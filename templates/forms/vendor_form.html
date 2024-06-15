@@ -1,0 +1,395 @@
+<div>
+    <div class="vendor_count_text">
+        <span ng-show="isSet(1)">
+            01 /
+        </span>
+        <span ng-show="isSet(2)">
+            02 /
+        </span>
+        <span ng-show="isSet(3)">
+            03 /
+        </span>
+        <!-- <span class="vendor_count_text_div">/</span> -->
+        <span class="vendor_count_text_total">
+            03
+        </span>
+    </div>
+    <form ng-submit="vendorform(vendorform_data)" name="vendorform_data" ng-validate="vendor_validate">
+        <div ng-if="isSet(1)">
+            <div class="flex-row">
+                <div id="vendor-form" class="form_wrapper contact_form">
+                    <div class="contact_lable">
+                        <input id="name_of_firm" name="name_of_firm" type="text" ng-model="vendor_obj.name_of_firm"
+                            required ng-change="nextChange();" class="form-control"  tabindex="1">
+                        <label class="md-lable" for="name_of_firm">Name of Firm</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="category_item" name="category_item" type="text" ng-model="vendor_obj.category_item"
+                            required ng-change="nextChange();" class="form-control"  tabindex="2">
+                        <label class="md-lable" for="category_item">Category Item</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="complete_product_details" name="complete_product_details" type="text"
+                            ng-model="vendor_obj.complete_product_details" class="form-control"  tabindex="3">
+                        <label class="md-lable" for="complete_product_details">Complete Product Details </label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="firm_establishment_year" name="firm_establishment_year" type="text"
+                            ng-model="vendor_obj.firm_establishment_year" required ng-change="nextChange();"
+                            class="form-control"  tabindex="4">
+                        <label class="md-lable" for="firm_establishment_year">Year of Establishment of Firm </label>
+                    </div>
+                    <div class="contact_lable">
+                        <div class="relative upload_input">
+                            <input id="product_details_catalogue_upload" name="product_details_catalogue_upload"
+                                type="file" ng-model="vendor_data_upload.product_details_catalogue_upload" ngf-select=""
+                                ngf-multiple="false" ngf-pattern="'.pdf'"
+                                ng-change="vendor_upload('product_details_catalogue');"
+                                class="upload-button-wrapper-input upload_file_input"  tabindex="5">
+                            <div class="upload-button-wrapper">
+                                <img src="assets/images/icon/upload.svg" alt="{{common_page_list.page_name}}" style="margin: 0;">
+                                <p ng-if="!vendor_data_upload.product_details_catalogue_upload.name"
+                                    class="transition_0s">
+                                    Product Catalogue
+                                </p>
+                                <p ng-if="vendor_data_upload.product_details_catalogue_upload.name"
+                                    class="transition_0s">
+                                    {{ vendor_data_upload.product_details_catalogue_upload.name }}
+                                </p>
+                            </div>
+                            <p class="other_message">Allow only pdf file.</p>
+                        </div>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="firm_status" name="firm_status" type="text" ng-model="vendor_obj.firm_status"
+                            class="form-control"  tabindex="6">
+                        <label class="md-lable" for="firm_status">Firm Status</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="nature_of_business" name="nature_of_business" type="text"
+                            ng-model="vendor_obj.nature_of_business" required ng-change="nextChange();"
+                            class="form-control"  tabindex="7">
+                        <label class="md-lable" for="nature_of_business">Nature of Business </label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="address_of_reg_office" name="address_of_reg_office" type="text"
+                            ng-model="vendor_obj.address_of_reg_office" required ng-change="nextChange();"
+                            class="form-control"  tabindex="8">
+                        <label class="md-lable" for="address_of_reg_office">Address of Registration Office </label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="factory_address" name="factory_address" type="text"
+                            ng-model="vendor_obj.factory_address" class="form-control"  tabindex="9">
+                        <label class="md-lable" for="factory_address">Factory Address</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="email" name="email" type="email" ng-model="vendor_obj.email" required
+                            ng-change="nextChange();" class="form-control"  tabindex="10">
+                        <label class="md-lable" for="email">Email </label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="contact_no" name="contact_no" type="tel" ng-model="vendor_obj.contact_no"
+                            minlength="{{vendor_contact_no_length2.minlength}}" maxlength="{{vendor_contact_no_length2.maxlength}}" numbers-only class="form-control contact-form"
+                            ng-change="contact_check_fun(vendor_obj.contact_no, '');"  tabindex="11" ng-trim="false">
+                        <label class="md-lable contact_code" for="contact_no">Mobile Number</label>
+                        <div class="conatct_number_input">
+                            <div class="country_code_data" ng-click="country_code_click(); $event.stopPropagation();">
+                                <div class="contact_country_flag">
+                                    <img src="{{vendor_obj.flag2}}" alt="reecosys">
+                                </div>
+                                <div>
+                                    &nbsp; +{{vendor_obj.country2}}
+                                </div>
+                                <div>
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="country_code_list_data" ng-class="{'active' : country_code_clickF}"
+                            ng-click="$event.stopPropagation();">
+                            <div class="search_c-code">
+                                <input type="text" ng-model="search" placeholder="Search">
+                            </div>
+                            <ul>
+                                <li ng-repeat="country_list_detail in country_list | filter: search: phonecode"
+                                    ng-click="country_click_vendor_from(country_list_detail.phonecode, country_list_detail.flag); vendor_country_change2();">
+                                    <div ng-click="country_code_click_false(); contact_check_fun(vendor_obj.contact_no, '');">
+                                        <div><img src="{{country_list_detail.flag}}" alt="reecosys">
+                                        </div>
+                                        <span class="display_country_code">+{{country_list_detail.phonecode}}</span>
+                                        {{country_list_detail.nicename}}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="contact_lable hidden-xs" style="opacity: 0;visibility: hidden;">
+                        <input id="phone" disabled name="phone" type="number" required  class="form-control">
+                        <label class="md-lable" for="phone">Phone</label>
+                    </div> -->
+
+                    <div class="submit-button button-div filled-div-button form_button" ng-if="!nextVlidate">
+                        <button type="submit" class="button-style orange-button" ng-disabled="vendor_save_f"  tabindex="12">
+                            <p>
+                                Next
+                            </p>
+
+                        </button>
+                    </div>
+                    <div class="submit-button button-div filled-div-button form_button" ng-if="nextVlidate"  tabindex="12">
+                        <button type="button" class="button-style orange-button" ng-click="setTab(2)">
+                            <p>
+                                Next
+                            </p>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="isSet(2)">
+            <div class="flex-row">
+                <div id="vendor-form" class="form_wrapper contact_form">
+                    <div class="contact_lable">
+                        <input id="company_ref_one" name="company_ref_one" type="text"
+                            ng-model="vendor_obj.company_ref_one" required ng-change="nextChange2();"
+                            class="form-control"  tabindex="13">
+                        <label class="md-lable" for="company_ref_one">First Company Reference</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="company_ref_two" name="company_ref_two" type="text"
+                            ng-model="vendor_obj.company_ref_two" required ng-change="nextChange2();"
+                            class="form-control"  tabindex="14">
+                        <label class="md-lable" for="company_ref_two">Second Company Reference</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="company_ref_three" name="company_ref_three" type="text"
+                            ng-model="vendor_obj.company_ref_three" required ng-change="nextChange2();"
+                            class="form-control"  tabindex="15">
+                        <label class="md-lable" for="company_ref_three">Third Company Reference</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="is_quality_manual" name="is_quality_manual" type="text"
+                            ng-model="vendor_obj.is_quality_manual" class="form-control"  tabindex="16">
+                        <label class="md-lable" for="is_quality_manual">Does quality manual exists for the
+                            material?</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="is_quality_audits" name="is_quality_audits" type="text"
+                            ng-model="vendor_obj.is_quality_audits" ng-change="nextChange2();" class="form-control"  tabindex="17">
+                        <label class="md-lable" for="is_quality_audits">Are quality audits done?</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="gst_no" name="gst_no" type="text" ng-model="vendor_obj.gst_no" required
+                            ng-change="nextChange2();" minlength="15" maxlength="15" class="form-control"  tabindex="18">
+                        <label class="md-lable" for="gst_no">GST Number</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="pan_no" name="pan_no" type="text" ng-model="vendor_obj.pan_no" required
+                            ng-change="nextChange2();" minlength="10" maxlength="12" class="form-control"  tabindex="19">
+                        <label class="md-lable" for="pan_no">PAN Card Number</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="contact_person_name" name="contact_person_name" type="text"
+                            ng-model="vendor_obj.contact_person_name" required ng-change="nextChange2();"
+                            class="form-control"  tabindex="20">
+                        <label class="md-lable" for="contact_person_name">Contact Person Name</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="contact_person_no" name="contact_person_no" type="tel"
+                            ng-model="vendor_obj.contact_person_no" required
+                            ng-change="nextChange2(); contact_check_fun('', vendor_obj.contact_person_no);"
+                            minlength="{{vendor_contact_no_length.minlength}}" maxlength="{{vendor_contact_no_length.maxlength}}" numbers-only class="form-control contact-form"  tabindex="21">
+                        <label class="md-lable contact_code" for="contact_person_no">Contact Person Number</label>
+                        <div class="conatct_number_input">
+                            <div class="country_code_data" ng-click="country_code_click(); $event.stopPropagation();">
+                                <div class="contact_country_flag">
+                                    <img src="{{vendor_obj.flag}}" alt="reecosys">
+                                </div>
+                                <div>
+                                    &nbsp; +{{vendor_obj.country}}
+                                </div>
+                                <div>
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="country_code_list_data" ng-class="{'active' : country_code_clickF}"
+                            ng-click="$event.stopPropagation();">
+                            <div class="search_c-code">
+                                <input type="text" ng-model="search" placeholder="Search">
+                            </div>
+                            <ul>
+                                <li ng-repeat="country_list_detail in country_list | filter: search: phonecode"
+                                    ng-click="country_click_vendor(country_list_detail.phonecode, country_list_detail.flag); vendor_country_change();">
+                                    <div ng-click="country_code_click_false(); contact_check_fun('', vendor_obj.contact_person_no);">
+                                        <div><img src="{{country_list_detail.flag}}" alt="reecosys">
+                                        </div>
+                                        <span class="display_country_code">+{{country_list_detail.phonecode}}</span>
+                                        {{country_list_detail.nicename}}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="turn_over" name="turn_over" type="text" ng-model="vendor_obj.turn_over"
+                            class="form-control"  tabindex="22">
+                        <label class="md-lable" for="turn_over">Turn Over of last three years</label>
+                        <p class="other_message">
+                            To be checked by Finance and taxation department
+                        </p>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="bank_details" name="bank_details" type="text" ng-model="vendor_obj.bank_details"
+                            required ng-change="nextChange2();" class="form-control"  tabindex="23">
+                        <label class="md-lable" for="bank_details">Bank Details</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="bank_account_no" name="bank_account_no" type="tel"
+                            ng-model="vendor_obj.bank_account_no" required ng-change="nextChange2();" numbers-only
+                            class="form-control"  tabindex="24">
+                        <label class="md-lable" for="bank_account_no">Account Number</label>
+                    </div>
+                    <div class="contact_lable">
+                        <input id="ifsc_code" name="ifsc_code" type="text" ng-model="vendor_obj.ifsc_code" required
+                            ng-change="nextChange2();" minlength="11" maxlength="11" class="form-control"  tabindex="25">
+                        <label class="md-lable" for="ifsc_code">IFSC Code</label>
+                    </div>
+                    <div class="submit-button button-div filled-div-button form_button" ng-if="!nextVlidate2">
+                        <button type="submit" class="button-style orange-button" ng-disabled="vendor_save_f"  tabindex="26">
+                            <p>
+                                Next
+                            </p>
+
+                        </button>
+                    </div>
+                    <div class="submit-button button-div filled-div-button form_button" ng-if="nextVlidate2">
+                        <button type="button" class="button-style orange-button" ng-click="setTab(3)"  tabindex="26">
+                            <p>
+                                Next
+                            </p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="isSet(3)">
+            <div class="flex-row">
+                <div id="vendor-form" class="form_wrapper contact_form">
+                    <div class="contact_lable">
+                        <div class="relative upload_input">
+                            <input id="gst_attach_upload" name="gst_attach_upload" type="file"
+                                ng-model="vendor_data_upload.gst_attach_upload" ngf-select="" ngf-multiple="false"
+                                ngf-pattern="'.pdf'" ng-change="vendor_upload('gst_attach');"
+                                class="upload-button-wrapper-input upload_file_input" required  tabindex="27">
+                            <div class="upload-button-wrapper">
+                                <img src="assets/images/icon/upload.svg" alt="{{common_page_list.page_name}}" style="margin: 0;">
+                                <p ng-if="!vendor_data_upload.gst_attach_upload.name" class="transition_0s lable_error">
+                                    GST Registration
+                                </p>
+                                <p ng-if="vendor_data_upload.gst_attach_upload.name" class="transition_0s">
+                                    {{ vendor_data_upload.gst_attach_upload.name }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_lable">
+                        <div class="relative upload_input">
+                            <input id="pan_attach_upload" name="pan_attach_upload" type="file"
+                                ng-model="vendor_data_upload.pan_attach_upload" ngf-select="" ngf-multiple="false"
+                                ngf-pattern="'.png,.jpg,.jpeg,.pdf'" ng-change="vendor_upload('pan_attach');"
+                                class="upload-button-wrapper-input upload_file_input" required  tabindex="28">
+                            <div class="upload-button-wrapper">
+                                <img src="assets/images/icon/upload.svg" alt="{{common_page_list.page_name}}" style="margin: 0;">
+                                <p ng-if="!vendor_data_upload.pan_attach_upload.name" class="transition_0s lable_error">
+                                    PAN Card
+                                </p>
+                                <p ng-if="vendor_data_upload.pan_attach_upload.name" class="transition_0s">
+                                    {{ vendor_data_upload.pan_attach_upload.name }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_lable">
+                        <div class="relative upload_input">
+                            <input id="iso_attach_upload" name="iso_attach_upload" type="file"
+                                ng-model="vendor_data_upload.iso_attach_upload" ngf-select="" ngf-multiple="false"
+                                ngf-pattern="'.png,.jpg,.jpeg,.pdf'" ng-change="vendor_upload('iso_attach');"
+                                class="upload-button-wrapper-input upload_file_input"  tabindex="29">
+                            <div class="upload-button-wrapper">
+                                <img src="assets/images/icon/upload.svg" alt="{{common_page_list.page_name}}" style="margin: 0;">
+                                <p ng-if="!vendor_data_upload.iso_attach_upload.name" class="transition_0s lable_error">
+                                    ISO Certificates (if any)
+                                </p>
+                                <p ng-if="vendor_data_upload.iso_attach_upload.name" class="transition_0s">
+                                    {{ vendor_data_upload.iso_attach_upload.name }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_lable">
+                        <div class="relative upload_input">
+                            <input id="address_attach_upload" name="address_attach_upload" type="file"
+                                ng-model="vendor_data_upload.address_attach_upload" ngf-select="" ngf-multiple="false"
+                                ngf-pattern="'.pdf'" ng-change="vendor_upload('address_attach');"
+                                class="upload-button-wrapper-input upload_file_input" required  tabindex="30">
+                            <div class="upload-button-wrapper">
+                                <img src="assets/images/icon/upload.svg" alt="{{common_page_list.page_name}}" style="margin: 0;">
+                                <p ng-if="!vendor_data_upload.address_attach_upload.name" class="transition_0s lable_error">
+                                    Address Proof
+                                </p>
+                                <p ng-if="vendor_data_upload.address_attach_upload.name" class="transition_0s">
+                                    {{ vendor_data_upload.address_attach_upload.name }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_lable">
+                        <div class="relative upload_input">
+                            <input id="msme_attach_upload" name="msme_attach_upload" type="file"
+                                ng-model="vendor_data_upload.msme_attach_upload" ngf-select="" ngf-multiple="false"
+                                ngf-pattern="'.pdf'" ng-change="vendor_upload('msme_attach');"
+                                class="upload-button-wrapper-input upload_file_input"  tabindex="31">
+                            <div class="upload-button-wrapper">
+                                <img src="assets/images/icon/upload.svg" alt="{{common_page_list.page_name}}" style="margin: 0;">
+                                <p ng-if="!vendor_data_upload.msme_attach_upload.name" class="transition_0s lable_error">
+                                    MSME Registration
+                                </p>
+                                <p ng-if="vendor_data_upload.msme_attach_upload.name" class="transition_0s">
+                                    {{ vendor_data_upload.msme_attach_upload.name }}
+                                </p>
+                            </div>
+                        </div>
+                        <p class="other_message">
+                            Note : Only .pdf files format are supported
+                        </p>
+                    </div>
+                    <p class="relative check_box_error get_update_text align_center">
+                        <input class="get_update_checkbox" type="checkbox" id="invalidCheck" name="invalidCheck"
+                            ng-model="vendor_data_upload.invalidCheck_display" aria-required="true"
+                            aria-invalid="true">
+                        <label class="darkgray-font" for="invalidCheck"  tabindex="32">
+                            Keep me updated.
+                        </label>
+                    </p>
+                    <div class="submit-button button-div filled-div-button form_button" ng-if="!vendor_save_f">
+                        <button type="submit" class="button-style orange-button" ng-disabled="vendor_save_f"  tabindex="33">
+                            <p>
+                                Submit
+                            </p>
+                        </button>
+                    </div>
+                    <div class="submit-button form_button submit-button-contact button-div filled-div-button form_loading_btn" ng-if="vendor_save_f">
+                        <button class="button-style orange-button" type="submit" disabled tabindex="7">
+                            <div class="loading_btn"></div>
+                            <p>
+                                Please wait..
+                            </p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

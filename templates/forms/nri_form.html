@@ -1,0 +1,93 @@
+<div>
+    <form id="nriform" name="nriform" ng-submit="nri_form(nriform)"
+        ng-validate="nri_validate" autocomplete="off">
+
+        <div class="form_wrapper contact_form">
+
+            <div class="contact_lable">
+                <input id="name" name="name" type="text" ng-model="nri_obj.name"
+                    required="" aria-required="true" aria-invalid="true" class="form-control"
+                    letters-only tabindex="1">
+                <label class="md-lable" for="name">Name</label>
+            </div>
+            
+            <div class="contact_lable relative">
+                <input id="contact_no" name="contact_no" type="tel"
+                    ng-model="nri_obj.contact_no_display" numbers-only="" minlength="{{nri_contact_no_length.minlength}}" maxlength="{{nri_contact_no_length.maxlength}}" required="" aria-required="true" aria-invalid="true"
+                    autocomplete="off" class="form-control contact-form" tabindex="2" ng-trim="false">
+                <label class="md-lable contact_code" for="contact_no">Mobile Number</label>
+                <div class="conatct_number_input">
+                    <div class="country_code_data" ng-click="country_code_click(); $event.stopPropagation();">
+                        <div class="contact_country_flag">
+                            <img src="{{nri_obj.flag}}" alt="reecosys">
+                        </div>
+                        <div>
+                            &nbsp; +{{nri_obj.country}}
+                        </div>
+                        <div>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="country_code_list_data" ng-class="{'active' : country_code_clickF}"  ng-click="$event.stopPropagation();">
+                    <div class="search_c-code">
+                        <input type="text" ng-model="search" placeholder="Search">
+                    </div>
+                    <ul>
+                        <li ng-repeat="country_list_detail in country_list | filter: search: phonecode"
+                            ng-click="country_click_nri(country_list_detail.phonecode, country_list_detail.flag); nri_country_change();">
+                            <div ng-click="country_code_click_false();">
+                                <div><img src="{{country_list_detail.flag}}" alt="reecosys">
+                                </div>
+                                <span class="display_country_code">+{{country_list_detail.phonecode}}</span>
+                                {{country_list_detail.nicename}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact_lable">
+                <input id="email" name="email" type="email" ng-model="nri_obj.email"
+                    required="" aria-required="true" aria-invalid="true" autocomplete="off"
+                    class="form-control" tabindex="3">
+                <label class="md-lable" for="email">Email</label>
+            </div>
+            
+            <div class="contact_lable commentbox">
+                <input id="message" name="message" type="text" ng-model="nri_obj.message"
+                    required="" aria-required="true" aria-invalid="true" autocomplete="off"
+                    class="form-control" tabindex="4"  rows="4">
+                <label class="md-lable" for="message">Message</label>
+            </div>
+
+            <p class="relative check_box_error get_update_text align_center">
+                <input type="checkbox" id="AgreeTandC" name="AgreeTandC" ng-model="nri_obj.agree_tandc_display" tabindex="5"  aria-required="true" aria-invalid="true" class="get_update_checkbox">
+                <label class="darkgray-font" for="AgreeTandC">
+                    Keep me updated.
+                </label>
+            </p>
+            <div
+                class="submit-button form_button submit-button-contact button-div filled-div-button" ng-if="!save_nri_f">
+                <button class="button-style orange-button" type="submit"
+                    ng-disabled="save_nri_f" aria-disabled="false" tabindex="6">
+                    <p>
+                        Submit
+                    </p>
+                </button>
+            </div>
+            <div class="submit-button form_button submit-button-contact button-div filled-div-button form_loading_btn" ng-if="save_nri_f">
+                <button class="button-style orange-button" type="submit" disabled tabindex="7">
+                    <div class="loading_btn"></div>
+                    <p>
+                        Please wait..
+                    </p>
+                </button>
+            </div>
+            <!-- <p class="form_call_text">
+                Call on <a href="tel:javascript:void(0);">+91 XOXOXOXOXO</a> to get in touch
+            </p> -->
+
+        </div>
+    </form>
+</div>

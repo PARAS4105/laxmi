@@ -1,0 +1,129 @@
+<div class="side_popup_wrapper" ng-class="{'inqury_active': career_click_f}" ng-click="country_code_click_false();">
+    <div class="inquiry_popup relative">
+        <div class="close_icon" ng-click="career_click_close();">
+            <img src="assets/images/icons/close.svg" alt="{{common_page_list.page_name.page_name}}">
+        </div>
+        <div>
+            <div class="side_popup_in">
+                <div class="section-title">
+                    <p>
+                        Job Application
+                    </p>
+                </div>
+
+                <div class="content-size-div">
+                    <p>
+                        {{career_form_data.position}} ({{career_form_data.exp_years}})
+                    </p>
+                </div>
+
+                <form id="career_form" name="career_form" ng-submit="careerform(career_form)"
+                    ng-validate="career_validate" ng-if="career_click_f">
+                    <div class="form_wrapper">
+                        <div class="contact_lable">
+                            <input id="person_name" name="person_name" type="text" ng-model="career_obj.name" required="required"
+                            class="form-control" letters-only tabindex="11" autocomplete="off">
+                            <label class="md-lable" for="client_name">Name</label>
+                        </div>
+                        <div class="contact_lable">
+                            <input id="person_email" name="person_email" type="email" ng-model="career_obj.email" required=""
+                                autocomplete="off" class="form-control" tabindex="2">
+                            <label class="md-lable" for="person_email">Email</label>
+                        </div>
+                        <div class="contact_lable relative">
+                            <input id="contact_no" name="contact_no" type="tel" ng-model="career_obj.contact_no_display"
+                                numbers-only="" minlength="{{career_contact_no_length.minlength}}" maxlength="{{career_contact_no_length.maxlength}}" required="" autocomplete="off"
+                                class="form-control contact-form" tabindex="3" ng-trim="false">
+                            <label class="md-lable contact_code" for="contact_no">Mobile Number</label>
+                            <div class="conatct_number_input">
+                                <div class="country_code_data" ng-click="country_code_click(); $event.stopPropagation();">
+                                    <div class="contact_country_flag">
+                                        <img src="{{career_obj.flag}}" alt="reecosys">
+                                    </div>
+                                    <div>
+                                        &nbsp; +{{career_obj.country}}
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="country_code_list_data" ng-class="{'active' : country_code_clickF}"
+                                ng-click="$event.stopPropagation();">
+                                <div class="search_c-code">
+                                    <input type="text" ng-model="search" placeholder="Search">
+                                </div>
+                                <ul>
+                                    <li ng-repeat="country_list_detail in country_list | filter: search: phonecode"
+                                        ng-click="country_click_career(country_list_detail.phonecode, country_list_detail.flag); career_country_change();">
+                                        <div ng-click="country_code_click_false();">
+                                            <div><img src="{{country_list_detail.flag}}" alt="reecosys">
+                                            </div>
+                                            <span class="display_country_code">+{{country_list_detail.phonecode}}</span>
+                                            {{country_list_detail.nicename}}
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="contact_lable">
+                            <input id="current_company" name="current_company" type="text"
+                                ng-model="career_obj.current_company" aria-invalid="false" autocomplete="off"
+                                class="form-control" tabindex="4">
+                            <label class="md-lable" for="current_company">Current Company</label>
+                        </div>
+
+                        <div class="contact_lable">
+                            <input id="current_designation" name="current_designation" type="text"
+                                ng-model="career_obj.current_designation" aria-invalid="false" autocomplete="off"
+                                class="form-control" tabindex="5">
+                            <label class="md-lable" for="current_designation">Current Designation</label>
+                        </div>
+                        <div class="contact_lable">
+                            <div class="relative upload_input">
+                                <input id="resume_upload" name="resume_upload" class="upload-button-wrapper-input upload_file_input"
+                                    type="file" ng-model="cv_upload_obj.resume_upload" ngf-select="career_upload_check(cv_upload_obj.resume_upload);"
+                                    ngf-multiple="false" ngf-pattern="'.pdf,.doc,.docx'"
+                                    ng-change="career_upload('resume');" required tabindex="6">
+                                <div class="upload-button-wrapper">
+                                    <img src="assets/images/icon/upload.svg" alt="{{common_page_list.page_name.page_name}}" style="margin: 0;">
+                                    <p ng-if="!cv_upload_obj.resume_upload.name" class="transition_0s lable_error">
+                                        Resume Attachment
+                                    </p>
+                                    <p ng-if="cv_upload_obj.resume_upload.name" class="transition_0s">
+                                        {{cv_upload_obj.resume_upload.name}}
+                                    </p>
+                                </div>
+                                <p class="other_message">Allow only pdf, doc, docx file.</p>
+                            </div>
+                        </div>
+                        <p class="relative check_box_error get_update_text align_center">
+                            <input class="get_update_checkbox" type="checkbox"  id="agree_tandc" name="agree_tandc" tabindex="7" ng-model="career_obj.agree_tandc_display" aria-required="true" aria-invalid="true">
+                            <label class="darkgray-font" for="agree_tandc">
+                                Keep me updated.
+                            </label>
+                        </p>
+                        <div class="submit-button button-div filled-div-button form_button"  ng-if="!addcareer">
+                            <button class="button-style orange-button" type="submit" ng-disabled="addcareer" tabindex="8">
+                                <p>
+                                    Submit
+                                </p>
+                            </button>
+                        </div>
+                        <div class="submit-button form_button submit-button-contact button-div filled-div-button form_loading_btn" ng-if="addcareer">
+                            <button class="button-style orange-button" type="submit" disabled tabindex="7">
+                                <div class="loading_btn"></div>
+                                <p>
+                                    Please wait..
+                                </p>
+                            </button>
+                        </div>
+                        <!-- <p class="form_call_text">
+                            Call on <a href="tel:javascript:void(0);">+91 XOXOXOXOXO</a> to get in touch
+                        </p> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

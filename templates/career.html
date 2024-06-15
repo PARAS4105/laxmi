@@ -1,0 +1,158 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper"  ng-click="country_code_click_false();"
+    ng-if="!is_commonpage_loading && common_page_list.page_name">
+    <div id="reecosys-aboutus-wrapper" class="relative">
+        <section class="reecosys-section relative" id="reecosys-aboutus-section-1">
+            <div class="commonpage_banner">
+                
+                <div ng-if="!isMobilescreen" style="height: 100%;">
+                    <img src="assets/images/other/dummy_image.png" hires="{{common_page_list.banner_web_full}}&h=1080&w=1903&q=75" alt="{{common_page_list.page_name}}" ng-if="common_page_list.banner_web_type == 'image' && common_page_list.banner_web_full">
+                    <video autoplay muted loop playsinline id="myVideo" style="width: 100%;display: block; object-fit: cover;" class="gallery-images image-cover" ng-if="common_page_list.banner_web_type == 'video' && common_page_list.banner_web_full">
+                        <source src="{{common_page_list.banner_web_full}}" type="video/mp4">
+                    </video>
+                </div>
+
+                <div ng-if="isMobilescreen" style="height: 100%;">
+                    <img src="assets/images/other/dummy_image.png" hires="{{common_page_list.banner_mobile_full}}&h=700&w=500&q=75" alt="{{common_page_list.page_name}}" ng-if="common_page_list.banner_web_type == 'image' && common_page_list.banner_mobile_full">
+                    <img src="assets/images/other/dummy_image.png" hires="{{common_page_list.banner_web_full}}&h=700&w=500&q=75" alt="{{common_page_list.page_name}}" ng-if="common_page_list.banner_web_type == 'image' && common_page_list.banner_web_full && !common_page_list.banner_mobile_full">
+                    <video autoplay muted loop playsinline id="myVideo" style="width: 100%;display: block; object-fit: cover;" class="gallery-images image-cover" ng-if="common_page_list.banner_web_type == 'video' && common_page_list.banner_mobile_full">
+                        <source src="{{common_page_list.banner_mobile_full}}" type="video/mp4">
+                    </video>
+                    <video autoplay muted loop playsinline id="myVideo" style="width: 100%;display: block; object-fit: cover;" class="gallery-images image-cover" ng-if="common_page_list.banner_web_type == 'video' && common_page_list.banner_web_full && !common_page_list.banner_mobile_full">
+                        <source src="{{common_page_list.banner_web_full}}" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+            <div class="black_overlay"></div>
+            <div class="banner-text-half" ng-if="common_page_list.page_name">
+                <!-- <div class="banner-title">
+                    <h1 class="white-color">
+                        {{common_page_list.page_name}}
+                    </h1>
+                </div> -->
+                <div class="banner-title-new wow banner_text-width fade_top other_page_width" data-wow-delay="0.6s" data-wow-duration="0.6s">
+                    <h2 class="white-color g_regular">   {{common_page_list.page_name}} </h2>
+                                        </div>
+            </div>
+        </section>
+
+        <section class="reecosys-section relative" ng-if="common_page_list.title || common_page_list.primary_text_display">
+            <div class="container">
+                <div class="inner-flex">
+                    <!-- <div class="section-information" ng-if="common_page_list.title">
+                        <div class="section-title">
+                            <h2 class="wow fade_top" data-wow-delay="0.3s" data-wow-duration="0.6s">
+                                {{common_page_list.title}}
+                            </h2>
+                        </div>
+                    </div> -->
+
+
+
+
+
+                 <div class="section-information" ng-if="common_page_list.title">
+                        <div class="section-title-tag_line">
+                            <h2 class="wow fade_top tcpaitlizex g_regular "
+                                data-wow-delay="0.6s"
+                                data-wow-duration="0.6s">
+                                {{common_page_list.title}}
+                            </h2>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="content-size-div" ng-if="common_page_list.primary_text_display">
+                        <p class="wow fade_top" data-wow-delay="0.6s" data-wow-duration="0.6s"
+                            ng-bind-html="common_page_list.primary_text_display"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reecosys-section relative" ng-if="career_full_list.length > 0">
+            <div class="container">
+                <div class="inner-flex">
+                    <div class="section-information wow fade_top animated" data-wow-delay="0.3s" data-wow-duration="0.6s">
+                        <!-- <div class="section-title title-color">
+                            <h2 class="capitalize">
+                                Current Openings
+                            </h2>
+                        </div> -->
+                        <div class="section-title-big ">
+                            <h2 class="wow fade_top tcpaitlizex gen_medium "
+                                data-wow-delay="0.6s"
+                                data-wow-duration="0.6s">
+                                Current Openings
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="career_position_block" id="accordion">
+                        <div class="career_position_list wow fade_top" data-wow-delay="0.6s" data-wow-duration="{{($index*0.2)}}s" ng-repeat="data in career_full_list">
+                            <div class="inner-flex accordion_click" accordion>
+                                <div class="">
+                                    <div class="section-title career_title" ng-if="data.position">
+                                        <h2>
+                                            {{data.position}}
+                                        </h2>
+                                        <div class="career_arrow" ng-if="data.description">
+                                            <img src="assets/images/icon/down_arrow.svg" alt="{{common_page_list.page_name}}">
+                                        </div>
+                                    </div>
+                                    <div class="content-size-div" ng-if="data.exp_years">
+                                        <p>
+                                            {{data.exp_years}}
+                                        </p>
+                                    </div>
+                                    <!-- <div class="link-btn amenities-view-btn view-more-less view_career_details">
+                                        <a href="javascript:void(0);">
+                                            <p>
+                                                <span class="view-career-details">
+                                                    View Details
+                                                </span>
+                                                <span class="hide-career-details">
+                                                    Hide Details
+                                                </span>
+                                            </p>
+                                        </a>
+                                    </div> -->
+                                </div>
+                                <div class="career_btn web_career_apply outline-div-button button-div" ng-if="!isMobilescreen || data.position"
+                                    ng-click="career_click(data); $event.stopPropagation();">
+                                    <button class="button-style download-fill-button">
+                                        <p class="capitalize">
+                                            Apply Now
+                                        </p>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="content_accordian" ng-if="data.description">
+                                <div class="career_detail_content content-size-div">
+                                    <p ng-bind-html="data.description"></p>
+                                </div>
+                            </div>
+                            <div class="career_btn outline-div-button button-div mobile_career_apply"
+                                ng-click="career_click(data); $event.stopPropagation();" ng-if="isMobilescreen || data.position">
+                                <button type="button" class="button-style download-fill-button">
+                                    <p class="capitalize">
+                                        Apply Now
+                                    </p>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+
+
+<div class="quickEnquiryOverlay" ng-click="career_click_close(); country_code_click_false();" ng-class="{'inqury_active' : career_click_f}"></div>
+
+<div ng-include='"templates/forms/career_form.html"'></div>

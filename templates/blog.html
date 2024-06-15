@@ -1,0 +1,101 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper" ng-if="!is_blog_data_loading">
+    <div id="reecosys-contact-wrapper" class="relative">
+
+        <section class="reecosys-section relative" id="reecosys-contact-section-banner">
+            <div class="commonpage_banner">
+                <div style="height: 100%;">
+                    <img src="assets/images/other/dummy_image.png" hires="{{blog_data.image_full}}&h=1080&w=1903&q=75"
+                        alt="{{blog_data.title}}" class="lazyload" ng-if="blog_data.image_full">
+                </div>
+            </div>
+
+            <div class="black_overlay"></div>
+
+            <div class="banner-text-half" ng-if="blog_data.banner_title">
+                <div class="banner-title">
+                    <h1 class="white-color">
+                        {{blog_data.banner_title}}
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="reecosys-section relative" id="reecosys-blog-detail-section-2">
+            <div class="container">
+                <div class="inner-flex">
+                    <div class="blog-grid" ng-if="!isMobilescreen && recent_blog_data.length > 0">
+                        <div class="blog-grid-one" style="opacity: 0; visibility: hidden;"></div>
+                        <div class="blog-grid-two">
+                            <div class="content-size-div recent_post_title">
+                                <p class="capitalize">
+                                    Recent Post
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-grid">
+                        <div class="blog-grid-one">
+                            <div class="inner-flex">
+                                <div class="section-information">
+                                    <div class="section-title-big blog-title" ng-if="blog_data.title">
+                                        <h2 class="capitalize">
+                                            {{blog_data.title}}
+                                        </h2>
+                                    </div>
+                                    <div class="blog_data_tags" ng-if="blog_data.tags.length > 0">
+                                        <div ng-repeat="data in blog_data.tags">
+                                            <a href="blogs?type={{data.text}}">
+                                                <div class="blog_tags_text capitalize">
+                                                    <p>{{data.text}}</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="published_blog_date" ng-if="blog_data.published_date">
+                                        <p>{{blog_data.published_date}}</p>
+                                    </div>
+                                </div>
+                                <div class="blog_bind_data" ng-if="blog_data.description">
+                                    <div ng-bind-html="blog_data.description | safeHtml"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-grid-two" ng-if="recent_blog_data.length > 0">
+                            <div class="inner-flex">
+                                <div class="content-size-div recent_post_title" ng-if="isMobilescreen">
+                                    <p class="capitalize">
+                                        Recent Post
+                                    </p>
+                                </div>
+                                <div class="recent_blog_grids">
+
+                                    <div class="recent_blogs_details" ng-repeat="data in recent_blog_data">
+                                        <a href="blog/{{data.slug}}">
+                                            <div class="inner-flex">
+                                                <div class="recent_blog_image">
+                                                    <img src="assets/images/other/dummy_image.png"
+                                                        hires="{{data.image_full}}&h=200&w=400" alt="">
+                                                </div>
+                                                <div class="content-size-div recent_blogs_details_title recent_post_title_flex">
+                                                    <div>
+                                                        <p>{{data.title}}</p>
+                                                        <p class="recent_blog_date">{{data.published_date}}</p>
+                                                    </div>
+                                                    <div class="recent-arrow-icon">
+                                                        <img src="assets/images/icon/right_arrow_line.svg" alt="Blog">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>

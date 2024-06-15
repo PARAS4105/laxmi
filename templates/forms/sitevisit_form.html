@@ -1,0 +1,101 @@
+<div>
+    <form id="sitevisit_form_data" name="sitevisit_form_data" ng-submit="sitevisitform(sitevisit_form_data)" ng-validate="sitevisit_validate"
+        autocomplete="off">
+
+        <div class="form_wrapper contact_form">
+
+            <div class="contact_lable">
+                <input id="name" name="name" type="text" ng-model="sitevisit_obj.name" required="" aria-required="true" aria-invalid="true" class="form-control" letters-only tabindex="1">
+                <label class="md-lable" for="name">Name</label>
+            </div>
+            <div class="contact_lable relative">
+                <input id="contact_no" name="contact_no" type="tel" ng-model="sitevisit_obj.contact_no_display"
+                    numbers-only="" minlength="{{contact_no_length.minlength}}" maxlength="{{contact_no_length.maxlength}}" required="" aria-required="true" aria-invalid="true"
+                    autocomplete="off" class="form-control contact-form" tabindex="2" ng-trim="false">
+                <label class="md-lable contact_code" for="contact_no">Mobile Number</label>
+                <div class="conatct_number_input">
+                    <div class="country_code_data" ng-click="country_code_click(); $event.stopPropagation();">
+                        <div class="contact_country_flag">
+                            <img src="{{sitevisit_obj.flag}}" alt="reecosys">
+                        </div>
+                        <div>
+                            &nbsp; +{{sitevisit_obj.country}}
+                        </div>
+                        <div>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="country_code_list_data" ng-class="{'active' : country_code_clickF}"
+                    ng-click="$event.stopPropagation();">
+                    <div class="search_c-code">
+                        <input type="text" ng-model="search" placeholder="Search">
+                    </div>
+                    <ul>
+                        <li ng-repeat="country_list_detail in country_list | filter: search: phonecode"
+                            ng-click="sitevisite_click_country(country_list_detail.phonecode, country_list_detail.flag); country_change();">
+                            <div ng-click="country_code_click_false();">
+                                <div><img src="{{country_list_detail.flag}}" alt="reecosys">
+                                </div>
+                                <span class="display_country_code">+{{country_list_detail.phonecode}}</span>
+                                {{country_list_detail.nicename}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mdInput toggleDateFrom_input" ng-if="!isMobilescreen">
+                <div class="relative">
+                    <input id="preferred_date_display" name="preferred_date_display"
+                        ng-model="sitevisit_obj.preferred_date_display" type="date"
+                        ng-click="toggleDateFrom();"
+                        ng-change="on_blur_preferred(sitevisit_obj.preferred_date_display)"
+                        class="date_picker_input form-control" autocomplete="off" required tabindex="3" min="{{mobileDate_min | date:'yyyy-MM-dd'}}" max="{{mobileDate_max | date:'yyyy-MM-dd'}}" style="opacity: 1">
+                </div>
+            </div>
+            <div class="contact_lable select_option select_apr relative">
+                <select name="preferred_time" class="form-control" id="preferred_time" ng-model="sitevisit_obj.preferred_time"
+                    required="" aria-required="true" aria-invalid="true" autocomplete="off" tabindex="4">
+                    <option value="" selected disabled class="gray-color"></option>
+                    <option value="10 am to 11 am">10 am&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;11 am</option>
+                    <option value="11 am to 12 am">11 am&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;12 am</option>
+                    <option value="12 pm to 01 pm">12 pm&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;01 pm</option>
+                    <option value="01 pm to 02 pm">01 pm&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;02 pm</option>
+                    <option value="02 pm to 03 pm">02 pm&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;03 pm</option>
+                    <option value="03 pm to 04 pm">03 pm&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;04 pm</option>
+                    <option value="04 pm to 05 pm">04 pm&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;05 pm</option>
+                    <option value="05 pm to 06 pm">05 pm&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;06 pm</option>
+                    <option value="06 pm to 07 pm">06 pm&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;07 pm</option>
+                </select>
+                <label class="md-lable department_label" for="preferred_time">Preferred Time</label>
+
+                <div class="fa-icon">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <div class="submit-button form_button submit-button-contact button-div filled-div-button" ng-if="!site_save_f">
+                <button class="button-style orange-button" type="submit" ng-disabled="site_save_f"
+                    aria-disabled="false" tabindex="5">
+                    <p>
+                        Submit
+                    </p>
+                </button>
+            </div>
+
+            <div class="submit-button form_button submit-button-contact button-div filled-div-button form_loading_btn" ng-if="site_save_f">
+                <button class="button-style orange-button" type="submit" disabled tabindex="5">
+                    <div class="loading_btn"></div>
+                    <p>
+                        Please wait..
+                    </p>
+                </button>
+            </div>
+
+            <!-- <p class="form_call_text">
+                Call on <a href="tel:javascript:void(0);">+91 XOXOXOXOXO</a> to get in touch
+            </p> -->
+
+        </div>
+    </form>
+</div>

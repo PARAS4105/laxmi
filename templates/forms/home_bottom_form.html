@@ -1,0 +1,125 @@
+<div>
+    <form id="contact" name="contact" ng-submit="submitcontact(contact)" ng-validate="contactUsformValidate"
+        autocomplete="off">
+
+        <div class="form_wrapper contact_form">
+
+            <div class="contact_lable">
+                <input id="name" name="name" type="text" ng-model="contactUs_list.name" required="" aria-required="true"
+                    aria-invalid="true" class="form-control" letters-only tabindex="1">
+                <label class="md-lable" for="name">Name</label>
+            </div>
+            <div class="contact_lable">
+                <input id="email" name="email" type="email" ng-model="contactUs_list.email" required=""
+                    aria-required="true" aria-invalid="true" autocomplete="off" class="form-control" tabindex="2">
+                <label class="md-lable" for="email">Email</label>
+            </div>
+            <div class="contact_lable relative">
+                <input id="contact_no" name="contact_no" type="tel" ng-model="contactUs_list.contact_no_display"
+                    numbers-only="" minlength="{{contact_form_contact_no_length.minlength}}"
+                    maxlength="{{contact_form_contact_no_length.maxlength}}" required="" aria-required="true"
+                    aria-invalid="true" autocomplete="off" class="form-control contact-form" tabindex="3"
+                    ng-trim="false">
+                <label class="md-lable contact_code" for="contact_no">Mobile Number</label>
+                <div class="conatct_number_input">
+                    <div class="country_code_data" ng-click="country_code_click(); $event.stopPropagation();">
+                        <div class="contact_country_flag">
+                            <img src="{{contactUs_list.flag}}" alt="reecosys">
+                        </div>
+                        <div>
+                            &nbsp; +{{contactUs_list.country}}
+                        </div>
+                        <div>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="country_code_list_data" ng-class="{'active' : country_code_clickF}"
+                    ng-click="$event.stopPropagation();">
+                    <div class="search_c-code">
+                        <input type="text" ng-model="search" placeholder="Search">
+                    </div>
+                    <ul>
+                        <li ng-repeat="country_list_detail in country_list | filter: search: phonecode"
+                            ng-click="country_click_contact(country_list_detail.phonecode, country_list_detail.flag); country_change_contact();">
+                            <div ng-click="country_code_click_false();">
+                                <div><img src="{{country_list_detail.flag}}" alt="reecosys">
+                                </div>
+                                <span class="display_country_code">+{{country_list_detail.phonecode}}</span>
+                                {{country_list_detail.nicename}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- <div class="contact_lable select_option select_apr relative">
+                <select name="department" class="form-control" id="department" ng-model="contactUs_list.department"
+                    required="" aria-required="true" aria-invalid="true" autocomplete="off" tabindex="4">
+                    <option value="" selected disabled class="gray-color" style="display: none;"></option>
+                    <option value="{{depertment_data.department}}" class="capitalize"
+                        ng-repeat="depertment_data in page_contact_list.contact_list[0].details">
+                        {{depertment_data.department}}
+                    </option>
+                </select>
+                <label class="md-lable department_label" for="department">Department</label>
+
+                <div class="fa-icon">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </div>
+            </div> -->
+
+            <div class="contact_lable commentbox">
+                <textarea id="message" name="message" type="text" ng-model="contactUs_list.message" required=""
+                    aria-required="true" aria-invalid="true" autocomplete="off" class="form-control" tabindex="5"
+                    rows="4">
+                </textarea>
+                <label class="md-lable" for="message">Comment</label>
+            </div>
+            <p class="relative check_box_error get_update_text align_center">
+                <input class="get_update_checkbox" type="checkbox" id="agree_tandc" tabindex="6" name="agree_tandc"
+                    ng-model="contactUs_list.agree_tandc_display" aria-required="true" aria-invalid="true">
+                <label class="darkgray-font" for="agree_tandc">
+                    By clicking the button you agree our T&C.
+                </label>
+            </p>
+
+            <div class="submit-button form_button submit-btn-home submit-button-contact button-div filled-div-button"
+                ng-if="!addContactUs">
+                <button class="button-style orange-button" type="submit" ng-disabled="addContactUs"
+                    aria-disabled="false" tabindex="7" >
+                    <p>
+                        Submit
+                    </p>
+                </button>
+            </div>
+
+            <div class="submit-button form_button submit-button-contact submit-btn-home button-div filled-div-button form_loading_btn"
+                ng-if="addContactUs">
+                <button class="button-style orange-button" type="submit" disabled tabindex="7">
+                    <div class="loading_btn"></div>
+                    <p>
+                        Please wait..
+                    </p>
+                </button>
+            </div>
+
+            <!-- <p class="form_call_text">
+                Call on <a href="tel:javascript:void(0);">+91 XOXOXOXOXO</a> to get in touch
+            </p> -->
+
+        </div>
+    </form>
+</div>
+<!-- 
+<script>
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
+
+</script> -->

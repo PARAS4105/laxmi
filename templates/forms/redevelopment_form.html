@@ -1,0 +1,130 @@
+<div>
+    <form id="redvelopment" name="redvelopment" ng-submit="redevelopmentform(redvelopment)"
+        ng-validate="redevelopment_validate" autocomplete="off">
+        <div class="form_wrapper contact_form">
+
+            <div class="contact_lable">
+                <input id="contact_persion_name" name="contact_persion_name" type="text" ng-model="redevelopment_obj.contact_persion_name"
+                    required="" aria-required="true" aria-invalid="true" class="form-control"
+                    letters-only tabindex="1">
+                <label class="md-lable" for="contact_persion_name">Contact Person Name</label>
+            </div>
+            
+            <div class="contact_lable relative">
+                <input id="contact_no" name="contact_no" type="tel"
+                    ng-model="redevelopment_obj.contact_no_display" numbers-only="" minlength="{{redevelopment_contact_no_length.minlength}}" maxlength="{{redevelopment_contact_no_length.maxlength}}" required="" aria-required="true" aria-invalid="true"
+                    autocomplete="off" class="form-control contact-form" tabindex="2" ng-trim="false">
+                <label class="md-lable contact_code" for="contact_no">Mobile Number</label>
+                <div class="conatct_number_input">
+                    <div class="country_code_data" ng-click="country_code_click(); $event.stopPropagation();">
+                        <div class="contact_country_flag">
+                            <img src="{{redevelopment_obj.flag}}" alt="reecosys">
+                        </div>
+                        <div>
+                            &nbsp; +{{redevelopment_obj.country}}
+                        </div>
+                        <div>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="country_code_list_data" ng-class="{'active' : country_code_clickF}" ng-if="country_code_clickF"  ng-click="$event.stopPropagation();">
+                    <div class="search_c-code">
+                        <input type="text" ng-model="search" placeholder="Search">
+                    </div>
+                    <ul>
+                        <li ng-repeat="country_list_detail in country_list | filter: search: phonecode"
+                            ng-click="country_click_redevelopment(country_list_detail.phonecode, country_list_detail.flag); redevelopment_country_change();">
+                            <div ng-click="country_code_click_false();">
+                                <div><img src="{{country_list_detail.flag}}" alt="reecosys">
+                                </div>
+                                <span class="display_country_code">+{{country_list_detail.phonecode}}</span>
+                                {{country_list_detail.nicename}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact_lable">
+                <input id="email" name="email" type="email" ng-model="redevelopment_obj.email"
+                    required="" aria-required="true" aria-invalid="true" autocomplete="off"
+                    class="form-control" tabindex="3">
+                <label class="md-lable" for="email">Email</label>
+            </div>
+            
+            <div class="contact_lable">
+                <input id="society_name" name="society_name" type="text" ng-model="redevelopment_obj.society_name"
+                    required="" aria-required="true" aria-invalid="true" autocomplete="off"
+                    class="form-control" tabindex="4">
+                <label class="md-lable" for="society_name">Society Name</label>
+            </div>
+
+            <div class="contact_lable">
+                <input id="address" name="address" type="text" ng-model="redevelopment_obj.address"
+                    required="" aria-required="true" aria-invalid="true" autocomplete="off"
+                    class="form-control" tabindex="5">
+                <label class="md-lable" for="address">Address [West Ahmedabad Preferred]</label>
+            </div>
+
+            <div class="contact_lable relative">
+                <input id="existing_unit" name="existing_unit" type="text" ng-model="redevelopment_obj.existing_unit"
+                    required="" aria-required="true" aria-invalid="true" autocomplete="off"
+                    class="form-control" tabindex="6">
+                <label class="md-lable" for="existing_unit">Existing Unit Details</label>
+                <p class="other_message">( Total Units, Size of Units )</p>
+            </div>
+
+            <div class="contact_lable relative">
+                <input id="plot_area" name="plot_area" type="text" ng-model="redevelopment_obj.plot_area"
+                    required="" aria-required="true" aria-invalid="true" autocomplete="off"
+                    class="form-control" tabindex="7">
+                <label class="md-lable" for="plot_area">Plot Area [In Square Yard]</label>
+                <p class="other_message">2000 Square Yard Minimum Preferred</p>
+            </div>
+            
+         
+            
+            <div class="contact_lable">
+                <input id="road_width" name="road_width" type="text" ng-model="redevelopment_obj.road_width"
+                    required="" aria-required="true" aria-invalid="true" autocomplete="off"
+                    class="form-control" tabindex="8">
+                <label class="md-lable" for="road_width">Road Width</label>
+            </div>
+            <div class="contact_lable">
+                <input id="requirements" name="requirements" type="text" ng-model="redevelopment_obj.requirements"
+                    required="" aria-required="true" aria-invalid="true" autocomplete="off"
+                    class="form-control" tabindex="9">
+                <label class="md-lable" for="requirements">Redevelopment Requirement From Developer</label>
+            </div>
+
+            <p class="relative check_box_error get_update_text align_center">
+                <input class="get_update_checkbox" type="checkbox" id="member_confirmation" tabindex="10" name="member_confirmation" ng-model="redevelopment_obj.member_confirmation_display"  aria-required="true" aria-invalid="true">
+                <label class="darkgray-font" for="member_confirmation">
+                    Please Confirm if 75% Members Area Ready For Redevelopment
+                </label>
+            </p>
+            <div
+                class="submit-button form_button submit-button-contact button-div filled-div-button" ng-if="!redevelopment_obj_save">
+                <button class="button-style orange-button" type="submit"
+                    ng-disabled="redevelopment_obj_save" aria-disabled="false" tabindex="11">
+                    <p>
+                        Submit
+                    </p>
+                </button>
+            </div>
+            <div class="submit-button form_button submit-button-contact button-div filled-div-button form_loading_btn" ng-if="redevelopment_obj_save">
+                <button class="button-style orange-button" type="submit" disabled tabindex="7">
+                    <div class="loading_btn"></div>
+                    <p>
+                        Please wait..
+                    </p>
+                </button>
+            </div>
+            <!-- <p class="form_call_text">
+                Call on <a href="tel:javascript:void(0);">+91 XOXOXOXOXO</a> to get in touch
+            </p> -->
+
+        </div>
+    </form>
+</div>

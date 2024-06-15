@@ -1,0 +1,29 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper"  ng-click="country_code_click_false();">
+    <div id="reecosys-aboutus-wrapper" class="relative">
+
+        <section class="reecosys-section relative" id="reecosys-aboutus-section-2"></section>
+
+        <section class="reecosys-section relative" id="reecosys-aboutus-section-2">
+            <div class="container commonpage_form_section">
+                <div class="inner-flex">
+                    <div class="section-information">
+                        <div class="section-title">
+                            <h2 class="wow fade_top" data-wow-delay="0.3s" data-wow-duration="0.6s">
+                                Book a Site Visit Now
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="commonpage_grid content-size-div-padding-top">
+                    <div class="blank_space" ng-if="!common_page_list.primary_text_display">
+                        <div>
+                            <!-- blank space div for manage style -->
+                            <p>blank space</p>
+                        </div>
+                    </div>
+                    <div ng-include='"templates/forms/sitevisit_form.html"'></div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

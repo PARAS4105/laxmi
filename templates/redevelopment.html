@@ -1,0 +1,63 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper"  ng-click="country_code_click_false();"
+    ng-if="!is_commonpage_loading && common_page_list.page_name">
+    <div id="reecosys-contact-wrapper" class="relative">
+        <section class="reecosys-section relative" id="reecosys-contact-section-banner">
+            <div class="commonpage_banner">
+                <div ng-if="!isMobilescreen" style="height: 100%;">
+                    <img src="assets/images/other/dummy_image.png" hires="{{common_page_list.banner_web_full}}&h=1080&w=1903&q=75" alt="{{common_page_list.page_name.page_name}}" ng-if="common_page_list.banner_web_type == 'image' && common_page_list.banner_web_full">
+                    <video autoplay muted loop playsinline id="myVideo" style="width: 100%;display: block; object-fit: cover;" class="gallery-images image-cover" ng-if="common_page_list.banner_web_type == 'video' && common_page_list.banner_web_full">
+                        <source src="{{common_page_list.banner_web_full}}" type="video/mp4">
+                    </video>
+                </div>
+
+                <div ng-if="isMobilescreen" style="height: 100%;">
+                    <img src="assets/images/other/dummy_image.png" hires="{{common_page_list.banner_mobile_full}}&h=700&w=500&q=75" alt="{{common_page_list.page_name.page_name}}" ng-if="common_page_list.banner_web_type == 'image' && common_page_list.banner_mobile_full">
+                    <img src="assets/images/other/dummy_image.png" hires="{{common_page_list.banner_web_full}}&h=700&w=500&q=75" alt="{{common_page_list.page_name.page_name}}" ng-if="common_page_list.banner_web_type == 'image' && common_page_list.banner_web_full && !common_page_list.banner_mobile_full">
+                    <video autoplay muted loop playsinline id="myVideo" style="width: 100%;display: block; object-fit: cover;" class="gallery-images image-cover" ng-if="common_page_list.banner_web_type == 'video' && common_page_list.banner_mobile_full">
+                        <source src="{{common_page_list.banner_mobile_full}}" type="video/mp4">
+                    </video>
+                    <video autoplay muted loop playsinline id="myVideo" style="width: 100%;display: block; object-fit: cover;" class="gallery-images image-cover" ng-if="common_page_list.banner_web_type == 'video' && common_page_list.banner_web_full && !common_page_list.banner_mobile_full">
+                        <source src="{{common_page_list.banner_web_full}}" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div class="black_overlay"></div>
+            <div class="banner-text-half" ng-if="common_page_list.page_name">
+                <div class="banner-title">
+                    <h1 class="white-color">
+                        {{common_page_list.page_name}}
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="reecosys-section commonpage_form_section" id="reecosys-contact-section-1">
+            <div class="container">
+                <div class="inner-flex" ng-if="common_page_list.title">
+                    <div class="section-information">
+                        <div class="section-title">
+                            <h2 class="capitalize">
+                                {{common_page_list.title}}
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="commonpage_grid content-size-div-padding-top">
+                    <div class="content-size-div banner-content-size-div contact_detail comonpage_discription" ng-if="common_page_list.primary_text_display">
+                        <p ng-bind-html="common_page_list.primary_text_display"></p>
+                    </div>
+                    <div class="blank_space" ng-if="!common_page_list.primary_text_display">
+                        <div>
+                            <p>blank</p>
+                        </div>
+                    </div>
+                    <div ng-include='"templates/forms/redevelopment_form.html"'></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>

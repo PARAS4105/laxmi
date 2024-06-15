@@ -1,0 +1,127 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper" ng-click="country_code_click_false();">
+    <div id="reecosys-contact-wrapper" class="relative">
+        <section class="reecosys-section relative" id="reecosys-contact-section-banner">
+
+            <div class="commonpage_banner">
+                <div ng-if="!isMobilescreen" style="height: 100%;">
+                    <img src="assets/images/other/dummy_image.png"
+                        hires="{{venture_page_list.banner_web_full}}&h=600&w=1903&q=75"
+                        alt="{{venture_page_list.page_name}}"
+                        ng-if="venture_page_list.banner_web_type == 'image' && venture_page_list.banner_web_full">
+                    <video autoplay muted loop playsinline id="myVideo"
+                        style="width: 100%;display: block; object-fit: cover;" class="gallery-images image-cover"
+                        ng-if="venture_page_list.banner_web_type == 'video' && venture_page_list.banner_web_full">
+                        <source src="{{venture_page_list.banner_web_full}}" type="video/mp4">
+                    </video>
+                </div>
+
+                <div ng-if="isMobilescreen" style="height: 100%;">
+                    <img src="assets/images/other/dummy_image.png"
+                        hires="{{venture_page_list.banner_mobile_full}}&h=700&w=500&q=75"
+                        alt="{{venture_page_list.page_name}}"
+                        ng-if="venture_page_list.banner_web_type == 'image' && venture_page_list.banner_mobile_full">
+                    <img src="assets/images/other/dummy_image.png"
+                        hires="{{venture_page_list.banner_web_full}}&h=700&w=500&q=75"
+                        alt="{{venture_page_list.page_name}}"
+                        ng-if="venture_page_list.banner_web_type == 'image' && venture_page_list.banner_web_full && !venture_page_list.banner_mobile_full">
+                    <video autoplay muted loop playsinline id="myVideo"
+                        style="width: 100%;display: block; object-fit: cover;" class="gallery-images image-cover"
+                        ng-if="venture_page_list.banner_web_type == 'video' && venture_page_list.banner_mobile_full">
+                        <source src="{{venture_page_list.banner_mobile_full}}" type="video/mp4">
+                    </video>
+                    <video autoplay muted loop playsinline id="myVideo"
+                        style="width: 100%;display: block; object-fit: cover;" class="gallery-images image-cover"
+                        ng-if="venture_page_list.banner_web_type == 'video' && venture_page_list.banner_web_full && !venture_page_list.banner_mobile_full">
+                        <source src="{{venture_page_list.banner_web_full}}" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="black_overlay"></div>
+            <div class="banner-text-half" ng-if="venture_page_list.banner_title">
+                <div class="banner-title">
+                    <h1 class="white-color">
+                        {{venture_page_list.banner_title}}
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="reecosys-section commonpage_form_section" id="reecosys-contact-section-1">
+            <div class="container">
+                <!-- ng-if="venture_page_list.title" -->
+                <div class="inner-flex">
+                    <div class="section-information" ng-if="venture_page_list.logo_get">
+                        <div class="venture_logo">
+                            <img src="{{venture_page_list.logo_get}}" alt="">
+                        </div>
+                    </div>
+                    <div class="commonpage_grid">
+                        <div class="inner-flex">
+                            <div class="content-size-div content-size-div-detail-section-highlight"
+                                ng-if="venture_page_list.primary_text_display">
+                                <!-- <p ng-bind-html="venture_page_list.primary_text_display"></p> -->
+                                <p read-more dd-text-collapse-max-length="450"
+                                    dd-text-collapse-text="{{venture_page_list.primary_text_display}}">
+                                </p>
+                            </div>
+                            <div class="ventures_social_links">
+                                <ul>
+                                    <li ng-if="venture_page_list.facebook_page_url">
+                                        <div>
+                                            <a href="{{venture_page_list.facebook_page_url}}" target="_blank">
+                                                <img src="assets/images/social/facebook.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li ng-if="venture_page_list.insta_page_url">
+                                        <div>
+                                            <a href="{{venture_page_list.insta_page_url}}" target="_blank">
+                                                <img src="assets/images/social/instagram.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li ng-if="venture_page_list.twitter_page_url">
+                                        <div>
+                                            <a href="{{venture_page_list.twitter_page_url}}" target="_blank">
+                                                <img src="assets/images/social/twitter.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li ng-if="venture_page_list.linkedin_page_url">
+                                        <div>
+                                            <a href="{{venture_page_list.linkedin_page_url}}" target="_blank">
+                                                <img src="assets/images/social/indeed.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li ng-if="venture_page_list.youtube_page_url">
+                                        <div>
+                                            <a href="{{venture_page_list.youtube_page_url}}" target="_blank">
+                                                <img src="assets/images/social/youtube.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="outline-div-button button-div wfc" ng-if="venture_page_list.website_url != '' && venture_page_list.website_url != 'undefined'">
+                                <button class="button-style download-fill-button">
+                                    <p class="capitalize">
+                                        <a href="{{venture_page_list.website_url}}" target="_blank">
+                                            Visit Website
+                                        </a>
+                                    </p>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="content-size-div-padding-top">
+                            <div ng-include='"templates/forms/ventureform.html"'></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>

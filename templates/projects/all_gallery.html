@@ -1,0 +1,92 @@
+<div class="container-mobile">
+    <div class="inner-flex">
+        <div class="section-information">
+            <div class="section-title capitalize" ng-if="gallery.tag_line">
+                <p>{{gallery.tag_line}}</p>
+            </div>
+        </div>
+        <!-- <div class="content-size-div capitalize" ng-bind-html="gallery.description"></div> -->
+        <div class="list-panel-ul" ng-if="projects_full_list_detail.gallery_data.length > 0">
+            <ul>
+                <li ng-class="{ active: gallery_get == '' }">
+                    <a href="javascript:void(0);" ng-click="gallery_get_f('');">
+                        All
+                    </a>
+                </li>
+                <li ng-class="{ active: gallery_get == data.title }" ng-repeat="data in projects_full_list_detail.gallery_data">
+                    <a href="javascript:void(0);" class="capitalize" ng-click="gallery_get_f(data.title);">
+                        {{data.title}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="gallery-image-3d">
+
+            <div class="relative">
+                <ks-swiper-container override-parameters="gallery3d_Swiper">
+
+                    <ks-swiper-slide ng-repeat="gallaryImg in gallery.image">
+                        <div class="gallery-card-3d relative">
+                            <a data-fancybox="project-gallery-fancy" href="{{gallaryImg.image_full}}" target="_self"
+                                class="">
+                                <img src="{{gallaryImg.image}}&h=550&w=900" alt="{{projects_full_list_detail.size_price}}" class="image-cover">
+                                <div class="black_light_overlay"></div>
+                            </a>
+                        </div>
+                    </ks-swiper-slide>
+
+                </ks-swiper-container>
+                <div class="swiper-button-next gallery3d-next">
+                    <img src="assets/images/icons/arrows/right-round-arrow-black.svg" alt="{{projects_full_list_detail.size_price}}">
+                </div>
+                <div class="swiper-button-prev gallery3d-prev">
+                    <img src="assets/images/icons/arrows/left-round-arrow-black.svg" alt="{{projects_full_list_detail.size_price}}">
+                </div>
+            </div>
+
+            <div>
+                <div class="virtual-walk-buttons">
+                    <div class="outline-div-button button-div" ng-repeat="video in projects_full_list_detail.virtual_data"
+                        ng-if="projects_full_list_detail.virtual_data.length > 0 && video.type == 'walk-through'">
+                        <a data-fancybox="walk-through" href="{{video.url}}" target="_self" class="button-style">
+                            <div class="button-icon">
+                                <img src="assets/images/reecosysicons/walk-through.svg" alt="{{projects_full_list_detail.size_price}}">
+                            </div>
+                            <p>
+                                Walk Through
+                            </p>
+                        </a>
+                    </div>
+                    <div class="outline-div-button button-div" ng-repeat="video in projects_full_list_detail.virtual_data"
+                        ng-if="projects_full_list_detail.virtual_data.length > 0 && video.type == 'virtual-tour'">
+                        <a class="fancybox" data-fancybox="walk-through" data-fancybox-type="iframe"
+                            href="{{video.url}}" target="_self" class="button-style orange-button">
+                            <button class="button-style orange-button">
+                                <div class="button-icon">
+                                    <img src="assets/images/reecosysicons/virtual-tour.svg" alt="{{projects_full_list_detail.size_price}}">
+                                </div>
+                                <p>
+                                    Virtual Tour
+                                </p>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- <ks-swiper-container override-parameters="gallery_Swiper_thumbnail">
+
+                    <ks-swiper-slide ng-repeat="gallaryImg in gallery.image">
+                        <div class="gallery-card-3d-thum relative">
+
+                            <img src="{{gallaryImg.image}}&h=70&w=120" class="image-cover" alt="{{projects_full_list_detail.size_price}}">
+                            <div class="white_overlay"></div>
+
+                        </div>
+                    </ks-swiper-slide>
+
+                </ks-swiper-container> -->
+            </div>
+
+        </div>
+    </div>
+
+</div>

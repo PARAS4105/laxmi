@@ -1,0 +1,129 @@
+<section class="reecosys-section" id="reecosys-detail-section-get-touch">
+    <div class="inquiry_form_detail">
+        <div>
+            <div class="inner-flex">
+                <div class="section-information">
+
+                    <div class="content-size-div">
+                        <p class="title-color capitalize wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.3s">
+                            Enquire
+                        </p>
+                    </div>
+                    <div class="section-title">
+                        <h2 class=" wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.3s">
+                            Register your interest
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="content-size-div-padding-top project_detail_inquiry_form">
+
+                    <div class="detail-page-form wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.6s">
+                        <form id="inquiry_form_detail" name="inquiry_form_detail"
+                            ng-submit="inquiryform_detail(inquiry_form_detail)" ng-validate="inquiry_validate_detail">
+                            <div class="form_wrapper">
+
+                                <div class="contact_lable">
+                                    <input id="client_name" name="client_name" type="text"
+                                        ng-model="inquiry_obj_detail.client_name" required="required"
+                                        class="form-control" letters-only tabindex="1">
+                                    <label class="md-lable" for="client_name">Name</label>
+                                </div>
+                                <div class="contact_lable">
+                                    <input id="client_email" name="client_email" type="email"
+                                        ng-model="inquiry_obj_detail.email_address" required="" autocomplete="off"
+                                        class="form-control  ng-valid-email" tabindex="2">
+                                    <label class="md-lable" for="client_email">Email</label>
+                                </div>
+                                <div class="contact_lable relative">
+                                    <input id="contact_no" name="contact_no" type="tel"
+                                        ng-model="inquiry_obj_detail.client_contact_no" numbers-only=""
+                                        minlength="{{detail_form_contact_no_length.minlength}}"
+                                        maxlength="{{detail_form_contact_no_length.maxlength}}" required=""
+                                        autocomplete="off" class="form-control contact-form" tabindex="3"
+                                        ng-trim="false">
+                                    <label class="md-lable contact_code" for="contact_no">Mobile Number</label>
+                                    <div class="conatct_number_input">
+                                        <div class="country_code_data"
+                                            ng-click="country_code_click(); $event.stopPropagation();">
+                                            <div class="contact_country_flag">
+                                                <img src="{{inquiry_obj_detail.flag}}" alt="reecosys">
+                                            </div>
+                                            <div>
+                                                &nbsp; +{{inquiry_obj_detail.country}}
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="country_code_list_data" ng-class="{'active' : country_code_clickF}"
+                                        ng-click="$event.stopPropagation();">
+                                        <div class="search_c-code">
+                                            <input type="text" ng-model="search" placeholder="Search">
+                                        </div>
+                                        <ul>
+                                            <li ng-repeat="country_list_detail in country_list | filter: search: phonecode"
+                                                ng-click="country_click_inquiry_detail(country_list_detail.phonecode, country_list_detail.flag); detail_form_country_change();">
+                                                <div ng-click="country_code_click_false();">
+                                                    <div><img src="{{country_list_detail.flag}}" alt="reecosys">
+                                                    </div>
+                                                    <span
+                                                        class="display_country_code">+{{country_list_detail.phonecode}}</span>
+                                                    {{country_list_detail.nicename}}
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="contact_lable commentbox">
+                                    <textarea id="remark" name="remark" type="text"
+                                        ng-model="inquiry_obj_detail.remarks" aria-invalid="false" autocomplete="off"
+                                        class="form-control" tabindex="4" rows="4">
+                                    </textarea>
+                                    <label class="md-lable" for="remark">Comments</label>
+                                    <!-- <p class="other_message">( Maximum length 1000 only )</p> -->
+                                </div>
+                                <p class="relative check_box_error get_update_text align_center">
+                                    <input class="get_update_checkbox" type="checkbox" checked="checked"
+                                        id="agree_tandc" name="agree_tandc" tabindex="5"
+                                        ng-model="inquiry_obj_detail.agree_tandc_display" aria-required="true"
+                                        aria-invalid="true">
+                                    <label class="darkgray-font" for="agree_tandc">
+                                        Keep me updated.
+                                    </label>
+                                </p>
+                                <div class="submit-button button-div filled-div-button form_button"
+                                    ng-if="!save_inquiry_detail_f">
+                                    <button class="button-style orange-button" type="submit"
+                                        ng-disabled="save_inquiry_detail_f" tabindex="6">
+                                        <p>
+                                            Submit
+                                        </p>
+                                    </button>
+                                </div>
+                                <div class="submit-button form_button submit-button-contact button-div filled-div-button form_loading_btn"
+                                    ng-if="save_inquiry_detail_f">
+                                    <button class="button-style orange-button" type="submit" disabled tabindex="7">
+                                        <div class="loading_btn"></div>
+                                        <p>
+                                            Please wait..
+                                        </p>
+                                    </button>
+                                </div>
+
+                                <!-- <p class="form_call_text">
+                                    Call on <a href="tel:javascript:void(0);">+91 XOXOXOXOXO</a> to get in touch
+                                </p> -->
+
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

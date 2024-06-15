@@ -1,0 +1,230 @@
+<div>
+    <form ng-submit="feedback_form(feedform_data)" name="feedform_data" id="feedform_data" ng-validate="feedback_validate"
+        style="display: block;">
+
+        <div class="form_wrapper contact_form">
+
+            <div class="contact_lable relative">
+                <input id="contact_no" name="contact_no" type="tel" ng-model="feed_obj.contact_no_display"
+                    numbers-only="" minlength="{{feedback_contact_no_length.minlength}}" maxlength="{{feedback_contact_no_length.maxlength}}" required="" aria-required="true" aria-invalid="true"
+                    autocomplete="off" class="form-control contact-form" tabindex="2" ng-trim="false">
+                <label class="md-lable contact_code" for="contact_no">Mobile Number</label>
+                <div class="conatct_number_input">
+                    <div class="country_code_data" ng-click="country_code_click(); $event.stopPropagation();">
+                        <div class="contact_country_flag">
+                            <img src="{{feed_obj.flag}}" alt="reecosys">
+                        </div>
+                        <div>
+                            &nbsp; +{{feed_obj.country}}
+                        </div>
+                        <div>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="country_code_list_data" ng-class="{'active' : country_code_clickF}"
+                    ng-click="$event.stopPropagation();">
+                    <div class="search_c-code">
+                        <input type="text" ng-model="search" placeholder="Search">
+                    </div>
+                    <ul>
+                        <li ng-repeat="country_list_detail in country_list | filter: search: phonecode"
+                            ng-click="feedback_click_country(country_list_detail.phonecode, country_list_detail.flag); feedback_country_change();">
+                            <div ng-click="country_code_click_false();">
+                                <div><img src="{{country_list_detail.flag}}" alt="reecosys">
+                                </div>
+                                <span class="display_country_code">+{{country_list_detail.phonecode}}</span>
+                                {{country_list_detail.nicename}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact_lable mdInput_feed input_question_wrapper">
+                <div class="relative question_flex">
+                    <p class="input_question input_question_no">
+                        1.
+                    </p>
+                    <div class="input_question_pro">
+                        <p class="input_question">
+                            {{question_obj[0]["val_0"]}}
+                        </p>
+                        <div class="radio_btn_list">
+                            <div class="radio_wrapper">
+                                <input type="radio" id="Yes_first" name="val_0" class="radio_input radio_input_green"
+                                    ng-model="feed_obj.come.val_0" value="Yes">
+                                <label for="Yes_first">Yes</label>
+                            </div>
+                            <div class="radio_wrapper">
+                                <input type="radio" id="No_first" name="val_0" class="radio_input radio_input_red"
+                                    ng-model="feed_obj.come.val_0" value="No">
+                                <label for="No_first">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact_lable mdInput_feed input_question_wrapper">
+                <div class="relative question_flex">
+                    <p class="input_question input_question_no">
+                        2.
+                    </p>
+                    <div class="input_question_pro">
+                        <p class="input_question">
+                            {{question_obj[1]["val_1"]}}
+                        </p>
+                        <div class="radio_btn_list">
+                            <div class="radio_wrapper">
+                                <input type="radio" id="Yes_second" name="val_1" class="radio_input radio_input_green"
+                                    ng-model="feed_obj.come.val_1" value="Yes">
+                                <label for="Yes_second">Yes</label>
+                            </div>
+                            <div class="radio_wrapper">
+                                <input type="radio" id="No_second" name="val_1" class="radio_input radio_input_red"
+                                    ng-model="feed_obj.come.val_1" value="No">
+                                <label for="No_second">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact_lable mdInput_feed input_question_wrapper">
+                <div class="relative question_flex">
+                    <p class="input_question input_question_no">
+                        3.
+                    </p>
+                    <div class="input_question_pro">
+                        <p class="input_question">
+                            {{question_obj[2]["val_2"]}}
+                        </p>
+                        <div class="radio_btn_list">
+                            <div class="radio_wrapper">
+                                <input type="radio" id="Yes_third" name="val_2" class="radio_input radio_input_green"
+                                    ng-model="feed_obj.come.val_2" value="Yes">
+                                <label for="Yes_third">Yes</label>
+                            </div>
+                            <div class="radio_wrapper">
+                                <input type="radio" id="No_third" name="val_2" class="radio_input radio_input_red"
+                                    ng-model="feed_obj.come.val_2" value="No">
+                                <label for="No_third">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact_lable mdInput_feed input_question_wrapper">
+                <div class="relative question_flex">
+                    <p class="input_question input_question_no">
+                        4.
+                    </p>
+                    <div class="input_question_pro">
+                        <p class="input_question">
+                            {{question_obj[3]["val_3"]}}
+                        </p>
+                        <div class="radio_btn_list">
+                            <div class="radio_wrapper">
+                                <input type="radio" id="Yes_four" name="val_3" class="radio_input radio_input_green"
+                                    ng-model="feed_obj.come.val_3" value="Yes">
+                                <label for="Yes_four">Yes</label>
+                            </div>
+                            <div class="radio_wrapper">
+                                <input type="radio" id="No_four" name="val_3" class="radio_input radio_input_red"
+                                    ng-model="feed_obj.come.val_3" value="No">
+                                <label for="No_four">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact_lable mdInput_feed input_question_wrapper">
+                <div class="relative question_flex">
+                    <p class="input_question input_question_no">
+                        5.
+                    </p>
+                    <div class="input_question_pro">
+                        <p class="input_question">
+                            {{question_obj[4]["val_4"]}}
+                        </p>
+                        <div class="radio_btn_list">
+                            <div class="radio_wrapper">
+                                <input type="radio" id="Fair_five" name="val_4" class="radio_input radio_input_red"
+                                    ng-model="feed_obj.come.val_4" value="Fair">
+                                <label for="Fair_five">Fair</label>
+                            </div>
+                            <div class="radio_wrapper">
+                                <input type="radio" id="Good_five" name="val_4" class="radio_input radio_input_yellow"
+                                    ng-model="feed_obj.come.val_4" value="Good">
+                                <label for="Good_five">Good</label>
+                            </div>
+                            <div class="radio_wrapper">
+                                <input type="radio" id="Excellent_five" name="val_4"
+                                    class="radio_input radio_input_green" ng-model="feed_obj.come.val_4"
+                                    value="Excellent">
+                                <label for="Excellent_five">Excellent</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact_lable mdInput_feed input_question_wrapper">
+                <div class="relative question_flex">
+                    <p class="input_question input_question_no">
+                        6.
+                    </p>
+                    <div class="input_question_pro">
+                        <p class="input_question">
+                            {{question_obj[5]["val_5"]}}
+                        </p>
+                        <div class="radio_btn_list">
+                            <div class="radio_wrapper">
+                                <input type="radio" id="Fair_six" name="val_5" class="radio_input radio_input_red"
+                                    ng-model="feed_obj.come.val_5" value="Fair">
+                                <label for="Fair_six">Fair</label>
+                            </div>
+                            <div class="radio_wrapper">
+                                <input type="radio" id="Good_six" name="val_5" class="radio_input radio_input_yellow"
+                                    ng-model="feed_obj.come.val_5" value="Good">
+                                <label for="Good_six">Good</label>
+                            </div>
+                            <div class="radio_wrapper">
+                                <input type="radio" id="Excellent_six" name="val_5"
+                                    class="radio_input radio_input_green" ng-model="feed_obj.come.val_5"
+                                    value="Excellent">
+                                <label for="Excellent_six">Excellent</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact_lable width_100_im">
+                <p class="input_question">
+                    Give us rating.
+                </p>
+                <div class="star-rating" star-rating rating-value="rating" data-max="5"
+                    on-rating-selected="rateFunction(rating);"></div>
+            </div>
+
+            <div class="submit-button form_button submit-button-contact button-div filled-div-button"
+                ng-if="!save_feed_f">
+                <button class="button-style orange-button" type="submit" ng-disabled="save_feed_f" aria-disabled="false"
+                    tabindex="6">
+                    <p>
+                        Submit
+                    </p>
+                </button>
+            </div>
+            <div class="submit-button form_button submit-button-contact button-div filled-div-button form_loading_btn"
+                ng-if="save_feed_f">
+                <button class="button-style orange-button" type="submit" disabled tabindex="7">
+                    <div class="loading_btn"></div>
+                    <p>
+                        Please wait..
+                    </p>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

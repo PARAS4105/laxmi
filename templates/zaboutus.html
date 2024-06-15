@@ -1,0 +1,291 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper" ng-click="country_code_click_false();"
+    ng-if="!is_commonpage_loading && common_page_list.page_name">
+    <div id="reecosys-aboutus-wrapper" class="relative">
+        <section class="reecosys-section relative" id="reecosys-aboutus-section-1">
+            <div class="commonpage_banner">
+                <div style="height: 100%;">
+                    <img src="assets/images/other/dummy_image.png"
+                        hires="{{common_page_list.banner_web_full}}&h=1080&w=1903&q=75"
+                        alt="{{common_page_list.page_name}}"
+                        ng-if="common_page_list.banner_web_type == 'image' && common_page_list.banner_web_full">
+                    <video autoplay muted loop playsinline id="myVideo"
+                        style="width: 100%;display: block; object-fit: cover;" class="gallery-images image-cover"
+                        ng-if="common_page_list.banner_web_type == 'video' && common_page_list.banner_web_full">
+                        <source src="{{common_page_list.banner_web_full}}" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+            <div class="black_overlay"></div>
+            <div class="banner-text-half" ng-if="common_page_list.page_name">
+                <div class="banner-title">
+                    <h1 class="white-color">
+                        {{common_page_list.page_name}}
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="reecosys-section relative" id="reecosys-aboutus-section-2"
+            ng-if="common_page_list.usp.length > 0 || common_page_list.title || common_page_list.primary_text_display">
+
+            <div class="container">
+                <div class="inner-flex">
+                    <div class="highlights-grid" style="margin-bottom: var(--smallgap-size);"
+                        ng-if="!data.tag_line || !data.name">
+                        <div class="wow fade_top" data-wow-delay="0.8s" data-wow-duration="0.6s"
+                            ng-repeat="data in common_page_list.usp">
+                            <div class="section-title-big" ng-if="data.name">
+                                <h2>
+                                    {{data.name}}
+                                </h2>
+                            </div>
+                            <div class="content-size-div" ng-if="data.tag_line">
+                                <p>
+                                    {{data.tag_line}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-information" ng-if="common_page_list.title">
+                        <div class="section-title">
+                            <h2 class="wow fade_top" data-wow-delay="0.3s" data-wow-duration="0.6s">
+                                {{common_page_list.title}}
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="content-size-div" ng-if="common_page_list.primary_text_display">
+                        <!-- <p class="wow fade_top" data-wow-delay="0.6s" data-wow-duration="0.6s"
+                            ng-bind-html="common_page_list.primary_text_display">
+                        </p> -->
+                        <p read-more dd-text-collapse-max-length="350"
+                            dd-text-collapse-text="{{common_page_list.primary_text_display}}">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reecosys-section relative" id="reecosys-aboutus-section-3" ng-if="common_page_list.profiles.length > 0">
+            <div class="container">
+                <div class="inner-flex">
+                    <div class="content-size-div">
+                        <p class="title-color capitalize wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.3s">
+                            {{$storage.logged_user_details.name}} Team
+                        </p>
+                    </div>
+                    <div class="content-size-div" ng-if="common_page_list.team_description">
+                        <p class="wow fade_top" data-wow-delay="0.6s" data-wow-duration="0.6s"
+                            ng-bind-html="common_page_list.team_description">
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="team-information-grid-about-page" ng-if="common_page_list.profiles">
+                    <div class="team-information-card" ng-repeat="data in common_page_list.profiles">
+                        <div class="team-member-image wow fade_top" data-wow-delay="0.3s" data-wow-duration="0.3s">
+                            <img src="assets/images/other/dummy_image.png"
+                                hires="{{data.profile_image_main}}&h=552&w=533&q=75"
+                                alt="{{common_page_list.profile_name}}">
+                        </div>
+                        <div class="team-member-information wow fade_top" data-wow-delay="0.5s"
+                            data-wow-duration="0.5s">
+                            <div class="inner-flex">
+                                <div class="section-information">
+                                    <div class="section-title" ng-if="data.profile_name">
+                                        <h2>
+                                            {{data.profile_name}}
+                                        </h2>
+                                        ---+{{data.slug}}
+                                    </div>
+                                    <div class="content-size-div person_about_designation" ng-if="data.designation"
+                                        ng-bind-html="data.designation">
+                                    </div>
+                                </div>
+
+                                <div class="content-size-div" ng-if="data.profile_description_short">
+                                    <p read-more dd-text-collapse-max-length="180"
+                                        dd-text-collapse-text="{{data.profile_description_short}}">
+                                    </p>
+                                </div>
+
+                                <div class="menber_social_links"
+                                    ng-if="data.instagram || data.linkedin || data.twitter || data.facebook">
+                                    <ul>
+                                        <li ng-if="data.facebook">
+                                            <a href="{{data.facebook}}" target="_blank">
+                                                <div class="member_social_icons">
+                                                    <img src="assets/images/social/facebook.svg"
+                                                        alt="{{common_page_list.page_name}}">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li ng-if="data.linkedin">
+                                            <a href="{{data.linkedin}}" target="_blank">
+                                                <div class="member_social_icons">
+                                                    <img src="assets/images/social/indeed.svg"
+                                                        alt="{{common_page_list.page_name}}">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li ng-if="data.instagram">
+                                            <a href="{{data.instagram}}" target="_blank">
+                                                <div class="member_social_icons">
+                                                    <img src="assets/images/social/instagram.svg"
+                                                        alt="{{common_page_list.page_name}}">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li ng-if="data.twitter">
+                                            <a href="{{data.twitter}}" target="_blank">
+                                                <div class="member_social_icons">
+                                                    <img src="assets/images/social/twitter.svg"
+                                                        alt="{{common_page_list.page_name}}">
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="outline-div-button button-div wfc">
+                                    <a href="profile/{{data.slug}}">
+                                        <button class="button-style download-fill-button">
+                                            <p class="capitalize">
+                                                View Profile
+                                            </p>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reecosys-section relative" id="reecosys-aboutus-section-4"
+            ng-if="common_page_list.awards.length > 0">
+            <div class="container">
+                <div class="inner-flex">
+                    <div class="content-size-div">
+                        <p class="title-color capitalize wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.3s">
+                            Awards & Certification
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="awards_swiper_outer relative inner-flex">
+                <ks-swiper-container override-parameters="awards_swiper" class="relative">
+                    <ks-swiper-slide ng-repeat="data in common_page_list.awards">
+                        <div class="awards-swiper-card wow fade_top " data-wow-duration="0.8s" data-wow-delay="0.8s">
+                            <div class="awards-year content-size-div">
+                                <p class="title-color capitalize" ng-if="data.year">
+                                    {{data.year}}
+                                </p>
+                            </div>
+                            <div class="awards-title section-title" ng-if="data.title">
+                                <h2>
+                                    {{data.title}}
+                                </h2>
+                            </div>
+
+                            <div class="awards-discription content-size-div" ng-if="data.description">
+                                <p>
+                                    {{data.description}}
+                                </p>
+                            </div>
+                        </div>
+                    </ks-swiper-slide>
+                </ks-swiper-container>
+                <div class="swiper-scrollbar swiper-scrollbar-awards"></div>
+            </div>
+        </section>
+
+
+        <section class="reecosys-section relative" id="reecosys-aboutus-section-5"
+            ng-if="common_page_list.milestone.length > 0">
+            <div class="container">
+                <div class="inner-flex">
+                    <div class="content-size-div">
+                        <p class="title-color capitalize wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.3s">
+                            Our Journey
+                        </p>
+                    </div>
+                    <div class="content-size-div" ng-if="common_page_list.milestone_description">
+                        <p>
+                            {{common_page_list.milestone_description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="awards_swiper_outer relative inner-flex">
+                <ks-swiper-container override-parameters="our_journey_swiper" class="relative">
+                    <ks-swiper-slide ng-repeat="data in common_page_list.milestone | orderBy : '-year'">
+                        <div class="awards-swiper-card wow fade_top " data-wow-duration="0.8s" data-wow-delay="0.8s">
+                            <div class="awards-year content-size-div">
+                                <p class="title-color capitalize" ng-if="data.year">
+                                    {{data.year}}
+                                </p>
+                            </div>
+
+                            <div class="awards-discription content-size-div" ng-if="data.description">
+                                <p>
+                                    {{data.description}}
+                                </p>
+                            </div>
+                        </div>
+                    </ks-swiper-slide>
+                </ks-swiper-container>
+                <div class="swiper-scrollbar swiper-scrollbar-our-journey"></div>
+            </div>
+        </section>
+
+        <!-- <section class="reecosys-section relative" id="reecosys-aboutus-section-5"
+            ng-if="common_page_list.milestone.length > 0">
+            <div class="container">
+                <div class="inner-flex wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.6s">
+                    <div class="content-size-div">
+                        <p class="title-color capitalize">
+                            Our Journey
+                        </p>
+                    </div>
+                    <div class="content-size-div" ng-if="common_page_list.milestone_description">
+                        <p>
+                            {{common_page_list.milestone_description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="awards_swiper_outer relative inner-flex">
+                <ks-swiper-container override-parameters="journey_swiper" class="relative">
+                    <ks-swiper-slide ng-repeat="data in common_page_list.milestone">
+                        <div class="journey-card inner-flex wow fade_top" data-wow-duration="0.9s"
+                            data-wow-delay="0.9s">
+                            <div class="journey_image relative">
+                                <img src="assets/images/other/dummy_image.png"
+                                    hires="{{data.image_main}}&h=590&w=590&q=75" alt="{{common_page_list.page_name}}">
+                                <div class="black_overlay"></div>
+                                <div class="journey-year">
+                                    <div class="content-size-div">
+                                        <p class="white-color">
+                                            {{data.year}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="journey_discription">
+                                <div class="content-size-div">
+                                    <p>
+                                        {{data.description}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </ks-swiper-slide>
+                </ks-swiper-container>
+                <div class="swiper-scrollbar swiper-scrollbar-journey"></div>
+            </div>
+        </section> -->
+
+    </div>
+</div>

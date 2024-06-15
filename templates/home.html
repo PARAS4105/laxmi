@@ -1,0 +1,564 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper"
+    id="reecosys-main-wrapper" ng-if="!is_homelist_load">
+    <div id="reecosys-home-wrapper" class="relative">
+        <section class="reecosys-section relative" id="reecosys-home-section-1">
+
+            <ks-swiper-container override-parameters="home_banner_swiper"
+                ng-if="home_list.banners.length > 0">
+                <ks-swiper-slide class="realative"
+                    ng-repeat="baner_data in home_list.banners">
+                    <div class="video-listing-banner">
+
+                        <video autoplay muted loop playsinline id="myVideo"
+                            style="width: 100%;display: block; object-fit: cover;"
+                            class="gallery-images image-cover"
+                            ng-if="baner_data.image_web_type == 'video'">
+                            <source src="{{baner_data.image_web_full}}"
+                                type="video/mp4">
+                        </video>
+
+                        <img src="assets/images/other/dummy_image.png"
+                            hires="{{baner_data.image_web_full}}&h=1080&w=1903&q=75"
+                            alt="{{baner_data.home_title}}"
+                            class="gallery-images image-cover"
+                            ng-if="baner_data.image_web_type == 'image'">
+                    </div>
+
+                    <div class="black_overlay"></div>
+
+                    <div class="inner-flex" ng-if="baner_data.text_image_web_full && baner_data.text_type == 'image'">
+                        <div class="banner-text-img wow fade_top"
+                            data-wow-delay="0.6s" data-wow-duration="0.6s">
+                            <img src="{{baner_data.text_image_web_full}}"
+                                alt="{{baner_data.home_title}}">
+                        </div>
+                    </div>
+                    <div class="banner-section-typo-home">
+                        <div class=" relative  inner-flex" ng-if="baner_data.text_type == 'text'">
+                           
+                           
+                            <div class="section-information">
+                                <div class="banenr-text-arrrow-flex">
+                                    <div class="inner-flex">
+                                        <div class="banner-title-new wow banner_text-width fade_top"
+                                            data-wow-delay="0.6s"
+                                            data-wow-duration="0.6s">
+                                            <!-- <h2 class="white-color" ng-bind-html="baner_data.text_display"></h2> -->
+                                            <h2 class="white-color g_regular">
+                                                “HOME IS WHERE ORDINARY BECOMES
+                                                EXTRAORDINARY.”
+                                            </h2>
+                                        </div>
+                                        <div
+                                            class="border-bottom wow borderfill2  borderSwiperAnimation relative"
+                                            data-wow-duration="5s"
+                                            data-wow-delay="0s"></div>
+                                    </div>
+                                    <div class="hidden-xs">
+                                        <div class="scroll-btnx home_down_arrowx"
+                                            ng-click="scrolltoDiv('reecosys-home-section-2');">
+                                            <img src="assets/images/icon/scroll.svg"
+                                                alt="{{home_list.home_title}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination home_banner_swiper hidden-xs wow fadeIn">
+                        </div>
+                            </div>
+                            
+
+                            
+
+                        </div>
+                    </div>
+
+                    <div class="project_banner_overlay"></div>
+
+                </ks-swiper-slide>
+            </ks-swiper-container>
+            <div class="swiper-pagination home_banner_pagination"
+                ng-if="home_list.banners.length > 1"></div>
+            <!-- <div class="scroll-btn home_down_arrow" ng-click="scrolltoDiv('reecosys-home-section-2');">
+                <img src="assets/images/icon/scroll.svg" alt="{{home_list.home_title}}">
+            </div> -->
+        </section>
+        <!-- logo-white-laxmi -->
+        <section class="relative reecosys-section relative"
+            id="reecosys-home-section-2"
+            ng-if="home_list.home_title || home_list.home_overview || home_list.highlights_array.length > 0">
+            <div class="website_container">
+                <div class="homepage_section2_width relative">
+                    <div class="inner-flex">
+                        <div
+                            class="content-size-div homepage_description_width">
+                            <p class="wow fade_top" data-wow-delay="0.6s"
+                                data-wow-duration="0.6s">
+                                / About
+                            </p>
+                        </div>
+                        <div class="section-information"
+                            ng-if="home_list.home_title">
+                            <div class="section-title-tag_line">
+                                <h2 class="wow fade_top tcpaitlizex"
+                                    data-wow-delay="0.6s"
+                                    data-wow-duration="0.6s">
+                                    {{home_list.home_title}}
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="minifont-size homepage_description_width"
+                            ng-if="home_list.home_overview">
+                            <p class="wow fade_top" data-wow-delay="0.6s"
+                                data-wow-duration="0.6s">
+                                {{home_list.home_overview}}
+                            </p>
+                        </div>
+
+                        <!-- <div class="highlights-grid" style="margin-bottom:0!important; margin-top: var(--smallgap-size);"
+                            ng-if="home_list.highlights_array.length > 0">
+                            <div class="wow fade_top" data-wow-delay="0.8s" data-wow-duration="0.6s"
+                                ng-repeat="data in home_list.highlights_array">
+                                <div class="section-title-big">
+                                    <h2>
+                                        {{data.name}}
+                                    </h2>
+                                </div>
+                                <div class="content-size-div">
+                                    <p>
+                                        {{data.tag_line}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div
+                            class="about-btn-home outline-div-button button-div wfc"
+                            ng-if="!is_homelist_load && home_list.home_title">
+                            <a href="about-us">
+                                <button
+                                    class="button-style download-fill-button wow fade_top"
+                                    data-wow-duration="0.6s"
+                                    data-wow-delay="0.6s">
+                                    <p class="capitalize">
+                                        Know More
+                                    </p>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="laxmi-logo-home">
+                        <img src="assets/images/home/logo-white-laxmi.svg" />
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- <section class="reecosys-section relative" id="reecosys-home-section-2" ng-if="home_list.highlights_array.length > 0" style="height: 300vh;"> -->
+        <section class="reecosys-section relative" id="reecosys-home-section-2" ng-if="home_list.highlights_array.length > 0">
+            <div class="sticky_div">
+                <div class="sticky_img_div">
+                    <img src="assets/images/home/white_center_img.png" class="hidden-xs" />
+                    <div class="highlight_home_abs">
+                        <div class="inner-flex">
+                            <div class="highlights-grid-home"
+                                style="margin-bottom:0!important; margin-top: var(--smallgap-size);"
+                                ng-if="home_list.highlights_array.length > 0">
+                                <div class="wow fade_top" data-wow-delay="0.8s"
+                                    data-wow-duration="0.6s"
+                                    ng-repeat="data in home_list.highlights_array">
+                                    <div class="section-title-tag_line">
+                                        <h2>
+                                            {{data.name}}
+                                        </h2>
+                                    </div>
+                                    <div class="content-size-div">
+                                        <p>
+                                            {{data.tag_line}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reecosys-section relative" id="reecosys-home-section-3" ng-if="projects_full_list && projects_full_list.length > 0 && is_section_Scrolled" style="margin-top: var(--mediumgap-size);">
+            <div class="inner-flex inner-flex-d-gap overflow">
+                <div ng-repeat="category_data in projects_category">
+                    <div class="website_container">
+
+                        <div class="inner-flex">
+                            <div
+                                class="content-size-div homepage_description_width">
+                                <p class="wow fade_top" data-wow-delay="0.6s"
+                                    data-wow-duration="0.6s">
+                                    / Projects
+                                </p>
+                            </div>
+                            <div class="section-information"
+                                ng-if="home_list.home_title">
+                                <div class="section-title-tag_line">
+                                    <h2 class="wow fade_top tcpaitlize g_regular"
+                                        data-wow-delay="0.6s"
+                                        data-wow-duration="0.6s">
+                                        {{category_data.category}}
+                                    </h2>
+                                </div>
+                            </div>
+                            <div
+                                class="content-size-div homepage_residentialdescription_width">
+                                <p class="wow fade_top" data-wow-delay="0.6s"
+                                    data-wow-duration="0.6s">
+                                    Offering the lifestyle that's serene, calm,
+                                    composed, peaceful and
+                                    soothing this residential project will offer
+                                    you the chance to
+                                    discover beautiful secrets of nature.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="home-page-listing-swiper relative home_new_list">
+                        <div class="website_container">
+                            <div
+                                class="project-list-grid project-list-grid-44-column">
+                                <!-- {{projects_full_list}} -->
+                                <div class="project-list-card wow fadeIn"
+                                    data-wow-delay="0.{{$index+3}}s"
+                                    data-wow-duration="0.6s"
+                                    ng-repeat="project_list_data in projects_full_list"
+                                    ng-if="category_data.category == project_list_data.category">
+                                    <a
+                                        href="project/{{project_list_data.slug}}">
+
+                                        <div class="relative">
+                                            <div
+                                                class="project-img-list relative">
+                                                <img
+                                                    data-src="assets/images/other/dummy_368.png"
+                                                    hires="{{project_list_data.banner_data.image_web_full}}&h=480&w=368&q=75"
+                                                    alt="{{home_list.home_title}}"
+                                                    class="image-cover lazyload">
+                                            </div>
+
+                                            <div
+                                                class="project-img-list relative"
+                                                ng-if="project_list_data.banner_data.image_web_type == 'video'">
+                                                <video autoplay muted loop
+                                                    playsinline id="myVideo"
+                                                    style="width: 100%;display: block;height: 100%;object-fit: cover;">
+                                                    <source
+                                                        data-src="assets/images/other/dummy_image.png"
+                                                        hires="{{project_list_data.banner_data.image_web_full}}"
+                                                        type="video/mp4"
+                                                        class="lazyload">
+                                                </video>
+                                            </div>
+                                            <div class="project_status_lable visible-xs" ng-if="project_list_data.status">
+                                                <p class="capitalize">{{project_list_data.status}}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="project-info-list">
+                                            <div class="section-information">
+
+                                                <div
+                                                    class="content-size-div section-title-flex j-c-sb">
+                                                    <p
+                                                        class="capitalize charter_regular">
+                                                        {{project_list_data.project_title}}
+                                                    </p>
+                                                    <div class="project-arrow-icon visible-xs">
+                                                        <img src="assets/images/icon/right_arrow_line.svg"
+                                                            alt="{{home_list.home_title}}">
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="content-size-div home_project_area">
+                                                    <p class="capitalize">
+                                                        {{project_list_data.size_price}} |
+                                                        {{project_list_data.location}} |
+                                                        {{project_list_data.status}}
+                                                    </p>
+                                                </div> -->
+                                                <div
+                                                    class="banner-detail-row banner-detail-row-grid">
+                                                    <div
+                                                        class="project-information-div"
+                                                        ng-if="project_list_data.size_price">
+                                                        <div
+                                                            class="building-icon">
+                                                            <img
+                                                                src="assets/images/icon/building-new.svg"
+                                                                alt="{{home_list.home_title}}">
+                                                        </div>
+                                                        <div
+                                                            class="content-size-divx minifont-size banner-detail-row-grid-text">
+                                                            <p
+                                                                class="capitalize ">
+                                                                {{project_list_data.size_price}}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div
+                                                        class="project-information-div"
+                                                        ng-if="project_list_data.location">
+                                                        <div
+                                                            class="building-icon">
+                                                            <img
+                                                                src="assets/images/icon/location-new.svg"
+                                                                alt="{{home_list.home_title}}">
+                                                        </div>
+                                                        <div
+                                                            class="content-size-divx minifont-size">
+                                                            <p
+                                                                class="capitalize">
+                                                                {{project_list_data.location}}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- <div class="project-information-div"
+                                                        ng-if="project_list_data.status.length > 0 ">
+                                                        <div class="progress-status"
+                                                            ng-if="project_list_data.construction.progress_percent">
+                                                            <p>
+                                                                {{project_list_data.construction.progress_percent}}
+                                                            </p>
+                                                        </div>
+                                                        <div class="content-size-div" ng-if="project_list_data.status">
+                                                            <p class="capitalize">
+                                                                {{project_list_data.status}}
+                                                            </p>
+                                                        </div>
+                                                    </div> -->
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section ng-if="!projects_full_list"
+            style="margin-top: var(--mediumgap-size);">
+            <div class="content-size-div text-align-center">
+                <p>No Projects to Display.</p>
+            </div>
+        </section>
+
+        <section class="laxmi-home_custome_div">
+            <div class="laxmi-custome_width">
+                <div class="custom_wrapper-flex">
+                    <div class="f40">
+                        <div class="horizontal-flex">
+                            <div ng-repeat="data in horizontal_text">
+                                <div class="inner-flex">
+                                    <div class="section-information">
+                                        <div class="content-size-div">
+                                            <p> No. {{data.id}} </p>
+                                        </div>
+                                        <div
+                                            class="content-size-div section-title-flex j-c-sb">
+                                            <p class="charter_regular"> {{data.title}} </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="content-size-div">
+                                        <p class="laxmi-gray">{{data.text}}
+                                             </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    <div class="f60">
+                        <div class="side_img parallax_img_scroll">
+
+                            <img src="assets/images/home/side_img.png"
+                                alt="img" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="reecosys-section relative" id="reecosys-home-section-3">
+            <div class="inner-flex inner-flex-d-gap overflow">
+                <div>
+                    <div class="website_container">
+                        <div class="inner-flex">
+                            <div
+                                class="content-size-div homepage_description_width">
+                                <p class="wow fade_top" data-wow-delay="0.6s" data-wow-duration="0.6s">
+                                    / Inquire now
+                                </p>
+                            </div>
+                            <div class="section-information">
+                                <div class="section-title-tag_line">
+                                    <h2 class="wow fade_top g_regular tcpaitlize" data-wow-delay="0.6s" data-wow-duration="0.6s">
+                                        Building Dreams, <br> Crafting Legacies
+                                    </h2>
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class="website_form-home_form">
+                           
+                              
+                                <div class="home_bottom_form">
+                                    <div class="inner-flex">
+                                        <div class="content-size-div">
+                                            <p class="gen_medium">Our commitment to eco-conscious construction extends
+                                                beyond compliance</p>    
+                                        </div>
+                                        <div ng-include='"templates/forms/home_bottom_form.html"'></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="reecosys-section relative" id="reecosys-home-section-4">
+            <div class="container">
+                <div class="">
+                    <div class="section-title wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.6s">
+                        <h2 class="">Real Estate Builder & Housing
+                            Construction Company in Ahmedabad</h2>
+                    </div>
+                    <div class="company_sec">
+                        <div class="company_flex">
+                            <div class="company_img wow fade_top" data-wow-duration="0.4s" data-wow-delay="0.6s">
+                                <img src="assets/images/laxmi-gold-orna-house.png" alt="">
+                            </div>
+                            <div class="company_img wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.6s">
+                                <img src="assets/images/laxminivas.png" alt="">
+                            </div>
+                            <div class="company_img wow fade_top" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                <img src="assets/images/skycity.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="reecosys-section relative   " id="reecosys-home-section-5">
+            <div class="container">
+                <div class="section-information">
+                    <div class="section-title wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.6s">
+                        <h2 class="capitalize">TESTIMONIAL</h2>
+                    </div>
+                    <div class="section-title section-title-flex wow fade_top" data-wow-duration="0.6s"
+                        data-wow-delay="0.6s">
+                        <P class="">CONCERTED
+                            EFFORTS TO BUILD
+                            SPECTACULAR</P>
+                    </div>
+                </div>
+        
+        
+                <div class="testimonial_sec wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.6s">
+                    <ks-swiper-container override-parameters="testimonial_Swiper ">
+                        <ks-swiper-slide ng-repeat="testimonial in testimonialBlock">
+                            <div class="testimonial_flex">
+                                <div class=" testimonial_basis1">
+                                    <div class="testimonial_img ">
+                                        <img src="{{testimonial.image}}" alt="">
+                                    </div>
+                                </div>
+                                <div class=" testimonial_basis2 section-information">
+                                    <div class="section-title">
+                                        <h2>{{testimonial.name}}</h2>
+                                    </div>
+                                    <div class="textimonial_text content-size-div">
+                                        <p read-more dd-text-collapse-max-length="250"
+                                            dd-text-collapse-text="{{testimonial.text}}"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ks-swiper-slide>
+                    </ks-swiper-container>
+                    <div class="swiper-button-next testimonial-next">
+                        <img src="assets/images/icons/arrows/right-round-arrow-black.svg" alt="">
+                    </div>
+                    <div class="swiper-button-prev testimonial-prev">
+                        <img src="assets/images/icons/arrows/left-round-arrow-black.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+    </div>
+</div>
+
+<section class="reecosys-section" ng-repeat="data in other_banner_list_get"
+    ng-if="is_section_Scrolled">
+    <a href="{{data.slug}}">
+        <div class="container-fluidx">
+            <div class="inner-flex">
+                <div class="cp-homes-card relative wow fadeIn"
+                    data-wow-delay="0.6s"
+                    data-wow-duration="0.{{$index+3}}s">
+                    <div class="cp-homes-image relative">
+                        <img
+                            data-src="{{data.banner_web_full}}&w=1700&h=900&q=75"
+                            alt="{{home_list.home_title}}"
+                            ng-if="data.banner_web_type == 'image' "
+                            class="lazyload">
+                        <video autoplay muted loop playsinline id="myVideo"
+                            style="width: 100%;display: block; object-fit: cover;"
+                            class="image-cover"
+                            ng-if="data.banner_web_type == 'video' ">
+                            <source
+                                data-src="assets/images/other/dummy_image.png"
+                                hires="{{data.banner_web_full}}"
+                                class="lazyload" type="video/mp4">
+                        </video>
+                        <!-- <div class="top-left-overlay"></div> -->
+                        <div class="project_detail_overlay"></div>
+                    </div>
+                    <div class="green-homes-content-abs inner-flex">
+                        <div class="inner-flex">
+                            <div class="banner-title" ng-if="data.page_name">
+                                <h2 class="white-color capitalize ">
+                                    {{data.page_name}}
+                                </h2>
+                            </div>
+                            <div class="content-size-div home-common-page-title"
+                                ng-if="data.title">
+                                <p>{{data.title}}</p>
+                            </div>
+                            <div
+                                class="outline-div-button button-div section-banner-button">
+                                <button class="button-style button-style-white">
+                                    <p class="capitalize">
+                                        Know More
+                                    </p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</section>

@@ -1,0 +1,107 @@
+<div>
+    <form id="invest_form" name="invest_form" ng-submit="submit_invest(invest_form)" ng-validate="investformValidate">
+
+        <div class="form_wrapper">
+
+            <div class="contact_lable">
+                <input id="name" name="name" type="text" ng-model="invest_list.name" required="required"
+                    class="form-control" letters-only tabindex="11">
+                <label class="md-lable" for="name">Name</label>
+            </div>
+            <div class="contact_lable">
+                <input id="email" name="email" type="email" ng-model="invest_list.email_address" required=""
+                    autocomplete="off" class="form-control  ng-valid-email" tabindex="22">
+                <label class="md-lable" for="email">Email</label>
+            </div>
+            <div class="contact_lable relative">
+                <input id="client_contact_no" name="client_contact_no" type="tel"
+                    ng-model="invest_list.contact_no_display" numbers-only="" minlength="{{invest_contact_no_length.minlength}}" maxlength="{{invest_contact_no_length.maxlength}}" required=""
+                    autocomplete="off" class="form-control  contact-form" tabindex="33" ng-trim="false">
+                <label class="md-lable contact_code" for="client_contact_no">Mobile
+                    Number</label>
+                <div class="conatct_number_input">
+                    <div class="country_code_data" ng-click="country_code_click(); $event.stopPropagation();">
+                        <div class="contact_country_flag">
+                            <img src="{{invest_list.flag}}" alt="reecosys">
+                        </div>
+                        <div>
+                            &nbsp; +{{invest_list.country}}
+                        </div>
+                        <div>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="country_code_list_data" ng-class="{'active' : country_code_clickF}"
+                    ng-click="$event.stopPropagation();">
+                    <div class="search_c-code">
+                        <input type="text" ng-model="search" placeholder="Search">
+                    </div>
+                    <ul>
+                        <li ng-repeat="country_list_detail in country_list | filter: search: phonecode"
+                            ng-click="country_click_invest(country_list_detail.phonecode, country_list_detail.flag); invest_country_change();">
+                            <div ng-click="country_code_click_false();">
+                                <div><img src="{{country_list_detail.flag}}" alt="reecosys">
+                                </div>
+                                <span class="display_country_code">+{{country_list_detail.phonecode}}</span>
+                                {{country_list_detail.nicename}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="relative" ng-if="activePath == '/propose-land/'">
+                <input id="resume_upload" name="resume_upload" class="upload-button-wrapper-input upload_file_input"
+                    type="file" ng-model="invest_list.attachment"
+                    ngf-select="" ngf-multiple="false"
+                    ngf-pattern="" tabindex="44">
+                <div class="upload-button-wrapper">
+                    <img src="assets/images/icon/upload.svg" alt="{{common_page_list.page_name.page_name}}"
+                        style="margin: 0;">
+                    <p ng-if="!invest_list.attachment.name" class="transition_0s lable_error ng-scope">
+                        Attachment
+                    </p>
+                    <p ng-if="invest_list.attachment.name" class="transition_0s lable_error ng-scope">
+                        {{invest_list.attachment.name}}
+                    </p>
+                    <img src="assets/images/upload.svg" alt="">
+                </div>
+                <!-- <p class="other_message">Allow only pdf, doc, docx file.</p> -->
+            </div>
+
+            <div class="contact_lable commentbox">
+                <textarea id="remarks" name="remarks" type="text" ng-model="invest_list.remarks" aria-invalid="false"
+                    autocomplete="off" class="form-control" tabindex="55" rows="4">
+                </textarea>
+                <label class="md-lable" for="remarks">Comments</label>
+            </div>
+            
+            <p class="relative check_box_error get_update_text align_center">
+                <input class="get_update_checkbox" type="checkbox" id="agree_tandc" tabindex="88" name="agree_tandc"
+                    ng-model="invest_list.agree_tandc_display" aria-required="true" aria-invalid="true">
+                <label class="darkgray-font" for="agree_tandc">
+                    Keep me updated.
+                </label>
+            </p>
+
+            <div class="submit-button button-div filled-div-button form_button" ng-if="!addInvestUs">
+                <button class="button-style orange-button" type="submit" ng-disabled="addInvestUs" tabindex="99">
+                    <p>
+                        Submit
+                    </p>
+                </button>
+            </div>
+            <div class="submit-button form_button submit-button-contact button-div filled-div-button form_loading_btn"
+                ng-if="addInvestUs">
+                <button class="button-style orange-button" type="submit" disabled tabindex="99">
+                    <div class="loading_btn"></div>
+                    <p>
+                        Please wait..
+                    </p>
+                </button>
+            </div>
+
+        </div>
+
+    </form>
+</div>

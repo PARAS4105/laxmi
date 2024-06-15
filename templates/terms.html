@@ -1,0 +1,49 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper"  ng-click="country_code_click_false();"
+    ng-if="!is_commonpage_loading && common_page_list.page_name">
+    <div id="reecosys-aboutus-wrapper" class="relative">
+        <section class="reecosys-section relative" id="reecosys-aboutus-section-1" ng-if="common_page_list.banner_web_full || common_page_list.banner_mobile_full">
+            <div class="commonpage_banner" ng-if="common_page_list.banner_web_full">
+                <video autoplay muted loop playsinline id="myVideo"
+                    style="width: 100%;display: block; object-fit: cover;" class="gallery-images image-cover" ng-if="common_page_list.banner_web_type == 'video' && !isMobilescreen">
+                    <source src="{{common_page_list.banner_web_full}}" type="video/mp4">
+                </video>
+
+                <video autoplay muted loop playsinline id="myVideo"
+                    style="width: 100%;display: block; object-fit: cover;" class="gallery-images image-cover" ng-if="common_page_list.banner_mobile_full == 'video' && isMobilescreen">
+                    <source src="{{common_page_list.banner_web_full}}" type="video/mp4">
+                </video>
+
+                <img src="assets/images/other/dummy_image.png" hires="{{common_page_list.banner_web_full}}&h=1080&w=1903&q=75" alt="{{common_page_list.page_name.page_name}}" ng-if="common_page_list.banner_web_type == 'image' && !isMobilescreen">
+
+                <img src="assets/images/other/dummy_image.png" hires="{{common_page_list.banner_web_full}}&h=1080&w=1903&q=75" alt="{{common_page_list.page_name.page_name}}" ng-if="common_page_list.banner_mobile_full == 'image' && isMobilescreen">
+            </div>
+            <div class="black_overlay"></div>
+            <div class="banner-text-half" ng-if="common_page_list.page_name">
+                <div class="banner-title">
+                    <h1 class="white-color">
+                        {{common_page_list.page_name}}
+                    </h1>
+                </div>
+            </div>
+        </section>
+        
+        <section class="reecosys-section relative" id="reecosys-aboutus-section-2">
+            <div class="container">
+                <div class="inner-flex">
+                    <div class="section-information" ng-if="common_page_list.title">
+                        <div class="section-title">
+                            <h2 class="wow fade_top" data-wow-delay="0.3s" data-wow-duration="0.6s">
+                                {{common_page_list.title}}
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="content-size-div banner-content-size-div contact_detail comonpage_discription" ng-if="common_page_list.primary_text_display">
+                        <p ng-bind-html="common_page_list.primary_text_display"></p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
