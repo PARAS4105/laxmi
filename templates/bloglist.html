@@ -4,7 +4,7 @@
 
             <div class="commonpage_banner">
                 <div style="height: 100%;">
-                    <img src="assets/images/other/dummy_image.png" hires="assets/images/blog/blog_img.jpg"
+                    <img src="assets/images/other/dummy_image.png" hires="https://www.reecosys.com/api/image-tool/index.php?src=https://www.reecosys.com/assets/uploads/project/banner/banner_web_1676637338_15.jpg&h=1080&w=1920&q=75"
                         alt="" class="lazyload">
                 </div>
             </div>
@@ -22,7 +22,6 @@
         <section class="reecosys-section project_blog_list_setion" id="reecosys-blog-section-2">
             <div class="container-fluid">
                 <div class="inner-flex">
-
                     <div class="tags_type_click relative" ng-if="tag_type">
                         <div class="blog_tags_text capitalize relative">
                             <p>{{tag_type}}</p>
@@ -33,38 +32,71 @@
                     </div>
 
 
-                    <div class="project-list-grid project-list-grid-1-column" ng-if="blogs_types_list.length == 1">
+                    <div class=" project-list-grid project-list-grid-1-column" ng-if="blogs_types_list.length == 1">
                         <div ng-repeat="data in blogs_types_list" class="project-list-card">
-                            <a href="blog/{{data.slug}}" class="wow fadeIn" data-wow-delay="0.4s"
-                                data-wow-duration="0.{{$index+3}}s">
-                                <div class="project-img-list relative">
-                                    <img src="assets/images/other/dummy_image.png"
-                                        hires="{{data.image_full}}&w=1320&h=740&q=75"
-                                        alt="" class="image-cover">
-                                    <div class="card_black_overlay"></div>
-                                </div>
-                                <div class="project-info-list">
-                                    <div class="section-information">
-                                        <div class="banner-title">
-                                            <h2 class="charter_regular white_color_text">
-                                                {{data.banner_title}}
-                                            </h2>
-                                        </div>
-                                        <div class="content-size-div capitalize content-size-div-small projects_list_information text-center">
-                                            <div class="project-info-flex">
-                                                <p>{{data.published_date}}</p>
+                           <div class="inner-flex">
+                            <div>
+                                    <a href="articles/{{data.slug}}" class="wow fadeIn" data-wow-delay="0.4s"
+                                    data-wow-duration="0.{{$index+3}}s">
+                                    <div class="project-img-list relative">
+                                        <img src="assets/images/other/dummy_image.png"
+                                            hires="{{data.image_full}}&w=1320&h=740&q=75"
+                                            alt="" class="image-cover">
+                                        <div class="card_black_overlay"></div>
+                                    </div>
+                                    <div class="project-info-list hidden-xs">
+                                        <div class="section-information">
+                                            <div class="banner-title">
+                                                <h1 class="g_regular white_color_text">
+                                                    {{data.banner_title}}
+                                                </h1>
+                                            </div>
+                                            <div class="content-size-div capitalize content-size-div-small projects_list_information text-center">
+                                                <div class="project-info-flex">
+                                                    <p>{{data.published_date}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="outline-div-button button-div view-project-btn">
+                                                <button class="button-style ">
+                                                    <p class="">
+                                                        Know More
+                                                    </p>
+                                                </button>
                                             </div>
                                         </div>
-                                        <div class="outline-div-button button-div view-project-btn">
-                                            <button class="button-style ">
-                                                <p class="">
-                                                    Know More
-                                                </p>
-                                            </button>
+                                    </div>
+                                </a>
+                            </div>
+                    
+                    <div class="list_one visible-xs">
+                        <a href="articles/{{data.slug}}" class="wow fadeIn" data-wow-delay="0.4s"
+                        data-wow-duration="0.{{$index+3}}s">
+                            <div class="project-info-listx ">
+                                <div class="section-information">
+                                    <div class="banner-title">
+                                        <h1 class="g_regular black-color">
+                                            {{data.banner_title}}
+                                        </h1>
+                                    </div>
+                                    <div class="content-size-div capitalize content-size-div-small projects_list_information text-center">
+                                        <div class="project-info-flex">
+                                            <p class="black-color">{{data.published_date}}</p>
                                         </div>
                                     </div>
+                                    <div class="outline-div-button button-div wfc" style="margin-top: 0.5rem;">
+                                        <button class="button-style download-fill-button">
+                                                <p class="capitalize">
+                                                Know More                                                    
+                                                </p>                                          
+                                        </button>
+                                    </div>
                                 </div>
-                            </a>
+                            </div>
+                        </a>
+                    </div>
+
+                           </div>
+                            
                         </div>
                     </div>
 
@@ -72,11 +104,11 @@
                     <div class="project-list-grid project-list-grid-2-column" ng-if="blogs_types_list.length > 1">
                         <div ng-repeat="data in blogs_types_list" class="project-list-card">
 
-                            <a href="blog/{{data.slug}}">
+                            <a href="articles/{{data.slug}}">
                                 <div class="blog_list_card section-information">
                                     <div class="list_blog_img overflow">
                                         <img src="assets/images/other/dummy_image.png"
-                                            hires="{{data.image_full}}&h=400&w=590&q=75" alt=""
+                                            hires="{{data.image_full}}&h=1079&w=1920&q=100" alt=""
                                             class="image-cover lazyload">
                                     </div>
                                 </div>
@@ -85,7 +117,7 @@
                                         <div class="content-size-div section-title-flex j-c-sb list_blogs_text">
                                             <div>
                                                 <p class="capitalize charter_regular">
-                                                    {{data.banner_title}}
+                                                    {{data.banner_title}}  
                                                 </p>
                                             </div>
                                             <div class="project-arrow-icon">
@@ -95,7 +127,7 @@
                                         <div class="banner-detail-row banner-detail-row-grid"
                                             ng-if="data.published_date">
                                             <div class="project-information-div">
-                                                <div class="content-size-div banner-detail-row-grid-text">
+                                                <div class="content-size-div banner-detail-row-grid-textxc">
                                                     <p class="capitalize">
                                                         {{data.published_date}}
                                                     </p>

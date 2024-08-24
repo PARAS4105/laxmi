@@ -1,0 +1,86 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper" id="reecosys-main-wrapper">
+    <div id="reecosys-investors-wrapper" class="relative">
+
+        <section class="reecosys-section relative" id="reecosys-investors-section-1">
+            <div class="video-listing-banner">
+                <div class="investor_sec1_banner"
+                    style="background-image: url(https://dummyimage.com/1920x1080/000000/000000)">
+                    <div class="banner-text-half">
+                        <div class="banner-title">
+                            <h1 class="white-color bold_gtwalsheim ">
+                                INVESTORS</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-btn home_down_arrow" ng-click="scrolltoDiv('reecosys-investors-section-2');">
+                    <img src="assets/images/icon/down_arrow_black.svg" alt="">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="reecosys-section relative" id="reecosys-investors-section-2">
+            <div class="website_container">
+                <div class="inner-flex">
+                    <div class="investors_tabs_grid ">
+
+                        <div class="tab_main_sec " ng-repeat="investros in investors_List" >
+                            <div class="tablinks" ng-click="investor_data(investros.id)"
+                                ng-class="{'active' : investros.id == invester_id}">
+                                <div class="tabtitle">
+                                    <div class="tab-header-icon">
+                                        <img src="https://dummyimage.com/50x50/000000/000000" alt="">
+                                    </div>
+                                    <div class="amenities-text">
+                                        <p class="">{{investros.title}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="" ng-repeat="data in investors_List" ng-if="data.id == invester_id">
+                        <div class="inner-flex">
+                            <div ng-repeat="data2 in data.data" class="inner-flex tabcontent"  >
+                                <div class="section-title">
+                                    <h2 class="lightText"> {{data2.data_title}}</h2>
+                                </div>
+                              
+                                <div class="downaload-grid-investor" ng-if="data.type == 'pdf' ">
+                                    <div  ng-repeat="data3 in data2.detail" >
+                                        <a href="{{data3.pdf}}" target="blank" class="investor_sec3_pdf">
+                                            <div class="pdf_icon">
+                                                <img src="assets/images/pdf-icon.svg">
+                                            </div>
+                                            <div class="button-style">
+                                                <p>{{data3.name}}</p>
+                                            </div>
+                                            <div class="download_icon1 ">
+                                                <img src="assets/images/icon/dowload.svg" alt="">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="directors_table">
+                                    <table style="width:100%"  ng-if="data.type != 'pdf' ">
+                                        <tr>
+                                            <th>{{data2.borad_title1}}</th>
+                                            <th>{{data2.borad_title2}}</th>
+                                            <th>{{data2.borad_title3}}</th>
+                                        </tr>
+                                        <tr ng-repeat="data3 in data2.detail" >
+                                            <td>{{data3.name}}</td>
+                                            <td>{{data3.status}}</td>
+                                            <td>{{data3.category}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

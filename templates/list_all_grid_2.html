@@ -1,10 +1,10 @@
 <a href="project/{{project_list_data.slug}}" class="wow fade_top" data-wow-delay="0.4s"
-    data-wow-duration="0.{{$index+3}}s">
+    data-wow-duration="0.{{$index+3}}s" ng-if="project_list_data.project_id != 335 && project_list_data.project_id != 336 && project_list_data.project_id != 337  && project_list_data.project_id != 373 && project_list_data.project_id != 374">
 
     <div class="relative">
         <div class="project-img-list relative" ng-if="project_list_data.banner_data.image_web_type == 'image'">
             <img src="assets/images/other/dummy_image.png"
-                hires="{{project_list_data.banner_data.image_web_full}}&h=1079&w=1920&q=75" alt="{{project_list_data.project_title}}" class="image-cover">
+                hires="{{project_list_data.banner_data.image_web_full}}&h=1079&w=1920&q=100" alt="{{project_list_data.project_title}}" class="image-cover">
         </div>
 
         <div class="project-img-list relative" ng-if="project_list_data.banner_data.image_web_type == 'video'">
@@ -22,7 +22,7 @@
         <div class="section-information">
 
             <div class="content-size-div section-title-flex j-c-sb">
-                <p class="capitalize charter_regular">
+                <p class="capitalize g_regular">
                     {{project_list_data.project_title}}
                 </p>
                 <div class="project-arrow-icon">
@@ -55,3 +55,61 @@
         </div>
     </div>
 </a>
+<a href="javascript:void(0);" class="wow fade_top" data-wow-delay="0.4s"
+    data-wow-duration="0.{{$index+3}}s" ng-if="project_list_data.project_id == 335 || project_list_data.project_id == 336 || project_list_data.project_id == 337  || project_list_data.project_id == 373 || project_list_data.project_id == 374">
+
+    <div class="relative">
+        <div class="project-img-list relative" ng-if="project_list_data.banner_data.image_web_type == 'image'">
+            <img src="assets/images/other/dummy_image.png"
+                hires="{{project_list_data.banner_data.image_web_full}}&h=1079&w=1920&q=100" alt="{{project_list_data.project_title}}" class="image-cover">
+        </div>
+
+        <div class="project-img-list relative" ng-if="project_list_data.banner_data.image_web_type == 'video'">
+            <video autoplay muted loop playsinline id="myVideo"
+                style="width: 100%;display: block;height: 100%;object-fit: cover;">
+                <source src="{{project_list_data.banner_data.image_web_full}}" type="video/mp4">
+            </video>
+        </div>
+        <div class="project_status_lable" ng-if="project_list_data.status">
+            <p class="capitalize">{{project_list_data.status}}</p>
+        </div>
+    </div>
+
+    <div class="project-info-list">
+        <div class="section-information">
+
+            <div class="content-size-div section-title-flex j-c-sb">
+                <p class="capitalize g_regular">
+                    {{project_list_data.project_title}}
+                </p>
+                <div class="project-arrow-icon">
+                    <img src="assets/images/icon/right_arrow_line.svg" alt="{{project_list_data.project_title}}">
+                </div>
+            </div>
+            <div class="banner-detail-row banner-detail-row-grid">
+                <div class="project-information-div" ng-if="project_list_data.size_price">
+                    <div class="building-icon">
+                        <img src="assets/images/icon/building.svg" alt="reecosys">
+                    </div>
+                    <div class="content-size-div banner-detail-row-grid-text">
+                        <p class="capitalize ">
+                            {{project_list_data.size_price}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-information-div" ng-if="project_list_data.location">
+                    <div class="building-icon">
+                        <img src="assets/images/icon/location.svg" alt="reecosys">
+                    </div>
+                    <div class="content-size-div">
+                        <p class="capitalize">
+                            {{project_list_data.location}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>
+

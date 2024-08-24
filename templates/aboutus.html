@@ -70,7 +70,7 @@
                     <div class="highlights-grid"
                         style="margin-bottom: var(--smallgap-size);"
                         ng-if="!data.tag_line || !data.name">
-                        <div class="wow fade_top" data-wow-delay="0.8s"
+                        <div class="wow fade_topx" data-wow-delay="0.8s"
                             data-wow-duration="0.6s"
                             ng-repeat="data in common_page_list.usp">
                             <div class="section-title-big" ng-if="data.name">
@@ -88,21 +88,21 @@
                     <div class="section-information"
                         ng-if="common_page_list.title">
                         <div class="section-title">
-                            <h2 class="wow fade_top brownTitle"
-                                data-wow-delay="0.3s" data-wow-duration="0.6s">
+                            <h2 class="wow fade_topx brownTitle g_regular"
+                                data-wow-delay="0.3s" data-wow-duration="0.6s" style="font-family: 'genralsans_regular' !important;">
                                 {{common_page_list.title}}
                             </h2>
                         </div>
                     </div>
                     <div class="content-size-div"
                         ng-if="common_page_list.primary_text_display">
-                        <!-- <p class="wow fade_top" data-wow-delay="0.6s" data-wow-duration="0.6s"
+                        <p class="wow fade_topx " data-wow-delay="0.6s" data-wow-duration="0.6s"
                             ng-bind-html="common_page_list.primary_text_display">
-                        </p> -->
-                        <p read-more dd-text-collapse-max-length="350"
+                        </p>
+                        <!-- <p read-more dd-text-collapse-max-length="350"
                             dd-text-collapse-text="{{common_page_list.primary_text_display}}"
                             class="brownTitle">
-                        </p>
+                        </p> -->
                     </div>
                 </div>
             </div>
@@ -111,16 +111,16 @@
             id="reecosys-aboutus-section-6">
             <div class="website_container">
 
-                <div class="inner-flex">
+                <div class="about_innerinner-flex">
                     <div class="section-information ">
                         <div class="inner-flex">
                             <div class="section-title-big quality_sec">
                                 <h2 class="brownTitle">
-                                    QUALITY PROJECTS
+                                    Quality projects
                                 </h2>
                             </div>
                             <div class="content-size-div">
-                                <p class="brownTitle wow fade_top"
+                                <p class="brownTitle wow fade_topx"
                                     data-wow-delay="0.6s"
                                     data-wow-duration="0.6s">
                                     Quality is the core of our presence. Laxmi
@@ -134,15 +134,23 @@
                     </div>
 
                     <div class="inner-flex">
-                        <div class="content-size-div">
+                        <!-- <div class="content-size-div">
                             <p
-                                class="title-colorx brownTitle capitalize wow fade_top"
+                                class="title-colorx brownTitle capitalize wow fade_topx"
                                 data-wow-duration="0.6s" data-wow-delay="0.3s">
                                 Latest Technology
                             </p>
+                        </div> -->
+
+                        <div class="section-title-big quality_sec">
+                            <h2 class="brownTitle">
+                                Latest Technology
+                            </h2>
                         </div>
+
+
                         <div class="content-size-div">
-                            <p class="brownTitle wow fade_top"
+                            <p class="brownTitle wow fade_topx"
                                 data-wow-delay="0.6s" data-wow-duration="0.6s">
                                 We have been infusing Rafting foundation,
                                 Beamless slabs, Tested & certified materials for
@@ -159,15 +167,22 @@
                     </div>
 
                     <div class="inner-flex">
-                        <div class="content-size-div">
+                        <!-- <div class="content-size-div">
                             <p
-                                class="brownTitle title-colorx capitalize wow fade_top"
+                                class="brownTitle title-colorx capitalize wow fade_topx"
                                 data-wow-duration="0.6s" data-wow-delay="0.3s">
                                 Construction Structure
                             </p>
+                        </div> -->
+
+                        <div class="section-title-big quality_sec">
+                            <h2 class="brownTitle">
+                                Construction Structure
+                            </h2>
                         </div>
+
                         <div class="content-size-div">
-                            <p class="brownTitle wow fade_top"
+                            <p class="brownTitle wow fade_topx"
                                 data-wow-delay="0.6s" data-wow-duration="0.6s">
                                 For every structure, construction is the basic
                                 foundation. Earthquake resistance structure.
@@ -188,16 +203,24 @@
             ng-if="common_page_list.team.length > 0">
             <div class="website_container">
                 <div class="inner-flex">
-                    <div class="content-size-div">
+
+
+                    <div class="section-title-big quality_sec">
+                        <h2 class="brownTitle">
+                            {{$storage.logged_user_details.name}} Team
+                        </h2>
+                    </div>
+
+                    <!-- <div class="content-size-div">
                         <p
-                            class="brownTitle title-colorx capitalize wow fade_top"
+                            class="brownTitle title-colorx capitalize wow fade_topx"
                             data-wow-duration="0.6s" data-wow-delay="0.3s">
                             {{$storage.logged_user_details.name}} Team
                         </p>
-                    </div>
+                    </div> -->
                     <div class="content-size-div"
                         ng-if="common_page_list.team_description">
-                        <p class="brownTitle wow fade_top" data-wow-delay="0.6s"
+                        <p class="brownTitle wow fade_topx" data-wow-delay="0.6s"
                             data-wow-duration="0.6s"
                             ng-bind-html="common_page_list.team_description">
                         </p>
@@ -207,24 +230,32 @@
                     ng-if="common_page_list.team">
                     <div class="team-information-card"
                         ng-repeat="data in common_page_list.team">
-                        <div class="team-member-image wow fade_top"
+                        <div class="team-member-image wow fade_topx"
                             data-wow-delay="0.3s" data-wow-duration="0.3s">
                             <img src="assets/images/other/dummy_image.png"
                                 hires="{{data.image_main}}&h=552&w=533&q=75"
                                 alt="{{common_page_list.page_name}}">
                         </div>
-                        <div class="team-member-information wow fade_top"
+                        <div class="team-member-information wow fade_topx"
                             data-wow-delay="0.5s"
                             data-wow-duration="0.5s">
                             <div class="inner-flex">
                                 <div class="section-information">
                                     <div class="inner-flex">
-                                        <div class="section-title"
+                                        <!-- <div class="section-title"
                                             ng-if="data.name">
                                             <h2 class="brownTitle">
-                                                {{data.name}}
+                                                {{data.name}} 
+                                            </h2>
+                                        </div> -->
+
+                                        <div class="section-title-big quality_sec" ng-if="data.name">
+                                            <h2 class="brownTitle g_regular">
+                                                {{data.name}} 
                                             </h2>
                                         </div>
+
+
                                         <div class=" content-size-div">
                                             <p class="brownTitle  person_about_designation" ng-if="data.designation" ng-bind-html="data.designation"> </p>
                                         </div>
@@ -312,7 +343,7 @@
             <div class="website_container">
                 <div class="inner-flex">
                     <div class="content-size-div">
-                        <p class="title-colorx capitalize wow fade_top"
+                        <p class="title-colorx capitalize wow fade_topx"
                             data-wow-duration="0.6s" data-wow-delay="0.3s">
                             Awards & Certification
                         </p>
@@ -324,7 +355,7 @@
                     class="relative">
                     <ks-swiper-slide
                         ng-repeat="data in common_page_list.awards">
-                        <div class="awards-swiper-card wow fade_top "
+                        <div class="awards-swiper-card wow fade_topx "
                             data-wow-duration="0.8s" data-wow-delay="0.8s">
                             <div class="awards-year content-size-div">
                                 <p class="title-colorx capitalize"
@@ -356,7 +387,7 @@
             id="reecosys-aboutus-section-5"
             ng-if="common_page_list.milestone.length > 0">
             <div class="website_container">
-                <div class="inner-flex wow fade_top" data-wow-duration="0.6s"
+                <div class="inner-flex wow fade_topx" data-wow-duration="0.6s"
                     data-wow-delay="0.6s">
                     <div class="content-size-div">
                         <p class="title-colorx capitalize">
@@ -376,7 +407,7 @@
                     class="relative">
                     <ks-swiper-slide
                         ng-repeat="data in common_page_list.milestone">
-                        <div class="journey-card inner-flex wow fade_top"
+                        <div class="journey-card inner-flex wow fade_topx"
                             data-wow-duration="0.9s"
                             data-wow-delay="0.9s">
                             <div class="journey_image relative">

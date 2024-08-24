@@ -1,0 +1,143 @@
+{
+    "extra_data" : [
+        {
+            "project_id": "50",
+            "title" : "LAXMI ETERNIA",
+            "viewonmap" : "https://maps.app.goo.gl/kkvArfNZiPEhnC729",
+            "floor_plan_img" : "assets/images/floorplan/eternia_image.png",
+            "floor_title" : "LAXMI ETERNIA",
+            "floor_paragraph":"Live a peaceful life which give you the chance to discover the unfolded secrets  of Nature. Eternal peace here leads youto a balanced state Of mind where no circumstances can bother you in any manner",
+            "floor_pdf" : "assets/images/floorplan/eternia_floor_plan.pdf",
+            "project_hightlight" :[
+                {
+                    "highlight_img" :"assets/images/detail/etower1.png",
+                    "highlight_title" :"1260",
+                    "highlight_content" :"Apartment Sq.Ft"
+                },
+                {
+                    "highlight_img" :"assets/images/detail/etower2.png",
+                    "highlight_title" :"30 Lakhs",
+                    "highlight_content" :"Starting From"
+                }               
+            ]
+          
+        },
+        {
+            "project_id": "48",
+            "title" : "LAXMI SKYCITY",
+            "viewonmap" : "https://maps.app.goo.gl/FnH5aJhxdS3VVvCq9",            
+            "floor_plan_img" : "assets/images/floorplan/skycityimages.png",
+            "floor_title" : "Inspired by <br> the sky",
+            "floor_paragraph":"Skycity offers endless potentials for your business. It is an ultimate business destination having soothing space that will encircle you in a world of possibilities. A classy commercial property positioned at S.P. Ring Road will be a hub of prudent professionals for great future opportunities.",
+            "floor_pdf" : "assets/images/floorplan/skycity_floor_plan.pdf",
+            "project_hightlight" :[
+                {
+                    "highlight_img" :"assets/images/detail/stower1.png",
+                    "highlight_title" :"1350",
+                    "highlight_content" :"Apartment Sq.Ft"
+                }
+                          
+            ]
+            
+        },
+        {
+            "project_id": "49",
+            "title" : "LAXMI NIVAS",
+            "viewonmap" : "https://maps.app.goo.gl/MQiYL44oUpgwSUGa7",
+            "floor_plan_img" : "assets/images/floorplan/nivas_images.png",
+            "floor_title" : "One <br> Landmark",
+            "floor_paragraph":"Laxmi Nivas is where the family stories get influenced by the beauty of comfort, conveniences, amenities, proximity, aesthetic beauty and much more.",
+            "floor_pdf" : "assets/images/floorplan/nivas_floor_plan.pdf",
+
+            "project_hightlight" :[
+                {
+                    "highlight_img" :"assets/images/detail/ntower1.png",
+                    "highlight_title" :"24 Lakhs",
+                    "highlight_content" :"2 BHK ( 1080 Sq. Ft. SBA)"
+                },
+                {
+                    "highlight_img" :"assets/images/detail/ntower2.png",
+                    "highlight_title" :"17.20 Lakhs",
+                    "highlight_content" :"1 BHK ( 774 Sq. Ft. SBA)"
+                }               
+            ]
+          
+        },
+        
+        {
+            "project_id": "51",
+            "title" : "LAXMI AASHIYANA",
+            "viewonmap" : "https://maps.app.goo.gl/4b7px6Nkk8oZjjeu6",
+            "floor_plan_img" : "assets/images/floorplan/aashiyana_image.png",
+            "floor_title" : "Affordable into <br> Luxury Living",
+            "floor_paragraph":"Laxmi Aashiyana's afforbale luxurious homes ensure plenty air and light circulation for healthy living. Impressing in first sight, these two bedroom residences are designed smart with abundant natural light & air circulation and have an optimum usage of space to give your family a cozy & comfortable living.",
+            "floor_pdf" : "assets/images/floorplan/aashiyana_floor_plan.pdf",
+            "project_hightlight" :[
+                {
+                    "highlight_img" :"assets/images/detail/aatower1.png",
+                    "highlight_title" :"1035",
+                    "highlight_content" :"Apartment Sq.Ft"
+                },
+                {
+                    "highlight_img" :"assets/images/detail/aatower2.png",
+                    "highlight_title" :"23 Lakhs",
+                    "highlight_content" :"Starting From"
+                }               
+            ]
+          
+        },
+        {
+            "project_id": "338",
+            "title" : "LAXMI ONE<span class='patch_color inter-regualer'>O</span><span class='inter-regualer white-color'>1 </span>",
+            "viewonmap" : "https://maps.app.goo.gl/kBtjpDKK4YUKEwsi8",
+            "floor_plan_img" : "assets/images/floorplan/laxmi_one_o1_images.png",
+            "floor_title" : "Crafting <br> Legacies",
+            "floor_paragraph":"Welcome to the blueprints of future. Each floor plan is meticulously crafted to redefine living spaces and set new benchmarks in architectural design. Discover floor plans tailored to your lifestyle, offering a harmonious blend of functionality and elegance.",
+            "floor_pdf" : "assets/images/floorplan/laxmi one o1_floor plan.pdf",
+            "project_hightlight" :[
+                {
+                    "highlight_img" :"assets/images/detail/tower1.png",
+                    "highlight_title" :"2",
+                    "highlight_content" :"Tower"
+                },
+                {
+                    "highlight_img" :"assets/images/detail/tower2.png",
+                    "highlight_title" :"112",
+                    "highlight_content" :"Units"
+                }         
+            ]
+        },
+        {
+            "project_id": "371",
+            "title" : "LAXMI COURTYARD",
+            "viewonmap" : "https://maps.app.goo.gl/z1qiuCU74TR8Qg698",
+            "floor_plan_img" : "assets/images/floorplan/Laxmi_courtyard_images.png",
+            "floor_title" : "Podium <br>living space",
+            "floor_paragraph":"We believe that our mission & vision are to create homes for everyone where the residents can cherish & adorn their own life.",
+            "floor_pdf" : "assets/images/floorplan/Laxmi Courtyard floor plan.pdf",
+            "project_hightlight" :[
+                {
+                    "highlight_img" :"assets/images/detail/ctower1.png",
+                    "highlight_title" :"65+",
+                    "highlight_content" :"Large Shops"
+                },
+                {
+                    "highlight_img" :"assets/images/detail/ctower2.png",
+                    "highlight_title" :"375",
+                    "highlight_content" :"Units"
+                },
+                {
+                    "highlight_img" :"assets/images/detail/ctower3.png",
+                    "highlight_title" :"20+",
+                    "highlight_content" :"Modern Aminities  "
+                },
+                {
+                    "highlight_img" :"assets/images/detail/ctower4.png",
+                    "highlight_title" :"25K+",
+                    "highlight_content" :"Sq.Ft. Recreational Space"
+                }                     
+            ]
+          
+        }
+    ]
+}

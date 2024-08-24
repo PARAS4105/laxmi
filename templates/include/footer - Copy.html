@@ -1,0 +1,356 @@
+<!-- <section class="subscribe_section darkBrown_bg">
+    <div class="footer_container">
+        <div class="subscribe_content">
+            <div class="subscribe_flex">
+                <div>
+                    <div class="section-information">
+                        <div class="content-size-div subscribe_title">
+                            <p class="title-color capitalize">
+                                Subscribe for latest updates
+                            </p>
+                        </div>
+                        <div class="content-size-div subscribe_text">
+                            <p>Know more about recent happenings at <span class="capitalize">{{$storage.logged_user_details.name}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-information subscribe_btn_section">
+                    <form id="subscribe" name="subscribe" ng-submit="subscribeform(subscribe)"
+                        ng-validate="subscribe_validate" autocomplete="off">
+                        <div class="subscribe_inner_flex">
+                            <div class="contact_lable subscribe_lable">
+                                <input id="email_address" name="email_address" type="email"
+                                    ng-model="subscribe_obj.email_address" required="" aria-required="true"
+                                    aria-invalid="true" autocomplete="off" class="form-control">
+                                <label class="md-lable" for="email_address">Enter your email</label>
+                            </div>
+
+                            <button class="submit_subscribe_btn" ng-if="!addsubscribe">
+                                <div class="submit_subscribe_img submit_subscribe_img_arrow">
+                                    <img src="assets/images/icon/right_arrow_line.svg" alt="">
+                                </div>
+                            </button>
+                            <button class="submit_subscribe_btn" ng-if="addsubscribe" disabled>
+                                <div class="submit_subscribe_img">
+                                    <img src="assets/images/icon/loading.svg" alt="">
+                                </div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section> -->
+
+<div class="reecosys-footer" id="reecosys-footer">
+
+    <div class="reecosys-footer-content"  >
+
+        <div class="reecosys_footer_web" >
+
+            <div class="web_footer_content">
+                <div class="footer_bassis1">
+                    <div class="footer_logo_flex">
+                        <div class="logo_address">
+                            <div class="reecosys-brand-logo-footer">
+                                <a href="{{base_url}}">
+                                    <!-- <img src="{{$storage.logged_user_details.logo}}" alt=""> -->
+                                    <img src="assets/images/footer-logo.svg" alt="">
+                                </a>
+                            </div>
+                            <div class="address">
+                                <a href="javascrip:void(0);">
+                                    <p class=" white-color">
+                                        Laxmi House, Opp Bandharano Khan-cho,
+                                        M.G Haveli Road, Manekchowk,
+                                        Ahmedabad-380001.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+    
+                        <div class="social_link inner_footer_flex">
+                            <div class="project_social_media" ng-if="project_social_links.length > 0">
+                                <ul class="social_media_list">
+                                    <li ng-repeat="data in project_social_links">
+                                        <div ng-if="data.name == 'facebook'">
+                                            <a href="{{data.slug}}" target="_blank">
+                                                <img src="assets/images/social/facebook.svg" alt=""
+                                                    class="social-media-icon-footer">
+                                            </a>
+                                        </div>
+                                        <div ng-if="data.name == 'instagram'">
+                                            <a href="{{data.slug}}" target="_blank">
+                                                <img src="assets/images/social/instagram.svg" alt=""
+                                                    class="social-media-icon-footer">
+                                            </a>
+                                        </div>
+                                        <div ng-if="data.name == 'twitter'">
+                                            <a href="{{data.slug}}" target="_blank">
+                                                <img src="assets/images/social/twitter.svg" alt=""
+                                                    class="social-media-icon-footer">
+                                            </a>
+                                        </div>
+                                        <div ng-if="data.name == 'linkedin'">
+                                            <a href="{{data.slug}}" target="_blank">
+                                                <img src="assets/images/social/indeed.svg" alt=""
+                                                    class="social-media-icon-footer">
+                                            </a>
+                                        </div>
+                                        <div ng-if="data.name == 'youtube'">
+                                            <a href="{{data.slug}}" target="_blank">
+                                                <img src="assets/images/social/youtube.svg" alt=""
+                                                    class="social-media-icon-footer">
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- <div class="social_link_sites">
+                                <a href="javaacript:void(0);">
+                                    <div class="social_icon">
+                                        <img src="assets/images/social/facebook.svg" alt="">
+                                    </div>
+                                </a>
+                                <a href="javaacript:void(0);">
+                                    <div class="social_icon">
+                                        <img src="assets/images/social/instagram.svg" alt="">
+                                    </div>
+                                </a>
+                                <a href="javaacript:void(0);">
+                                    <div class="social_icon">
+                                        <img src="assets/images/social/indeed.svg" alt="">
+                                    </div>
+                                </a>
+                                <a href="javaacript:void(0);">
+                                    <div class="social_icon">
+                                        <img src="assets/images/social/youtube.svg" alt="">
+                                    </div>
+                                </a>
+                            </div> -->
+                            <div class="contact_details">
+                                <a href="tell:+91 98989 85001">
+                                    <div class="">
+                                        <p class="white-color">+91 98989 85001</p>
+                                    </div>
+                                </a>
+                                <a href="mailto:info@laxmigroup.co.in">
+                                    <div class="mail_id">
+                                        <p class="white-color">info@laxmigroup.co.in</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bassis2">
+                    <div class=" link_flex">
+                        <div class="project_other_links" >
+                            <!-- <p class="project_links_title white-color">{{category_data.category}}</p> -->
+                            
+                            <div class="project_other_links" ng-if="page_full_list.length > 0 || venture_full_list.length > 0">
+                                
+                                <ul>
+                                    <li >
+                                        <a href="projects">
+                                            <p class="capitalize white-color">Projects</p>
+                                        </a>
+                                    </li>
+                                    <li >
+                                        <a href="completed-projects">
+                                            <p class="capitalize white-color">Completed Projects</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="articles">
+                                            <p class="capitalize white-color">Articles</p>
+                                        </a>
+                                    </li>
+                                    <!-- <li ng-repeat="data in page_full_list" ng-if="data.page_type == '' && data.is_profile_page == 0 && data.slug != 'career' && data.slug != 'vendor'"> -->
+                                    <li ng-repeat="data in page_full_list">
+                                        <a href="{{data.slug}}" ng-class="{'active_page': activePath == '/{{data.slug}}/'}"
+                                            target="{{data.slug_target}}">
+                                            <p class="capitalize white-color">{{data.page_name}}</p>
+                                        </a>
+                                    </li>
+                                    <li ng-repeat="data in venture_full_list" >
+                                        <a href="{{data.slug}}" class="capitalize">
+                                            <p class="capitalize white-color">{{data.page_name}}</p>
+                                        </a>
+                                    </li>
+                                    <li >
+                                        <a href="investors">
+                                            <p class="capitalize white-color">Investors</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project_other_links" ng-repeat="category_data in projects_category"
+                            ng-if="category_data.category">
+                            <!-- <p class="project_links_title white-color">{{category_data.category}}</p> -->
+                            <ul>
+                                <li ng-repeat="data in projects_full_list">
+                                    <a href="project/{{data.slug}}" ng-class="{'active_page': activePath == '/{{data.slug}}/'}" ng-if="data.project_id != 335 && data.project_id != 336 && data.project_id != 337 && data.project_id != 338">
+                                        <p class="capitalize white-color">{{data.project_title}}</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                    
+                
+                
+            </div>
+
+            <div class="reecosys_footer_copyright">
+                <div>
+                   
+                    <div class="web_copyright">
+                        <!-- <p class="p0 white-color">&copy; {{$storage.logged_user_details.name}} {{year}} - All Rights Reserved.</p> -->
+                        <p class="p0 white-color">&copy; Laxmi Goldorna House Limited {{year}} - All Rights Reserved.</p>
+
+                        
+
+                    </div>
+                    <div class="footer_legals">
+                        <ul>
+                            <li ng-repeat="data in page_full_list" ng-if="data.page_type == 'legal'">
+                                <a href="{{data.slug}}">
+                                    <p class="white-color capitalize">{{data.page_name}}</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="powered-by">
+                        <p class="white-color">
+                            Powered By :
+                        </p>
+                        <a href="https://www.reecosys.com/" target="_blank">
+                            <p class="bold white-color">
+                                REECOSYS
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="reecosys-footer-link-sections reecosys-mainfooter-section-links" ng-if="!isMobilescreen">
+            <div class="mob-link" style="margin: 0 !important;">
+                <ul class="quicklinks-footer quicklinks-footer-mobile">
+
+                    <li>
+                        <a href="{{base_url}}">
+                            <p class="capitalize">Home</p>
+                        </a>
+                    </li>
+
+                    <li class="project-footer-accordion" ng-repeat="category_data in projects_category">
+                        <div ng-click="project_list_click2(category_data.category);"
+                            ng-class="{'active' : project_list_click_f2 == category_data.category}">
+                            <a href="javascript:void(0);">
+                                <p class="capitalize">{{category_data.category}}</p>
+                                <span class="down_arrow_footer">
+                                    <img src="assets/images/icon/down_arrow.svg" alt="">
+                                </span>
+                            </a>
+                        </div>
+                        <div class="project-links content_accordian"
+                            ng-class="{'active_list' : project_list_click_f2 == category_data.category}">
+                            <ul>
+                                <li ng-repeat="data in projects_full_list" class="links-flex-column"
+                                    ng-if="data.category == category_data.category">
+                                    <p class="capitalize" ng-if="data.project_title">
+                                        <a href="project/{{data.slug}}"
+                                            ng-click="nav_accordion_close(); menu_click_close();"
+                                            ng-class="{'active_page': activePath == '/{{data.slug}}/'}">
+                                            {{data.project_title}}
+                                        </a>
+                                    </p>
+                                    <p class="small-links-div capitalize"
+                                        ng-if="data.size_price || data.location || data.status">
+                                        {{data.size_price}} | {{data.location}} | {{data.status}}
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li ng-repeat="data in page_full_list_menu" ng-if="data.page_type == ''">
+                        <a href="{{data.slug}}" ng-class="{'active_page': activePath == '/{{data.slug}}/'}"
+                            target="{{data.slug_target}}">
+                            <p class="capitalize">{{data.page_name}}</p>
+                        </a>
+                    </li>
+
+                    <li ng-repeat="data in page_full_list" ng-if="data.page_type == 'legal'">
+                        <a href="{{data.slug}}" ng-class="{'active_page': activePath == '/{{data.slug}}/'}">
+                            <p class="capitalize">{{data.page_name}}</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="quicklinks-footer-copyright">
+                <li ng-if="project_social_links.length > 0">
+                    <ul class="social_media_list">
+                        <li ng-repeat="data in project_social_links">
+                            <div ng-if="data.name == 'facebook'">
+                                <a href="{{data.slug}}" target="_blank">
+                                    <img src="assets/images/social/facebook.svg" alt=""
+                                        class="social-media-icon-footer">
+                                </a>
+                            </div>
+                            <div ng-if="data.name == 'instagram'">
+                                <a href="{{data.slug}}" target="_blank">
+                                    <img src="assets/images/social/instagram.svg" alt=""
+                                        class="social-media-icon-footer">
+                                </a>
+                            </div>
+                            <div ng-if="data.name == 'twitter'">
+                                <a href="{{data.slug}}" target="_blank">
+                                    <img src="assets/images/social/twitter.svg" alt="" class="social-media-icon-footer">
+                                </a>
+                            </div>
+                            <div ng-if="data.name == 'linkedin'">
+                                <a href="{{data.slug}}" target="_blank">
+                                    <img src="assets/images/social/indeed.svg" alt="" class="social-media-icon-footer">
+                                </a>
+                            </div>
+                            <div ng-if="data.name == 'youtube'">
+                                <a href="{{data.slug}}" target="_blank">
+                                    <img src="assets/images/social/youtube.svg" alt="" class="social-media-icon-footer">
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="web_copyright">
+                        <p class="p0">&copy; {{$storage.logged_user_details.name}} {{year}}</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="powered-by">
+                        <p>
+                            Powered By :
+                        </p>
+                        <a href="https://www.reecosys.com/" target="_blank">
+                            <p class="bold">
+                                REECOSYS
+                            </p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div> -->
+    </div>
+</div>

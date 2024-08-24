@@ -1,12 +1,15 @@
-app = angular.module("laxmi", ['ngRoute', /*'ngIdle',*/ 'base64', 'ngStorage', 'ngValidate', 'ngSanitize', 'ngFileUpload', /*'checklist-model',*/ "ui.bootstrap", /*"angular-google-analytics",*/ 'ksSwiper', /*'hl.sticky',*/ 'ui.swiper', 'ngMaterial' /*'ngMessages',*/ /*'socialbase.sweetAlert',*/ /*'rzModule',*/ /*'socialLogin',*/ /*'angular-nicescroll',*/ /*'ui.bootstrap.datetimepicker',*/ /*'angular-progress-arc'*/]);
+app = angular.module("laxmigroup", ['ngRoute', /*'ngIdle',*/ 'base64', 'ngStorage', 'ngValidate', 'ngSanitize', 'ngFileUpload', /*'checklist-model',*/ "ui.bootstrap", /*"angular-google-analytics",*/ 'ksSwiper', /*'hl.sticky',*/ 'ui.swiper', 'ngMaterial' /*'ngMessages',*/ /*'socialbase.sweetAlert',*/ /*'rzModule',*/ /*'socialLogin',*/ /*'angular-nicescroll',*/ /*'ui.bootstrap.datetimepicker',*/ /*'angular-progress-arc'*/]);
 /*ngImgCrop*/
 
 app.$inject = ['SweetAlert'];
 
-var base_url = 'http://192.168.1.46/laxmi/';
+//var base_url = 'http://192.168.1.26/laxmigroup/';
+//var base_url = 'http://192.168.84.246/laxmigroup/';
+//var base_url = 'https://www.laxmigroup.co/';
+//var base_url = 'https://www.saltpixels.in/laxmigroup/';
+var base_url = 'https://www.laxmigroup.co/beta/';
 
-//var base_url = 'https://www.saltpixels.in/laxmi/';
-var apiUrl = "https://www.reecosys.com/api/Services/";
+    var apiUrl = "https://www.reecosys.com/api/Services/";
 var apiUrl_admin = "https://www.reecosys.com/api/Admin/";
 
 app.config(['$locationProvider', '$routeProvider', '$validatorProvider', /*'AnalyticsProvider',*/ /*'socialProvider',*/
@@ -52,148 +55,166 @@ app.config(['$locationProvider', '$routeProvider', '$validatorProvider', /*'Anal
         }, 'Please enter valid value.');
 
         $routeProvider.when("/", {
-            templateUrl: "templates/home.html?ver=11-04-2023-v1",
+            templateUrl: "templates/home.html?ver=29-03-2023-v1",
             controller: "homeController",
-            page_title: "",
+            page_title: "We are a leading Real Estate builder & property developers in Ahmedabad ",
+            page_description: "Home",
         })
 
-        $routeProvider.when("/projects/", {
-            templateUrl: "templates/list.html?ver=11-04-2023-v1",
+        $routeProvider.when("/projects/", { 
+            templateUrl: "templates/list.html?ver=29-03-2023-v1",
             controller: "listController",
             page_title: "Projects",
+            page_description: "Projects",
+        })
+
+        $routeProvider.when("/completed-projects/", {
+            templateUrl: "templates/completedlist.html?ver=17-05-2023-v1",
+            controller: "listController",
+            page_title: "Completed Projects",
+            page_description: "Completed Projects",
         })
 
         $routeProvider.when("/about-us/", {
-            templateUrl: "templates/aboutus.html?ver=11-04-2023-v1",
+            templateUrl: "templates/aboutus.html?ver=29-03-2023-v1",
             controller: "aboutusController",
-            page_title: "",
+            page_description: "About",
         })
 
         $routeProvider.when("/contact-us/", {
-            templateUrl: "templates/contact.html?ver=11-04-2023-v1",
+            templateUrl: "templates/contact.html?ver=29-03-2023-v1",
             controller: "contactController",
-            page_title: "",
+            page_description: "Contact",
+        })
+
+        $routeProvider.when("/investors/", {
+            templateUrl: "templates/investors.html?ver=29-03-2023-v1",
+            controller: "investorsController",
+            page_title: " Laxmi-Lifestyle Investors",
+            page_description: "Investors",
         })
 
         $routeProvider.when("/redevelopment/", {
-            templateUrl: "templates/redevelopment.html?ver=11-04-2023-v1",
+            templateUrl: "templates/redevelopment.html?ver=29-03-2023-v1",
             controller: "redevelopmentController",
             page_title: "",
         })
 
         $routeProvider.when("/nricorner/", {
-            templateUrl: "templates/nri.html?ver=11-04-2023-v1",
+            templateUrl: "templates/nri.html?ver=29-03-2023-v1",
             controller: "nriController",
             page_title: "",
         })
 
         $routeProvider.when("/channelpartner/", {
-            templateUrl: "templates/channelpartner.html?ver=11-04-2023-v1",
+            templateUrl: "templates/channelpartner.html?ver=29-03-2023-v1",
             controller: "channelpartnerController",
             page_title: "",
         })
 
         $routeProvider.when("/vendor/", {
-            templateUrl: "templates/vendor.html?ver=11-04-2023-v1",
+            templateUrl: "templates/vendor.html?ver=29-03-2023-v1",
             controller: "vendorController",
             page_title: "",
         })
 
-        $routeProvider.when("/blogs/", {
-            templateUrl: "templates/bloglist.html?ver=29-03-2023-v1",
-            controller: "bloglistController",
-            page_title: "Blogs",
-        })
-
         $routeProvider.when("/career/", {
-            templateUrl: "templates/career.html?ver=11-04-2023-v1",
+            templateUrl: "templates/career.html?ver=29-03-2023-v1",
             controller: "careerController",
             page_title: "",
         })
 
         $routeProvider.when("/invest-with-us/", {
-            templateUrl: "templates/investment.html?ver=11-04-2023-v1",
+            templateUrl: "templates/investment.html?ver=29-03-2023-v1",
             controller: "investmentController",
             page_title: "",
         })
 
         $routeProvider.when("/propose-land/", {
-            templateUrl: "templates/investment.html?ver=11-04-2023-v1",
+            templateUrl: "templates/investment.html?ver=29-03-2023-v1",
             controller: "investmentController",
             page_title: "",
         })
 
         $routeProvider.when("/residential/", {
-            templateUrl: "templates/residential_project.html?ver=11-04-2023-v1",
+            templateUrl: "templates/residential_project.html?ver=29-03-2023-v1",
             controller: "residentialController",
             page_title: "Residential Projects",
         })
 
         $routeProvider.when("/commercial/", {
-            templateUrl: "templates/residential_project.html?ver=11-04-2023-v1",
+            templateUrl: "templates/residential_project.html?ver=29-03-2023-v1",
             controller: "residentialController",
             page_title: "Commercial Projects",
         })
 
         $routeProvider.when("/terms-and-conditions/", {
-            templateUrl: "templates/terms.html?ver=11-04-2023-v1",
+            templateUrl: "templates/terms.html?ver=29-03-2023-v1",
             controller: "termsController",
             page_title: "",
         })
 
         $routeProvider.when("/privacy-policy/", {
-            templateUrl: "templates/privacy.html?ver=11-04-2023-v1",
+            templateUrl: "templates/privacy.html?ver=29-03-2023-v1",
             controller: "privacyController",
             page_title: "",
         })
 
         $routeProvider.when("/cookie/", {
-            templateUrl: "templates/cookie.html?ver=11-04-2023-v1",
+            templateUrl: "templates/cookie.html?ver=29-03-2023-v1",
             controller: "cookieController",
             page_title: "",
         })
 
         $routeProvider.when("/feedback", {
-            templateUrl: "templates/feedback.html??ver=11-04-2023-v1",
+            templateUrl: "templates/feedback.html??ver=29-03-2023-v1",
             controller: 'feedbackController',
             page_title: "Feedback",
         })
 
+        $routeProvider.when("/articles/", {
+            templateUrl: "templates/bloglist.html?ver=10-11-2023",
+            controller: "bloglistController",
+            page_title: "Laxmi Group Articles | Laxmi Group Ahmedabad",
+        })
+
         $routeProvider.when("/project/:slug/", {
-            templateUrl: "templates/projects/project-detail.html?ver=11-04-2023-v1",
+            templateUrl: "templates/projects/project-detail.html?ver=29-03-2023-v1",
             controller: "projectdetailController",
             page_title: "Projects",
             project_detail_flag: "project_detail_flag",
         })
 
         $routeProvider.when("/project/:slug/thankyou/", {
-            templateUrl: "templates/projects/thankyou.html?ver=11-04-2023-v1",
+            templateUrl: "templates/projects/thankyou.html?ver=29-03-2023-v1",
             controller: "thankyouController",
             page_title: "Thank You",
+            thankyouPage: "thankyouPage",
         })
 
         $routeProvider.when("/:slug/thankyou/", {
-            templateUrl: "templates/thank_you.html?ver=11-04-2023-v1",
+            templateUrl: "templates/thank_you.html?ver=29-03-2023-v1",
             controller: "thank_youController",
             page_title: "Thank You",
+            thankyouPage: "thankyouPage",
+        })
+
+        $routeProvider.when("/articles/:slug", {
+            templateUrl: "templates/blog.html?ver=10-11-2023",
+            controller: "blogController",
+            page_title: "",
         })
 
         $routeProvider.when("/:slug", {
-            templateUrl: "templates/venture.html?ver=11-04-2023-v1",
+            templateUrl: "templates/venture.html?ver=29-03-2023-v1",
             controller: "ventureController",
             page_title: "",
         })
 
-        $routeProvider.when("/blog/:slug", {
-            templateUrl: "templates/blog.html?ver=29-03-2023-v1",
-            controller: "blogController",
-            page_title: "Blogs",
-        })
-
-        $routeProvider.when("/profile/:slug", {
-            templateUrl: "templates/profilepage.html?ver=29-03-2023-v1",
-            controller: "profilepageController",
-            page_title: "Profile",
+        $routeProvider.when("/about-us/:slug", {
+            templateUrl: "templates/profile.html?ver=29-03-2023-v1",
+            controller: "profileController",
+            page_title: "",
         })
 
             .otherwise({
@@ -214,6 +235,13 @@ app.run(function ($timeout, $rootScope, $location, $localStorage, $http, $window
 
         // angular.element(".loading_body").class("opacity": "0");
 
+        if ($rootScope.thankyouPage && !$rootScope.$storage.thank_you_redirect) {
+            $location.path('/');
+        }
+        $timeout(function () {
+            $rootScope.$storage.thank_you_redirect = false;
+        }, 1000);
+
         $rootScope.base_url = base_url;
         $rootScope.screenWidth = screen.width;
         $rootScope.activePath = $location.path();
@@ -223,8 +251,7 @@ app.run(function ($timeout, $rootScope, $location, $localStorage, $http, $window
         $window.scrollTo(0, 0);
         $rootScope.page_title = current.$$route.page_title ? current.$$route.page_title : "";
         $rootScope.page_description = current.$$route.page_description ? current.$$route.page_description : "";
-        $rootScope.page_keywords = current.$$route.page_keywords ? current.$$route.page_keywords : "";
-        $rootScope.page_image = current.$$route.page_image ? current.$$route.page_image : "";
+        $rootScope.remove_product_hover = current.$$route.remove_product_hover ? current.$$route.remove_product_hover : "";
 
         $rootScope.project_detail_flag = current.$$route.project_detail_flag;
         $rootScope.page_flag = current.$$route.page_flag;
@@ -258,6 +285,8 @@ app.run(function ($timeout, $rootScope, $location, $localStorage, $http, $window
         $rootScope.ventures_click_f = false;
         $rootScope.ventures_click2_f = false;
         $rootScope.ventures_click2_f = false;
+        $rootScope.thankyouPage = current.$$route.thankyouPage;
+        
         $('.navigation-wrapper-div .content_accordian').hide();
         $('.nav-li-flex').removeClass('active');
         $(".accordion_click").removeClass("active");
@@ -515,6 +544,12 @@ app.directive('ngFileModel', ['$parse', function ($parse) {
     };
 }]);
 
+app.filter('safeHtml', function ($sce) {
+    return function (val) {
+        return $sce.trustAsHtml(val);
+    };
+});
+
 app.filter("trustUrl", ['$sce',
     function ($sce) {
         return function (recordingUrl) {
@@ -571,8 +606,11 @@ app.directive('readMore', ['$compile', function ($compile) {
             scope.toggle = function () {
                 scope.collapsed = !scope.collapsed;
             };
+
             attrs.$observe('ddTextCollapseText', function (text) {
+
                 var maxLength = scope.$eval(attrs.ddTextCollapseMaxLength);
+
                 if (text.length > maxLength) {
                     var firstPart = String(text).substring(0, maxLength);
                     var secondPart = String(text).substring(maxLength, text.length);
@@ -582,6 +620,7 @@ app.directive('readMore', ['$compile', function ($compile) {
                     var moreIndicatorSpan = $compile('<span ng-if="!collapsed">... </span>')(scope);
                     var lineBreak = $compile('<br ng-if="collapsed" class="readmore_para">')(scope);
                     var toggleButton = $compile('<span class="readmore_click" ng-click="toggle();">{{collapsed ? "read less" : "read more"}}</span>')(scope);
+
                     element.empty();
                     element.append(firstSpan);
                     element.append(secondSpan);
@@ -642,19 +681,38 @@ app.directive('starRating', function () {
 }
 );
 
-app.filter('safeHtml', function ($sce) {
-    return function (val) {
-        return $sce.trustAsHtml(val);
-    };
-});
-
-app.filter("trustUrl", ['$sce', function ($sce) {
-	return function (recordingUrl) {
-		return $sce.trustAsResourceUrl(recordingUrl);
-	};
-}]);
-
 app.controller("MainController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
+
+   // window.onkeyup = function (event) {
+   //      if (event.keyCode == '27') {
+   //          $timeout(function () {
+   //              $scope.onload_popup_f = false;
+
+   //          }, 100);
+   //      }
+   //  }
+    
+   //  $scope.onload_popup_f = false;
+   //  $timeout(function () {
+   //      $scope.onload_popup_f = true;
+   //  }, 3000);
+
+   //  $scope.inquire_close = function () {
+   //      $scope.onload_popup_f = false;
+   //  }
+
+    // $scope.inquire_open = function () {
+    //  $scope.inquire_popup_f = true;
+    // }
+
+    $scope.onload_popup_f = false;
+    $timeout(function () {
+        $scope.onload_popup_f = true;
+    }, 3000);
+
+    $scope.inquire_close = function () {
+        $scope.onload_popup_f = false;
+    }
 
     $rootScope.getHeight = function () {
         $timeout(function () {
@@ -768,6 +826,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
     if (angular.element(window).innerWidth() <= 992) {
         $rootScope.isMobilescreen = true;
     }
+    // console.log(angular.element(window).innerWidth());
 
     $rootScope.toBase64 = function (string) {
         return $base64.encode(unescape(encodeURIComponent(string)));
@@ -821,7 +880,8 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                 $rootScope.dropdown_category_get_f = false;
                 $rootScope.open_contact_dropdown_f = false;
                 $rootScope.project_detail_dropdown_f = false;
-                $rootScope.profile_video_click_close();
+                $rootScope.profile_video_click_f = false;
+                $scope.onload_popup_f = false;
             }, 100);
         }
     }
@@ -862,6 +922,24 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
             $rootScope.country_code_clickF = false;
         }, 100);
     }
+
+    // $rootScope.nav_accordion_toggleF = false;
+    // $scope.nav_accordion_toggle = function () {
+    //     if ($rootScope.nav_accordion_toggleF) {
+    //         $rootScope.nav_accordion_toggleF = false;
+    //     } else {
+    //         $rootScope.nav_accordion_toggleF = true;
+    //     }
+    // }
+    // $scope.nav_accordion_close = function () {
+
+    //     $rootScope.nav_accordion_toggleF = false;
+    // }
+
+    // $scope.inquire_popup_toggle_close = function () {
+
+    //     $rootScope.inquire_popup_toggleF = false;
+    // }
 
     $rootScope.inquire_popup_web_toggleF = false;
     $scope.inquire_popup_web_toggle = function () {
@@ -988,6 +1066,8 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                 $rootScope.projects_full_list = response.data;
                 $scope.total_records_all = response.total_records;
 
+                // console.log($rootScope.projects_full_list);
+
                 $scope.drope_list_check = [];
                 var drope_list_obj = $rootScope.projects_full_list;
                 angular.forEach(drope_list_obj, function (val, key) {
@@ -1027,6 +1107,22 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
         });
     }
 
+    // $scope.interval_temp_call = function () {
+    //     $scope.interval_temp_main = $interval(function () {
+    //         if ($rootScope.$storage.logged_in_master_id) {
+    //             $scope.projects_full_load();
+    //             $scope.page_full_load();
+    //             $scope.faqs_full_load();
+    //             // $scope.career_full_load();
+    //             $scope.country_code();
+    //             $scope.categories_load();
+    //             $scope.page_contact_load();
+    //             $interval.cancel($scope.interval_temp_main);
+    //         }
+    //     }, 100);
+    // }
+    // $scope.interval_temp_call();
+
     $rootScope.pixel_code_data = [];
     $rootScope.is_pixel_code_loading = false;
     $scope.pixel_code_load = function () {
@@ -1049,7 +1145,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                 $rootScope.pixel_code_data = response.data;
             }
             else {
-
+                // $location.path('/');
             }
             $rootScope.is_pixel_code_loading = false;
 
@@ -1059,6 +1155,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
     }
 
     $rootScope.page_full_list = [];
+    $rootScope.page_full_list_menu = [];
     $rootScope.is_all_page_loading = true;
     $scope.page_full_load = function () {
         $rootScope.is_all_page_loading = true;
@@ -1179,6 +1276,32 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
         });
     }
 
+    // $rootScope.page_contact_list = {};
+    // $rootScope.is_contact_loading = false;
+    // $scope.page_contact_load = function () {
+    //     $rootScope.is_contact_loading = true;
+    //     $rootScope.page_contact_list = {};
+    //     $http({
+    //         method: 'POST',
+    //         url: apiUrl_admin + 'contact_page/details',
+    //         data: {
+    //             master_user_id: $rootScope.$storage.logged_in_master_id,
+    //         },
+
+    //     }).then(function successCallback(response) {
+
+    //         response = response.data;
+    //         if (response.success == 1) {
+    //             $rootScope.page_contact_list = response.data;
+    //         }
+    //         $rootScope.is_contact_loading = false;
+
+    //     }, function errorCallback(response) {
+    //         $rootScope.is_contact_loading = false;
+    //     });
+    // }
+    /* End */
+
     // categories data
     $scope.list_categories = {};
     $scope.is_categories_loading = false;
@@ -1189,8 +1312,8 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
             method: 'POST',
             url: apiUrl + 'categories/list',
             data: {
-                master_user_id: $scope.$storage.logged_in_master_id,
-                logged_in_master_user_id: $scope.$storage.logged_in_master_id,
+                master_user_id: $rootScope.$storage.logged_in_master_id,
+                logged_in_master_user_id: $rootScope.$storage.logged_in_master_id,
             },
             headers: {
                 'Authorization': 'User CXPNVIEIQMVJESPFKSKSMHNYNMVNXGYYHELVAZGNDVYHZUMKQM5891853093'
@@ -1201,6 +1324,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
             response = response.data;
             if (response.success == 1) {
                 $scope.list_categories = response.data;
+                // console.log($scope.list_categories);
             }
             else {
                 $location.path('/');
@@ -1257,6 +1381,18 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
     $scope.close_dropdown_category_get = function () {
         $rootScope.dropdown_category_get_f = "";
         $rootScope.dropdown_category_get_show = false;
+    }
+
+    /**/
+
+    $rootScope.residecesdropdown_F = false;
+    $scope.residecesdropdown = function () {
+        if ($rootScope.residecesdropdown_F) {
+            $rootScope.residecesdropdown_F = false;
+        }
+        else {
+            $rootScope.residecesdropdown_F = true;
+        }
     }
 
     // open contact dropdown
@@ -1332,12 +1468,14 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                 if (project_data) {
                     $scope.project_details = {};
                     $scope.project_details = project_data;
+                    // console.log($scope.project_details, "get");
+
+                    // $rootScope.activePath = "/" + $scope.project_details.category;
 
                     $rootScope.project_title = $scope.project_details.project_title;
                     $rootScope.page_title = $scope.project_details.page_title;
                     $rootScope.page_description = $scope.project_details.page_description;
-                    $rootScope.page_keywords = $scope.project_details.page_keywords;
-                    $rootScope.page_image = $scope.project_details.page_image_full + "&h=400&w=500";
+                    $rootScope.page_image = $scope.project_details.page_image_full;
 
                     $scope.project_details.gallery_data_all = [{
                         tag_line: "",
@@ -1356,6 +1494,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                         $scope.project_details.related_projects_array.push(related_data);
 
                     })
+                    // console.log($scope.project_details);
 
                     angular.forEach($scope.project_details.gallery_data, function (val, key) {
                         if (!$scope.project_details.gallery_data_all[0].tag_line) {
@@ -1380,6 +1519,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                             $scope.document_data.price = true;
                         }
                     })
+                    // console.log($scope.project_details.gallery_data_all);
                 } else {
 
                 }
@@ -1432,6 +1572,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                 if (faqs_data) {
                     $scope.faqs_details = {};
                     $scope.faqs_details = faqs_data;
+                    // console.log($scope.faqs_details, "faqs_details");
                 }
             }, 100);
         } else {
@@ -1479,11 +1620,11 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                 if (page_data) {
                     $scope.page_details = {};
                     $scope.page_details = page_data;
+                    // console.log($scope.page_details, "get");
 
                     $rootScope.page_title = $scope.page_details.seo_title;
                     $rootScope.page_description = $scope.page_details.seo_description;
-                    $rootScope.page_keywords = $scope.page_details.seo_keywords;
-                    $rootScope.page_image = $scope.page_details.seo_image_full + "&h=400&w=500";
+                    $rootScope.page_image = $scope.page_details.seo_image_full;
                 } else {
                     $location.path("/");
                 }
@@ -1492,6 +1633,21 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
             $scope.page_get_temp();
         }
     }
+
+    // $rootScope.inquiry_open_f = false;
+    // $rootScope.inquiry_open = function () {
+    //     if ($rootScope.inquiry_open_f) {
+    //         $rootScope.inquiry_open_f = false;
+    //         $rootScope.overflow_auto();
+    //     } else {
+    //         $rootScope.inquiry_open_f = true;
+    //         $rootScope.overflow_hidden();
+    //     }
+    // }
+    // $rootScope.inquiry_close = function () {
+    //     $rootScope.inquiry_open_f = false;
+    //     $rootScope.overflow_auto();
+    // }
 
     $rootScope.project_filter_data = {};
     $rootScope.project_filter = function (project_id, slug, project_change) {
@@ -1519,6 +1675,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                 }
             })
         }
+        // console.log($rootScope.project_filter_data, "data");
     }
 
     $rootScope.downloadFile = function (filePath) {
@@ -1587,6 +1744,15 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
             $rootScope.inquire_popup_toggleF = true;
         }
     }
+
+    // $rootScope.inquire_popup_web_toggleF = false;
+    // $scope.inquire_popup_web_toggle = function () {
+    //     if ($rootScope.inquire_popup_web_toggleF) {
+    //         $rootScope.inquire_popup_web_toggleF = false;
+    //     } else {
+    //         $rootScope.inquire_popup_web_toggleF = true;
+    //     }
+    // }
 
     $rootScope.country_click = function (phonecode, flag) {
         $scope.inquiry_obj.country = phonecode;
@@ -1675,6 +1841,12 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
             }).then(function successCallback(response) {
                 response = response.data;
                 if (response.success == 1) {
+                    var project_data_get = $rootScope.projects_full_list.filter(function (e) {
+                        if (e.project_id == $scope.inquiry_obj.project_id) {
+                            return e;
+                        }
+                    })[0];
+
                     $scope.inquiry_obj = {};
                     // $rootScope.inquiry_close();
                     $mdToast.show({
@@ -1692,13 +1864,31 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                                 $window.open($scope.project_filter_data.price_list);
                             }, 500);
                         } else if ($scope.is_from != "") {
+                            // angular.forEach($scope.project_details.document_data, function (val, key) {
+                            //     if (val.type == $scope.is_from) {
+                            //         $timeout(function () {
+                            //             $window.open(val.url);
+                            //         }, 500);
+                            //     }
+                            // })
+                            /*angular.forEach($scope.project_details.document_other_data, function (val, key) {
+                                if (val.type == $scope.is_from) {
+                                    $timeout(function () {
+                                        $window.open(val.url);
+                                    }, 500);
+                                }
+                            })*/
                             $rootScope.$storage.thankyou_redirect = true;
                             $location.path($rootScope.activePath + 'thankyou');
                         }
                     }
                     else {
                         $rootScope.$storage.thank_you_redirect = true;
-                        $location.path($rootScope.projects_full_list_detail.slug + "/" + 'thankyou');
+                        if ($rootScope.project_filter_data.project_id) {
+                            $location.path($rootScope.projects_full_list_detail.slug + "/" + 'thankyou');
+                        } else {
+                            $location.path(project_data_get.slug + "/" + 'thankyou');
+                        }
                     }
                     // 
                     $scope.inquiry_obj.country = '91';
@@ -1725,7 +1915,12 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
         }
     }
 
-    $scope.inquiry_validate_detail = {      
+    $scope.inquiry_validate_detail = {
+
+        /*onkeyup: function (element) {
+            this.element(element);
+        },*/
+
         rules: {
             project_id_get: {
                 required: true,
@@ -1832,6 +2027,13 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                 $scope.inquiry_obj_detail.is_utm_google_code = $scope.gclid;
             }
 
+            // if ($scope.is_from_f) {
+            //     $scope.inquiry_obj_detail.is_from = $scope.is_from;
+            // } else {
+            //     $scope.inquiry_obj_detail.is_from = "";
+            // }
+            // $scope.is_from_f = false;
+
             $http({
                 method: 'POST',
                 url: apiUrl + 'inquiries/save',
@@ -1839,7 +2041,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                 headers: {
                     'Authorization': 'User CXPNVIEIQMVJESPFKSKSMHNYNMVNXGYYHELVAZGNDVYHZUMKQM5891853093'
                 },
-            }).then(function successCallback(response) {th
+            }).then(function successCallback(response) {
                 response = response.data;
                 if (response.success == 1) {
                     $scope.inquiry_obj_detail = {};
@@ -1852,6 +2054,31 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
 
                     $rootScope.$storage.thank_you_redirect = true;
                     $location.path($rootScope.projects_full_list_detail.slug + "/" + 'thankyou');
+
+                    // if ($scope.is_from == "download_brochure") {
+                    //     $timeout(function () {
+                    //         $window.open($scope.project_filter_data.broucher_list);
+                    //     }, 500);
+                    // } else if ($scope.is_from == "download_price") {
+                    //     $timeout(function () {
+                    //         $window.open($scope.project_filter_data.price_list);
+                    //     }, 500);
+                    // } else if ($scope.is_from != "") {
+                    //     angular.forEach($scope.project_details.document_data, function (val, key) {
+                    //         if (val.type == $scope.is_from) {
+                    //             $timeout(function () {
+                    //                 $window.open(val.url);
+                    //             }, 500);
+                    //         }
+                    //     })
+                    //     angular.forEach($scope.project_details.document_other_data, function (val, key) {
+                    //         if (val.type == $scope.is_from) {
+                    //             $timeout(function () {
+                    //                 $window.open(val.url);
+                    //             }, 500);
+                    //         }
+                    //     })
+                    // }
 
                 } else {
                     $mdToast.show({
@@ -1875,7 +2102,11 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
         }
     }
 
-    /*here*/
+    // tab panel
+    // $rootScope.open_id = "one";
+    // $rootScope.openTab = function (id) {
+    //     $rootScope.open_id = id;
+    // }
 
     $rootScope.tab = 1;
     $rootScope.setTab = function (newTab) {
@@ -1892,7 +2123,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
             $rootScope.amenities_count_fun();
         }
     });
-
+    // console.log($rootScope.screenWidth);
     $rootScope.amenities_count_fun = function () {
         if ($rootScope.screenWidth <= 767) {
             $scope.amenities_count = "5";
@@ -1902,7 +2133,6 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
     }
     $rootScope.amenities_count_fun();
 
-    // for local user
     $rootScope.user_name = "laxmi";
 
     $rootScope.GetUserProfile = function () {
@@ -1923,7 +2153,6 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                 $rootScope.$storage.logged_in_master_id = response.data.master_user_id;
                 $rootScope.$storage.logged_in_master_user_id = response.data.master_user_id;
                 $rootScope.$storage.permissions = response.data.admin_group_data.permissions;
-                $rootScope.favicon = response.data.favicon_icon_full;
 
                 // $rootScope.rootUrl = "https://" + $rootScope.user_name + ".reecosys.com";
 
@@ -1937,8 +2166,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                 $scope.country_code();
                 $scope.categories_load();
                 $scope.page_contact_load();
-                $scope.menu_venture_data();
-
+                // $scope.load_blog_list();
                 // $rootScope.profilepage_load();
 
                 if ($rootScope.project_detail_flag) {
@@ -1994,6 +2222,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
             response = response.data;
             if (response.success == 1) {
                 $rootScope.page_contact_list = response.data;
+                // console.log($rootScope.page_contact_list, "page_contact_list");
             }
             else {
                 // $location.path('/');
@@ -2010,17 +2239,13 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
 
     $rootScope.common_page_load = function (common_slug) {
         $rootScope.common_page_list = {};
-        $rootScope.common_page_list = $rootScope.page_full_list.filter(function (e) {
-            if (e.slug == common_slug) {
-                return e;
-            }
-        })[0];
+        $rootScope.common_page_list = $rootScope.page_full_list.filter(function (e) { if (e.slug == common_slug) { return e; } })[0];
         $rootScope.is_commonpage_loading = false;
 
         $rootScope.page_title = $rootScope.common_page_list.seo_title ? $rootScope.common_page_list.seo_title : "";
         $rootScope.page_description = $rootScope.common_page_list.seo_description ? $rootScope.common_page_list.seo_description : "";
         $rootScope.page_keywords = $rootScope.common_page_list.seo_keywords ? $rootScope.common_page_list.seo_keywords : "";
-        $rootScope.page_image = $rootScope.common_page_list.seo_image_full ? $rootScope.common_page_list.seo_image_full + "&h=400&w=500" : "";
+        $rootScope.page_image = $rootScope.common_page_list.seo_image ? $rootScope.common_page_list.seo_image : "";
     }
 
     $rootScope.admin_module_list = [];
@@ -2044,6 +2269,11 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
             response = response.data;
             if (response.success == 1) {
                 $rootScope.admin_module_list = response.data;
+                // console.log($rootScope.admin_module_list);
+                // angular.forEach($rootScope.admin_module_list, function (val, key) {
+                //     if (val.name == "joint_ventures") {
+                //     }
+                // })
             }
             else {
                 $location.path('/');
@@ -2092,21 +2322,63 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
 
     $rootScope.venture_page_load = function (common_slug) {
         $rootScope.venture_page_list = {};
-        $rootScope.venture_page_list = $rootScope.venture_full_list.filter(function (e) {
-            if (e.slug == common_slug) {
-                return e;
-            }
-        })[0];
+        $rootScope.venture_page_list = $rootScope.venture_full_list.filter(function (e) { if (e.slug == common_slug) { return e; } })[0];
         $rootScope.is_venture_page_loading = false;
         if ($rootScope.venture_page_list) {
             $rootScope.page_title = $rootScope.venture_page_list.seo_title;
             $rootScope.page_description = $rootScope.venture_page_list.seo_description;
             $rootScope.page_keywords = $rootScope.venture_page_list.seo_keywords;
-            $rootScope.page_image = $rootScope.venture_page_list.seo_image_full + "&h=400&w=500";
+            $rootScope.page_image = $rootScope.venture_page_list.seo_image;
         } else {
             $location.path("/");
         }
     }
+
+    // $rootScope.profile_page_list = {};
+    // $rootScope.is_profile_page_loading = false;
+
+    // $rootScope.profile_page_load = function (common_slug) {
+    //     $rootScope.profile_page_list = {};
+    //     $rootScope.profile_page_list = $rootScope.profilepage_list.filter(function (e) { if (e.slug == common_slug) { return e; } })[0];
+    //     $rootScope.is_profile_page_loading = false;
+
+    //     $rootScope.page_title = $rootScope.profile_page_list.seo_title;
+    //     $rootScope.page_description = $rootScope.profile_page_list.seo_description;
+    //     $rootScope.page_keywords = $rootScope.profile_page_list.seo_keywords;
+    //     $rootScope.page_image = $rootScope.profile_page_list.seo_image;
+    // }
+    // 
+
+    // $rootScope.common_page_load = function (common_slug) {
+    //     $scope.is_commonpage_loading = true;
+    //     $rootScope.common_page_list = {};
+
+    //     $http({
+    //         method: 'POST',
+    //         url: apiUrl_admin + 'pages/list',
+    //         data: {
+    //             master_user_id: $rootScope.$storage.logged_in_master_id,
+    //             group_id: $rootScope.$storage.logged_user_details.group_id,
+    //             slug: common_slug
+    //         },
+
+    //     }).then(function successCallback(response) {
+
+    //         response = response.data;
+    //         if (response.success == 1) {
+    //             $rootScope.common_page_list = response.data[0];
+    //             console.log($rootScope.common_page_list);
+    //             $rootScope.page_title = $rootScope.common_page_list.seo_title;
+    //             $rootScope.page_description = $rootScope.common_page_list.seo_description;
+    //             $rootScope.page_keywords = $rootScope.common_page_list.seo_keywords;
+    //             $rootScope.page_image = $rootScope.common_page_list.seo_image;
+    //         }
+    //         $scope.is_commonpage_loading = false;
+
+    //     }, function errorCallback(response) {
+    //         $scope.is_commonpage_loading = false;
+    //     });
+    // }
 
     $scope.dateFrmObj = {};
     $scope.dateFrmObj.DateFrom = false;
@@ -2171,6 +2443,35 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
         }
     }
 
+    // $scope.isjointPageLoading = false;
+    // $scope.jointDataLoad = function () {
+    //     $scope.isjointPageLoading = true;
+    //     $http({
+    //         method: 'POST',
+    //         url: apiUrl_admin + 'joint_ventures/list',
+    //         data: {
+    //             slug: $routeParams.slug,
+    //             master_user_id: $rootScope.$storage.logged_in_master_id,
+    //             group_id: $rootScope.$storage.logged_user_details.group_id,
+    //         },
+
+    //     }).then(function successCallback(response) {
+
+    //         response = response.data;
+    //         if (response.success == 1) {
+    //             $scope.joint_data = response.data[0];
+    //             console.log($scope.joint_data);
+    //         }
+    //         $scope.isjointPageLoading = false;
+
+    //     }, function errorCallback(response) {
+    //         $scope.isjointPageLoading = false;
+    //     });
+    // }
+    // if ($scope.slug) {
+    //     $scope.jointDataLoad();
+    // }
+
     $rootScope.menu_venture_list = {};
     $scope.is_venture_load = true;
     $scope.menu_venture_data = function () {
@@ -2180,8 +2481,8 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
             method: 'POST',
             url: apiUrl_admin + 'joint_ventures/list_new',
             data: {
-                master_user_id: $scope.$storage.logged_in_master_id,
-                logged_in_master_user_id: $scope.$storage.logged_in_master_id,
+                master_user_id: $rootScope.$storage.logged_in_master_id,
+                logged_in_master_user_id: $rootScope.$storage.logged_in_master_id,
                 group_id: $rootScope.$storage.logged_user_details.group_id,
                 menu_list: 1,
             },
@@ -2196,7 +2497,7 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
                 $rootScope.menu_venture_list = response.data;
             }
             else {
-                // $location.path("/");
+                $location.path("/");
             }
             $scope.is_venture_load = false;
 
@@ -2204,6 +2505,20 @@ app.controller("MainController", function ($scope, $location, $rootScope, $timeo
             $scope.is_venture_load = false;
         });
     }
+
+    $rootScope.extra_data_list = {};
+    $scope.load_extra_data = function () {
+        $http({
+            url: base_url + "extra_data.json",
+        }).then(function successCallback(response) {
+
+            response = response.data;
+            $rootScope.extra_data_list = response.extra_data;
+            console.log($rootScope.extra_data_list);
+
+        }, function errorCallback(response) { });
+    }
+    $scope.load_extra_data();
 
 })
 
@@ -2430,28 +2745,23 @@ app.controller("homeController", function ($scope, $location, $rootScope, $timeo
         }
 
     ]
-  
     $rootScope.is_section_Scrolled = false;
 
-    $scope.home_banner_swiper = {
-        observer: true,
-        observeParents: true,
-        slidesPerView: 1,
-        spaceBetween: 10,
-        effect: 'fade',
-        speed: 1500,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        // pagination: {
-        //     el: ".swiper-pagination.home_banner_pagination",
-        // },
-        pagination: {
-            el: ".swiper-pagination.home_banner_swiper",
-            type: "fraction",
-        },
-    }
+    // console.log($rootScope.page_full_list);
+
+    // $scope.home_other_banner = [];
+    // $scope.detail_interval_temp = $interval(function () {
+
+    //     angular.forEach($rootScope.page_full_list, function (val, key) {
+
+    //         if ($rootScope.home_list.other_page_banner.indexOf(val.admin_slug)) {
+    //             $scope.home_other_banner.push(val);
+    //             console.log($scope.home_other_banner);
+    //         }
+
+    //     })
+
+    // }, 100);
 
     $rootScope.home_list = {};
     $scope.is_homelist_load = true;
@@ -2463,8 +2773,8 @@ app.controller("homeController", function ($scope, $location, $rootScope, $timeo
             method: 'POST',
             url: apiUrl_admin + 'home/details',
             data: {
-                master_user_id: $scope.$storage.logged_in_master_id,
-                logged_in_master_user_id: $scope.$storage.logged_in_master_id,
+                master_user_id: $rootScope.$storage.logged_in_master_id,
+                logged_in_master_user_id: $rootScope.$storage.logged_in_master_id,
             },
             headers: {
                 'Authorization': 'User CXPNVIEIQMVJESPFKSKSMHNYNMVNXGYYHELVAZGNDVYHZUMKQM5891853093'
@@ -2475,12 +2785,6 @@ app.controller("homeController", function ($scope, $location, $rootScope, $timeo
             response = response.data;
             if (response.success == 1) {
                 $rootScope.home_list = response.data;
-
-                $rootScope.page_title = $scope.home_list.seo_title;
-                $rootScope.page_description = $scope.home_list.seo_description;
-                $rootScope.page_keywords = $scope.home_list.seo_keywords;
-                $rootScope.page_image = $scope.home_list.seo_image_full + "&h=400&w=500";
-
                 if ($rootScope.home_list.other_page_banner) {
                     $scope.other_banner_get_temp();
                 }
@@ -2520,9 +2824,65 @@ app.controller("homeController", function ($scope, $location, $rootScope, $timeo
         angular.forEach($rootScope.page_full_list, function (val, key) {
             if ($rootScope.home_list.other_page_banner.indexOf(val.admin_slug) != -1) {
                 $scope.other_banner_list_get.push(val);
+                // console.log($scope.other_banner_list_get);
             }
         })
     }
+
+    $scope.testimonial_Swiper = {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        spaceBetween: 50,
+        speed: 1500,
+        freeMode: false,
+        autoplay: false,
+        // clickable: true,
+        loop: false,
+        // autoplay: {
+        //     delay: 4000,
+        //     disableOnInteraction: false,
+        // },
+        breakpoints: {
+            1152: {
+                slidesPerView: 1,
+            },
+            500: {
+                slidesPerView: 1,
+            }
+        },
+        scrollbar: {
+            el: ".swiper-scrollbar.swiper-scrollbar-gallery",
+            hide: false,
+        },
+        pagination: {
+            el: ".swiper-pagination.gallery-swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next.testimonial-next",
+            prevEl: ".swiper-button-prev.testimonial-prev",
+        },
+    }
+
+    $scope.testimonialBlock = [
+        {
+            image: "assets/images/customer-testimonial-1.png",
+            name: "Parthivn Majumdar",
+            text: "A very simple young man Mr. Jayesh Chinubhai Shah ahead to his 44 years of age, has a very strong aim from his very childhood to provide a home to everyone. He has observed and understood the need for a common people, that shelter is the priority. He  has struggled from a very early age to fulfill the dream of common people. As a Chairman and Managing Director of Laxmi Group he has already delivered 3 mass housing projects in Ahmedabad. He has 2 upcoming projects which are again a mass housing. He is gracefully moving ahead to his goal and competent about his responsibilities towards society. His knowledge of architecture & engineering is much higher than a paper certificate.",
+        },
+        {
+            image: "assets/images/customer-testimonial-2.png",
+            name: "Rajesh Kumar",
+            text: "I always Dreamt for a big home, But my budget was very constraint. Buying big home was next impossible. One day I was in social site and I got thrilled that my hunt for big home came to an end. I got Sky city of 23 storied luxuries 3 BHK in my budget. It was bigger than big home I  desired . I am a  proud  owner today.",
+        },
+        {
+            image: "assets/images/customer-testimonial-3.png",
+            name: "Umesh Upadhaya",
+            text: "Are you looking for a home. Are you looking for smart budget. Are you looking a home which you have dreamt. You have thought right , I am a happy apartment owner in laxmi's  group project Eternia. I suggest to all home buyers do not  waste time and money. ",
+        }
+
+    ]
 
 })
 
@@ -2530,6 +2890,45 @@ app.controller("listController", function ($scope, $location, $rootScope, $timeo
 
     $rootScope.is_section_Scrolled = false;
 
+    // $scope.gallery_Swiper_listing = {
+    //     observer: true,
+    //     observeParents: true,
+    //     effect: "fade",
+    //     slidesPerView: 1,
+    //     spaceBetween: 15,
+    //     speed: 1500,
+    //     autoplay: true,
+    //     clickable: true,
+    //     loop: true,
+    //     autoplay: {
+    //         delay: 2500,
+    //         disableOnInteraction: false,
+    //     },
+    //     breakpoints: {
+    //         1450: {
+    //             slidesPerView: 1,
+    //             spaceBetween: 10,
+    //         },
+    //         1440: {
+    //             slidesPerView: 1,
+    //             spaceBetween: 10,
+    //         },
+    //         1280: {
+    //             slidesPerView: 1,
+    //             spaceBetween: 10,
+    //         },
+    //         768: {
+    //             slidesPerView: 1,
+    //             spaceBetween: 10,
+    //         },
+    //         600: {
+    //             slidesPerView: 1,
+    //         },
+    //         384: {
+    //             slidesPerView: 1,
+    //         }
+    //     },
+    // }
 })
 
 app.controller("contactController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
@@ -2673,6 +3072,10 @@ app.controller("contactController", function ($scope, $location, $rootScope, $ti
                     hideDelay: 3500,
                     position: 'bottom right'
                 });
+
+                // $rootScope.$storage.thank_you_redirect = true;
+                // $location.path('/contact-us/thankyou/');
+
             }, function errorCallback(response) {
                 $scope.contact_list = [];
                 $scope.addContactUs = false;
@@ -3279,6 +3682,7 @@ app.controller("vendorController", function ($scope, $location, $rootScope, $tim
             }
             var contact_person_no = $scope.vendor_obj.contact_person_no;
             $scope.vendor_obj.contact_person_no = $scope.vendor_obj.country + " " + contact_person_no;
+            // console.log($scope.vendor_obj);
             // return false;
 
             $http({
@@ -3344,15 +3748,13 @@ app.controller("vendorController", function ($scope, $location, $rootScope, $tim
                 method: 'POST',
                 url: apiUrl + 'vendor/upload_file',
                 data: data,
-                headers: {
+                headers:{
                     'Content-Type': undefined,
                     'Authorization': 'User CXPNVIEIQMVJESPFKSKSMHNYNMVNXGYYHELVAZGNDVYHZUMKQM5891853093'
                 }
-
             }).then(function successCallback(response) {
-
                 response = response.data;
-                if (response.success == 1) {
+                if (response.success == 1)  {
                     if (upload_type == "product_details_catalogue") {
                         $scope.vendor_obj.product_details_catalogue = response.file_name;
                     } else if (upload_type == "gst_attach") {
@@ -3463,6 +3865,20 @@ app.controller("vendorController", function ($scope, $location, $rootScope, $tim
 
 app.controller("projectdetailController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
 
+    $rootScope.extra_data_list = {};
+    $scope.load_extra_data = function () {
+        $http({
+            url: base_url + "extra_data.json",
+        }).then(function successCallback(response) {
+
+            response = response.data;
+            $rootScope.extra_data_list = response.extra_data;
+            console.log($rootScope.extra_data_list);
+
+        }, function errorCallback(response) { });
+    }
+    $scope.load_extra_data();
+    
     $scope.accordionId = "";
     $scope.accordionClick = function (id) {
         
@@ -3484,8 +3900,8 @@ app.controller("projectdetailController", function ($scope, $location, $rootScop
 
         spaceBetween: 10,
         speed: 1500,
-
-        autoplay: true,
+        slidesOffsetBefore :180,
+        autoplay: false,
         // clickable: true,
         loop: false,
         // autoplay: {
@@ -3495,15 +3911,19 @@ app.controller("projectdetailController", function ($scope, $location, $rootScop
         breakpoints: {
             1920: {
                 slidesPerView: 3,
+                slidesOffsetBefore :180,
             },
             1680: {
                 slidesPerView: 3,
+                slidesOffsetBefore :80,
             },
             1600: {
                 slidesPerView: 3,
+                slidesOffsetBefore :0,
             },
             1440: {
                 slidesPerView: 3,
+                slidesOffsetBefore :0,
             },
             1366: {
                 slidesPerView: 3,
@@ -3519,18 +3939,23 @@ app.controller("projectdetailController", function ($scope, $location, $rootScop
             },
             767: {
                 slidesPerView: 2,
+                slidesOffsetBefore :0,
             },
             500: {
                 slidesPerView: 1,
+                slidesOffsetBefore :0,
             },
             420: {
                 slidesPerView: 1,
+                slidesOffsetBefore :0,
             },
             375: {
                 slidesPerView: 1,
+                slidesOffsetBefore :0,
             },
             360: {
                 slidesPerView: 1,
+                slidesOffsetBefore :0,
             }
         },
         scrollbar: {
@@ -3546,7 +3971,44 @@ app.controller("projectdetailController", function ($scope, $location, $rootScop
             prevEl: ".swiper-button-prev.gallery_swiper-prev",
         },
     }
-    
+
+    $scope.gallery3d_Swiper_new_two = {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 2.1,
+        spaceBetween: 20,
+        speed: 1500,
+        slidesOffset :150,
+        //freeMode: true,
+        autoplay: false,
+        // clickable: true,
+        loop: false,
+        // autoplay: {
+        //     delay: 4000,
+        //     disableOnInteraction: false,
+        // },
+        breakpoints: {
+            1152: {
+                slidesPerView: 2,
+            },
+            500: {
+                slidesPerView: 1,
+            }
+        },
+        scrollbar: {
+            el: ".swiper-scrollbar.fraction_pagination-scrollbar",
+            hide: false,
+        },
+        pagination: {
+            el: ".swiper-pagination.gallery-swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next.listgallery_swiper-next",
+            prevEl: ".swiper-button-prev.listgallery_swiper-prev",
+        },
+    }
+   
     $rootScope.is_section_Scrolled = false;
 
     // $rootScope.project_contact_no = {};
@@ -3591,10 +4053,18 @@ app.controller("projectdetailController", function ($scope, $location, $rootScop
                 $rootScope.project_title = $rootScope.projects_full_list_detail.project_title;
                 $rootScope.page_title = $rootScope.projects_full_list_detail.page_title;
                 $rootScope.page_description = $rootScope.projects_full_list_detail.page_description;
-                $rootScope.page_keywords = $rootScope.projects_full_list_detail.page_keywords;
-                $rootScope.page_image = $rootScope.projects_full_list_detail.page_image_full + "&h=400&w=500";
                 $rootScope.project_contact_no = $rootScope.projects_full_list_detail.project_contact_no;
                 $rootScope.project_filter("", $rootScope.projects_full_list_detail.slug, "");
+
+                if ($rootScope.extra_data_list) {
+                    var project_extra_data = $rootScope.extra_data_list.filter(function (e) {
+                        if (e.project_id == $rootScope.project_id) {
+                            return e;
+                        }
+                    })[0];
+                    $rootScope.extra_data = project_extra_data;
+                    console.log($rootScope.extra_data);
+                }
 
                 $rootScope.projects_full_list_detail.gallery_data_all = [{
                     tag_line: "",
@@ -3647,18 +4117,6 @@ app.controller("projectdetailController", function ($scope, $location, $rootScop
     }
     $scope.detail_get_temp();
 
-    $scope.project_detail_banner_swiper = {
-        observer: true,
-        observeParents: true,
-        slidesPerView: 1,
-        effect : 'fade',
-        speed: 1500,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-    }
-    
     $scope.gallery3d_Swiper_new = {
         observer: true,
         observeParents: true,
@@ -3735,31 +4193,6 @@ app.controller("projectdetailController", function ($scope, $location, $rootScop
         },
     }
 
-    $scope.swiper_project_video = {
-        observer: true,
-        observeParents: true,
-        slidesPerView: 3,
-        spaceBetween: 30,
-        speed: 1500,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            1152: {
-                slidesPerView: 3,
-            },
-            500: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-            }
-        },
-        scrollbar: {
-            el: ".swiper-scrollbar.project_video_scrollbar",
-            hide: false,
-        },
-    }
-
     $scope.experts_swiper = {
         observer: true,
         observeParents: true,
@@ -3780,34 +4213,6 @@ app.controller("projectdetailController", function ($scope, $location, $rootScop
             500: {
                 slidesPerView: 2,
             }
-        },
-    }
-
-    $scope.project_blog_swiper = {
-        observer: true,
-        observeParents: true,
-        slidesPerView: 3,
-        spaceBetween: 15,
-        speed: 1500,
-        freeMode: false,
-        autoplay: false,
-        clickable: true,
-        slidesOffsetBefore: 50,
-        breakpoints: {
-            1280: {
-                slidesPerView: 2.7,
-            },
-            1152: {
-                slidesPerView: 2,
-            },
-            500: {
-                slidesOffsetBefore: 0,
-                slidesPerView: 1,
-            }
-        },
-        scrollbar: {
-            el: ".swiper-scrollbar.swiper-scrollbar-blog",
-            hide: false,
         },
     }
 
@@ -3861,6 +4266,27 @@ app.controller("projectdetailController", function ($scope, $location, $rootScop
         },
     }
 
+    $scope.spec_data = [
+        {
+            spec_text: "Double Height Entrance Foyer on Ground Floor with Matte Finish Vitrified Floor Tiles."
+        },
+        {
+            spec_text: "Wall-finishes :<br>External : Double Coated Sand Faced/Mala Plaster with Tex/Acrylic Paint.<br>Internal : Single Coated Mala Plaster with Cement Based Lapi Finish."
+        },
+        {
+            spec_text: "Central Garbage Collection System Via Garbage Shafts At Each Floor."
+        },
+        {
+            spec_text: "Properly Designed Office Specific Location For Placement Of Outdoor Air-condition Units."
+        },
+        {
+            spec_text: "First and Second Floor Showroom Floor to Floor height is 11 Feet 11inch Office Floor to Floor height is 10 Feet 9Inch"
+        },
+        {
+            spec_text: "The Building is Supported with 3 Basements for Ample Parking Space"
+        }
+    ]
+
     $scope.construction_swiper_demo = {
         observer: true,
         observeParents: true,
@@ -3887,7 +4313,21 @@ app.controller("projectdetailController", function ($scope, $location, $rootScop
     //     $(".swiper-pagination-custom .swiper_pagination_switch").removeClass("active");
     //     $(this).addClass("active");
     // }
-    
+
+    $scope.projectTitle_List = [];
+    $scope.projectTitle_load = function () {
+        $http({
+            url: base_url + "detailTitle.json",
+        }).then(function successCallback(response) {
+
+            response = response.data;
+            $scope.projectTitle_List = response.titleList;
+            // console.log($scope.projectTitle_List);
+        }, function errorCallback(response) {
+
+        });
+    }
+    $scope.projectTitle_load();
 
 })
 
@@ -4021,43 +4461,12 @@ app.controller("aboutusController", function ($scope, $location, $rootScope, $ti
             hide: false,
         },
     }
-
-    $scope.our_journey_swiper = {
-        observer: true,
-        observeParents: true,
-        slidesPerView: 3.5,
-        spaceBetween: 20,
-        speed: 1500,
-        freeMode: true,
-        autoplay: false,
-        clickable: true,
-        loop: false,
-        // autoplay: {
-        //     delay: 4000,
-        //     disableOnInteraction: false,
-        // },
-        breakpoints: {
-            1280: {
-                slidesPerView: 2.6,
-            },
-            1152: {
-                slidesPerView: 2.1,
-            },
-            500: {
-                slidesPerView: 1.2,
-            }
-        },
-        scrollbar: {
-            el: ".swiper-scrollbar.swiper-scrollbar-our-journey",
-            hide: false,
-        },
-    }
-
 })
 
 app.controller("careerController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
 
     $rootScope.is_section_Scrolled = false;
+
     $scope.career_full_list = [];
     $scope.is_all_career_loading = false;
     $scope.career_full_load = function () {
@@ -4091,6 +4500,7 @@ app.controller("careerController", function ($scope, $location, $rootScope, $tim
     }
 
     $rootScope.career_click_f = false;
+    // $rootroot$rootScope.career_form_data = {};
     $rootScope.career_click = function (data) {
 
         $rootScope.career_form_data = data;
@@ -4242,6 +4652,8 @@ app.controller("careerController", function ($scope, $location, $rootScope, $tim
                         return e;
                     }
                 })[0];
+
+                // console.log(obj_data);
                 $scope.career_obj.department = obj_data.department;
                 $scope.career_obj.experience = obj_data.exp_years;
             }
@@ -4544,6 +4956,8 @@ app.controller("channelpartnerController", function ($scope, $location, $rootSco
                 }
             })[0];
         }
+        // console.log($scope.cp_obj);
+        // return false;
 
         var cp_name_split = $scope.cp_obj.first_name;
         $scope.cp_obj.first_name = cp_name_split.split(" ")[0];
@@ -4601,6 +5015,29 @@ app.controller("channelpartnerController", function ($scope, $location, $rootSco
         $scope.dropeDownClose = false;
     }
 
+    /*$scope.GetAllComNameList = {};
+    $scope.GetAllComName_list = function () {
+        $scope.dropeDownClose = true;
+        $http({
+            method: 'POST',
+            url: apiUrl + 'paramantra_company_call',
+            headers: {
+                'Authorization': 'User CXPNVIEIQMVJESPFKSKSMHNYNMVNXGYYHELVAZGNDVYHZUMKQM5891853093'
+            },
+
+        }).then(function successCallback(response) {
+
+            response = response.data;
+            if (response.data) {
+                $scope.GetAllComNameList = response.data;
+            }
+
+        }, function errorCallback(response) {
+
+        });
+    }
+    $scope.GetAllComName_list();*/
+
     $scope.cp_company_list = [];
     $scope.isCPCompanyLoading = false;
     $scope.cpCompanyload = function () {
@@ -4621,6 +5058,7 @@ app.controller("channelpartnerController", function ($scope, $location, $rootSco
             response = response.data;
             if (response.success == 1) {
                 $scope.cp_company_list = response.data;
+                console.log($scope.cp_company_list);
             }
             $scope.isCPCompanyLoading = false;
 
@@ -4638,6 +5076,217 @@ app.controller("channelpartnerController", function ($scope, $location, $rootSco
             }
         }
     }
+})
+
+app.controller("detailController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter) {
+
+    $scope.gallery_Swiper = {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        autoplay: false,
+        clickable: true,
+        loop: true,
+        // autoplay: {
+        //     delay: 4000,
+        //     disableOnInteraction: false,
+        // },
+
+        pagination: {
+            el: ".swiper-pagination.gallery-swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next.gallery-next",
+            prevEl: ".swiper-button-prev.gallery-prev",
+            hide: true,
+        },
+
+    }
+
+    $scope.gallery3d_Swiper = {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1.05,
+        spaceBetween: 20,
+        speed: 1500,
+        freeMode: false,
+        autoplay: false,
+        clickable: true,
+        loop: false,
+        // autoplay: {
+        //     delay: 4000,
+        //     disableOnInteraction: false,
+        // },
+        breakpoints: {
+            600: {
+                slidesPerView: 1,
+            },
+            384: {
+                slidesPerView: 1,
+            }
+        },
+        pagination: {
+            el: ".swiper-pagination.gallery-swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next.gallery3d-next",
+            prevEl: ".swiper-button-prev.gallery3d-prev",
+        },
+    }
+
+    $scope.gallery_Swiper_thumbnail = {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 6.5,
+        spaceBetween: 10,
+        autoplay: false,
+        clickable: true,
+        // autoplay: {
+        //     delay: 4000,
+        //     disableOnInteraction: false,
+        // },
+        breakpoints: {
+            1450: {
+                slidesPerView: 6.5,
+                spaceBetween: 10,
+            },
+            1440: {
+                slidesPerView: 6.5,
+                spaceBetween: 10,
+            },
+            1280: {
+                slidesPerView: 5.5,
+                spaceBetween: 10,
+            },
+            768: {
+                slidesPerView: 5.8,
+                spaceBetween: 10,
+            },
+            600: {
+                slidesPerView: 2.5,
+            }
+        }
+    }
+
+    $scope.construction_swiper = {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1.05,
+        spaceBetween: 20,
+        speed: 1500,
+        freeMode: true,
+        autoplay: false,
+        clickable: true,
+        loop: false,
+        // autoplay: {
+        //     delay: 4000,
+        //     disableOnInteraction: false,
+        // },
+        breakpoints: {
+            600: {
+                slidesPerView: 1,
+            },
+            384: {
+                slidesPerView: 1,
+            }
+        },
+        pagination: {
+            el: ".swiper-pagination.gallery-swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next.construction-swiper-next",
+            prevEl: ".swiper-button-prev.construction-swiper-prev",
+        },
+    }
+
+    $scope.related_project_swiper = {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1.05,
+        spaceBetween: 20,
+        speed: 1500,
+        freeMode: true,
+        autoplay: false,
+        clickable: true,
+        loop: false,
+        // autoplay: {
+        //     delay: 4000,
+        //     disableOnInteraction: false,
+        // },
+        breakpoints: {
+            600: {
+                slidesPerView: 1,
+            },
+            384: {
+                slidesPerView: 1,
+            }
+        },
+        pagination: {
+            el: ".swiper-pagination.gallery-swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next.related_project_next",
+            prevEl: ".swiper-button-prev.related_project_prev",
+        },
+    }
+
+    $scope.construction_swiper_thumbnail = {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 6.5,
+        spaceBetween: 10,
+        autoplay: false,
+        clickable: true,
+        // autoplay: {
+        //     delay: 4000,
+        //     disableOnInteraction: false,
+        // },
+        breakpoints: {
+            1450: {
+                slidesPerView: 6.5,
+                spaceBetween: 10,
+            },
+            1440: {
+                slidesPerView: 6.5,
+                spaceBetween: 10,
+            },
+            1280: {
+                slidesPerView: 5.5,
+                spaceBetween: 10,
+            },
+            768: {
+                slidesPerView: 5.8,
+                spaceBetween: 10,
+            },
+            600: {
+                slidesPerView: 2.5,
+            }
+        }
+    }
+
+    // $scope.construction_Swiper = {
+    //     observer: true,
+    //     observeParents: true,
+    //     slidesPerView: 1.1,
+    //     spaceBetween: 10,
+    //     autoplay: false,
+    //     clickable: true,
+    //     // autoplay: {
+    //     //     delay: 4000,
+    //     //     disableOnInteraction: false,
+    //     // },
+    //     breakpoints: {
+    //     },
+    //     scrollbar: {
+    //         el: ".swiper-scrollbar.construction_Swiper_scrollbar",
+    //         hide: false,
+    //     },
+    // }
 })
 
 app.controller("residentialController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter) {
@@ -4793,6 +5442,9 @@ app.controller("ventureController", function ($scope, $location, $rootScope, $ti
             $scope.venture_obj.admin_module_id = $rootScope.venture_page_list.admin_module_id;
             var contact_no = $scope.venture_obj.contact_no_display;
             $scope.venture_obj.contact_no = $scope.venture_obj.country + " " + contact_no;
+
+            // console.log($scope.venture_obj.admin_module_id);
+            // return false;
 
             if ($scope.venture_obj.agree_tandc_display) {
                 $scope.venture_obj.agree_tandc = '1';
@@ -5002,6 +5654,311 @@ app.controller("feedbackController", function ($scope, $location, $rootScope, $t
 
 })
 
+app.controller("thankyouController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
+
+    if (!$rootScope.$storage.thankyou_redirect) {
+        $location.path("/");
+    }
+    $rootScope.$storage.thankyou_redirect = true;
+
+    $scope.construction_array = [];
+    $scope.construction_array_images = [];
+    $rootScope.projects_full_list_detail = {};
+    $scope.is_all_project_loading_detail = true;
+    $scope.projects_full_load_detail = function () {
+        $scope.is_all_project_loading_detail = true;
+        $rootScope.projects_full_list_detail = {};
+        $http({
+            method: 'POST',
+            url: apiUrl + 'properties/list',
+            data: {
+                all_detail: 1,
+                master_user_id: $rootScope.$storage.logged_in_master_id,
+                logged_in_master_user_id: $rootScope.$storage.logged_in_master_id,
+                slug: $routeParams.slug
+            },
+            headers: {
+                'Authorization': 'User CXPNVIEIQMVJESPFKSKSMHNYNMVNXGYYHELVAZGNDVYHZUMKQM5891853093'
+            },
+
+        }).then(function successCallback(response) {
+
+            response = response.data;
+            if (response.success == 1) {
+                $rootScope.projects_full_list_detail = response.data[0];
+                $rootScope.projects_name = $rootScope.projects_full_list_detail.project_title;
+                $rootScope.project_id = $rootScope.projects_full_list_detail.project_id;
+                $rootScope.project_title = $rootScope.projects_full_list_detail.project_title;
+                $rootScope.page_title = $rootScope.projects_full_list_detail.page_title;
+                $rootScope.page_description = $rootScope.projects_full_list_detail.page_description;
+            }
+            else {
+                $location.path('/');
+            }
+            $scope.is_all_project_loading_detail = false;
+        }, function errorCallback(response) {
+            $scope.is_all_project_loading_detail = false;
+        });
+    }
+
+    $scope.detail_get_temp = function () {
+        $scope.detail_interval_temp = $interval(function () {
+            if ($rootScope.$storage.logged_in_master_id != null) {
+                $scope.projects_full_load_detail();
+                $interval.cancel($scope.detail_interval_temp);
+            }
+        }, 100);
+    }
+    $scope.detail_get_temp();
+
+})
+
+app.controller("thank_youController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
+
+    if (!$rootScope.$storage.thank_you_redirect) {
+        $location.path("/");
+    }
+    // $rootScope.$storage.thank_you_redirect = true;
+
+    // if (!$rootScope.$storage.thankyou_redirect) {
+    //     $location.path("/");
+    // }
+    // $rootScope.$storage.thankyou_redirect = true;
+
+    if ($rootScope.activePath == '/career/thankyou/') {
+        $scope.page_name = "Career";
+    }
+    else if ($rootScope.activePath == '/contact-us/thankyou/') {
+        $scope.page_name = "Contact Us";
+    }
+    else if ($rootScope.activePath == '/invest-with-us/thankyou/') {
+        $scope.page_name = "Invest With Us";
+    }
+    else if ($rootScope.activePath == '/propose-land/thankyou/') {
+        $scope.page_name = "Propose Land";
+        // $scope.page_name = $rootScope.propose_land_type;
+    }
+    else if ($rootScope.activePath == '/nricorner/thankyou/') {
+        $scope.page_name = "Nri";
+    }
+    else if ($rootScope.activePath == '/channelpartner/thankyou/') {
+        $scope.page_name = "channel partner";
+    }
+    else if ($rootScope.activePath == '/vendor/thankyou/') {
+        $scope.page_name = "Vendor";
+    }
+    else if ($rootScope.activePath == '/lofy/thankyou/') {
+        $scope.page_name = "Lofy India";
+    }
+    else {
+        /*$scope.page_name = $rootScope.projects_full_list_detail.project_title;*/
+        var project_data_get = $rootScope.projects_full_list.filter(function (e) {
+            if (e.slug == $routeParams.slug) {
+                return e;
+            }
+        })[0];
+        $scope.page_name = project_data_get.project_title;
+    }
+
+})
+
+app.controller("investmentController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
+
+    $rootScope.is_section_Scrolled = false;
+
+    // $scope.detail_get_temp = function () {
+    //     $scope.detail_interval_temp = $interval(function () {
+    //         if ($rootScope.$storage.logged_in_master_id != null && !$rootScope.is_all_page_loading) {
+    //             $rootScope.common_page_load($location.path().replace("/", "").replace("/", ""));
+    //             $interval.cancel($scope.detail_interval_temp);
+    //         }
+    //     }, 100);
+    // }
+    // $scope.detail_get_temp();
+
+    // $scope.investformValidate = {
+
+    //     onkeyup: function (element) {
+    //         this.element(element);
+    //     },
+
+    //     rules: {
+    //         name: {
+    //             required: true
+    //         },
+    //         email_address: {
+    //             required: true,
+    //             email: true
+    //         },
+    //         contact_no: {
+    //             required: true,
+    //         },
+    //         // agree_tandc: {
+    //         //     required: true
+    //         // }
+    //     },
+
+    //     messages: {
+    //         name: {
+    //             required: "Please enter name."
+    //         },
+    //         email_address: {
+    //             required: "Please enter email address."
+    //         },
+    //         contact_no: {
+    //             required: "Please enter mobile number."
+    //         },
+    //         // agree_tandc: {
+    //         //     required: "Please agree terms and conditions."
+    //         // }
+    //     }
+    // }
+
+    // // $scope.invest_upload_check = function (file) {
+    // //     if (file == undefined) {
+    // //         $scope.inquiryObj.attachment = "";
+    // //     }
+    // //     console.log($scope.inquiryObj.attachment);
+    // // }
+
+    // $scope.country_click_invest = function (phonecode, flag) {
+    //     $scope.invest_list.country = phonecode;
+    //     $scope.invest_list.flag = flag;
+    //     $rootScope.country_code_clickF = false;
+    // }
+
+    // $scope.invest_contact_no_length = {
+    //     minlength: 10,
+    //     maxlength: 10,
+    // };
+
+    // $scope.invest_country_change = function () {
+    //     if ($scope.invest_list.country == "91") {
+    //         $scope.invest_contact_no_length.minlength = 10;
+    //         $scope.invest_contact_no_length.maxlength = 10;
+    //     } else {
+    //         $scope.invest_contact_no_length.minlength = 8;
+    //         $scope.invest_contact_no_length.maxlength = 13;
+    //     }
+    // }
+
+    // $scope.invest_list = {};
+    // // $scope.invest_list.propose_land_type = "Join Venture";
+    // $scope.invest_list.agree_tandc_display = true;
+    // $scope.invest_list.country = '91';
+    // $scope.invest_list.flag = 'https://flagcdn.com/w40/in.webp';
+    // $scope.addInvestUs = false;
+    // $scope.investSavetext = "Submit";
+    // $scope.submit_invest = function (form) {
+    //     if (form.validate() && !$scope.addInvestUs) {
+
+    //         // if ($rootScope.activePath.indexOf('invest-with-us') != -1) {
+    //         //     $scope.invest_list.propose_land_type = "";
+    //         // }
+
+    //         // $rootScope.propose_land_type = $scope.invest_list.propose_land_type;
+
+    //         var data = new FormData();
+    //         $scope.addInvestUs = true;
+    //         $scope.investSavetext = "Please wait...";
+    //         $scope.invest_list.from_app = 'true';
+    //         $scope.invest_list.master_user_id = $rootScope.$storage.logged_in_master_id;
+    //         $scope.invest_list.logged_in_master_user_id = $rootScope.$storage.logged_in_master_id;
+    //         $scope.invest_list.admin_module_id = $rootScope.common_page_list.admin_module_id;
+    //         $scope.invest_list.page_id = $rootScope.common_page_list.id;
+
+    //         if ($scope.invest_list.agree_tandc_display) {
+    //             $scope.invest_list.agree_tandc = '1';
+    //         } else {
+    //             $scope.invest_list.agree_tandc = '0';
+    //         }
+
+    //         var contact_no = $scope.invest_list.contact_no_display;
+    //         $scope.invest_list.contact_no = $scope.invest_list.country + " " + contact_no;
+    //         angular.forEach($scope.invest_list, function (val, key) {
+    //             data.append(key, val);
+    //         })
+
+    //         // console.log($scope.invest_list);
+    //         // return false;
+
+    //         $http({
+    //             method: 'POST',
+    //             url: apiUrl + 'other_pages/inquiry_save',
+    //             data: data,
+    //             headers: {
+    //                 'Content-Type': undefined,
+    //                 'Authorization': 'User CXPNVIEIQMVJESPFKSKSMHNYNMVNXGYYHELVAZGNDVYHZUMKQM5891853093'
+    //             }
+
+    //         }).then(function successCallback(response) {
+    //             response = response.data;
+    //             if (response.success == 1) {
+    //                 $rootScope.$storage.thank_you_redirect = true;
+    //                 if ($scope.activePath == '/invest-with-us/') {
+    //                     $location.path('/invest-with-us/thankyou/');
+    //                 }
+    //                 if ($scope.activePath == '/propose-land/') {
+    //                     $location.path('/propose-land/thankyou/');
+    //                 }
+    //             }
+
+    //             $scope.addInvestUs = false;
+    //             $scope.invest_list = {};
+    //             $scope.invest_list.agree_tandc_display = true;
+
+    //             $scope.investSavetext = "Submit";
+
+    //             $scope.invest_list.country = '91';
+    //             $scope.invest_list.flag = 'https://flagcdn.com/w40/in.webp';
+    //             // $scope.invest_list.propose_land_type = "Join Venture";
+
+    //             $mdToast.show({
+    //                 template: '<md-toast class="md-toast error">' + response.message + '</md-toast>',
+    //                 hideDelay: 3500,
+    //                 position: 'bottom right'
+    //             });
+
+    //         }, function errorCallback(response) {
+    //             $scope.invest_list = {};
+    //             $scope.addInvestUs = false;
+    //         });
+    //     }
+    // }
+
+})
+
+app.controller("investorsController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
+
+    $scope.investors_List = [];
+    $scope.investors_load = function () {
+        $http({
+            url: base_url + "inverstor.json",
+        }).then(function successCallback(response) {
+
+            response = response.data;
+            $scope.investors_List = response.list;
+            // console.log($scope.investors_List[0].data);
+        }, function errorCallback(response) {
+
+        });
+    }
+    $scope.investors_load();
+
+    $scope.invester_id = "1";
+    $scope.investor_data = function (data) {
+        $scope.invester_id = data;
+    }
+    console.log($scope.invester_id);
+
+    // $scope.investors_data = [];
+    // $scope.investors_data =  $scope.investors_List;
+    // $scope.openTab = function (data) {
+    // 	$scope.investors_data.data = data;
+    //     console.log($scope.investors_data.data);
+    // }
+})
+
 app.controller("blogController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
 
     $scope.blog_data_temp = function () {
@@ -5143,534 +6100,4 @@ app.controller("bloglistController", function ($scope, $location, $rootScope, $t
         $scope.tag_type = "";
         $location.search({});
     }
-})
-
-app.controller("thankyouController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
-
-    if (!$rootScope.$storage.thankyou_redirect) {
-        $location.path("/");
-    }
-    $rootScope.$storage.thankyou_redirect = true;
-
-    $scope.construction_array = [];
-    $scope.construction_array_images = [];
-    $rootScope.projects_full_list_detail = {};
-    $scope.is_all_project_loading_detail = true;
-    $scope.projects_full_load_detail = function () {
-        $scope.is_all_project_loading_detail = true;
-        $rootScope.projects_full_list_detail = {};
-        $http({
-            method: 'POST',
-            url: apiUrl + 'properties/list',
-            data: {
-                all_detail: 1,
-                master_user_id: $rootScope.$storage.logged_in_master_id,
-                logged_in_master_user_id: $rootScope.$storage.logged_in_master_id,
-                slug: $routeParams.slug
-            },
-            headers: {
-                'Authorization': 'User CXPNVIEIQMVJESPFKSKSMHNYNMVNXGYYHELVAZGNDVYHZUMKQM5891853093'
-            },
-
-        }).then(function successCallback(response) {
-
-            response = response.data;
-            if (response.success == 1) {
-                $rootScope.projects_full_list_detail = response.data[0];
-                $rootScope.projects_name = $rootScope.projects_full_list_detail.project_title;
-                $rootScope.project_id = $rootScope.projects_full_list_detail.project_id;
-                $rootScope.project_title = $rootScope.projects_full_list_detail.project_title;
-                $rootScope.page_title = $rootScope.projects_full_list_detail.page_title;
-                $rootScope.page_description = $rootScope.projects_full_list_detail.page_description;
-                $rootScope.page_keywords = $rootScope.projects_full_list_detail.page_keywords;
-            }
-            else {
-                $location.path('/');
-            }
-            $scope.is_all_project_loading_detail = false;
-        }, function errorCallback(response) {
-            $scope.is_all_project_loading_detail = false;
-        });
-    }
-
-    $scope.detail_get_temp = function () {
-        $scope.detail_interval_temp = $interval(function () {
-            if ($rootScope.$storage.logged_in_master_id != null) {
-                $scope.projects_full_load_detail();
-                $interval.cancel($scope.detail_interval_temp);
-            }
-        }, 100);
-    }
-    $scope.detail_get_temp();
-
-})
-
-app.controller("thank_youController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
-
-    if (!$rootScope.$storage.thank_you_redirect) {
-        $location.path("/");
-    }
-    $rootScope.$storage.thank_you_redirect = true;
-
-    // if (!$rootScope.$storage.thankyou_redirect) {
-    //     $location.path("/");
-    // }
-    // $rootScope.$storage.thankyou_redirect = true;
-
-    if ($rootScope.activePath == '/career/thankyou/') {
-        $scope.page_name = "Career";
-    }
-    else if ($rootScope.activePath == '/contact-us/thankyou/') {
-        $scope.page_name = "Contact Us";
-    }
-    else if ($rootScope.activePath == '/invest-with-us/thankyou/') {
-        $scope.page_name = "Invest With Us";
-    }
-    else if ($rootScope.activePath == '/propose-land/thankyou/') {
-        $scope.page_name = "Propose Land";
-    }
-    else if ($rootScope.activePath == '/nricorner/thankyou/') {
-        $scope.page_name = "Nri";
-    }
-    else if ($rootScope.activePath == '/channelpartner/thankyou/') {
-        $scope.page_name = "channel partner";
-    }
-    else if ($rootScope.activePath == '/vendor/thankyou/') {
-        $scope.page_name = "Vendor";
-    }
-    else {
-        $scope.page_name = $rootScope.projects_full_list_detail.project_title;
-    }
-
-})
-
-app.controller("investmentController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
-
-    $rootScope.is_section_Scrolled = false;
-
-    $scope.detail_get_temp = function () {
-        $scope.detail_interval_temp = $interval(function () {
-            if ($rootScope.$storage.logged_in_master_id != null && !$rootScope.is_all_page_loading) {
-                $rootScope.common_page_load($location.path().replace("/", "").replace("/", ""));
-                $interval.cancel($scope.detail_interval_temp);
-            }
-        }, 100);
-    }
-    $scope.detail_get_temp();
-
-    $scope.investformValidate = {
-
-        onkeyup: function (element) {
-            this.element(element);
-        },
-
-        rules: {
-            name: {
-                required: true
-            },
-            email_address: {
-                required: true,
-                email: true
-            },
-            contact_no: {
-                required: true,
-            },
-            // agree_tandc: {
-            //     required: true
-            // }
-        },
-
-        messages: {
-            name: {
-                required: "Please enter name."
-            },
-            email_address: {
-                required: "Please enter email address."
-            },
-            contact_no: {
-                required: "Please enter mobile number."
-            },
-            // agree_tandc: {
-            //     required: "Please agree terms and conditions."
-            // }
-        }
-    }
-
-    $scope.country_click_invest = function (phonecode, flag) {
-        $scope.invest_list.country = phonecode;
-        $scope.invest_list.flag = flag;
-        $rootScope.country_code_clickF = false;
-    }
-
-    $scope.invest_contact_no_length = {
-        minlength: 10,
-        maxlength: 10,
-    };
-
-    $scope.invest_country_change = function () {
-        if ($scope.invest_list.country == "91") {
-            $scope.invest_contact_no_length.minlength = 10;
-            $scope.invest_contact_no_length.maxlength = 10;
-        } else {
-            $scope.invest_contact_no_length.minlength = 8;
-            $scope.invest_contact_no_length.maxlength = 13;
-        }
-    }
-
-    $scope.invest_list = {};
-    // $scope.invest_list.propose_land_type = "Join Venture";
-    $scope.invest_list.agree_tandc_display = true;
-    $scope.invest_list.country = '91';
-    $scope.invest_list.flag = 'https://flagcdn.com/w40/in.webp';
-    $scope.addInvestUs = false;
-    $scope.investSavetext = "Submit";
-    $scope.submit_invest = function (form) {
-        if (form.validate() && !$scope.addInvestUs) {
-
-            var data = new FormData();
-            $scope.addInvestUs = true;
-            $scope.investSavetext = "Please wait...";
-            $scope.invest_list.from_app = 'true';
-            $scope.invest_list.master_user_id = $rootScope.$storage.logged_in_master_id;
-            $scope.invest_list.logged_in_master_user_id = $rootScope.$storage.logged_in_master_id;
-            $scope.invest_list.admin_module_id = $rootScope.common_page_list.admin_module_id;
-            $scope.invest_list.page_id = $rootScope.common_page_list.id;
-
-            if ($scope.invest_list.agree_tandc_display) {
-                $scope.invest_list.agree_tandc = '1';
-            } else {
-                $scope.invest_list.agree_tandc = '0';
-            }
-
-            var contact_no = $scope.invest_list.contact_no_display;
-            $scope.invest_list.contact_no = $scope.invest_list.country + " " + contact_no;
-            angular.forEach($scope.invest_list, function (val, key) {
-                data.append(key, val);
-            })
-
-            $http({
-                method: 'POST',
-                url: apiUrl + 'other_pages/inquiry_save',
-                data: data,
-                headers: {
-                    'Content-Type': undefined,
-                    'Authorization': 'User CXPNVIEIQMVJESPFKSKSMHNYNMVNXGYYHELVAZGNDVYHZUMKQM5891853093'
-                }
-
-            }).then(function successCallback(response) {
-                response = response.data;
-                if (response.success == 1) {
-                    $rootScope.$storage.thank_you_redirect = true;
-                    if ($scope.activePath == '/invest-with-us/') {
-                        $location.path('/invest-with-us/thankyou/');
-                    }
-                    if ($scope.activePath == '/propose-land/') {
-                        $location.path('/propose-land/thankyou/');
-                    }
-                }
-
-                $scope.addInvestUs = false;
-                $scope.invest_list = {};
-                $scope.invest_list.agree_tandc_display = true;
-
-                $scope.investSavetext = "Submit";
-
-                $scope.invest_list.country = '91';
-                $scope.invest_list.flag = 'https://flagcdn.com/w40/in.webp';
-
-                $mdToast.show({
-                    template: '<md-toast class="md-toast error">' + response.message + '</md-toast>',
-                    hideDelay: 3500,
-                    position: 'bottom right'
-                });
-
-            }, function errorCallback(response) {
-                $scope.invest_list = {};
-                $scope.addInvestUs = false;
-            });
-        }
-    }
-
-})
-
-app.controller("profilepageController", function ($scope, $location, $rootScope, $timeout, $http, $localStorage, $routeParams, $window, $route, $base64, $timeout, $sce, $mdToast, $filter, $interval) {
-
-    $(".fancybox").fancybox({
-        type: "iframe",
-    })
-
-    $rootScope.is_section_Scrolled = false;
-
-    $scope.slug = $routeParams.slug;
-    $scope.profile_page_data = {};
-    $scope.is_profile_page_loading = false;
-    $scope.profile_page_load = function () {
-        $scope.is_profile_page_loading = true;
-        $scope.profile_page_data = {};
-        $http({
-            method: 'POST',
-            url: apiUrl_admin + 'pages/list',
-            data: {
-                master_user_id: $rootScope.$storage.logged_in_master_id,
-                logged_in_master_user_id: $rootScope.$storage.logged_in_master_id,
-                slug: $scope.slug,
-            },
-            headers: {
-                'Authorization': 'User CXPNVIEIQMVJESPFKSKSMHNYNMVNXGYYHELVAZGNDVYHZUMKQM5891853093',
-            },
-
-        }).then(function successCallback(response) {
-
-            response = response.data;
-
-            if (response.success == 1) {
-                $scope.profile_page_data = response.data[0];
-                $rootScope.page_title = $scope.profile_page_data.seo_title ? $scope.profile_page_data.seo_title : "";
-                $rootScope.page_description = $scope.profile_page_data.seo_description ? $scope.profile_page_data.seo_description : "";
-                $rootScope.page_keywords = $scope.profile_page_data.seo_keywords ? $scope.profile_page_data.seo_keywords : "";
-                $rootScope.page_image = $scope.profile_page_data.seo_image_full ? $scope.profile_page_data.seo_image_full + "&h=400&w=500" : "";
-            }
-            else {
-                $location.path('/');
-            }
-            $scope.is_profile_page_loading = false;
-
-        }, function errorCallback(response) {
-            $scope.is_profile_page_loading = false;
-        });
-    }
-    $scope.profile_page_load();
-
-    $scope.profile_page_swiper = {
-        observer: true,
-        observeParents: true,
-        slidesPerView: 3.5,
-        spaceBetween: 20,
-        speed: 1500,
-        freeMode: true,
-        autoplay: false,
-        // clickable: true,
-        loop: false,
-        // autoplay: {
-        //     delay: 4000,
-        //     disableOnInteraction: false,
-        // },
-        breakpoints: {
-            1152: {
-                slidesPerView: 2.25,
-            },
-            500: {
-                slidesPerView: 1.2,
-                spaceBetween: 10,
-                slidesOffsetBefore: 18,
-            }
-        },
-        scrollbar: {
-            el: ".swiper-scrollbar.swiper-scrollbar-gallery",
-            hide: false,
-        },
-        pagination: {
-            el: ".swiper-pagination.gallery-swiper-pagination",
-            type: "fraction",
-        },
-        navigation: {
-            nextEl: ".swiper-button-next.projectgallery3d-next",
-            prevEl: ".swiper-button-prev.projectgallery3d-prev",
-        },
-    }
-
-    $scope.profile_page_video_swiper = {
-        observer: true,
-        observeParents: true,
-        slidesPerView: 2.2,
-        spaceBetween: 20,
-        speed: 1500,
-        // freeMode: true,
-        autoplay: false,
-        loop: false,
-        breakpoints: {
-            1152: {
-                slidesPerView: 2.25,
-            },
-            500: {
-                slidesPerView: 1,
-            }
-        },
-        scrollbar: {
-            el: ".swiper-scrollbar.swiper-scrollbar-video",
-            hide: false,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next.swiper-button-video",
-            prevEl: ".swiper-button-prev.swiper-button-video",
-        },
-    }
-
-    $scope.profile_country_contact = function (phonecode, flag) {
-        $scope.profile_obj.country = phonecode;
-        $scope.profile_obj.flag = flag;
-        $rootScope.country_code_clickF = false;
-    }
-
-    $rootScope.country_code_clickF = false;
-    $scope.country_code_click = function () {
-        if ($rootScope.country_code_clickF) {
-            $timeout(function () {
-                $rootScope.country_code_clickF = false;
-            }, 100);
-        } else {
-            $rootScope.country_code_clickF = true;
-        }
-    }
-
-    $rootScope.country_code_click_false = function () {
-        $timeout(function () {
-            $rootScope.country_code_clickF = false;
-        }, 100);
-    }
-
-    $scope.profile_contact_no_length = {
-        minlength: 10,
-        maxlength: 10,
-    };
-
-    $scope.profile_country_change = function () {
-        if ($scope.profile_obj.country == "91") {
-            $scope.profile_contact_no_length.minlength = 10;
-            $scope.profile_contact_no_length.maxlength = 10;
-        } else {
-            $scope.profile_contact_no_length.minlength = 8;
-            $scope.profile_contact_no_length.maxlength = 13;
-        }
-    }
-
-    $scope.profileformValidate = {
-        /*onkeyup: function (element) {
-            this.element(element);
-        },*/
-
-        rules: {
-            name: {
-                required: true
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            contact_no: {
-                required: true,
-            },
-            remarks: {
-                required: true,
-            },
-            // agree_tandc: {
-            //     required: true
-            // }
-        },
-
-        messages: {
-            name: {
-                required: "Please enter name."
-            },
-            email: {
-                required: "Please enter email address."
-            },
-            contact_no: {
-                required: "Please enter mobile number."
-            },
-            remarks: {
-                required: "Please enter comment."
-            },
-            // agree_tandc: {
-            //     required: "Please agree terms and conditions."
-            // }
-        }
-    }
-
-    $scope.profile_obj = {};
-    // $scope.profile_obj.agree_tandc_display = true;
-    $scope.profile_obj.country = '91';
-    $scope.profile_obj.flag = 'https://flagcdn.com/w40/in.webp';
-    $scope.addprofile_from = false;
-    $scope.submit_profile = function (form) {
-        if (form.validate() && !$scope.addprofile_from) {
-            $scope.addprofile_from = true;
-            $scope.profile_obj.from_app = 'true';
-            $scope.profile_obj.master_user_id = 1;
-            $scope.profile_obj.logged_in_master_user_id = $rootScope.$storage.logged_in_master_id;
-            $scope.profile_obj.id = $scope.profile_page_data.id;
-            var contact_no = $scope.profile_obj.contact_no_display;
-            $scope.profile_obj.contact_no = $scope.profile_obj.country + " " + contact_no;
-
-            $http({
-                method: 'POST',
-                url: apiUrl_admin + 'pages/inquiry_save',
-                data: $scope.profile_obj,
-                headers: {
-                    'Authorization': 'User CXPNVIEIQMVJESPFKSKSMHNYNMVNXGYYHELVAZGNDVYHZUMKQM5891853093'
-                },
-
-            }).then(function successCallback(response) {
-                response = response.data;
-
-                $scope.addprofile_from = false;
-                $scope.profile_obj = {};
-                $scope.profile_obj.agree_tandc_display = true;
-
-                $scope.profile_obj.country = '91';
-                $scope.profile_obj.flag = 'https://flagcdn.com/w40/in.webp';
-
-                $mdToast.show({
-                    template: '<md-toast class="md-toast error">' + response.message + '</md-toast>',
-                    hideDelay: 3500,
-                    position: 'bottom right'
-                });
-
-            }, function errorCallback(response) {
-                $scope.addprofile_from = false;
-            });
-        }
-    }
-
-    $scope.project_blog_swiper = {
-        observer: true,
-        observeParents: true,
-        slidesPerView: 3,
-        spaceBetween: 15,
-        speed: 1500,
-        freeMode: false,
-        autoplay: false,
-        clickable: true,
-        slidesOffsetBefore: 50,
-        breakpoints: {
-            1280: {
-                slidesPerView: 2.7,
-            },
-            1152: {
-                slidesPerView: 2,
-            },
-            500: {
-                slidesOffsetBefore: 0,
-                slidesPerView: 1,
-            }
-        },
-        scrollbar: {
-            el: ".swiper-scrollbar.swiper-scrollbar-blog",
-            hide: false,
-        },
-    }
-
-    $rootScope.profile_video_click_f = false;
-    $scope.profile_video_click = function (data) {
-        $rootScope.profile_video_click_f = true;
-        $scope.profile_url = data;
-    }
-
-    $rootScope.profile_video_click_close = function () {
-        $timeout(function () {
-            $scope.profile_url = "";
-        }, 100);
-        $rootScope.profile_video_click_f = false;
-    }
-
 })

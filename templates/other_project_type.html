@@ -1,0 +1,65 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper">
+    <div id="reecosys-list-wrapper" class="relative">
+
+        <section class="reecosys-section relative wow fadeIn" data-wow-delay="0.6s" data-wow-duration="0.4s"
+            id="reecosys-list-section-1">
+            <div class="video-listing-banner-list">
+                <img src="{{projects_full_list[0].banner_data.image_web_full}}&h=480&w=1920&q=75" alt="" ng-if="$storage.logged_in_master_id != '29'">
+                <!-- <video autoplay="" muted="" loop="" playsinline="" id="myVideo" class="">
+                    <source src=""
+                        type="video/mp4">
+                </video> -->
+            </div>
+            <div class="top-left-overlay-new"></div>
+            <!-- <div class="banner-section-typo inner-flex">
+                <div class="banner-text-img">
+                    <img src="" alt="{{project_list_data.project_title}}">
+                </div>
+            </div> -->
+        </section>
+
+        <section class="reecosys-section overflow" id="reecosys-list-section-2">
+            <div class="container-fluid">
+                <div class="inner-flex">
+                    <div class="listing-section-header">
+                        <div class="inner-flex-2 list_w100">
+                            <div class="list_page_iconwrapper">
+                                <div class="section-title wow fadeIn" data-wow-delay="0.6s" data-wow-duration="0.6s">
+                                    <h2>
+                                        A Premium Living Lifestyle
+                                    </h2>
+                                </div>
+                                <div class="list-change-button">
+                                    <div class="list-change-button-icon">
+                                        <img src="assets/images/icons/list_icon.svg"
+                                            alt="{{project_list_data.project_title}}">
+                                    </div>
+                                    <div class="list-change-ul">
+                                        <ul>
+                                            <li class="columntab">
+                                                <a href="javascript:void(0);" ng-class="{'activelink': column_get == 1}"
+                                                    ng-click="column_get_f(1);">
+                                                    1 Column
+                                                </a>
+                                            </li>
+                                            <li class="columntab">
+                                                <a href="javascript:void(0);" ng-class="{'activelink': column_get == 2}"
+                                                    ng-click="column_get_f(2);">
+                                                    2 Column
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div ng-include="'templates/list_all.html'"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

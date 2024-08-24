@@ -50,7 +50,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="relative" ng-if="activePath == '/propose-land/'">
+            <div class="relative">
                 <input id="resume_upload" name="resume_upload" class="upload-button-wrapper-input upload_file_input"
                     type="file" ng-model="invest_list.attachment"
                     ngf-select="" ngf-multiple="false"
@@ -75,7 +75,23 @@
                 </textarea>
                 <label class="md-lable" for="remarks">Comments</label>
             </div>
-            
+            <!-- <div class="contact_lable" ng-if="activePath == '/propose-land/'">
+                <div class="relative">
+                    <p>Propose Land Type</p>
+                    <div class="land_type">
+                        <div class="radio_btn_list">
+                            <div class="radio_wrapper">
+                                <input type="radio" name="propose_land_type" tabindex="66" id="propose_land_type" aria-checked="true" value="Join Venture" ng-model="invest_list.propose_land_type" class="form-control radio_input radio_input_black">
+                            <label class="propose_land_label" for="propose_land_type">Join Venture</label>
+                            </div>
+                            <div class="radio_wrapper">
+                                <input type="radio" name="propose_land_type" tabindex="77" id="propose_land_type2" value="Outrage Sales" ng-model="invest_list.propose_land_type" class="form-control radio_input radio_input_black">
+                            <label class="propose_land_label" for="propose_land_type2">Outrage Sales</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
             <p class="relative check_box_error get_update_text align_center">
                 <input class="get_update_checkbox" type="checkbox" id="agree_tandc" tabindex="88" name="agree_tandc"
                     ng-model="invest_list.agree_tandc_display" aria-required="true" aria-invalid="true">

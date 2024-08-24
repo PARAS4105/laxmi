@@ -6,8 +6,8 @@
         <div>
             <div class="side_popup_in">
                 <div class="section-title">
-                    <p>
-                        Enquire Now
+                    <p class="g_regular">
+                        Inquire Now
                     </p>
                 </div>
                 <!-- <span ng-if="project_filter_data.project_title && projet_get == ''"></span> -->
@@ -21,7 +21,7 @@
                     ng-validate="inquiry_validate" ng-if="inquire_popup_web_toggleF">
                     <div class="form_wrapper">
 
-                        <div class="contact_lable select_option select_apr relative" ng-if="project_detail_flag && !project_detail_flag">
+                        <div class="contact_lable select_option select_apr relative" ng-if="!project_detail_flag">
                             <select name="project_id" class="form-control" id="project_id"
                                 ng-model="inquiry_obj.project_id" required="" aria-required="true"
                                 aria-invalid="true" autocomplete="off" tabindex="1">

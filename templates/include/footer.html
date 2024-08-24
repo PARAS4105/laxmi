@@ -103,6 +103,7 @@
                                 </div>
                             </div>
 
+                            <!-- <div class="project_social_media" ng-if="home_list.facebook_url || home_list.instagram_url || home_list.twitter_url || home_list.linkedin_url || home_list.youtube_page_url"> -->
                             <div class="project_social_media" ng-if="home_list.facebook_url || home_list.instagram_url || home_list.twitter_url || home_list.linkedin_url || home_list.youtube_page_url">
                                 <ul class="social_media_list">
                                     <li ng-if="home_list.facebook_url">
@@ -153,18 +154,27 @@
                     </div>
                     <div class="web_footer_flex"> 
                         <div class="project_other_links section-title-big" ng-repeat="category_data in projects_category" ng-if="category_data.category">
-                            <h2 class="project_links_title white-color tcpaitlize ">{{category_data.category}}</h2>
+                            <h2 class="project_links_title white-color tcpaitlize ">{{category_data.category}} </h2>
                             <ul>
                                 <li ng-repeat="data in projects_full_list" ng-if="data.category == category_data.category">
-                                    <a href="project/{{data.slug}}" ng-class="{'active_page': activePath == '/{{data.slug}}/'}">
-                                        <p class="capitalize white-color">{{data.project_title}}</p>
-                                    </a>
+        <a href="project/{{data.slug}}" ng-class="{'active_page': activePath == '/{{data.slug}}/'}" ng-if="data.project_id != 335 && data.project_id != 336 && data.project_id != 337  &&  data.project_id != 373  && data.project_id != 374 ">
+            <p class="capitalize white-color">{{data.project_title}}</p>
+        </a>
+        <a href="javscript:void(0);" ng-class="{'active_page': activePath == '/{{data.slug}}/'}" ng-if="data.project_id == 335 || data.project_id == 336 || data.project_id == 337  || data.project_id == 373 || data.project_id == 374">
+            <p class="capitalize white-color">{{data.project_title}}</p>
+
+            
+        </a>
                                 </li>
+
+                                
                             </ul>
                         </div>
                         <div class="project_other_links section-title-big" ng-if="page_full_list.length > 0 || venture_full_list.length > 0">
                         <h2 class="project_links_title white-color tcpaitlize ">Quick links</h2>
                         <ul>
+
+
                             <li ng-repeat="data in page_full_list"
                                 ng-if="data.page_type == '' && data.is_profile_page == 0">
                                 <a href="{{data.slug}}" ng-class="{'active_page': activePath == '/{{data.slug}}/'}"
@@ -186,10 +196,17 @@
                                 </a>
                             </li>
                             <li ng-if="$storage.permissions.indexOf('blogs') != -1">
-                                <a href="blogs" class="capitalize" ng-class="{'active_page': activePath == '/blogs/'}">
-                                    <p class="capitalize white-color">Blogs</p>
+                                <a href="articles" class="capitalize" ng-class="{'active_page': activePath == '/articles/'}">
+                                    <p class="capitalize white-color">Articles</p>
                                 </a>
                             </li>
+                            <li>
+                                <a href="completed-projects/" class="capitalize">
+                                    <p class="capitalize white-color">Completed Projects</p>
+                                </a>
+                            </li>
+
+
                         </ul>
                         </div>
                     </div>
@@ -342,6 +359,11 @@
                                 </span>
                             </a>
                         </div>
+
+                        
+                        
+                                
+
                         <div class="project-links content_accordian"
                             ng-class="{'active_list' : project_list_click_f2 == category_data.category}">
                             <ul>
@@ -350,9 +372,14 @@
                                     <p class="capitalize" ng-if="data.project_title">
                                         <a href="project/{{data.slug}}"
                                             ng-click="nav_accordion_close(); menu_click_close();"
-                                            ng-class="{'active_page': activePath == '/{{data.slug}}/'}">
+                                            ng-class="{'active_page': activePath == '/{{data.slug}}/'}" ng-if="data.project_id != 335 && data.project_id != 336 && data.project_id != 337  &&  data.project_id != 373  && data.project_id != 374 ">
                                             {{data.project_title}}
                                         </a>
+                                        <a href="javascript:void(0);"
+                                        ng-click="nav_accordion_close(); menu_click_close();"
+                                        ng-class="{'active_page': activePath == '/{{data.slug}}/'}" ng-if="data.project_id == 335 || data.project_id == 336 || data.project_id == 337  || data.project_id == 373 || data.project_id == 374">
+                                        {{data.project_title}}
+                                    </a>
                                     </p>
                                     <p class="small-links-div capitalize"
                                         ng-if="data.size_price || data.location || data.status">
@@ -370,11 +397,26 @@
                         </a>
                     </li>
 
-                    <li ng-if="$storage.permissions.indexOf('blogs') != -1">
+                    <!-- <li ng-if="$storage.permissions.indexOf('blogs') != -1">
                         <a href="blogs" class="capitalize" ng-class="{'active_page': activePath == '/blogs/'}">
                             <p class="capitalize">Blogs</p>
                         </a>
+                    </li> -->
+
+
+                    <li>
+                        <a href="articles" class="capitalize">
+                            <p class="capitalize white-color"> Articles</p>
+                        </a>
                     </li>
+                    <li>
+                        <a href="completed-projects/" class="capitalize">
+                            <p class="capitalize white-color">Completed Projects</p>
+                        </a>
+                    </li>
+
+
+                    
 
                     <li ng-repeat="data in page_full_list" ng-if="data.page_type == 'legal'">
                         <a href="{{data.slug}}" ng-class="{'active_page': activePath == '/{{data.slug}}/'}">

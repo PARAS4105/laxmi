@@ -1,33 +1,35 @@
-<div class="list-grid-block active" ng-if="category_get != '' && column_get == 1">
-    <div class="project-list-grid project-list-grid-1-column">
-        <div class="project-list-card" ng-repeat="project_list_data in projects_full_list"
-            ng-if="category_get == project_list_data.category">
-            <div ng-include="'templates/list_all_grid_1.html'"></div>
+<div>
+    <div class="list-grid-block active" ng-if="category_get != '' && column_get == 1">
+        <div class="project-list-grid project-list-grid-1-column">
+            <div class="project-list-card" ng-repeat="project_list_data in projects_full_list"
+                ng-if="category_get == project_list_data.category">
+                <div ng-include="'templates/list_all_grid_1.html'"></div>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="list-grid-block active" ng-if="category_get == '' && column_get == 1">
-    <div class="project-list-grid project-list-grid-1-column">
-        <div class="project-list-card" ng-repeat="project_list_data in projects_full_list">
-            <div ng-include="'templates/list_all_grid_1.html'"></div>
+    <div class="list-grid-block active" ng-if="category_get == '' && column_get == 1">
+        <div class="project-list-grid project-list-grid-1-column">
+            <div class="project-list-card" ng-repeat="project_list_data in projects_full_list">
+                <div ng-include="'templates/list_all_grid_1.html'"></div>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="list-grid-block active" ng-if="category_get != '' && column_get == 2">
-    <div class="project-list-grid project-list-grid-2-column">
-        <div class="project-list-card" ng-repeat="project_list_data in projects_full_list"
-            ng-if="category_get == project_list_data.category">
-            <div ng-include="'templates/list_all_grid_2.html'"></div>
+    <div class="list-grid-block active" ng-if="category_get != '' && column_get == 2">
+        <div class="project-list-grid project-list-grid-2-column">
+            <div class="project-list-card" ng-repeat="project_list_data in projects_full_list"
+                ng-if="category_get == project_list_data.category">
+                <div ng-include="'templates/list_all_grid_2.html'"></div>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="list-grid-block active" ng-if="category_get == '' && column_get == 2">
-    <div class="project-list-grid project-list-grid-2-column">
-        <div class="project-list-card" ng-repeat="project_list_data in projects_full_list">
-            <div ng-include="'templates/list_all_grid_2.html'"></div>
+    <div class="list-grid-block active" ng-if="category_get == '' && column_get == 2">
+        <div class="project-list-grid project-list-grid-2-column">
+            <div class="project-list-card" ng-repeat="project_list_data in projects_full_list">
+                <div ng-include="'templates/list_all_grid_2.html'"></div>
+            </div>
         </div>
     </div>
 </div>

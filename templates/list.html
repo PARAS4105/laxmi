@@ -4,7 +4,7 @@
         <section class="reecosys-section relative wow fadeIn" data-wow-delay="0.6s" data-wow-duration="0.4s"
             id="reecosys-list-section-1">
             <div class="video-listing-banner-list">
-                <img src="{{projects_full_list[0].banner_data.image_web_full}}&h=480&w=1920&q=75" alt="">
+                <img src="{{projects_full_list[0].banner_data.image_web_full}}&h=480&w=1920&q=100" alt="" ng-if="$storage.logged_in_master_id != '29'">
                 <!-- <video autoplay="" muted="" loop="" playsinline="" id="myVideo" class="">
                     <source src=""
                         type="video/mp4">
@@ -13,7 +13,7 @@
             <div class="top-left-overlay-new"></div>
             <!-- <div class="banner-section-typo inner-flex">
                 <div class="banner-text-img">
-                    <img src="assets/images/banner-text/text_image_1659528358_56.svg" alt="{{project_list_data.project_title}}">
+                    <img src="" alt="{{project_list_data.project_title}}">
                 </div>
             </div> -->
         </section>
@@ -23,56 +23,58 @@
                 <div class="inner-flex">
                     <div class="listing-section-header">
                         <div class="inner-flex-2 list_w100">
-                            <div class="section-title wow fadeIn" data-wow-delay="0.6s" data-wow-duration="0.6s">
+                            <!-- <div class="section-title wow fadeIn" data-wow-delay="0.6s" data-wow-duration="0.6s">
                                 <h2>
-                                    A Premium Living Lifestyle
+                                    HOME IS WHERE
+                                    ORDINARY BECOMES
+                                    EXTRAORDINARY
                                 </h2>
-                            </div>
+                            </div> -->
 
                             <div class="project-type-list-panel list_page_iconwrapper wow fadeIn" data-wow-delay="0.6s"
-                                data-wow-duration="0.8s">
-                                <div class="list-panel-ul">
+                            data-wow-duration="0.8s">
+                            <div class="list-panel-ul">
+                                <ul>
+                                    <li ng-class="{ active: isSet(1) }">
+                                        <a href="javascript:void(0);" class="charter_regularx g_regular "
+                                            ng-click="category_get_f(''); setTab(1);">
+                                            All
+                                        </a>
+                                    </li>
+
+                                    <li ng-class="{ active: category_get == category_data.category }"
+                                        ng-repeat="category_data in projects_category"
+                                        ng-if="category_data.category">
+                                        <a href="javascript:void(0);" class="capitalize charter_regularx g_regular "
+                                            ng-click="category_get_f(category_data.category); setTab($index+2);">
+                                            {{category_data.category}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="list-change-button">
+                                <div class="list-change-button-icon">
+                                    <img src="assets/images/icons/list_icon.svg"
+                                        alt="{{project_list_data.project_title}}">
+                                </div>
+                                <div class="list-change-ul">
                                     <ul>
-                                        <li ng-class="{ active: isSet(1) }">
-                                            <a href="javascript:void(0);" class="charter_regular"
-                                                ng-click="category_get_f(''); setTab(1);">
-                                                All
+                                        <li class="columntab">
+                                            <a href="javascript:void(0);" ng-class="{'activelink': column_get == 1}"
+                                                ng-click="column_get_f(1);">
+                                                1 Column
                                             </a>
                                         </li>
-
-                                        <li ng-class="{ active: category_get == category_data.category }"
-                                            ng-repeat="category_data in projects_category"
-                                            ng-if="category_data.category">
-                                            <a href="javascript:void(0);" class="capitalize charter_regular"
-                                                ng-click="category_get_f(category_data.category); setTab($index+2);">
-                                                {{category_data.category}}
+                                        <li class="columntab">
+                                            <a href="javascript:void(0);" ng-class="{'activelink': column_get == 2}"
+                                                ng-click="column_get_f(2);">
+                                                2 Column
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="list-change-button">
-                                    <div class="list-change-button-icon">
-                                        <img src="assets/images/icons/list_icon.svg"
-                                            alt="{{project_list_data.project_title}}">
-                                    </div>
-                                    <div class="list-change-ul">
-                                        <ul>
-                                            <li class="columntab">
-                                                <a href="javascript:void(0);" ng-class="{'activelink': column_get == 1}"
-                                                    ng-click="column_get_f(1);">
-                                                    1 Column
-                                                </a>
-                                            </li>
-                                            <li class="columntab">
-                                                <a href="javascript:void(0);" ng-class="{'activelink': column_get == 2}"
-                                                    ng-click="column_get_f(2);">
-                                                    2 Column
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
+                        </div>
                         </div>
                     </div>
 
@@ -88,7 +90,7 @@
                                     <div class="project-img-list relative"
                                         ng-if="project_list_data.banner_data.image_web_type == 'image'">
                                         <img src="assets/images/other/dummy_image.png"
-                                            hires="{{project_list_data.banner_data.image_web_full}}&w=1320&h=740&q=75"
+                                            hires="{{project_list_data.banner_data.image_web_full}}&w=1320&h=740&q=100"
                                             alt="{{project_list_data.project_title}}" class="image-cover">
                                         <div class="card_black_overlay"></div>
                                     </div>
@@ -104,13 +106,10 @@
                                     </div>
                                     <div class="project-info-list">
                                         <div class="section-information">
-                                            <!-- <div class="status-lable content-size-div"
-                                                style="margin-left: auto;margin-right:auto;">
-                                                <p class="capitalize" style="color: #fff !important;">
-                                                    {{project_list_data.status}}</p>
-                                            </div> -->
+                                          
+
                                             <div class="banner-title">
-                                                <h2>
+                                                <h2 class="g_regular ">
                                                     {{project_list_data.project_title}}
                                                 </h2>
                                             </div>
@@ -121,7 +120,6 @@
                                                     {{project_list_data.status}}
                                                 </p>
                                             </div>
-
                                         </div>
                                     </div>
                                 </a>
@@ -137,7 +135,7 @@
                                     <div class="project-img-list relative"
                                         ng-if="project_list_data.banner_data.image_web_type == 'image'">
                                         <img src="assets/images/other/dummy_image.png"
-                                            hires="{{project_list_data.banner_data.image_web_full}}&h=1079&w=1920&q=75"
+                                            hires="{{project_list_data.banner_data.image_web_full}}&h=1079&w=1920&q=100"
                                             alt="{{project_list_data.project_title}}" class="image-cover">
                                         <div class="card_black_overlay"></div>
                                     </div>
@@ -153,12 +151,8 @@
                                     </div>
                                     <div class="project-info-list">
                                         <div class="section-information">
-                                            <!-- <div class="status-lable content-size-div"
-                                                style="margin-left: auto;margin-right:auto;">
-                                                <p style="color: #fff !important;">{{project_list_data.status}}</p>
-                                            </div> -->
                                             <div class="banner-title">
-                                                <h2>
+                                                <h2 class="g_regular ">
                                                     {{project_list_data.project_title}}
                                                 </h2>
                                             </div>
@@ -172,7 +166,6 @@
                                     </div>
                                 </a>
                             </div>
-
                         </div>
                     </div>
 
@@ -186,7 +179,7 @@
                                     <div class="project-img-list relative"
                                         ng-if="project_list_data.banner_data.image_web_type == 'image'">
                                         <img src="assets/images/other/dummy_image.png"
-                                            hires="{{project_list_data.banner_data.image_web_full}}&h=1079&w=1920&q=75"
+                                            hires="{{project_list_data.banner_data.image_web_full}}&h=1079&w=1920&q=100"
                                             alt="{{project_list_data.project_title}}" class="image-cover">
                                         <div class="card_black_overlay"></div>
                                     </div>
@@ -204,7 +197,7 @@
                                         <div class="section-information">
 
                                             <div class="title-size">
-                                                <p>
+                                                <p class="g_regularx ">
                                                     {{project_list_data.project_title}}
                                                 </p>
                                                 <div class="project-arrow-icon">

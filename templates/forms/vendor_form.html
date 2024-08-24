@@ -29,6 +29,11 @@
                         <label class="md-lable" for="category_item">Category Item</label>
                     </div>
                     <div class="contact_lable">
+                        <input id="vendor_type" name="vendor_type" type="text" ng-model="vendor_obj.vendor_type"
+                            required ng-change="nextChange();" class="form-control"  tabindex="2">
+                        <label class="md-lable" for="vendor_type">Vendor Type </label>
+                    </div>
+                    <div class="contact_lable">
                         <input id="complete_product_details" name="complete_product_details" type="text"
                             ng-model="vendor_obj.complete_product_details" class="form-control"  tabindex="3">
                         <label class="md-lable" for="complete_product_details">Complete Product Details </label>

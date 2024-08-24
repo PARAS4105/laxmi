@@ -1,0 +1,118 @@
+<a href="project/{{project_list_data.slug}}" class="wow fade_top" data-wow-delay="0.4s" data-wow-duration="0.{{$index+3}}s" ng-if="project_list_data.project_id != 373  && project_list_data.project_id != 374">
+
+    <div class="relative">
+        <div class="project-img-list relative" ng-if="project_list_data.banner_data.image_web_type == 'image'">
+            <img src="assets/images/other/dummy_image.png" hires="{{project_list_data.banner_data.image_web_full}}&h=1079&w=1920&q=100" alt="{{project_list_data.project_title}}" class="image-cover">
+        </div>
+
+        <div class="project-img-list relative" ng-if="project_list_data.banner_data.image_web_type == 'video'">
+            <video autoplay muted loop playsinline id="myVideo"
+                style="width: 100%;display: block;height: 100%;object-fit: cover;">
+                <source src="{{project_list_data.banner_data.image_web_full}}" type="video/mp4">
+            </video>
+        </div>
+        <div class="project_status_lable" ng-if="project_list_data.status">
+            <p class="capitalize">{{project_list_data.status}}</p>
+        </div>
+    </div>
+
+    <div class="project-info-list">
+        <div class="section-information">
+
+            <div class="content-size-div section-title-flex j-c-sb">
+                <p class="xcapitalize charter_regularx g_regular uppercase">
+                    {{project_list_data.project_title}} 
+                </p>
+                <div class="project-arrow-icon">
+                    <img src="assets/images/icon/right_arrow_line.svg" alt="{{project_list_data.project_title}}">
+                </div>
+            </div>
+            <div class="banner-detail-row banner-detail-row-grid">
+                <div class="project-information-div" ng-if="project_list_data.size_price">
+                    <div class="building-icon">
+                        <img src="assets/images/icon/building.svg" alt="reecosys">
+                    </div>
+                    <div class="content-size-div banner-detail-row-grid-text">
+                        <p class="capitalize ">
+                            {{project_list_data.size_price}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-information-div" ng-if="project_list_data.location">
+                    <div class="building-icon">
+                        <img src="assets/images/icon/location.svg" alt="reecosys">
+                    </div>
+                    <div class="content-size-div">
+                        <p class="capitalize">
+                            {{project_list_data.location}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>
+
+
+<a href="javascript:void(0);" class="wow fade_top" data-wow-delay="0.4s" data-wow-duration="0.{{$index+3}}s" ng-if="project_list_data.project_id != 373  && project_list_data.project_id != 374">
+
+    <div class="relative">
+        <div class="project-img-list relative" ng-if="project_list_data.banner_data.image_web_type == 'image'">
+            <img src="assets/images/other/dummy_image.png"
+                hires="{{project_list_data.banner_data.image_web_full}}&h=1079&w=1920&q=100" alt="{{project_list_data.project_title}}" class="image-cover">
+        </div>
+
+        <div class="project-img-list relative" ng-if="project_list_data.banner_data.image_web_type == 'video'">
+            <video autoplay muted loop playsinline id="myVideo"
+                style="width: 100%;display: block;height: 100%;object-fit: cover;">
+                <source src="{{project_list_data.banner_data.image_web_full}}" type="video/mp4">
+            </video>
+        </div>
+        <div class="project_status_lable" ng-if="project_list_data.status">
+            <p class="capitalize" ng-if="project_list_data.status != 'ready to move in' && project_list_data.status != 'newly launched'">{{project_list_data.status}}</p>
+            <p class="capitalize" ng-if="project_list_data.status == 'ready to move in'">Completed</p>
+            <p class="capitalize" ng-if="project_list_data.status == 'newly launched'">Upcoming</p>
+        </div>
+    </div>
+
+    <div class="project-info-list">
+        <div class="section-information">
+
+            <div class="content-size-div section-title-flex j-c-sb">
+                <p class="xcapitalize charter_regularx g_regular uppercase">
+                    {{project_list_data.project_title}}
+                </p>
+                <div class="project-arrow-icon">
+                    <img src="assets/images/icon/right_arrow_line.svg" alt="{{project_list_data.project_title}}">
+                </div>
+            </div>
+            <div class="banner-detail-row banner-detail-row-grid">
+                <div class="project-information-div" ng-if="project_list_data.size_price">
+                    <div class="building-icon">
+                        <img src="assets/images/icon/building.svg" alt="reecosys">
+                    </div>
+                    <div class="content-size-div banner-detail-row-grid-text">
+                        <p class="capitalize ">
+                            {{project_list_data.size_price}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-information-div" ng-if="project_list_data.location">
+                    <div class="building-icon">
+                        <img src="assets/images/icon/location.svg" alt="reecosys">
+                    </div>
+                    <div class="content-size-div">
+                        <p class="capitalize">
+                            {{project_list_data.location}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>
+
+
+

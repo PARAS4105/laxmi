@@ -12,11 +12,15 @@
             <div class="black_overlay"></div>
 
             <div class="banner-text-half" ng-if="blog_data.banner_title">
-                <div class="banner-title">
+                <!-- <div class="banner-title">
                     <h1 class="white-color">
                         {{blog_data.banner_title}}
                     </h1>
-                </div>
+                </div> -->
+                
+                <div class="banner-title-new wow banner_text-width fade_top other_page_width" data-wow-delay="0.6s" data-wow-duration="0.6s" ng-if="blog_data.banner_title">
+                    <h2 class="white-color g_regular">    {{blog_data.banner_title}}  </h2>
+                                        </div>
             </div>
         </section>
 
@@ -38,13 +42,13 @@
                             <div class="inner-flex">
                                 <div class="section-information">
                                     <div class="section-title-big blog-title" ng-if="blog_data.title">
-                                        <h2 class="capitalize">
+                                        <h2 class="capitalize ">
                                             {{blog_data.title}}
                                         </h2>
                                     </div>
                                     <div class="blog_data_tags" ng-if="blog_data.tags.length > 0">
                                         <div ng-repeat="data in blog_data.tags">
-                                            <a href="blogs?type={{data.text}}">
+                                            <a href="articles?type={{data.text}}">
                                                 <div class="blog_tags_text capitalize">
                                                     <p>{{data.text}}</p>
                                                 </div>
@@ -70,7 +74,7 @@
                                 <div class="recent_blog_grids">
 
                                     <div class="recent_blogs_details" ng-repeat="data in recent_blog_data">
-                                        <a href="blog/{{data.slug}}">
+                                        <a href="articles/{{data.slug}}">
                                             <div class="inner-flex">
                                                 <div class="recent_blog_image">
                                                     <img src="assets/images/other/dummy_image.png"

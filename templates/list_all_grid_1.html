@@ -1,8 +1,7 @@
-<a href="project/{{project_list_data.slug}}" class="wow fadeIn" data-wow-delay="0.4s"
-    data-wow-duration="0.{{$index+3}}s">
+<a href="project/{{project_list_data.slug}}" class="wow fadeIn" data-wow-delay="0.4s" data-wow-duration="0.{{$index+3}}s" ng-if="project_list_data.project_id != 335 && project_list_data.project_id != 336 && project_list_data.project_id != 337  && project_list_data.project_id != 373 && project_list_data.project_id != 374">
     <div class="project-img-list relative" ng-if="project_list_data.banner_data.image_web_type == 'image'">
         <img src="assets/images/other/dummy_image.png"
-            hires="{{project_list_data.banner_data.image_web_full}}&w=1320&h=740&q=75" alt="{{project_list_data.project_title}}" class="image-cover">
+            hires="{{project_list_data.banner_data.image_web_full}}&w=1920&h=740&q=100" alt="{{project_list_data.project_title}}" class="image-cover">
         <div class="card_black_overlay"></div>
     </div>
     <div class="project-img-list relative" ng-if="project_list_data.banner_data.image_web_type == 'video'">
@@ -15,7 +14,7 @@
     <div class="project-info-list">
         <div class="section-information">
             <div class="banner-title">
-                <h2 class="charter_regular white_color_text">
+                <h2 class="charter_regularx g_regular  white_color_text">
                     {{project_list_data.project_title}}
                 </h2>
             </div>
@@ -77,52 +76,84 @@
         </div>
     </div>
 </a>
-
-
-<!-- <div class="container-fluid" ng-if="isMobilescreen">
-    <div class="project-list-grid">
-        <div class="project-list-card" ng-repeat="project_list_data in projects_full_list"
-            ng-if="category_data.category == project_list_data.category">
-            <a href="project/{{project_list_data.slug}}">
-
-                <div class="project-img-list relative"
-                    ng-if="project_list_data.banner_data.image_web_type == 'image'">
-                    <img src="assets/images/other/dummy_image.png"
-                        hires="{{project_list_data.banner_data.image_web_full}}&h=1079&w=1920"
-                        alt="{{project_list_data.project_title}}" class="image-cover">
-                    <div class="black_overlay"></div>
+<a href="javascript:void(0);" class="wow fadeIn" data-wow-delay="0.4s" data-wow-duration="0.{{$index+3}}s" ng-if="project_list_data.project_id == 335 || project_list_data.project_id == 336 || project_list_data.project_id == 337  ||  project_list_data.project_id == 373 || project_list_data.project_id == 374 ">
+    <div class="project-img-list relative" ng-if="project_list_data.banner_data.image_web_type == 'image'">
+        <img src="assets/images/other/dummy_image.png"
+            hires="{{project_list_data.banner_data.image_web_full}}&w=1920&h=740&q=100" alt="{{project_list_data.project_title}}" class="image-cover">
+        <div class="card_black_overlay"></div>
+    </div>
+    <div class="project-img-list relative" ng-if="project_list_data.banner_data.image_web_type == 'video'">
+        <video autoplay muted loop playsinline id="myVideo"
+            style="width: 100%;display: block;height: 100%;object-fit: cover;">
+            <source src="{{project_list_data.banner_data.image_web_full}}" type="video/mp4">
+        </video>
+        <div class="card_black_overlay"></div>
+    </div>
+    <div class="project-info-list">
+        <div class="section-information">
+            <div class="banner-title">
+                <h2 class="charter_regularx g_regular white_color_text">
+                    {{project_list_data.project_title}}
+                </h2>
+            </div>
+            <div class="content-size-div capitalize content-size-div-small projects_list_information text-center">
+                <div class="project-info-flex">
+                    <div class="project_list_icon">
+                        <img src="assets/images/icon/building_white.svg" alt="{{project_list_data.project_title}}">
+                    </div>
+                    <p>{{project_list_data.size_price}} </p>
                 </div>
-
-                <div class="project-img-list relative"
-                    ng-if="project_list_data.banner_data.image_web_type == 'video'">
-                    <video autoplay muted loop playsinline id="myVideo"
-                        style="width: 100%;display: block;height: 100%;object-fit: cover;">
-                        <source src="{{project_list_data.banner_data.image_web_full}}"
-                            type="video/mp4">
-                    </video>
-                    <div class="black_overlay"></div>
+                <div class="project-info-flex">
+                    <div class="project_list_icon">
+                        <img src="assets/images/icon/location_white.svg" alt="{{project_list_data.project_title}}">
+                    </div>
+                    <p>{{project_list_data.location}}</p>
                 </div>
-                <div class="project-info-list">
-                    <div class="section-information">
-
-                        <div class="title-size">
-                            <p class="capitalize">
-                                {{project_list_data.project_title}}
-                            </p>
-                            <div class="project-arrow-icon">
-                                <img src="assets/images/icons/right-arrow.svg" alt="{{project_list_data.project_title}}">
+                <div class="project-info-flex">
+                    <div class="progress-status-list">
+                        <div class="progress"
+                            data-percentage="{{project_list_data.construction.progress_percent}}"
+                            ng-if="project_list_data.construction.progress_percent > 0">
+                            <span class="progress-left">
+                                <span class="progress-bar"></span>
+                            </span>
+                            <span class="progress-right">
+                                <span class="progress-bar"></span>
+                            </span>
+                            <div class="progress-value">
+                                <p>
+                                    {{project_list_data.construction.progress_percent}}
+                                </p>
                             </div>
                         </div>
-                        <div class="content-size-div home_project_area">
-                            <p class="capitalize">
-                                {{project_list_data.size_price}} |
-                                {{project_list_data.location}} |
-                                {{project_list_data.status}}
-                            </p>
+                        <div class="progress"
+                            ng-if="!project_list_data.construction && !project_list_data.construction.progress_percent">
+                            <span class="progress-left">
+                                <span class="progress-bar"></span>
+                            </span>
+                            <span class="progress-right">
+                                <span class="progress-bar"></span>
+                            </span>
+                            <div class="progress-value">
+                                <p>
+                                    0%
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    <!-- <p>{{project_list_data.status}}</p> -->
+                    <p class="capitalize" ng-if="project_list_data.status != 'ready to move in' && project_list_data.status != 'newly launched'">{{project_list_data.status}}</p>
+                    <p class="capitalize" ng-if="project_list_data.status == 'ready to move in'">Completed</p>
+                    <p class="capitalize" ng-if="project_list_data.status == 'newly launched'">Upcoming</p>
                 </div>
-            </a>
+            </div>
+            <!-- <div class="outline-div-button button-div view-project-btn">
+                <button class="button-style ">
+                    <p class="">
+                        Know More
+                    </p>
+                </button>
+            </div> -->
         </div>
     </div>
-</div> -->
+</a>

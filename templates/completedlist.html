@@ -1,0 +1,158 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper">
+    <div id="reecosys-list-wrapper" class="relative">
+
+        <section class="reecosys-section relative wow fadeIn" data-wow-delay="0.6s" data-wow-duration="0.4s"
+            id="reecosys-list-section-1">
+            <div class="video-listing-banner-list">
+                <img src="{{projects_full_list[0].banner_data.image_web_full}}&h=480&w=1920&q=75" alt=""
+                    ng-if="$storage.logged_in_master_id != '29'">
+                <!-- <video autoplay="" muted="" loop="" playsinline="" id="myVideo" class="">
+                    <source src=""
+                        type="video/mp4">
+                </video> -->
+            </div>
+            <div class="top-left-overlay-new"></div>
+            <!-- <div class="banner-section-typo inner-flex">
+                <div class="banner-text-img">
+                    <img src="" alt="{{project_list_data.project_title}}">
+                </div>
+            </div> -->
+        </section>
+
+        <section class="reecosys-section overflow" id="reecosys-list-section-2">
+            <div class="container-fluid">
+                <div class="inner-flex ">
+                    <div class="listing-section-header">
+                        <div class="inner-flex-2 list_w100">
+                            <div class="section-title wow fadeIn" data-wow-delay="0.6s" data-wow-duration="0.6s">
+                                <h2>
+                                    HOME IS WHERE
+                                    ORDINARY BECOMES
+                                    EXTRAORDINARY
+                                </h2>
+                            </div>
+
+                            <!-- <div class="project-type-list-panel list_page_iconwrapper wow fadeIn" data-wow-delay="0.6s"
+                                data-wow-duration="0.8s">
+                                <div class="list-panel-ul">
+                                    <ul>
+                                        <li ng-class="{ active: isSet(1) }">
+                                            <a href="javascript:void(0);" class="charter_regular"
+                                                ng-click="category_get_f(''); setTab(1);">
+                                                All
+                                            </a>
+                                        </li>
+
+                                        <li ng-class="{ active: category_get == category_data.category }"
+                                            ng-repeat="category_data in projects_category"
+                                            ng-if="category_data.category">
+                                            <a href="javascript:void(0);" class="capitalize charter_regular"
+                                                ng-click="category_get_f(category_data.category); setTab($index+2);">
+                                                {{category_data.category}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="list-change-button">
+                                    <div class="list-change-button-icon">
+                                        <img src="assets/images/icons/list_icon.svg"
+                                            alt="{{project_list_data.project_title}}">
+                                    </div>
+                                    <div class="list-change-ul">
+                                        <ul>
+                                            <li class="columntab">
+                                                <a href="javascript:void(0);" ng-class="{'activelink': column_get == 1}"
+                                                    ng-click="column_get_f(1);">
+                                                    1 Column
+                                                </a>
+                                            </li>
+                                            <li class="columntab">
+                                                <a href="javascript:void(0);" ng-class="{'activelink': column_get == 2}"
+                                                    ng-click="column_get_f(2);">
+                                                    2 Column
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="project-list-grid project-list-grid-2-column">
+                        <div class="project-list-card" ng-repeat="project_list_data in projects_full_list"
+                            ng-if="project_list_data.project_id == 373 || project_list_data.project_id == 374">
+                            <a href="javascript:void(0);" class="wow fade_top" data-wow-delay="0.4s"
+                                data-wow-duration="0.{{$index+3}}s">
+
+                                <div class="relative">
+                                    <div class="project-img-list relative"
+                                        ng-if="project_list_data.banner_data.image_web_type == 'image'">
+                                        <img src="assets/images/other/dummy_image.png"
+                                            hires="{{project_list_data.banner_data.image_web_full}}&h=1079&w=1920&q=75"
+                                            alt="{{project_list_data.project_title}}" class="image-cover">
+                                    </div>
+
+                                    <div class="project-img-list relative"
+                                        ng-if="project_list_data.banner_data.image_web_type == 'video'">
+                                        <video autoplay muted loop playsinline id="myVideo"
+                                            style="width: 100%;display: block;height: 100%;object-fit: cover;">
+                                            <source src="{{project_list_data.banner_data.image_web_full}}"
+                                                type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="project_status_lable" ng-if="project_list_data.status">
+                                        <p class="capitalize"
+                                            ng-if="project_list_data.status != 'ready to move in' && project_list_data.status != 'newly launched'">
+                                            {{project_list_data.status}}</p>
+                                        <p class="capitalize" ng-if="project_list_data.status == 'ready to move in'">
+                                            Completed</p>
+                                        <p class="capitalize" ng-if="project_list_data.status == 'newly launched'">
+                                            Upcoming</p>
+                                    </div>
+                                </div>
+
+                                <div class="project-info-list">
+                                    <div class="section-information">
+
+                                        <div class="content-size-div section-title-flex j-c-sb">
+                                            <p class="capitalize charter_regular">
+                                                {{project_list_data.project_title}}
+                                            </p>
+                                            <!-- <div class="project-arrow-icon">
+                                                <img src="assets/images/icon/right_arrow_line.svg"
+                                                    alt="{{project_list_data.project_title}}">
+                                            </div> -->
+                                        </div>
+                                        <div class="banner-detail-row banner-detail-row-grid">
+                                            <div class="project-information-div" ng-if="project_list_data.size_price">
+                                                <div class="building-icon">
+                                                    <img src="assets/images/icon/building.svg" alt="reecosys">
+                                                </div>
+                                                <div class="content-size-div banner-detail-row-grid-text">
+                                                    <p class="capitalize ">
+                                                        {{project_list_data.size_price}}
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="project-information-div" ng-if="project_list_data.location">
+                                                <div class="building-icon">
+                                                    <img src="assets/images/icon/location.svg" alt="reecosys">
+                                                </div>
+                                                <div class="content-size-div">
+                                                    <p class="capitalize">
+                                                        {{project_list_data.location}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

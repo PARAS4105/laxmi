@@ -6127,7 +6127,7 @@ button.close {
     text-align: left;
     text-align: start;
     filter: alpha(opacity=0);
-    opacity: 0
+    opacity: 0;
 }
 
 .tooltip.in {
@@ -14297,6 +14297,12 @@ button, input, select, textarea {
 }
 
 @media (min-width:1280px) {
+
+    .project-detail-info-banner-new .banner-title h1 {
+        font-size: 10rem ;
+
+    }
+
     .flex-order-gt-md--20 {
         -webkit-order: -20;
         -ms-flex-order: -20;
@@ -24003,7 +24009,7 @@ md-tooltip.md-show {
     }
 }
 
-.fade_top {
+.fade_topcx {
     -webkit-animation-name: fade_top;
     animation-name: fade_top;
 }
@@ -31812,12 +31818,28 @@ md-tooltip.md-show {
     font-style: normal;
 
 }
+
+.inter-regualer {
+    font-family: "Inter";
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    
+  }
+  .inter-regualer {
+    font-family: "inter";
+  }
+
 .tcpaitlize {
     text-transform: capitalize;
 }
 
+:root { 
+    --detailbanner-title-new: 12.7rem;
+}
 :root {
     /* colors */
+    --title-brown-color: #7c4e2e;
     --primary-color: #000;
     --gray-color: #E2E2E2;
     --white-color: #ffffff;
@@ -31830,7 +31852,7 @@ md-tooltip.md-show {
     /* font-sizes */
     --thankyou-title: 7rem;
     --thankyou-title-mobile: 5rem;
-    --detailbanner-title-new: 11rem;
+    --detailbanner-title-new: 12.7rem;
     --banner-title-new: 4.5rem;
     --banner-title: 3.5rem;
     --title-size: 2rem;
@@ -31897,7 +31919,7 @@ md-tooltip.md-show {
  .borderfill2.borderSwiperAnimation:after {
     width: 0;
     content: "";
-    background-color: #ff0000 !important;
+    background-color: #E1A019 !important;
     height: 100%;
     position: absolute;
     top: 0;
@@ -31958,7 +31980,7 @@ md-tooltip.md-show {
 .borderfill2.borderSwiperAnimation:after {
     width: 0;
     content: "";
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
     height: 100%;
     position: absolute;
     top: 0;
@@ -32421,6 +32443,17 @@ button, a {
     /* transition: all ease-in-out 0.3s;
     -webkit-transition: all ease-in-out 0.3s; */
 }
+.project_banner_overlay3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: %;
+    background-image: linear-gradient(#ffffff00, #000000eb);
+    /* background-image: linear-gradient(#f6921e00, #000); */
+    /* transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s; */
+}
 
 .project_detail_overlay {
     position: absolute;
@@ -32560,6 +32593,12 @@ button, a {
     gap: var(--mediumgap-size);
 }
 
+.detail_page_laxmi .inner-flex {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smallgap-size);
+}
+
 .gallery-card {
     width: 100%;
     display: flex;
@@ -32584,9 +32623,9 @@ button, a {
     align-items: center;
     gap: 1rem;
     transition: var(--common-transition);
-    width: 100%;
+    width:100%;
     padding: 0 2rem;
-    height: 60px;
+    height: 50px;
     background-color: transparent;
     border-radius: 50px;
     border: 1px solid transparent;
@@ -32607,6 +32646,13 @@ button:focus,
     cursor: pointer;
 }
 
+/* .outline-div-button:nth-child(1) .button-style  {
+    border-color: var(--black-color);
+    background-color: var(--black-color);
+} */
+.patch_color {
+    color :#E1A019;
+}
 .outline-div-button.button-div .button-style {
     border-color: var(--black-color);
 }
@@ -32666,6 +32712,7 @@ button:focus,
 
 .filled-div-button.button-div .button-style.orange-button {
     border-color: var(--black-color);
+    width: 100%;
 }
 
 .filled-div-button.button-div .button-style p {
@@ -32720,15 +32767,23 @@ button:focus,
     text-align: center;
     gap: var(--smallgap-size);
     align-items: center;
-    min-height: 177px;
+    min-height: 140px;
     justify-content: center;
     padding: 1rem;
 }
 .amenities-grid>div:nth-child(4), .amenities-grid>div:nth-child(5) , .amenities-grid>div:nth-child(6) {
-    border-bottom: 0;
+    border:0
 }
-.amenities-grid>div:nth-child(1), .amenities-grid>div:nth-child(2) , .amenities-grid>div:nth-child(4), .amenities-grid>div:nth-child(5) { 
-    border-right: 1px solid var(--gray-color);
+.amenities-grid>div:nth-child(1), .amenities-grid>div:nth-child(3) .amenities-grid>div:nth-child(2) , .amenities-grid>div:nth-child(4), .amenities-grid>div:nth-child(5) { 
+    /* border-right: 1px solid var(--gray-color); */
+    border:0
+}
+.amenities-grid>div:nth-child(2)  {
+    /* border-right: 0; */
+    border:0
+}
+.amenities-grid>div {
+    border-bottom: 0;
 }
 
 .amenities-icon {
@@ -32947,7 +33002,8 @@ button:focus,
 
 .form-control {
     position: relative;
-    border-radius: var(--border-radius);
+    /* border-radius: var(--border-radius); */
+    border-radius: 0;
     font-size: var(--content-size);
     border: 1px solid #999999;
     width: 100%;
@@ -33442,22 +33498,25 @@ label.error {
     top: 0;
     z-index: 9999999;
     transition: all 0.6s ease;
-    background-color: var(--white-color);
+    /* background-color: var(--white-color); */
+    background-color: transparent;
 }
 
 .reecosys-header-content {
     padding: 1rem 1.2rem 1rem 1rem;
-    background-color: var(--white-color);
-    border-bottom: 1px solid #ebebeb;
+    /* background-color: var(--white-color); */
+    /* border-bottom: 1px solid #ebebeb; */
+    border-bottom: 1px solid transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 999;
+    background-color: #fff;
 }
 
-/* .reecosys-header.header_change {
-    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 15%);
-} */
+.reecosys-header.header_change {
+    background-color: var(--white-color);
+}
 
 .mobile-icons-flex {
     display: flex;
@@ -33673,6 +33732,12 @@ body.header_contact_open {
     overflow: hidden;
     margin: 0 -2rem;
     aspect-ratio: 800/800;
+    background-color: var(--gray-color);
+}
+.project-img-list-upcoming{
+    overflow: hidden;
+    margin: 0 -2rem;
+    aspect-ratio: 700/400;
     background-color: var(--gray-color);
 }
 
@@ -34152,7 +34217,7 @@ p.bold {
 .navigation-wrapper-links ul li p a {
     /* font-family: var(--semibold-font-family); */
     color: var(--black-color);
-    line-height: 1;
+    line-height: auto;
     /* font-size: var(--mobcontent-size); */
     font-size: var(--content-size);
 }
@@ -34326,6 +34391,21 @@ p.bold {
     text-align: center;
     width: 80%;
     transform: translate(-50%, -50%);
+}
+
+.list_one .project-list-grid.project-list-grid-1-column .project-info-list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    width: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.list_one .projects_list_information  {
+    text-align:left;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .project-list-grid.project-list-grid-1-column .project-info-list p,
@@ -34826,7 +34906,7 @@ form .md-lable.contact_code #contact_no {
 #reecosys-project-detail-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 6rem;
+    gap: 4rem;
 }
 
 .content-size-div-detail-section-1 {
@@ -35030,7 +35110,7 @@ form .md-lable.contact_code #contact_no {
 
 .banner_content-flex {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: var(--mediumgap-size);
 }
 
@@ -35557,8 +35637,6 @@ body.header_color_change_div .downloadplans-text p {
     aspect-ratio: 800/800;
 }
 
-
-
 /* .content-size-div-detail-section-highlight p br {
     display: none;
 } */
@@ -35989,7 +36067,7 @@ input[type="checkbox"i] {
 }
 
 .form_button .button-style {
-    height: 60px !important;
+    height: 50px !important;
 }
 
 .header-inquire-now .button-style {
@@ -36118,6 +36196,7 @@ form #contact_code {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    width: 90%;
 }
 
 .team-information-grid-about-page {
@@ -37426,7 +37505,7 @@ body.mobile_dropdown {
 .reecosys_footer_web {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 20rem;
 }
 
 .reecosys_footer_copyright {
@@ -39597,8 +39676,39 @@ body {
     color: var(--white-color);
     font-weight: bold;
 }
-.highlights-grid-detail:hover .hight_light_abs  .highlight_flex h2 {
-    color: #E1A019;
+
+.highlights-grid-detail  .hight_light_abs  .highlight_flex h2 { 
+    color: #A75F4A;
+}
+.highlights-grid-detail  .hight_light_abs  .highlight_flex p {
+    color: var(--black-color);
+}
+
+.project_gallery_overlay-white {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#ffffffd1, #e7dedede);
+    opacity: 1;
+    visibility: visible;
+    transition: var(--common-transition);
+}
+.static_img:hover .project_gallery_overlay-white{
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--common-transition);
+}
+.highlights-grid-detail>div:hover .highlight_flex h2 { 
+    color: var(--white-color);
+}
+.highlights-grid-detail div:hover  .highlight_flex p {
+    color: var(--white-color);
+}
+
+.highlights-grid-detail div:hover  .highlight_flex h2 {
+    /* color: #E1A019; */
     font-weight: bold;
 }
 
@@ -39609,16 +39719,18 @@ body {
     overflow: hidden;
     transition: height 0.4s ease , max-height 0.4s ease ;
 }
-.specificationContent.active{
+.specificationContent.active {
     height: 100%;
     /* overflow: hidden; */
-    max-height: 10vh;
+    max-height: 20vh;
     /* padding: 1rem 0; */
-    transition: height 0.4s ease , max-height 0.4s ease ;
+    transition: height 0.4s ease , max-height 0.4s ease;
+    padding-top: 1rem;
 }
-.amenitiesAccordion{
+.amenitiesAccordion {
     padding-bottom: 1rem;
     border-bottom: 1px solid #D9D9D9;
+    padding-top: 1rem;
 }
 
 .amenitiesAccordion .accodionBlock{
@@ -39631,7 +39743,7 @@ body {
 }
 
 .accodionBlock.active>div:nth-child(1){
-    padding-bottom : 1rem;
+    padding-bottom : 0rem;
 }
 
  .accodionBlock.active .accordionIcon .minus,
@@ -39644,7 +39756,6 @@ body {
     display: none;
 }
 
-
 .projectfloor-grid{
     display : grid;
     grid-template-columns: 55% 40%;
@@ -39652,16 +39763,253 @@ body {
     
 }
 .projectfloor-grid{
-    display : grid;
+    /* display : grid;
     grid-template-columns: 55% 40%;
     justify-content: space-between;
+    gap: 3rem; */
+    display : flex;
+    grid-template-columns: 55% 40%;
+    justify-content: space-between;
+    /* flex-direction: row-reverse; */
+    flex-direction: column-reverse;
+    gap: 3rem;
     
 }
 
-.mo
+.projectfloor-grid-location {
+    display: flex;
+    grid-template-columns: 100% 100%;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-direction: column;
+}
+.projectfloor-grid-form {
+    display: grid;
+    grid-template-columns: 100% 100%;
+    justify-content: space-between;
+    gap: 10rem;
+}
+.location_paragraph_width {
+    width: 100%;
+}
 
-/* resposnive */
+.tablinks {
+    width: 100%;
+    vertical-align: middle;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #e2eaec;
+}
+.tablinks.active {
+    border-bottom: 2px solid var(--title-brown-color);
+}
+
+.tabtitle {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.investors_tabs_grid {
+    display: grid;
+}
+.downaload-grid-investor {
+    display: grid;
+    row-gap: 1.5rem;
+}
+.investor_sec3_pdf {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+.pdf_icon img {
+    width: 40px;
+}
+
+.pdf_icon  {
+    width: 40px;
+}
+.downaload-grid-investor .button-style {
+    justify-content: unset;
+    padding: 0;
+}
+
+.download_icon1 {
+    margin: 0 0 0 auto;
+}
+.tabcontent .section-title h2 {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.directors_table td {
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--title-brown-color);
+    vertical-align: middle;
+}
+
+.directors_table th {
+    color: var(--title-brown-color);
+    font-size: var(--content-size);
+    font-family: var(--bold-font-family);
+    padding-bottom: 1rem;
+    font-weight: bold;
+}
+
+.investor_sec3_pdf {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.investor_sec3_pdf div:nth-child(1) {
+    flex-basis: 10%;
+}
+.investor_sec3_pdf div:nth-child(2) {
+    flex-basis: 80%;
+    white-space: unset;
+}
+.investor_sec3_pdf div:nth-child(3) {
+    flex-basis: 10%;
+}
+
+.download-button-filled-ul li:nth-child(1)  .outline-div-button.button-div .button-style {
+    border-color: var(--black-color) !important    ;
+    background-color: var(--black-color) !important;
+}
+.download-button-filled-ul li:nth-child(1)  .outline-div-button.button-div .button-style  p {
+    color :var(--white-color)
+    
+}
+.download-button-filled-ul li:nth-child(1)  .outline-div-button.button-div .download_icon img {
+    filter: invert(1);
+}
+
+/* .............. */
+.download-button-filled-ul li:nth-child(1):hover  .outline-div-button.button-div .button-style {
+    border-color: var(--black-color) !important    ;
+    background-color: transparent!important;
+}
+.download-button-filled-ul li:nth-child(1):hover  .outline-div-button.button-div .button-style  p {
+    color :var(--black-color)
+    
+}
+.download-button-filled-ul li:nth-child(1):hover  .outline-div-button.button-div .download_icon img {
+    filter: invert(0);
+}
+/* .............. */
+.custom_iframe iframe {
+    background-color: #f5f0f5 ;
+    width: 100%;
+    height: 600px;
+    
+}
+
+.iframe-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5; /* Replace this with the extracted color */
+    opacity: 0.5; /* Adjust opacity as needed */
+    pointer-events: none; /* Allow interaction with iframe */
+}
+
+/* resposnive abouve */
 @media only screen and (min-width: 325px) {
+
+    .list_one .banner-title h1 {
+        font-size: 2rem;
+    }
+
+    .list_one .button-style {
+        padding: 1rem 2rem;
+        
+    }
+
+    .extra_br br {
+        display: none;
+    }
+
+    .gallery-images-detail-banner {
+        height: 85vh;
+    }
+
+    .project-rera-numberx.content-size-div p{
+        font-size: 1rem;
+     }
+    #reecosys-project-detail-wrapper .project_banner_info_size p {
+        -webkit-line-clamp : unset;
+        overflow: unset;        
+            white-space: nowrap;
+        
+    }
+
+    .ullisection .content-size-div div {
+        letter-spacing: 0.4px;
+        line-height: 1.5;
+        font-size: var(--content-size);
+        font-family: var(--colfax-font-family);
+        position: relative;        
+    }
+    .ullisection .content-size-div div ul li {
+        position: relative;
+        padding-left: 15px;
+    }
+    .ullisection .content-size-div div ul li::before {
+        position: absolute;
+        top: 12px;
+        left: 0px;
+        background-color: #000;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        content: '';
+
+    }
+
+    .investors_tabs_grid {
+        gap: 2rem;
+    }
+    .investors_tabs_grid {
+        gap: 2rem;
+    }
+    
+    .directors_table th {
+        text-align: center;
+    }
+    .directors_table td {
+        font-size: 1.2rem;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+    .download_icon1 img {
+        width: 3rem;
+    }
+
+    .downaload-grid-investor .button-style p {
+        line-height: 1.2;
+        font-size: 1.25rem;
+    }
+
+    .highlights-grid-detail {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .static_img img {
+        width: 100%;
+    }
+    .highlight_wrapper {
+        display: flex;
+        gap: 5rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .hover_icon:hover button .download_icon img {
+        filter:invert(1)
+    }
     .upload-button-wrapper {
         padding: 1.15rem 1.5rem;
         font-size: 18px;
@@ -39704,8 +40052,99 @@ body {
     .foootericon img {
         width: 2rem;
     }
+    .project-info-list-abs {
+        position: absolute;
+        bottom: 5%;
+        left: 3%;
+        width: 95%;
+    }
+    .project-info-list-abs-flex h2 {
+        color: var(--white-color);
+        text-align: left;
+    }
+    .tabtitle {
+        gap: 1rem;
+    }
+
+    .tabtitle .amenities-text p {
+        font-size: 1.4rem;
+    }
+    .investor_sec3_pdf {
+        padding: 10px 25px !important;
+        gap: 1rem !important;
+    }
+    .downaload-grid-investor .button-style {
+        height: 50px;
+    }
+    #reecosys-investors-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .tablinks {
+        width: 100%;
+        vertical-align: middle;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid #e2eaec;
+    }
+    .tablinks.active {
+        border-bottom: 2px solid var(--title-brown-color);
+    }
+    .button-style p {
+        font-size: 1.1rem;
+    }
+
+    .reecosys-header .logo2 {
+        display: block;
+    }
+    .reecosys-header .logo1 {
+        display: none;
+    }
+
+    .horizontal-flex {
+        display: flex;
+        gap: 5rem;
+        flex-direction: column;
+    }
+    .fwbold {
+        font-weight: bold ;
+    }
+
+    .white_btn-new .outline-div-button.button-div .button-style {
+        border-color: var(--white-color);
+        width: max-content;
+        background-color: var(--white-color);
+    }
+    .white_btn-new  .outline-div-button.button-div .button-style p {
+        color: var(--black-color);
+    }
+
+    .about_innerinner-flex {
+        display: flex;gap: 2rem;
+        flex-direction: column;
+    }
 
     /*325new*/
+
+   .fraction_pagination .swiper-scrollbar-drag {
+        background: #f47434;
+    }
+    .fraction_pagination 
+.fraction_pagination    .swiper-scrollbar-drag {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background: rgba(0, 0, 0, .5);
+        border-radius: 10px;
+        left: 0;
+        top: 0;
+    }
+
+    .download_icon {
+        width:2rem;
+    }
 
     .footer-logo-abs {
         position: absolute;
@@ -39752,7 +40191,7 @@ body {
     }
     
     .section-title-tag_line h2 {
-        font-size: 3rem;     
+        font-size: 2rem;
     }
     .minifont-size p {
         font-size: 1.4rem;     
@@ -40213,10 +40652,11 @@ body {
     }
 
     .banner-detail-row {
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
         width: fit-content;
-        gap: var(--mediumgap-size);
+        /* gap: var(--mediumgap-size); */
+        gap: var(--smallgap-size);
     }
 
     .project-rera-number p {
@@ -40382,7 +40822,200 @@ body {
     }
 }
 
+.extra_img_height {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
 @media only screen and (min-width: 1024px) {
+
+    .project-list-grid.project-list-grid-1-column .project-info-list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        width: 80%;
+        transform: translate(-50%, -50%);
+    }
+    .highlights-grid-detail {
+        gap: 2rem;
+    }
+
+    .banner-text-half {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: unset;
+    }
+    .list_one .projects_list_information {
+        text-align: center;
+        align-items: center;
+        width: max-content;
+    }
+
+    .extra_br br {
+        display: block;
+    }
+    .navigation-wrapper-links ul li p, .navigation-wrapper-links ul li p a {
+        line-height: 1;        
+        
+    }
+
+    .extra_img_height {
+        width: 100%;
+        height: unset;
+    }
+
+    .button-style {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        transition: var(--common-transition);
+        width: max-content;
+        padding: 0 2rem;
+        height: 50px;
+        background-color: transparent;
+        border-radius: 50px;
+        border: 1px solid transparent;
+        white-space: nowrap;
+    }
+
+    .banner_content-flex {
+        display: flex;
+        flex-direction: column;
+        gap: var(--mediumgap-size);
+    }
+
+    .project-rera-numberx.content-size-div p{
+        font-size: var(--content-size);
+     }
+     .upcomingsection .swiper-slide:hover     .project-info-list-abs .view_white.outline-div-button.button-div .button-style {
+        border-color: var(--black-color);
+        background-color: var(--black-color);;
+    }
+
+    .custom_iframe iframe {
+        background-color: #f5f0f5 ;
+        width: 100%;
+        height: 800px;
+        
+    }
+    .rera_flex_wrapper {
+        display: flex;
+        gap: 3rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .web_specification {
+        padding-top: 1rem;
+        padding-right: 3rem;
+    }
+
+    .ullisection .content-size-div div {
+        letter-spacing: 0.4px;
+        line-height: 1.5;
+        font-size: var(--content-size);
+        font-family: var(--colfax-font-family);
+        position: relative;        
+    }
+    .ullisection .content-size-div div ul li {
+        position: relative;
+        padding-left: 15px;
+    }
+    .ullisection .content-size-div div ul li::before {
+        position: absolute;
+        top: 12px;
+        left: 0px;
+        background-color: #000;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        content: '';
+
+    }
+
+    .section_padding_laxmi {
+        padding: 5rem 0;
+    }
+
+    /* .gallery-swiper-detail-outer {
+        padding-left: vw;
+    } */
+
+    .gallery-images-detail-banner {
+        height:unset;
+    }
+
+    .investor_sec3_pdf div:nth-child(1) {
+        flex-basis: 5%;
+    }
+    .investor_sec3_pdf div:nth-child(2) {
+        flex-basis: 80%;
+    }
+    .investor_sec3_pdf div:nth-child(3) {
+        flex-basis: 5%;
+    }
+    
+    .directors_table th, .directors_table td {
+        text-align: left;
+        padding: 2rem 0;
+    }
+    .directors_table th {
+        color: var(--title-brown-color);
+        font-size: var(--content-size);
+        font-family: var(--bold-font-family);
+        padding-bottom: 1rem;
+    }
+
+    .directors_table th, .directors_table td {
+        text-align: left;
+        padding: 2rem 0;
+    }
+    .directors_table td {
+        font-size: var(--content-size);
+    }
+    .download_icon1 img {
+        width: 2rem;
+    }
+
+    .downaload-grid-investor .button-style {
+        height: 50px;
+    }
+    .investor_sec3_pdf {
+        padding: 10px 25px;
+        gap: 1rem;
+    }
+    .tabtitle .amenities-text p {
+        font-size: 1.24rem;
+    }
+    .downaload-grid-investor {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .investors_tabs_grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        row-gap: 3rem;
+        padding: 0 0 5rem 0;
+    }
+    .tabtitle {
+        gap: 1.5rem;
+    }
+    
+    .projectfloor-grid-location {
+        display: grid;
+        grid-template-columns: 45% 55%;
+        justify-content: space-between;
+        gap: 5rem;
+    }
 
     .gallery_flex-content {
         display: flex;
@@ -40411,7 +41044,7 @@ body {
     .arrow {
         width: 100%;
         height: 100%;
-        filter: invert(1);
+        /* filter: invert(1); */
     }
     .gallery_swiper-next {
         top: unset;
@@ -40426,10 +41059,15 @@ body {
         float: right;
         margin-top: 0;
         margin-right: 0;
+        
     }
     .arrow-img-size img {
         position: relative;
         z-index: 5;
+        filter: invert(1);
+    }
+    .arrow-img-size .img2 {
+        filter: invert(0);
     }
     .arrow-img-size::after {
         width: 100%;
@@ -40494,8 +41132,111 @@ body {
     .logo_spacing {
         width: 40%;
     }
+    .location_paragraph_width {
+        width: 70%;
+    } 
+    .project-map-iframe {
+        margin-top: 0;
+    }
+
+    .projectfloor-grid{
+        display : grid;
+        grid-template-columns: 55% 40%;
+        justify-content: space-between;
+        gap: 3rem;
+        /* display : flex;
+        grid-template-columns: 55% 40%;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        gap: 3rem; */
+        
+    }
+
+    .projectfloor-grid-form {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        justify-content: space-between;
+        gap: 10rem;
+    }
+
+    #reecosys-project-detail-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    .detail_page_laxmi .inner-flex {
+        display: flex;
+        flex-direction: column;
+        gap: var(--mediumgap-size);
+    }
+
+    .investor_sec1_banner {
+        width: 100%;
+        height: 70vh;
+    }
+    #reecosys-investors-wrapper {
+        gap: 8rem;
+    }
+    .about_innerinner-flex {
+        display: flex;gap: 2.8rem;
+        flex-direction: column;
+    }
 
 /* JIGNESH1024 */
+
+.amenities-grid>div:nth-child(1), .amenities-grid>div:nth-child(2), .amenities-grid>div:nth-child(4), .amenities-grid>div:nth-child(5) {
+    border-right: 1px solid var(--gray-color);
+}
+
+.amenities-grid>div:nth-child(4), .amenities-grid>div:nth-child(5) , .amenities-grid>div:nth-child(6) {
+    border-bottom: 0;
+}
+.project-info-list-abs {
+    position: absolute;
+    bottom: 5%;
+    left: 3%;
+    width: 95%;
+}
+.amenities-grid>div:nth-child(1), .amenities-grid>div:nth-child(2), .amenities-grid>div:nth-child(3) {
+    border-bottom: 1px solid var(--gray-color);
+}
+
+    .amenities-grid>div {
+        padding: 0rem;
+        background-color: transparent;
+        border-bottom: 1px solid var(--gray-color);
+        /* border-radius: 0.5rem; */
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: var(--smallgap-size);
+        align-items: center;
+        min-height: 140px;
+        justify-content: center;
+        padding: 1rem;
+    }
+.project-info-list-abs .view_white.outline-div-button.button-div .button-style p {
+    font-size: var(--link-size);
+    color: #fff;
+}
+.project-info-list-abs .view_white.outline-div-button.button-div .button-style {
+    border-color: var(--white-color);
+} 
+.project-info-list-abs .banner-title h2 {
+    font-size: 3rem;
+    text-align:left;
+
+}
+.project-info-list-abs-flex {
+    display: flex;
+    gap: 5rem;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.project-info-list-abs-flex h2 {
+    color: var(--white-color);
+}
 .mrleft_auto {
     margin-left: auto !important;
 }
@@ -40619,6 +41360,29 @@ body {
     top: 1%;
     left: 0;
 
+}
+.sticky_fullimg {
+    padding-top: 0rem;
+    position: sticky;
+    top: 1%;
+    left: 0;
+}
+.sticky_full{
+
+}
+.white_bg_Sticky0, .white_bg_Sticky1, .white_bg_Sticky2, .white_bg_Sticky3, .white_bg_Sticky4, .white_bg_Sticky5, .white_bg_Sticky6, .white_bg_Sticky7 {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    height: 250px;
+}
+.sticky_fullwrapper {
+    height: 300vh;
+    position: sticky;
+    top: 100px;
+}
+.side_img img {
+    width: 100%;
 }
 .footer-logo-abs {
     position: absolute;
@@ -41217,7 +41981,8 @@ body {
     }
 
     .reecosys-main-wrapper {
-        padding-top: 5.4rem;
+        /* padding-top: 5.4rem; */
+        padding-top: 0 !important;
     }
 
     .subscribe_content {
@@ -41432,7 +42197,7 @@ body {
     }
 
     .reecosys-footer a p:hover {
-        border-color: var(--black-color);
+        border-color: var(--white-color);
     }
 
     .navigation-wrapper {
@@ -41538,7 +42303,8 @@ body {
 
     .form-control {
         position: relative;
-        border-radius: var(--border-radius);
+        /* border-radius: var(--border-radius); */
+        border-radius: 0;
         font-size: var(--link-size);
         border: 1px solid #999999;
         width: 100%;
@@ -41581,7 +42347,7 @@ body {
     .project-detail-info-banner-new {
         bottom: unset;
         left: 5%;
-        top: 25%;
+        top: 13%;
         padding: 0 5rem 0 0;
         width: unset;
         display: flex;
@@ -41589,9 +42355,9 @@ body {
         text-align: left;
         margin-left: auto;
     }
-
     .project-detail-info-banner-new .banner-title h1 {
-        font-size: var(--detailbanner-title-new);
+        font-size: 9.3rem;
+        text-align: left;
     }
 
     .banner_sub_info {
@@ -41608,7 +42374,7 @@ body {
     }
 
     .detail-page-form {
-        width: 55%;
+        width: 65%;
     }
 
     /* inquiry style */
@@ -41711,6 +42477,12 @@ body {
         padding: 0;
       
     }
+    .website_container_gallery {
+        width: 95%;
+        padding: 0;
+        padding-top: 1rem;
+        margin: 0 0 0 auto;
+    }
 
     .gallery-image-swiper-outer .swiper-container {
         padding: 0rem;
@@ -41728,6 +42500,7 @@ body {
     .reecosys-header-content {
         min-height: 90px;
         padding: 1.2rem 2rem;
+        background-color: transparent;
     }
 
     .reecosys-brand-logo {
@@ -41739,6 +42512,131 @@ body {
         height: 100%;
         object-fit: contain;
     }
+
+    /* ----for menu web start---------- */
+    .reecosys-brand-logo img {
+        /* filter: invert(1)brightness(12.5); */
+    }
+
+    .reecosys-header .logo2 {
+        display: none;
+    }
+    .reecosys-header .logo1 {
+        display: block;
+    }
+
+    .reecosys-header.header_change  .logo1 {
+        display: none;
+    }
+    .reecosys-header.header_change  .logo2 {
+        display: block;
+    }
+
+    .reecosys-header.header_change .reecosys-brand-logo img{
+        filter: unset
+    }
+    .header-navigation-project p{
+        color: var(--white-color);
+    }
+    .header-navigation-links-arrow img {
+        filter:invert(1)
+    }
+    .reecosys-header.header_change   .header-navigation-project p{
+        color: var(--black-color);
+    }
+    .reecosys-header.header_change  .header-navigation-links-arrow img {
+        filter:invert(0)
+    }
+
+    .navigation-wrapper-active  .outline-div-button.button-div .button-style {
+        border: 1px solid var(--black-color);
+    }
+
+    .reecosys-header .outline-div-button.button-div .button-style {
+        border-color: var(--white-color);
+        background-color: #ffff;
+        padding: 2rem;
+    }
+    .reecosys-header.header_change .outline-div-button.button-div .button-style {
+        border-color: var(--black-color);
+        background-color: transparent
+    }
+    .reecosys-header.header_change  .outline-div-button.button-div .button-style:hover {
+        background-color: var(--black-color)
+    }
+    .reecosys-header.header_change  .outline-div-button.button-div .button-style:hover p{
+        color: var(--white-color);
+    }
+
+    .reecosys-header .bar {
+        background-color: var(--white-color);       
+    }
+
+    .reecosys-header.header_change  .bar { 
+        background-color: var(--black-color);
+    }
+
+    .nav-btn-active .bar { 
+        background-color: var(--black-color);
+    }
+    .menu_display .header-navigation-project p {
+        color: var(--black-color);
+    }
+    .menu_display .header-navigation-links-arrow img {
+        filter: invert(0);
+    }
+    .menu_display .outline-div-button.button-div .button-style {
+        border: 1px solid var(--black-color);
+    }
+
+    .reecosys-header .header_project_name p {
+        color: var(--white-color);
+    }
+    .reecosys-header.header_change .header_project_name p {
+        color: var(--black-color);
+    }
+    .reecosys-header  .back-icon-header {
+        filter: invert(1);
+    }
+
+    .reecosys-header.header_change  .back-icon-header {
+        filter: invert(0);
+    }
+
+    /* .header-navigation-links-arrow.active  {
+        background-color: var(--white-color)  !important;
+    } */
+
+    .bgwhiteheader.reecosys-header .reecosys-header-logo .logo1 {
+        display: none;
+    }
+    .bgwhiteheader.reecosys-header .reecosys-header-logo .logo2 {
+        display: block;
+    }
+    .bgwhiteheader.reecosys-header {
+        background-color: #fff;
+    }
+
+    .bgwhiteheader.reecosys-header .header-navigation-project p {
+        color: var(--black-color);
+    }
+
+    .bgwhiteheader.reecosys-header .header-navigation-links-arrow img {
+        filter: invert(0);
+    }
+    .bgwhiteheader.reecosys-header  .outline-div-button.button-div .button-style {
+        border: 1px solid var(--black-color);
+    }
+
+    .bgwhiteheader.reecosys-header .bar {
+            color :var(--black-color);            
+            background: #000;
+
+    }
+
+    /* .reecosys-header.header_change */
+
+    /* ----for menu web end---------- */
 
     /* .project-logo {
         transform: translateX(-1rem);
@@ -41908,7 +42806,7 @@ body {
     .navigation-wrapper-links ul li p,
     .navigation-wrapper-links ul li p a {
         color: var(--black-color);
-        line-height: 1;
+        line-height:unset;
         font-size: var(--content-size);
     }
 
@@ -42034,7 +42932,7 @@ body {
     }
 
     #reecosys-project-detail-wrapper {
-        gap: 11rem;
+        gap: 6rem;
     }
 
     .virtual-tour-button {
@@ -42149,6 +43047,7 @@ body {
     .outline-div-button.button-div:hover .button-style {
         border-color: var(--black-color);
         background-color: var(--black-color);
+        
     }
 
     .view-map-btn:hover .map-icon {
@@ -42407,6 +43306,14 @@ body {
 
 @media only screen and (min-width: 1366px) {
 
+    .reecosys-brand-logo {
+        height: 4rem;
+    }
+
+    .tabtitle .amenities-text p {
+        font-size: var(--content-size);
+    }
+
     .banner_text-width {
         width: 65%;
     }
@@ -42495,6 +43402,13 @@ body {
         padding: 0;
     }
 
+    .website_container_gallery {
+        width: 92.5%;
+        padding: 0;
+        padding-top: 1rem;
+        margin: 0 0 0 auto;
+    }
+
     .detail-wrapper-grid {
         width: 85%
     }
@@ -42547,6 +43461,11 @@ body {
 }
 
 @media only screen and (min-width: 1440px) {
+    
+    .project-detail-info-banner-new .banner-title h1 {
+        font-size: 10rem;
+        text-align: left;
+    }
 
     html {
         font-size: 13px !important;
@@ -42590,7 +43509,7 @@ body {
 @media only screen and (min-width: 1550px) {
 
     .menu-dropdown-web {
-        width: 32%;
+        width: 31%;
     }
 
     .partners_list {
@@ -42599,6 +43518,15 @@ body {
 }
 
 @media only screen and (min-width: 1680px) {
+
+    .project-detail-info-banner-new .banner-title h1 {
+        font-size: 13rem;
+        text-align: left;
+    }
+
+    .section-title h2 {
+        font-size: var(--title-size);
+    }
 
     .horizontal-flex {
         display: flex;
@@ -42654,6 +43582,12 @@ body {
         margin: 0 auto;
     }
 
+    .website_container_gallery {
+        width: 100%;
+        padding: 0;
+        padding-top: 1rem;
+        margin: 0 0 0 auto;
+    }
     /* #reecosys-list-section-2 .section-title h1 {
         font-size: 3.5rem;
     } */

@@ -1,4 +1,4 @@
-<div class="side_popup_wrapper" ng-class="{'inqury_active': career_click_f}" ng-click="country_code_click_false();">
+    <div class="side_popup_wrapper" ng-class="{'inqury_active': career_click_f}" ng-click="country_code_click_false();">
     <div class="inquiry_popup relative">
         <div class="close_icon" ng-click="career_click_close();">
             <img src="assets/images/icons/close.svg" alt="{{common_page_list.page_name.page_name}}">
@@ -6,10 +6,16 @@
         <div>
             <div class="side_popup_in">
                 <div class="section-title">
-                    <p>
+                    <p class="g_regular">
                         Job Application
                     </p>
                 </div>
+
+                <!-- <div class="section-title-tag_line">
+                    <h2 class="g_regular wow fade_topx tcpaitlizex" data-wow-delay="0.6s"
+                        data-wow-duration="0.6s">                        Job Application
+                    </h2>
+                </div> -->
 
                 <div class="content-size-div">
                     <p>
@@ -19,12 +25,15 @@
 
                 <form id="career_form" name="career_form" ng-submit="careerform(career_form)"
                     ng-validate="career_validate" ng-if="career_click_f">
+
                     <div class="form_wrapper">
+
                         <div class="contact_lable">
                             <input id="person_name" name="person_name" type="text" ng-model="career_obj.name" required="required"
-                            class="form-control" letters-only tabindex="11" autocomplete="off">
-                            <label class="md-lable" for="client_name">Name</label>
+                                class="form-control" letters-only tabindex="1">
+                            <label class="md-lable" for="person_name">Name</label>
                         </div>
+
                         <div class="contact_lable">
                             <input id="person_email" name="person_email" type="email" ng-model="career_obj.email" required=""
                                 autocomplete="off" class="form-control" tabindex="2">
@@ -66,6 +75,24 @@
                                 </ul>
                             </div>
                         </div>
+
+                          <div class="contact_lable select_option select_apr relative">
+                            <select name="joining_availability" class="form-control" id="joining_availability" ng-model="career_obj.joining_availability" required=""
+                                aria-required="true" aria-invalid="true" autocomplete="off" tabindex="4">
+                                <option value="" selected disabled class="gray-color" style="display: none;"></option>
+                                <option value="Immediately" class="capitalize"> Immediately </option>
+                                <option value="In 1 Month" class="capitalize"> In 1 Month </option>
+                                <option value="In 3 Month" class="capitalize"> In 3 Month </option>
+                                    
+                                </option>
+                            </select>
+                            <label class="md-lable  label" for="joining_availability">Joining availability</label>
+                        
+                            <div class="fa-icon">
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </div>
+                        </div> 
+
                         <div class="contact_lable">
                             <input id="current_company" name="current_company" type="text"
                                 ng-model="career_obj.current_company" aria-invalid="false" autocomplete="off"
@@ -79,6 +106,7 @@
                                 class="form-control" tabindex="5">
                             <label class="md-lable" for="current_designation">Current Designation</label>
                         </div>
+
                         <div class="contact_lable">
                             <div class="relative upload_input">
                                 <input id="resume_upload" name="resume_upload" class="upload-button-wrapper-input upload_file_input"

@@ -1,0 +1,15 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper"  ng-if="!is_all_project_loading_detail">
+    <div class="relative">
+
+        <section class="reecosys-section" id="reecosys-contact-section-1">
+            <div ng-repeat="video in projects_full_list_detail.virtual_data"
+                ng-if="projects_full_list_detail.virtual_data.length > 0 && video.type == 'virtual-tour'">
+                <div>
+                    <iframe src="assets/images/other/map_dummy.jpg" hires="{{video.url}}" allowfullscreen=""
+                        style="width: 100%; height: 90vh;">
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>

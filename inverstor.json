@@ -1,0 +1,357 @@
+{
+    "list" : [
+       
+       
+        {
+            "id": "1",
+            "type":"pdf",
+            "title" : "Annual Reports & Notices & Results",
+            "data" : [
+                {
+                    "id": "1",
+                    "data_title" : "Annual Reports",
+                    "detail" : [
+                        {
+                            "name" : "Annual Report 2014- 2015",
+                            "pdf" : "assets/brochure/Annual-Report-2014-2015.pdf"
+                        },
+                        {
+                            "name" : "Annual Report 2015- 2016",
+                            "pdf" : "assets/brochure/Annual-Report-2015-2016.pdf"
+                        },
+                        {
+                            "name" : "Annual Report 2016- 2017",
+                            "pdf" : "assets/brochure/Annual-Report-2016-2017.pdf"
+                        },
+                        {
+                            "name" : "Annual Report 2017- 2018",
+                            "pdf" : "assets/brochure/Annual-Report-2017-2018.pdf"
+                        },
+                        {
+                            "name" : "Annual Report 2018- 2019",
+                            "pdf" : "assets/brochure/Annual-Report-2018-2019.pdf"
+                        },
+                        {
+                            "name" : "Annual Report 2019- 2020",
+                            "pdf" : "assets/brochure/Annual-Report-2019-20_Laxmi-Goldorna-House-Limited.pdf"
+                        },
+                        {
+                            "name" : "Annual Report 2020- 2021",
+                            "pdf" : "assets/brochure/Annual-Report-2020-2021.pdf"
+                        },
+                        {
+                            "name" : "Extract of MGT-9 Annual Return-31-03-2021",
+                            "pdf" : "assets/brochure/Extract-of-MGT-9-Annual-Return-31-03-2021.pdf"
+                        }
+                    ]
+                },
+                {
+                    "id": "2",
+                    "data_title" : "Notices",
+                    "detail" : [
+                        {
+                            "name" : "Financial Results for the half year and year ended 31-03-2021",
+                            "pdf" : "assets/brochure/Financial-Results-for-the-half-year-and-year-ended-31-03-2021.pdf"
+                        },
+                        {
+                            "name" : "Financial Results for the half year ended 30-09-2020",
+                            "pdf" : "assets/brochure/Financial-Results-for-the-half-year-ended-30-09-2020.pdf"
+                        },
+                        {
+                            "name" : "Financial Results for the year ended 31-03-2020",
+                            "pdf" : "assets/brochure/Financial-Results-for-the-year-ended-31-03-2020.pdf"
+                        }
+                    ]
+                },
+                {
+                    "id": "3",
+                    "data_title" : "Results",
+                    "detail" : [
+                        {
+                            "name" : "Notice of AGM 2019-20_Laxmi Goldorna House Limited",
+                            "pdf" : "assets/brochure/Notice-of-AGM-2019-20_Laxmi-Goldorna-House-Limited.pdf"
+                        },
+                        {
+                            "name" : "Notice of AGM 2020-21_Laxmi Goldorna House Limited",
+                            "pdf" : "assets/brochure/Notice-of-AGM-2020-21_Laxmi-Goldorna-House-Limited.pdf"
+                        },
+                        {
+                            "name" : "Notice of AGM 2019-20_Laxmi Goldorna House Limited",
+                            "pdf" : "assets/brochure/PRIOR-INTIMATION-OF-BM_31072020.pdf"
+                        },
+                        {
+                            "name" : "Prior_Intimation_Bm_12_11_2020",
+                            "pdf" : "assets/brochure/PRIOR_INTIMATION_BM_12_11_2020.pdf"
+                        },
+                        {
+                            "name" : "Prior_Intimation_Bm_30.06.2021",
+                            "pdf" : "assets/brochure/PRIOR_INTIMATION_BM_30.06.2021.pdf"
+                        }
+                    ]
+                }
+        
+            ]
+        },
+
+
+        {
+            "id": "2",
+            "type":"text",
+            "title" : "Board of Directors",
+            "data" : [
+                {
+                    "id": "1",
+                    "data_title" : "Composition Of The Board Of Directors",
+                    "borad_title1":"Name of Directors",
+                    "borad_title2":"DIN",
+                    "borad_title3":"Category & Designation",
+                    "detail" : [
+                        {
+                            "name" : "Mr. Jayesh Chinubhai Shah",
+                            "status" : "02479665",
+                            "category":"Promoter / Managing Director"
+                        },
+                        {
+                            "name" : "Mrs. Rupalben Jayeshkumar Shah",
+                            "status" : "02479662",
+                            "category":"Whole-time Director"
+                        },
+                        {
+                            "name" : "Mr. Nirav Arvindbhai Shah",
+                            "status" : "07868247",
+                            "category":"Independent & Non-Executive Director"
+                        },
+                        {
+                            "name" : "Mr. Manish Mahendrabhai Jain",
+                            "status" : "07871644",
+                            "category":"Independent & Non-Executive Director"
+                        },
+                        {
+                            "name" : "Mr. Jugal Rajendrakumar Dave",
+                            "status" : "07895716",
+                            "category":"Independent & Non-Executive Director"
+                           
+                        }
+                    ]
+                },
+                {
+                    "id": "2",
+                    "data_title" : "Composition Of Audit Committeee",
+                    "borad_title1":"Name of Directors",
+                    "borad_title2":"Status",
+                    "borad_title3":"Category & Designation",
+                    "detail" : [
+                        {
+                            "name" : "Mr. Manish Mahendrabhai Jain",
+                            "status" : "Chairman",
+                            "category":"Independent & Non-Executive Director"
+                        },
+                        {
+                            "name" : "Mr. Nirav Arvindbhai Shah",
+                            "status" : "Member",
+                            "category":"Independent & Non-Executive Director"
+                        },
+                        {
+                            "name" : "Mr. Jayesh Chinubhai Shah",
+                            "status" : "Member",
+                            "category":"Chairman & Managing Director"
+                        }
+                    ]
+                },
+                {
+                    "id": "3",
+                    "data_title" : "Composition Of Stakeholder Relationships Committee",
+                    "borad_title1":"Name of Directors",
+                    "borad_title2":"Status",
+                    "borad_title3":"Category & Designation",
+                    "detail" : [
+                        {
+                            "name" : "Mr. Nirav Arvindbhai Shah",
+                            "status" : "Chairman",
+                            "category":"Independent & Non-Executive Director"
+                        },
+                        {
+                            "name" : "Mr. Manish Mahendrabhai Jain",
+                            "status" : "Member",
+                            "category":"Independent & Non-Executive Director"
+                        },
+                        {
+                            "name" : "Mr. Jayesh Chinubhai Shah",
+                            "status" : "Member",
+                            "category":"Chairman & Managing Director"
+                        }
+                    ]
+                },
+                {
+                    "id": "4",
+                    "data_title" : "Composition of Meeting of Independent Directors",
+                    "borad_title1":"Name of Directors",
+                    "borad_title2":"Status",
+                    "borad_title3":"Category & Designation",
+                    "detail" : [
+                        {
+                            "name" : "Mr. Nirav Arvindbhai Shah",
+                            "status" : "Chairman",
+                            "category":"Independent & Non-Executive Director"
+                        },
+                        {
+                            "name" : "Mr. Manish Mahendrabhai Jain",
+                            "status" : "Member",
+                            "category":"Independent & Non-Executive Director"
+                        },
+                        {
+                            "name" : "Mr. Jayesh Chinubhai Shah",
+                            "status" : "Member",
+                            "category":"Independent Non-Executive Director"
+                        }
+                    ]
+                }
+        
+            ]
+        },
+
+
+
+
+        {   "id": "3",
+            "type":"pdf",
+            "title" : "Corporate Governance",
+            "data" : [
+                {
+                    "data_title" : "Board of Directors & Committees",
+                    "detail" : [
+                        {
+                            "name" : "Composition of Board and Committee",
+                            "pdf" : "assets/brochure/Composition-of-Board-and-Committee.pdf"
+                        }
+                    ]
+                },
+                {
+                    "data_title" : "Code of Conduct & Policies",
+                    "detail" : [
+                        {
+                            "name" : "Code of Conduct",
+                            "pdf" : "assets/brochure/Code-of-Conduct.pdf"
+                        },
+                        {
+                            "name" : "Code of Fair Disclosure",
+                            "pdf" : "assets/brochure/Code-of-Fair-Disclosure.pdf"
+                        },
+                        {
+                            "name" : "Policy for identification of material group companiess",
+                            "pdf" : "assets/brochure/Policy-for-identification-of-material-group-companiess.pdf"
+                        },
+                        {
+                            "name" : "Policy for identification of material litigations",
+                            "pdf" : "assets/brochure/Policy_for_identification_of_material_litigations.pdf"
+                        },
+                        {
+                            "name" : "Policy for Identification of Material Outstanding Dues to Creditorss",
+                            "pdf" : "assets/brochure/Annual-Report-2019-20_Laxmi-Goldorna-House-Limited (1).pdf"
+                        },
+                        {
+                            "name" : "Policy for determining Material Subsidiaries",
+                            "pdf" : "assets/brochure/Policy-for-determining-Material-Subsidiaries.pdf"
+                        },
+                        {
+                            "name" : "Policy on Related Party Transactions",
+                            "pdf" : "assets/brochure/Policy-for-identification-of-material-group-companiess (2).pdf"
+                        },
+                        {
+                            "name" : "Terms & Conditions of Appointment of Indepenent Director",
+                            "pdf" : "assets/brochure/Terms-Conditions-of-Appointment-of-Indepenent-Director.pdf"
+                        },
+                        {
+                            "name" : "Whistle-Blower-Policy",
+                            "pdf" : "assets/brochure/Whistle-Blower-Policy.pdf"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "type":"pdf",
+            "title" : "Investors Contacts",
+            "data" : [
+                {
+                    "data_title" : "Investors Contacts",
+                    "detail" : [
+                        {
+                            "name" : "Investors Contacts",
+                            "pdf" : "assets/brochure/Investor-Contact.pdf"
+                        }
+                    ]
+                }
+            ]
+        },
+        {   
+            "id": "5",
+            "type":"pdf",
+            "title" : "IPO Information",
+            "data" : [
+                {
+                    "data_title" : "IPO Information",
+                    "detail" : [
+                        {
+                            "name" : "Draft Prospectus - Laxmi Goldorna House Limited dated December 19, 2019",
+                            "pdf" : "assets/brochure/Draft-Prospectus-Laxmi-Goldorna-House-Limited-dated-December-19-2019.pdf"
+                        },
+                        {
+                            "name" : "Final Prospectus - Laxmi Goldorna House Limited dated March 11, 2020",
+                            "pdf" : "assets/brochure/Final-Prospectus-Laxmi-Goldorna-House-Limited-dated-March-11-2020.pdf"
+                        },
+                        {
+                            "name" : "LGHL - General Information Document (GID)",
+                            "pdf" : "assets/brochure/LGHL-General-Information-Document-GID.pdf"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "type":"pdf",
+            "title" : "Shareholding Patterns",
+            "data" : [
+                {
+                    "data_title" : "Shareholding Patterns",
+                    "detail" : [
+                        {
+                            "name" : "Post-Issue",
+                            "pdf" : "assets/brochure/Post_Issue.pdf"
+                        },
+                        {
+                            "name" : "Pre-Issue",
+                            "pdf" : "assets/brochure/Pre_Issue.pdf"
+                        },
+                        {
+                            "name" : "Shareholding Pattern-30-09-2020",
+                            "pdf" : "assets/brochure/Shareholding-Pattern-30-09-2020.pdf"
+                        },
+                        {
+                            "name" : "Shareholding Pattern-31-03-2021",
+                            "pdf" : "assets/brochure/Shareholding-Pattern-31-03-2021.pdf"
+                        }
+                    ]
+                }
+            ]
+        },
+        {   
+            "id": "7",
+            "type":"pdf",
+            "title" : "Financial Results",
+            "data" : [
+                {
+                    "data_title" : "Financial Results",
+                    "detail" : [
+                        {
+                            "name" : "Financial Results 2021",
+                            "pdf" : "assets/brochure/financial-results.pdf"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

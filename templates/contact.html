@@ -43,7 +43,7 @@
                         {{common_page_list.banner_title}}
                     </h1>
                 </div> -->
-                <div class="banner-title-new wow banner_text-width fade_top other_page_width" data-wow-delay="0.6s" data-wow-duration="0.6s" style="visibility: visible; animation-duration: 0.6s; animation-delay: 0.6s; animation-name: fade_top;">
+                <div class="banner-title-new wow banner_text-width fade_top other_page_width" data-wow-delay="0.6s" data-wow-duration="0.6s">
                     <h2 class="white-color g_regular ng-binding">      {{common_page_list.banner_title}} </h2>
                                         </div>
             </div>
@@ -69,7 +69,7 @@
                     <div class="inner-flex-commonpage">
                         <div class="section-title banner-content-size-div comonpage_discription"
                             ng-if="common_page_list.primary_text_display">
-                            <h2 ng-bind-html="common_page_list.primary_text_display"></h2>
+                            <h2 ng-bind-html="common_page_list.primary_text_display" style="font-family: 'genralsans_regular' !important;"></h2>
                         </div>
                         <div ng-if="page_contact_list.contact_list[0].address">
                             <div class="content-size-div banner-title-newx">
@@ -82,7 +82,7 @@
                             </div>
                             <div class="outline-div-button view-map-btn button-div content-size-div-padding-top">
                                 <a href="{{page_contact_list.contact_list[0].map_url}}" target="_blank">
-                                    <button class="button-style wow FadeIn" data-wow-duration="0.6s" data-wow-delay="0.6s">
+                                    <button class="button-style wow FadeIn" data-wow-duration="0.6s" data-wow-delay="0.6s" style="width: max-content;">
                                         <div class="map-icon">
                                             <img src="assets/images/icons/location.svg"
                                                 alt="{{common_page_list.page_name}}">

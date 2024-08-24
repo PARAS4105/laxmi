@@ -1,4 +1,4 @@
-<div class="reecosys-main-wrapper" id="reecosys-main-wrapper" ng-if="!is_all_project_loading_detail"
+<div class="reecosys-main-wrapper detail_page_laxmi" id="reecosys-main-wrapper" ng-if="!is_all_project_loading_detail"
     ng-click="country_code_click_false();">
 
     <div id="reecosys-project-detail-wrapper" class="relative">
@@ -23,8 +23,8 @@
                         <div class="project_banner_image relative"
                             ng-if="banner_data.image_web_type == 'image' && banner_data.image_web_full">
                             <img src="assets/images/other/dummy_image.png"
-                                hires="{{banner_data.image_web_full}}&h=1080&w=1903&q=75"
-                                alt="{{projects_full_list_detail.project_title}}" class="gallery-images image-cover">
+                                hires="{{banner_data.image_web_full}}&h=1450&w=1920&q=75"
+                                alt="{{projects_full_list_detail.project_title}}" class="gallery-images-detail-banner image-cover">
                             <div class="project_banner_overlay2"></div>
                         </div>
                     </ks-swiper-slide>
@@ -34,28 +34,25 @@
                     ng-if="projects_full_list_detail.banner_data.title || projects_full_list_detail.size_price || projects_full_list_detail.location || projects_full_list_detail.status.length > 0">
                     <div class="inner-flex">
                         <div class="banner_content-flex">
-                            <div class="banner-detail-row banner_sub_info-new wow fadeIn" data-wow-duration="0.6s"
-                                data-wow-delay="1s"
+                            <div class="banner-detail-row banner_sub_info-new"
                                 ng-if="projects_full_list_detail.size_price || projects_full_list_detail.location || projects_full_list_detail.status.length > 0">
-                                <div class="project-information-div wow fadeIn" data-wow-duration="0.6s"
-                                    data-wow-delay="0.6s" ng-if="projects_full_list_detail.size_price">
-                                    <div class="building-icon">
+                                <div class="project-information-div "  ng-if="projects_full_list_detail.size_price">
+                                    <!-- <div class="building-icon">
                                         <img src="assets/images/icon/building_white.svg"
                                             alt="{{projects_full_list_detail.size_price}}">
-                                    </div>
+                                    </div> -->
                                     <div class="content-size-div project_banner_info_size ">
-                                        <p class="capitalize">
+                                        <p class="capitalize"> 
                                             {{projects_full_list_detail.size_price}}
                                         </p>
                                     </div>
                                 </div>
 
-                                <div class="project-information-div wow fadeIn" data-wow-duration="0.6s"
-                                    data-wow-delay="0.8s" ng-if="projects_full_list_detail.location">
-                                    <div class="building-icon">
+                                <div class="project-information-div " ng-if="projects_full_list_detail.location">
+                                    <!-- <div class="building-icon">
                                         <img src="assets/images/icon/location_white.svg"
                                             alt="{{projects_full_list_detail.size_price}}">
-                                    </div>
+                                    </div> -->
                                     <div class="content-size-div ">
                                         <p class="capitalize">
                                             {{projects_full_list_detail.location}}
@@ -63,8 +60,34 @@
                                     </div>
                                 </div>
 
-                                <div class="project-information-div wow fadeIn" data-wow-duration="0.6s"
-                                    data-wow-delay="1s" ng-if="projects_full_list_detail.construction">
+                                  <div class="project-information-div" ng-if="projects_full_list_detail.construction">
+                                    <!-- <div class="progress-statuss">
+                                        <div class="progress progress_banner"
+                                            data-percentage="{{projects_full_list_detail.construction.progress_percent}}"
+                                            ng-if="projects_full_list_detail.construction.progress_percent > 0">
+                                            <span class="progress-left">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <span class="progress-right">
+                                                <span class="progress-bar"></span>
+                                            </span>
+                                            <div class="progress-value value_get">
+                                                <p>{{projects_full_list_detail.construction.progress_percent}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="progress-consctruction progress_banner white"
+                                            ng-if="projects_full_list_detail.construction.progress_percent == 0">
+                                            <img src="assets/images/icon/construction.svg" alt>
+                                        </div>
+                                    </div> -->
+                                    <div class="content-size-div" ng-if="projects_full_list_detail.status">
+                                        <p class="capitalize">
+                                            {{projects_full_list_detail.status}}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="project-information-div" ng-if="projects_full_list_detail.construction">
                                     <div class="progress-statuss">
                                         <div class="progress progress_banner"
                                             data-percentage="{{projects_full_list_detail.construction.progress_percent}}"
@@ -89,7 +112,7 @@
                                             {{projects_full_list_detail.status}}
                                         </p>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- <div class="section-title-flex mob-jc-sb wow fadeIn"
                                 data-wow-delay="0.6s"
@@ -101,15 +124,41 @@
                                     </h1>
                                 </div>
                             </div> -->
-                            <div class="section-title-flex mob-jc-sb wow fadeIn" data-wow-delay="0.6s"
-                                data-wow-duration="0.6s" ng-if="projects_full_list_detail.project_name">
+                            <!-- <div class="section-title-flex mob-jc-sb " ng-if="projects_full_list_detail.project_title">
                                 <div class="banner-title m75w">
-                                    <h1 class="white-color g_regular"
-                                        ng-bind-html="projects_full_list_detail.project_name">
-                                    </h1>
+                                    <h1 class="white-color g_regular fwbold"
+                                        ng-bind-html="projects_full_list_detail.project_title">
+                                    </h1> 
 
+                                    
+                                </div>
+                            </div> -->
+
+                            <div class="section-title-flex mob-jc-sb">
+                                <div class="banner-title m75wx">
+                                    <h1 class="white-color gen_medium fwboldx"
+                                        ng-bind-html="extra_data.title">
+                                    </h1>                                     
                                 </div>
                             </div>
+
+                            
+
+                            <div class="white_btn-new hidden-xs">
+                                <div class="outline-div-button button-div hover_icon" >
+                                    <button ng-click="inquire_popup_web_toggle()" class="button-style download-fill-button wow fade_topx" data-wow-duration="0.6s" data-wow-delay="0.6s">
+                                        <div class="download_icon">
+                                            <img src="assets/images/icon/call.svg">
+                                        </div>
+                                      
+                                        <p class="capitalize ng-binding">
+                                            Inquire Now
+                                        </p>
+                                    </button>
+                                </div>
+
+                            </div>
+                            
 
                         </div>
                     </div>
@@ -119,45 +168,64 @@
 
         <!-- /*Deatail Banner Section Start*/ -->
         <!-- /*Deatail Banner Hight light section Start*/ -->
-        <section class="reecosys-section relative" id="reecosys-project-detail-section-3"
-            ng-if="projects_full_list_detail.highlights.length > 0 || projects_full_list_detail.rera_number || projects_full_list_detail.document_data.length > 0 || projects_full_list_detail.big_text_pain">
+
+        <div class="" ng-if="projects_full_list_detail.project_id != '335'">
+            <section class="reecosys-section relative" id="reecosys-project-detail-section-3" ng-if="projects_full_list_detail.highlights.length > 0 || projects_full_list_detail.rera_number || projects_full_list_detail.document_data.length > 0 || projects_full_list_detail.big_text_pain">
             <div class="highlight_section">
                 <div class="website_container">
                     <div class="highlight_wrapper">
                         <div class="f40">
 
-                            <div class="inner-flex">
+                            
+ 
+                            <div class="inner-flex" >
                                 <div class="content-size-div homepage_description_width">
-                                    <p class="wow fade_top" data-wow-delay="0.6s" data-wow-duration="0.6s">
+                                    <p class="">
                                         / About
                                     </p>
                                 </div>
                                 <div class="section-information">
                                     <div class="section-title-tag_line">
-                                        <h2 class="g_regular wow fade_top tcpaitlizex" data-wow-delay="0.6s"
-                                            data-wow-duration="0.6s">
-                                            A Classical <br> Modern Marvel
+                                        <h2 class="g_regular" ng-bind-html="projects_full_list_detail.banner_data.title">
+                                            
                                         </h2>
                                     </div>
                                 </div>
-                                <div class="content-size-div content-size-div-detail-section-highlight wow fade_top"
-                                    data-wow-duration="0.6s" data-wow-delay="0.8s"
+                                <div class="content-size-div content-size-div-detail-section-highlight"
                                     ng-if="projects_full_list_detail.big_text_pain">
                                     <p read-more dd-text-collapse-max-length="180"
                                         dd-text-collapse-text="{{projects_full_list_detail.big_text_pain}}">
                                     </p>
                                 </div>
 
+                                
+
                                 <div class="download-button-filled-ul"
                                     ng-if="projects_full_list_detail.document_data.length > 0 || projects_full_list_detail.document_other_data.length > 0">
                                     <ul>
+                                        <li>
+                                            <div class="white_btn-newx">
+                                                <div class="outline-div-button button-div hover_icon" >
+                                                    <button ng-click="inquire_popup_web_toggle()" class="button-style download-fill-button wow fade_topx" data-wow-duration="0.6s" data-wow-delay="0.6s">
+                                                        <div class="download_icon">
+                                                            <img src="assets/images/icon/call.svg">
+                                                        </div>
+                                                      
+                                                        <p class="capitalize ng-binding">
+                                                            Inquire Now
+                                                        </p>
+                                                    </button>
+                                                </div>
+                
+                                            </div>
+                                        </li>
                                         <li ng-repeat="download_data in projects_full_list_detail.document_data"
                                             ng-if="projects_full_list_detail.document_data.length > 0"
                                             ng-click="inquire_popup_web_toggle(); inquiry_from_click(download_data.type);"
-                                            class="wow fade_top" data-wow-duration="0.6s"
+                                            class="wow fade_topx combine_btn" data-wow-duration="0.6s"
                                             data-wow-delay="0.{{$index+3}}s">
-                                            <div class="outline-div-button button-div">
-                                                <button class="button-style download-fill-button wow fade_top"
+                                            <div class="outline-div-button button-div ">
+                                                <button class="button-style download-fill-button wow fade_topx"
                                                     data-wow-duration="0.6s" data-wow-delay="0.6s">
                                                     <p class="capitalize">
                                                         {{download_data.type |
@@ -169,11 +237,15 @@
                                         <li ng-repeat="download_data in projects_full_list_detail.document_other_data"
                                             ng-if="projects_full_list_detail.document_other_data.length > 0"
                                             ng-click="inquire_popup_web_toggle(); inquiry_from_click(download_data.type);"
-                                            class="wow fade_top" data-wow-duration="0.6s"
+                                            class="wow fade_topx" data-wow-duration="0.6s"
                                             data-wow-delay="0.{{$index+3}}s">
-                                            <div class="outline-div-button button-div">
-                                                <button class="button-style download-fill-button wow fade_top"
+                                            <div class="outline-div-button button-div hover_icon">
+                                                <button class="button-style download-fill-button wow fade_topx"
                                                     data-wow-duration="0.6s" data-wow-delay="0.6s">
+                                                    <div class="download_icon">
+                                                        <img src="assets/images/icon/dowload.svg"/>
+                                                    </div>
+                                                  
                                                     <p class="capitalize">
                                                         {{download_data.type}}
                                                     </p>
@@ -186,21 +258,24 @@
                             </div>
 
                         </div>
-                        <div class="f60">
+
+                        
+                        <!-- <div class="f60">
                             <div class="highlight_outer_wrapper">
                                 <div class="highlights-grid-detail"
                                     ng-if="projects_full_list_detail.highlights.length > 0">
                                     <div ng-repeat="data in projects_full_list_detail.highlights"
-                                        class="relative  wow fade_top" data-wow-duration="0.3s"
+                                        class="relative  wow fade_topx" data-wow-duration="0.3s"
                                         data-wow-delay="0.{{$index*3}}s">
-
-                                        <div class="static_img">
-                                            <img src="assets/images/detail/tower1.png" />
+                                        
+                                        <div class="static_img relative hidden-xsx">
+                                            <img src="assets/images/detail/tower1.png" class="mobileimage_static" />
+                                            <div class="project_gallery_overlay-white"></div>
                                         </div>
                                         <div class="hight_light_abs">
                                             <div class="highlight_flex">
                                                 <div class="section-title-big" ng-if="data.name">
-                                                    <h2 class="capitalize">
+                                                    <h2 class="capitalize gen_medium ">
                                                         {{data.name}}
                                                     </h2>
                                                 </div>
@@ -214,13 +289,42 @@
                                     </div>
                                 </div>
                             </div>
+                        </div> -->
+                        <div class="f60">
+                            <div class="highlight_outer_wrapper">
+                                <div class="highlights-grid-detail">
+                                    <div ng-repeat="data in extra_data.project_hightlight" class="relative  wow fade_topx" data-wow-duration="0.3s" data-wow-delay="0.{{$index*3}}s">
+                                        
+                                        <div class="static_img relative hidden-xsx">
+                                            <!-- <img src="assets/images/detail/tower1.png" class="mobileimage_static" /> -->
+                                            <img src="{{data.highlight_img}}" class="mobileimage_static" />
+                                            <div class="project_gallery_overlay-white"></div>
+                                        </div>
+                                        
+                                        <div class="hight_light_abs">
+                                            <div class="highlight_flex">
+                                                <div class="section-title-big" >
+                                                    <h2 class="capitalize gen_medium ">
+                                                        {{data.highlight_title}}
+                                                    </h2>
+                                                </div>
+                                                <div class="content-size-div">
+                                                    <p class="capitalize" ng-bind-html="data.highlight_content"></p>
+                                                </div>
+                                            </div>
+                                        </div>
 
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </section>
+            </section>
+        </div>
         <!-- /*Deatail Banner Hight light section End*/ -->
 
         <!-- <section class="reecosys-section relative"
@@ -233,7 +337,7 @@
                         ng-if="projects_full_list_detail.highlights.length > 0">
                         <div
                             ng-repeat="data in projects_full_list_detail.highlights"
-                            class="wow fade_top"
+                            class="wow fade_topx"
                             data-wow-duration="0.3s"
                             data-wow-delay="0.{{$index*3}}s">
                             <div class="section-title-big" ng-if="data.name">
@@ -249,7 +353,7 @@
                     </div>
 
                     <div
-                        class="content-size-div content-size-div-detail-section-highlight wow fade_top"
+                        class="content-size-div content-size-div-detail-section-highlight wow fade_topx"
                         data-wow-duration="0.6s" data-wow-delay="0.8s"
                         ng-if="projects_full_list_detail.big_text_pain">
                         <p read-more dd-text-collapse-max-length="180"
@@ -257,7 +361,7 @@
                         </p>
                     </div>
 
-                    <div class="project-rera-number wow fade_top"
+                    <div class="project-rera-number wow fade_topx"
                         data-wow-duration="0.6s" data-wow-delay="0.9s"
                         ng-if="projects_full_list_detail.rera_number != null && projects_full_list_detail.rera_number != undefined && projects_full_list_detail.rera_number != ''">
                         <p class="capitalize">
@@ -272,11 +376,11 @@
                                 ng-repeat="download_data in projects_full_list_detail.document_data"
                                 ng-if="projects_full_list_detail.document_data.length > 0"
                                 ng-click="inquire_popup_web_toggle(); inquiry_from_click(download_data.type);"
-                                class="wow fade_top" data-wow-duration="0.6s"
+                                class="wow fade_topx" data-wow-duration="0.6s"
                                 data-wow-delay="0.{{$index+3}}s">
                                 <div class="outline-div-button button-div">
                                     <button
-                                        class="button-style download-fill-button wow fade_top"
+                                        class="button-style download-fill-button wow fade_topx"
                                         data-wow-duration="0.6s"
                                         data-wow-delay="0.6s">
                                         <p class="capitalize">
@@ -290,11 +394,11 @@
                                 ng-repeat="download_data in projects_full_list_detail.document_other_data"
                                 ng-if="projects_full_list_detail.document_other_data.length > 0"
                                 ng-click="inquire_popup_web_toggle(); inquiry_from_click(download_data.type);"
-                                class="wow fade_top" data-wow-duration="0.6s"
+                                class="wow fade_topx" data-wow-duration="0.6s"
                                 data-wow-delay="0.{{$index+3}}s">
                                 <div class="outline-div-button button-div">
                                     <button
-                                        class="button-style download-fill-button wow fade_top"
+                                        class="button-style download-fill-button wow fade_topx"
                                         data-wow-duration="0.6s"
                                         data-wow-delay="0.6s">
                                         <p class="capitalize">
@@ -310,6 +414,9 @@
             </div>
         </section> -->
 
+
+
+        <!-- !--EXpert section start--> 
         <section class="reecosys-section relative"
             ng-if="projects_full_list_detail.experts_data.experts_array.length > 0 && is_section_Scrolled"
             id="reecosys-project-detail-expert-section">
@@ -333,43 +440,38 @@
                 </div>
             </div>
         </section>
+        <!-- !--EXpert section end--> 
 
 
-        <section id="reecosys-project-detail-section-5"
-            ng-if="projects_full_list_detail.gallery_data_all[0].image.length > 0 && is_section_Scrolled">
-            <!-- <div class="reecosys-section" id="reecosys-detail-section-gallery"
-                ng-repeat="gallery in projects_full_list_detail.gallery_data"
-                ng-if="projects_full_list_detail.gallery_data.length > 0 && gallery_get == gallery.title">
-                <div ng-include="'templates/projects/all_gallery2.html'"></div>
-            </div> -->
 
+        <!-- !--Gallery section start--> 
+        <section id="reecosys-project-detail-section-5" ng-if="projects_full_list_detail.gallery_data_all[0].image.length > 0 && is_section_Scrolled">
+          
             <div class="reecosys-section" id="reecosys-detail-section-gallery"
                 ng-repeat="gallery in projects_full_list_detail.gallery_data_all"
                 ng-if="gallery.image.length > 0 && gallery_get == ''">
                 <!-- <div ng-include="'templates/projects/all_gallery2.html'"></div> -->
                 <div class="inner-flex">
                     <div class="website_container">
-                        <div class="relative wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.3s">
+                        <div class="relative">
 
                             <div class="gallery_flex-content">
                                 <div class="child1">
                                     <div class="inner-flex" ng-if="gallery.title || gallery.tag_line">
                                         <div class="content-size-div homepage_description_width" ng-if="gallery.title">
-                                            <p class="wow fade_top" data-wow-delay="0.6s" data-wow-duration="0.6s">
+                                            <p class="">
                                                 / {{gallery.title}}
                                             </p>
                                         </div>
                                         <div class="section-information"
                                             ng-if="gallery.tag_line && gallery.tag_line != 'undefined'">
                                             <div class="section-title-tag_line">
-                                                <h2 class="g_regular wow fade_top tcpaitlizex" data-wow-delay="0.6s"
-                                                    data-wow-duration="0.6s">
+                                                <h2 class="g_regular">
                                                     {{gallery.tag_line}}
                                                 </h2>
                                             </div>
                                         </div>
-                                        <div class="content-size-div content-size-div-detail-section-highlight wow fade_top"
-                                            data-wow-duration="0.6s" data-wow-delay="0.8s"
+                                        <div class="content-size-div content-size-div-detail-section-highlight"
                                             ng-if="projects_full_list_detail.big_text_pain">
                                             <p>
                                                 {{gallery.description}}
@@ -379,18 +481,17 @@
                                     </div>
                                 </div>
                                 <div class="child2">
+                                    
                                     <div class="swiper_position">
-                                        <div class="wow fade_top animated swiper-button-prev gallery_swiper-prev"
-                                            data-wow-duration="1s">
+                                        <div class="swiper-button-prev gallery_swiper-prev">
                                             <div class="arrow-img-size">
                                                 <img src="assets/images/icons/left arrow.svg" class="arrow img1" alt="">
 
                                             </div>
                                         </div>
-                                        <div class="wow fade_top animated swiper-button-next gallery_swiper-next"
-                                            data-wow-duration="1s">
+                                        <div class="swiper-button-next gallery_swiper-next">
                                             <div class="arrow-img-size">
-                                                <img src="assets/images/icons/right arrow.svg" class="arrow img1"
+                                                <img src="assets/images/other/right arrow.svg" class="arrow img1 img2"
                                                     alt="">
 
                                             </div>
@@ -402,92 +503,88 @@
 
 
 
-                            <!-- <div class="section-information relative"
-                                ng-if="gallery.title || gallery.tag_line">
-                                <div class="content-size-div"
-                                    ng-if="gallery.title">
-                                    <p class="title-color capitalize">
-                                        {{gallery.title}}
-                                    </p>
-                                </div>
-                                <div
-                                    class="section-title gallery-section-title-flex relative"
-                                    ng-if="gallery.tag_line && gallery.tag_line != 'undefined'">
-                                    <h2>
-                                        {{gallery.tag_line}}
-                                    </h2>
-                                </div>
-                            </div> -->
-
-                            <!-- <div class="web-3d-icon"
-                                ng-if="projects_full_list_detail.virtual_data.length > 0">
-                                <div
-                                    class="outline-div-button button-div virtual_tour_data"
-                                    ng-repeat="video in projects_full_list_detail.virtual_data"
-                                    ng-if="projects_full_list_detail.virtual_data.length > 0 && video.type == 'virtual-tour'">
-                                    <a class="fancybox"
-                                        data-fancybox="virtual-tour"
-                                        data-type="iframe"
-                                        data-href="{{video.url}}"
-                                        href="javascript:void(0)" target="_self"
-                                        class="button-style orange-button">
-                                        <button
-                                            class="button-style orange-button wow fadeIn"
-                                            data-wow-duration="0.6s"
-                                            data-wow-delay="0.6s">
-                                            <p>
-                                                <span
-                                                    class="bold">360&deg;</span>
-                                                Virtual Tour
-                                            </p>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div> -->
+                           
                         </div>
                     </div>
 
-                    <div class="gallery-swiper-detail-outer relative gallery_wrapper">
-                        <div class="inner-flex">
+                    <div class=" website_container_gallery">
+                        <div class="gallery-swiper-detail-outer relative gallery_wrapper">
+                            <div class="inner-flex">
 
-                            <ks-swiper-container override-parameters="gallery3d_Swiper_new_one">
-                                <ks-swiper-slide ng-repeat="gallaryImgData in gallery.image" class="">
-                                    <div class="project_gallery_images  project_gallery_grid_cls laxmi_gallery ">
-                                        <a data-fancybox="project-gallery-fancy" href="{{gallaryImgData.image_full}}"
-                                            target="_self">
-                                            <div class="overflow project_gallery_hover laxmi_img relative">
-                                                <img data-src="https://dummyimage.com/500x600/cccccc/cccccc"
-                                                    hires="{{gallaryImgData.image}}&h=600&w=500"
-                                                    alt="{{projects_full_list_detail.size_price}}"
-                                                    class="image-cover wow fadeIn lazyload" data-wow-duration="0.6s"
-                                                    data-wow-delay="0.{{$index*3}}s">
-                                                <div class="project-gallery-title"
-                                                    ng-if="gallaryImgData.title != 'undefined' && gallaryImgData.title != 'null' && gallaryImgData.title != ''">
-                                                    <p class="capitalize text-center">
-                                                        {{gallaryImgData.title}}
-                                                    </p>
+                                <ks-swiper-container override-parameters="gallery3d_Swiper_new_one">
+                                    <ks-swiper-slide ng-repeat="gallaryImgData in gallery.image" class="">
+                                        <div class="project_gallery_images  project_gallery_grid_cls laxmi_gallery ">
+                                            <a data-fancybox="project-gallery-fancy" href="{{gallaryImgData.image_full}}"
+                                                target="_self">
+                                                <div class="overflow project_gallery_hover laxmi_img relative">
+                                                    <img data-src="https://dummyimage.com/570x570/cccccc/cccccc"
+                                                        hires="{{gallaryImgData.image}}&h=570&w=570"
+                                                        alt="{{projects_full_list_detail.size_price}}"
+                                                        class="image-cover wow fadeIn lazyload" data-wow-duration="0.6s"
+                                                        data-wow-delay="0.{{$index*3}}s">
+                                                    <div class="project-gallery-title"
+                                                        ng-if="gallaryImgData.title != 'undefined' && gallaryImgData.title != 'null' && gallaryImgData.title != ''">
+                                                        <p class="capitalize text-center">
+                                                            {{gallaryImgData.title}}
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                        </a>
-                                    </div>
-                                </ks-swiper-slide>
-                            </ks-swiper-container>
-                        </div>
-                        <div class="">
-                            <div class="project-rera-number wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.9s"
-                                ng-if="projects_full_list_detail.rera_number != null && projects_full_list_detail.rera_number != undefined && projects_full_list_detail.rera_number != ''">
-                                <p class="capitalize">
-                                    RERA : {{projects_full_list_detail.rera_number}}
-                                </p>
+                                            </a>
+                                        </div>
+                                    </ks-swiper-slide>
+                                </ks-swiper-container>
+                            </div>
+                        
+
+
+
+                            <div class="ntc-gallery-swiper-pagination " ng-if="isMobilescreen">
+                                <div class="swiper-pagination gallery-swiper-pagination"></div>
                             </div>
                         </div>
+                    </div>
+                    <div class="website_container">
+                        <!-- <div class="project-rera-numberx content-size-div"
+                            ng-if="projects_full_list_detail.rera_number != null && projects_full_list_detail.rera_number != undefined && projects_full_list_detail.rera_number != ''">
+                            <p class="capitalize laxmi-gray">
+                                RERA : {{projects_full_list_detail.rera_number}}
+                            </p>
+                        </div> -->
 
 
 
-                        <div class="ntc-gallery-swiper-pagination " ng-if="isMobilescreen">
-                            <div class="swiper-pagination gallery-swiper-pagination"></div>
+
+                        <div class="rera_flex_wrapper">
+                            
+                                <div class="project-rera-numberx content-size-div" ng-if="projects_full_list_detail.rera_number != null && projects_full_list_detail.rera_number != undefined && projects_full_list_detail.rera_number != ''">
+                                    <p class="capitalize laxmi-gray"> RERA : {{projects_full_list_detail.rera_number}}                            </p>
+                                </div>
+
+    
+                                <div class="web-3d-iconx hidden-xs" ng-if="projects_full_list_detail.virtual_data.length > 0">
+                                    <div class="outline-div-button button-div virtual_tour_data"
+                                        ng-repeat="video in projects_full_list_detail.virtual_data"
+                                        ng-if="projects_full_list_detail.virtual_data.length > 0 && video.type == 'virtual-tour'">
+                                        <a class="fancybox" data-fancybox="virtual-tour" data-type="iframe"
+                                            data-href="{{video.url}}" href="javascript:void(0)" target="_self"
+                                            class="button-style orange-button">
+                                            <button class="button-style orange-button wow fadeIn" data-wow-duration="0.6s"
+                                                data-wow-delay="0.6s">
+                                                <p>
+                                                    <span class="bold">360&deg;</span> Virtual Tour
+                                                </p>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            
                         </div>
+
+
+
+
+                        
                     </div>
                     <!-- <div class="project-gallery-outer inner-flex">
                         <div class="project_gallery_grid">
@@ -565,33 +662,60 @@
                 </div>
             </div>
         </section>
+        <!-- !--Gallery section end --> 
 
         <section class="reecosys-section relative" id="reecosys-project-detail-section-4"
             ng-repeat="video in projects_full_list_detail.virtual_data"
             ng-if="projects_full_list_detail.virtual_data.length > 0 && video.type == 'walk-through' && video.image && is_section_Scrolled">
             <div class="website_containerx overflow">
+
+                
+
                 <div class="inner-flex">
+                    <div class="section-information visible-xs" ng-if="video.title || video.tag_line ">
+                        <div class="content-size-div text-center " ng-if="video.title " >
+                            <p class="wow fade_topx black-color  uppercase" data-wow-delay="0.6s" data-wow-duration="0.6s">
+                                 {{video.title}} 
+                            </p>
+                        </div>
+                        <div class="section-title-tag_line">
+                            <h2 class="g_regular black-color text-center  wow fade_topx tcpaitlizex uppercase" data-wow-delay="0.6s"
+                                data-wow-duration="0.6s"
+                                ng-if="video.tag_line">
+                                {{video.tag_line}}
+                            </h2>
+                        </div>
+                    </div>
                     <div class="walkthrough-project-thumb relative">
                         <a data-fancybox="walkthrough-fancy" href="{{video.url}}" target="_self" class>
                             <div class="walk-thumbnail-image relative">
 
                                 <img data-src="assets/images/other/dummy_image.png"
-                                    hires="{{video.image}}&w=1320&q=75&h=740" class="image-cover wow fadeIn lazyload"
+                                    hires="{{video.image}}&w=1920&q=75&h=800" class="image-cover wow fadeIn lazyload"
                                     data-wow-duration="0.6s" data-wow-delay="0.3s"
                                     alt="{{projects_full_list_detail.size_price}}">
                                 <div class="black_overlay"></div>
                             </div>
                             <div class="walkthrough-banner-content">
-                                <div class="inner-flex wow fade_top" data-wow-duration="0.6s">
-                                    <div class="section-information" ng-if="video.title || video.tag_line">
-                                        <div class="content-size-div" data-wow-delay="0.4s" ng-if="video.title">
-                                            <p class="white-color">{{video.title}}</p>
+                                <div class="inner-flex wow fade_topx" data-wow-duration="0.6s">
+                                    <div class="section-information hidden-xs" ng-if="video.title || video.tag_line ">
+                                        <div class="content-size-div " ng-if="video.title " >
+                                            <p class="wow fade_topx white-color  uppercase" data-wow-delay="0.6s" data-wow-duration="0.6s">
+                                                 {{video.title}} 
+                                            </p>
                                         </div>
-                                        <div class="section-title" ng-if="video.tag_line">
-                                            <h2 class="white-color" data-wow-delay="0.4s">
+                                        <div class="section-title-tag_line">
+                                            <h2 class="g_regular white-color  wow fade_topx tcpaitlizex uppercase" data-wow-delay="0.6s"
+                                                data-wow-duration="0.6s"
+                                                ng-if="video.tag_line">
                                                 {{video.tag_line}}
                                             </h2>
                                         </div>
+
+
+
+
+
                                     </div>
                                     <div class="outline-div-button button-div section-banner-button">
                                         <button class="button-style button-style-white">
@@ -614,18 +738,30 @@
         </section>
 
 
-        <section class="reecosys-section relative" id="reecosys-project-detail-section-6"
-            ng-if="projects_full_list_detail.amenities_data && is_section_Scrolled">
-            <div class="container overflow">
+             <!-- !--Extra Image section start--> 
+             <section class="reecosys-section relative" id="">
+                
+
+                
+                
+                <img src="{{projects_full_list_detail.gallery_data[0].image[2].image_full}}" class="extra_img_height" />
+
+             </section>
+             
+             <!-- !--Extra Image section  end --> 
+             
+            <!-- --------Amenities start------------- -->
+
+        <section class="reecosys-section relative section_padding_laxmi" id="reecosys-project-detail-section-6"             ng-if="projects_full_list_detail.amenities_data && is_section_Scrolled">
+            <div class="website_container overflow">
                 <div class>
                     <div class="project-amenities-grid project-amenities-grid-new relative">
 
 
-                        <div class="amenities-banner amenities-banner-web amenities_section_container relative wow fade_top"
-                            data-wow-duration="0.6s" data-wow-delay="1.1s">
+                        <div class="amenities-banner amenities-banner-web amenities_section_container relative">
 
-                            <img data-src="assets/images/other/dummy_image.png"
-                                hires="{{projects_full_list_detail.amenities_images[0].image}}&h=570&w=670&q=75"
+                            <img data-src="assets/images/other/dummy_753.jpg"
+                                hires="{{projects_full_list_detail.amenities_images[0].image}}&h=640&w=753&q=75"
                                 alt="{{projects_full_list_detail.size_price}}"
                                 ng-if="projects_full_list_detail.amenities_images[0].image" class="lazyload">
 
@@ -637,7 +773,7 @@
                         </div>
 
                         <div class="amenities-block-section inner-flex">
-                            <!-- <div class="section-information wow fade_top"
+                            <!-- <div class="section-information wow fade_topx"
                                 data-wow-duration="0.6s"
                                 data-wow-delay="0.3s">
                                 <div class="content-size-div"
@@ -656,23 +792,20 @@
                             <div class="inner-flex">
                                 <div class="content-size-div homepage_description_width"
                                     ng-if="projects_full_list_detail.amenities_title">
-                                    <p class="wow fade_top uppercase" data-wow-delay="0.6s" data-wow-duration="0.6s">
+                                    <p class="">
                                         / {{projects_full_list_detail.amenities_title}}
                                     </p>
                                 </div>
                                 <div class="section-information">
                                     <div class="section-title-tag_line">
-                                        <h2 class="g_regular wow fade_top tcpaitlizex" data-wow-delay="0.6s"
-                                            data-wow-duration="0.6s"
-                                            ng-if="projects_full_list_detail.amenities_tagline">
+                                        <h2 class="g_regular wow fade_topx tcpaitlizex" data-wow-delay="0.6s"  data-wow-duration="0.6s" ng-if="projects_full_list_detail.amenities_tagline">
                                             {{projects_full_list_detail.amenities_tagline}}
                                         </h2>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="amenities-banner amenities-banner-mob amenities_section_container relative wow fade_top"
-                                data-wow-duration="0.6s" data-wow-delay="1.1s">
+                            <div class="amenities-banner amenities-banner-mob amenities_section_container relative ">
                                 <img data-src="assets/images/other/dummy_image.png"
                                     hires="{{projects_full_list_detail.amenities_images[0].image}}&h=570&w=670&q=75"
                                     alt="{{projects_full_list_detail.size_price}}"
@@ -682,7 +815,7 @@
                                     ng-if="!projects_full_list_detail.amenities_images[0].image">
                             </div>
 
-                            <div class="amenities-grid wow fade_top" data-wow-duration="0.6s" data-wow-delay="0.9s">
+                            <div class="amenities-grid ">
                                 <div ng-repeat="amenities in projects_full_list_detail.amenities_data"
                                     ng-if="$index <= amenities_count" class>
 
@@ -690,15 +823,14 @@
                                         <img src="{{amenities.icon}}" alt="{{projects_full_list_detail.project_title}}">
                                     </div>
                                     <div class="amenities-text amenities-text-bind">
-                                        <p class="capitalize gen_medium">
+                                        <p class="capitalize g_regular">
                                             {{amenities.amenity}}
                                         </p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="amenities-view-btn view-more-less wow fade_top" data-wow-duration="0.6s"
-                                data-wow-delay="0.6s">
+                            <div class="amenities-view-btn view-more-less">
 
                                 <div class="outline-div-button button-div wfc mrleft_auto"
                                     ng-click="view_moreless_toggle()"
@@ -723,62 +855,66 @@
             </div>
         </section>
 
+         <!-- --------Amenities end------------- -->
+        <!-- --------specification start------------- -->
 
-        <!-- --------specification jay------------- -->
-
-        <section class="reecosys-section relative" id="reecosys-project-detail-section-7"
+        <section class="reecosys-section relative section_padding_laxmi" id="reecosys-project-detail-section-7"
             ng-if="projects_full_list_detail.specifications.length > 0 && is_section_Scrolled">
             <div class="website_container overflow">
                 <div class="">
                     <div class="project-amenities-grid project-amenities-grid-new relative">
                         <div class="specificationFlex inner-flex ">
                             <div class="amenities-block-section inner-flex">
-                                <div class="section-information wow fade_top" data-wow-duration="0.6s"
-                                    data-wow-delay="0.3s">
+                                <div class="section-information">
                                     <div class="content-size-div">
-                                        <p class="title-color capitalize">
-                                            Specifications
+                                        <p class="title-colorx capitalize">
+                                         /   Specifications
                                         </p>
                                     </div>
 
                                     <div class="section-information">
                                         <div class="section-title-tag_line">
-                                            <h2 class="g_regular wow fade_top tcpaitlizex" data-wow-delay="0.6s"
-                                                data-wow-duration="0.6s">
+                                            <h2 class="g_regular">
                                                 Where Luxury Awaits
                                                 You
                                             </h2>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="inner-flex hidden-xs">
-                                    <div class="amenitiesAccordion"
-                                        ng-repeat="data in projects_full_list_detail.specifications">
-                                        <div class="accodionBlock" ng-click="accordionClick(data.title)"
-                                            ng-class="{'active' : accordionId == data.title }">
-                                            <div class="content-size-div capitalize">
-                                                <p class="general-medium-fonts">{{data.title}}</p>
-                                            </div>
-                                            <div class="accordionIcon">
-                                                <img src="assets/images/icons/plus.svg" class="plus" alt="">
 
-                                                <img src="assets/images/icons/minus.svg" class="minus" alt="">
+                                    <div class=" hidden-xs">
+                                        <div class="web_specification">
+                                        <div class="amenitiesAccordion"
+                                            ng-repeat="data in projects_full_list_detail.specifications">
+                                            <div class="accodionBlock" ng-click="accordionClick(data.title)"
+                                                ng-class="{'active' : accordionId == data.title }">
+                                                <div class="content-size-div capitalize">
+                                                    <p class="g_regular ">{{data.title}}</p>
+                                                </div>
+                                                <div class="accordionIcon">
+                                                    <img src="assets/images/icons/plus.svg" class="plus" alt="">
+    
+                                                    <img src="assets/images/icons/minus.svg" class="minus" alt="">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="specificationContent"
-                                            ng-class="{'active' : accordionId == data.title }">
-                                            <div class="amenities-text specs-text">
-                                                <p>
-                                                    {{data.description}}
-                                                </p>
+                                            <div class="specificationContent"
+                                                ng-class="{'active' : accordionId == data.title }">
+                                                <div class="ullisection">
+                                                    <div class="content-size-div ">
+                                                        <div ng-bind-html="data.description">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    </div>
                                 </div>
+                                
+                               
                             </div>
 
-                            <div class="amenities-banner amenities-banner-mob amenities_section_container relative wow fade_top"
-                                data-wow-duration="0.6s" data-wow-delay="1.1s">
+                            <div class="amenities-banner amenities-banner-mob amenities_section_container relative">
                                 <!-- <img data-src="assets/images/other/dummy_image.png"
                                 hires="{{projects_full_list_detail.amenities_images[0].image}}&h=570&w=670&q=75"
                                 alt="{{projects_full_list_detail.size_price}}"
@@ -797,7 +933,7 @@
                                         <div class="accodionBlock" ng-click="accordionClick(data.title)"
                                             ng-class="{'active' : accordionId == data.title }">
                                             <div class="content-size-div capitalize">
-                                                <p class="general-medium-fonts">{{data.title}}</p>
+                                                <p class="g_regular ">{{data.title}}</p>
                                             </div>
                                             <div class="accordionIcon">
                                                 <img src="assets/images/icons/plus.svg" class="plus" alt="">
@@ -807,10 +943,12 @@
                                         </div>
                                         <div class="specificationContent"
                                             ng-class="{'active' : accordionId == data.title }">
-                                            <div class="amenities-text specs-text">
-                                                <p>
-                                                    {{data.description}}
-                                                </p>
+                                            <div class="ullisection">
+                                                <div class="content-size-div ">
+                                                    <div ng-bind-html="data.description">
+                                                        
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -818,8 +956,7 @@
                             </div>
                         </div>
 
-                        <div class="amenities-banner amenities-banner-web amenities_section_container relative wow fade_top"
-                            data-wow-duration="0.6s" data-wow-delay="1.1s">
+                        <div class="amenities-banner amenities-banner-web amenities_section_container relative">
                             <img src="{{projects_full_list_detail.gallery_data[0].image[0].image}}&w=720&h=960"
                                 class="" />
                         </div>
@@ -827,38 +964,40 @@
                 </div>
             </div>
         </section>
+         <!-- --------specification end------------- -->
 
-        <section class="reecosys-section relative" id="reecosys-project-detail-section-7"
-            ng-if="projects_full_list_detail.specifications.length > 0 && is_section_Scrolled">
+         
+        <section class="reecosys-section relative" id="reecosys-project-detail-section-7">
             <div class="website_container overflow">
                 <div class="">
                     <div class="projectfloor-grid relative">
 
-                        <div class="amenities-banner amenities-banner-web  amenities_section_container relative wow fade_top"
+                        <div class="amenities-banner amenities-banner-web  amenities_section_container relative wow fade_topx"
                             data-wow-duration="0.6s" data-wow-delay="1.1s">
-                            <img src="assets/images/detail/FloorPlanImg.jpg" class="" />
+                            <img src="{{extra_data.floor_plan_img}}" class="" />
                         </div>
-                        <div class="amenities-banner amenities-banner-mob amenities_section_container relative wow fade_top"
+                        <div class="amenities-banner amenities-banner-mob amenities_section_container relative wow fade_topx"
                             data-wow-duration="0.6s" data-wow-delay="1.1s">
-                            <img src="assets/images/detail/FloorPlanImg.jpg" class="" />
+                            <img src="{{extra_data.floor_plan_img}}" class="" />
                         </div>
 
                         <div class="specificationFlex inner-flex ">
                             <div class=" inner-flex">
-                                <div class="section-information wow fade_top" data-wow-duration="0.6s"
+                                <div class="section-information wow fade_topx" data-wow-duration="0.6s"
                                     data-wow-delay="0.3s">
                                     <div class="content-size-div homepage_description_width">
-                                        <p class="wow fade_top uppercase" data-wow-delay="0.6s"
+                                        <p class="wow fade_topx uppercase" data-wow-delay="0.6s"
                                             data-wow-duration="0.6s">
                                             / Floor Plans
                                         </p>
                                     </div>
 
                                     <div class="section-information">
-                                        <div class="section-title-tag_line">
-                                            <h2 class="g_regular wow fade_top cpaitlize" data-wow-delay="0.6s"
-                                                data-wow-duration="0.6s">
-                                                Crafting <br> Legacies
+                                        <div class="section-title-tag_line extra_br">
+                                            <h2 class="g_regular wow fade_topx cpaitlize" data-wow-delay="0.6s"
+                                                data-wow-duration="0.6s" ng-bind-html="extra_data.floor_title">
+                                                
+                                                
                                             </h2>
                                         </div>
                                     </div>
@@ -867,23 +1006,75 @@
                                 <div class="inner-flex">
                                     <div class="">
                                         <div class="content-size-div capitalize">
-                                            <p class="general-medium-fonts">Welcome to the blueprints of future. Each
-                                                floor plan is meticulously crafted to redefine living spaces and set new
-                                                benchmarks in architectural design. Discover floor plans tailored to
-                                                your lifestyle, offering a harmonious blend of functionality and
-                                                elegance.</p>
+                                            <p class="g_regular " ng-bind-html="extra_data.floor_paragraph">
+                                            
+                                                
+                                            </p>
                                         </div>
 
                                     </div>
 
-                                    <div class="outline-div-button button-div wfc mt4" ng-click="view_moreless_toggle()"
-                                        ng-if="projects_full_list_detail.amenities_data.length >= 7" >
+                                    <!-- <div class="outline-div-button button-div wfc mt4"  ng-if="projects_full_list_detail.amenities_data.length >= 7" >
                                         <button class="button-style download-fill-button">
                                             <p class="capitalize">
                                                 View Floor Plans
                                             </p>
                                         </button>
-                                    </div>
+                                    </div> -->
+
+
+
+
+
+
+
+                                    
+                                    <div class="download-button-filled-ul" ng-if="projects_full_list_detail.document_data.length > 0 || projects_full_list_detail.document_other_data.length > 0">
+                                    <ul>
+                                        <li>
+                                            <div class="white_btn-newx">
+                                                <div class="outline-div-button button-div hover_icon" >
+                                                    <!-- <button ng-click="inquire_popup_web_toggle()" class="button-style download-fill-button wow fade_topx" data-wow-duration="0.6s" data-wow-delay="0.6s"> -->
+                                                    <button class="button-style download-fill-button wow fade_topx" data-wow-duration="0.6s" data-wow-delay="0.6s">
+
+                                                        <a href="{{extra_data.floor_pdf}}" target="_blank">
+
+                                                        
+                                                        <!-- <div class="download_icon">
+                                                            <img src="assets/images/icon/call.svg">
+                                                        </div> -->
+                                                      
+                                                        <p class="capitalize ng-binding">
+                                                            View Floor Plans
+                                                        </p>
+                                                    </a>
+                                                    </button>
+                                                </div>
+                
+                                            </div>
+                                        </li>
+                                        <li>
+                                            
+                                            <div class="white_btn-newx">
+                                                <div class="outline-div-button button-div hover_icon" >
+                                                    <button ng-click="inquire_popup_web_toggle(); inquiry_from_click(download_data.type);" class="button-style download-fill-button wow fade_topx" data-wow-duration="0.6s" data-wow-delay="0.6s">
+                                                        <div class="download_icon">
+                                                            <img src="assets/images/icon/dowload.svg">
+                                                        </div>
+                                                      
+                                                        <p class="capitalize ng-binding">
+                                                          Brochure
+                                                        </p>
+                                                    </button>
+                                                </div>
+                
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                    
+
+
 
                                 </div>
 
@@ -896,56 +1087,52 @@
             </div>
         </section>
 
-        <section class="reecosys-section relative" id="reecosys-project-detail-section-7"
-            ng-if="projects_full_list_detail.specifications.length > 0 && is_section_Scrolled">
+        <section class="reecosys-section relative section_padding_laxmi" id="project_location" ng-if="(projects_full_list_detail.location_tag_line || projects_full_list_detail.proximity_data.proximity_array.length > 0) && is_section_Scrolled">
             <div class="website_container overflow">
                 <div class="">
-                    <div class="projectfloor-grid projectfloor-grid-reverse relative">
+                    <div class="projectfloor-grid-location projectfloor-grid-reverse relative">
 
-                        <div class="amenities-banner  amenities_section_container relative wow fade_top"
-                            data-wow-duration="0.6s" data-wow-delay="1.1s">
-                            <img src="assets/images/detail/FloorPlanImg.jpg" class="" />
-                        </div>
+                       
 
                         <div class="specificationFlex inner-flex ">
                             <div class=" inner-flex">
-                                <div class="section-information wow fade_top" data-wow-duration="0.6s"
-                                    data-wow-delay="0.3s">
-                                    <div class="content-size-div homepage_description_width">
-                                        <p class="wow fade_top uppercase" data-wow-delay="0.6s"
+                                <div class="section-information">
+                                    <div class="content-size-div homepage_description_width" ng-if="projects_full_list_detail.location_title">
+                                        <p class=""
                                             data-wow-duration="0.6s">
-                                            / Floor Plans
+                                           / {{projects_full_list_detail.location_title}}
                                         </p>
                                     </div>
 
-                                    <div class="section-information">
-                                        <div class="section-title-tag_line">
-                                            <h2 class="g_regular wow fade_top cpaitlize" data-wow-delay="0.6s"
-                                                data-wow-duration="0.6s">
-                                                Crafting <br> Legacies
+                                    <div class="section-information" ng-if="projects_full_list_detail.location_tag_line">
+                                        <div class="section-title-tag_line" ng-if="projects_full_list_detail.location_tag_line">
+                                            <h2 class="g_regular">
+                                                {{projects_full_list_detail.location_tag_line}}
                                             </h2>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="inner-flex">
-                                    <div class="">
-                                        <div class="content-size-div capitalize">
-                                            <p class="general-medium-fonts">Welcome to the blueprints of future. Each
-                                                floor plan is meticulously crafted to redefine living spaces and set new
-                                                benchmarks in architectural design. Discover floor plans tailored to
-                                                your lifestyle, offering a harmonious blend of functionality and
-                                                elegance.</p>
+                                    <div class="location_paragraph_width" ng-if="projects_full_list_detail.address_description">
+                                        <div class="content-size-div capitalize ">
+                                            <p class="g_regular ">
+                                                {{projects_full_list_detail.address_description}}
+
+                                            </p>
                                         </div>
 
                                     </div>
 
-                                    <div class="outline-div-button button-div wfc mt4" ng-click="view_moreless_toggle()"
-                                        ng-if="projects_full_list_detail.amenities_data.length >= 7" >
+                                    <div class="outline-div-button button-div wfc" style="margin-top: 0.5rem;">
                                         <button class="button-style download-fill-button">
-                                            <p class="capitalize">
-                                                View Floor Plans
-                                            </p>
+                                            <a href="{{extra_data.viewonmap}}" target="_blank">
+                                                <p class="capitalize">
+                                                    Locate On Map 
+
+                                                    
+                                                </p>
+                                            </a>
                                         </button>
                                     </div>
 
@@ -955,10 +1142,220 @@
                         </div>
 
 
+
+                        
+                        <div class="custom_iframe relative wow fade_topx" data-wow-duration="0.6s" data-wow-delay="1.1s">
+                            <div class="relative project-map-iframe detail-map relative" ng-if="projects_full_list_detail.map_iframe">
+                                <iframe data-src="assets/images/other/map_dummy.jpg" hires="{{projects_full_list_detail.map_iframe}}"
+                                style="border:0;" allowfullscreen="" class="wow fadeIn lazyload"
+                                data-wow-duration="0.6s" data-wow-delay="1.2s"></iframe>
+                                <!-- <div class="iframe-overlay"></div> -->
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
         </section>
+
+
+        <!-- -----FORM WITH IMAGE START-------- -->
+        <section class="reecosys-section relative section_padding_laxmi" id="reecosys-project-detail-section-7" >
+            <div class="website_container overflow">
+                <div class="">
+                    <div class="projectfloor-grid-form relative">
+
+                        <div class="amenities-banner amenities-banner-web  amenities_section_container relative">
+                            <!-- <img src="{{projects_full_list_detail.map_image}}" class="" /> -->
+                             <img data-src="assets/images/other/dummy_image700.png" hires="{{projects_full_list_detail.map_image_full}}&h=821&w=620&q=75" alt=""  class="lazyload">
+                        </div>
+                      
+
+                        <div class="specificationFlex inner-flex ">
+                            <div ng-if="is_section_Scrolled">
+                                <div class="detail_form">
+                                    <div ng-include='"templates/forms/project_detail_inquiry.html"'></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- -----FORM WITH IMAGE END -------- -->
+
+
+        <section id="reecosys-project-detail-section-5" >
+        <div class="reecosys-section upcomingsection" id="reecosys-detail-section-gallery"             >
+            <div class="inner-flex">
+                <div class="website_container">
+                    <div class="relative">
+
+                        <div class="gallery_flex-content">
+                            <div class="child1">
+                                <div class="inner-flex" >
+                                    <div class="content-size-div homepage_description_width">
+                                        <p class="">
+                                            / Upcoming Projects
+                                        </p>
+                                    </div>
+                                    <div class="section-information" >
+                                        <div class="section-title-tag_line">
+                                            <h2 class="g_regular tcpaitlizex">
+                                                View More <br class="hidden-xs"> Projects
+                                            </h2>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                            <div class="child2">
+                                <!-- <div class="swiper_position">
+                                    <div class="wow fade_topx animated swiper-button-prev gallery_swiper-prev listgallery_swiper-prev" data-wow-duration="1s">
+                                        <div class="arrow-img-size">
+                                            <img src="assets/images/icons/left arrow.svg" class="arrow img1" alt="">
+
+                                        </div>
+                                    </div>
+                                    <div class="wow fade_topx animated swiper-button-next gallery_swiper-next listgallery_swiper-next" data-wow-duration="1s">
+                                        <div class="arrow-img-size">
+                                            <img src="assets/images/other/right arrow.svg" class="arrow img1" alt="">
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="outline-div-button button-div wfc mrleft_auto view_white hidden-xs" ng-if="!isMobilescreen">
+                                    <button class="button-style download-fill-button">
+
+                                        <a href="{{base_url}}/projects" >
+                                    
+                                        <p class="capitalize">
+                                            View All Project
+                                        </p>
+                                    </a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>                       
+                    </div>
+                </div>
+                
+                <div class="website_container">
+                    <div class="gallery-swiper-detail-outer  relative gallery_wrapper ">
+                        <div class="inner-flex upcomingsection">
+                            <ks-swiper-container override-parameters="gallery3d_Swiper_new_two">
+                                <ks-swiper-slide ng-repeat="project_list_data in projects_full_list" ng-if="project_list_data.project_id != projects_full_list_detail.project_id && project_list_data.project_id != 373  && project_list_data.project_id != 374">
+                                    <div class="project-list-card" >
+                                        <a href="project/{{project_list_data.slug}}" ng-if="project_list_data.slug != 335 && project_list_data.slug != 336 && project_list_data.slug != 337  &&  project_list_data.slug != 373  && project_list_data.slug != 374 ">
+        
+                                            <div class="project-img-list project-img-list-upcoming relative"
+                                                ng-if="project_list_data.banner_data.image_web_type == 'image'">
+                                                <img src="assets/images/other/dummy_725.png"
+                                                    hires="{{project_list_data.banner_data.image_web_full}}&w=1000&h=420&q=75"
+                                                    alt="{{project_list_data.project_title}}" class="image-cover">
+                                                <div class="card_black_overlay"></div>
+                                            </div>
+        
+                                            <div class="project-img-list relative"
+                                                ng-if="project_list_data.banner_data.image_web_type == 'video'">
+                                                <video autoplay muted loop playsinline id="myVideo"
+                                                    style="width: 100%;display: block;height: 100%;object-fit: cover;">
+                                                    <source src="{{project_list_data.banner_data.image_web_full}}"
+                                                        type="video/mp4">
+                                                </video>
+                                                <div class="card_black_overlay"></div>
+                                            </div>
+                                            <div class="project-info-list project-info-list-abs">
+                                                <div class="project-info-list-abs-flex">
+                                                
+                                                    <div class="banner-title">
+                                                        <h2 class="g_regular ">
+                                                            {{project_list_data.project_title}} 
+                                                        </h2>
+                                                    </div>
+                                                    <div>
+                                                    <div class="outline-div-button button-div wfc mrleft_auto view_white" ng-if="!isMobilescreen">
+                                                        <button class="button-style download-fill-button">
+                                                            <p class="capitalize">
+                                                                View Project
+                                                            </p>
+                                                        </button>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0);'" ng-if="project_list_data.slug == 335 || project_list_data.slug == 336 || project_list_data.slug == 337   || project_list_data.slug == 373 || project_list_data.slug == 374 ">
+        
+                                            <div class="project-img-list project-img-list-upcoming relative"
+                                                ng-if="project_list_data.banner_data.image_web_type == 'image'">
+                                                <img src="assets/images/other/dummy880.png"
+                                                    hires="{{project_list_data.banner_data.image_web_full}}&w=1000&h=1000&q=75"
+                                                    alt="{{project_list_data.project_title}}" class="image-cover">
+                                                <div class="card_black_overlay"></div>
+                                            </div>
+        
+                                            <div class="project-img-list relative"
+                                                ng-if="project_list_data.banner_data.image_web_type == 'video'">
+                                                <video autoplay muted loop playsinline id="myVideo"
+                                                    style="width: 100%;display: block;height: 100%;object-fit: cover;">
+                                                    <source src="{{project_list_data.banner_data.image_web_full}}"
+                                                        type="video/mp4">
+                                                </video>
+                                                <div class="card_black_overlay"></div>
+                                            </div>
+                                            <div class="project-info-list project-info-list-abs">
+                                                <div class="project-info-list-abs-flex">
+                                                
+                                                    <div class="banner-title">
+                                                        <h2 class="g_regular ">
+                                                            {{project_list_data.project_title}}
+                                                        </h2>
+                                                    </div>
+                                                    <div>
+                                                    <div class="outline-div-button button-div wfc mrleft_auto view_white" ng-if="!isMobilescreen">
+                                                        <button class="button-style download-fill-button">
+                                                            <p class="capitalize">
+                                                                View Project
+                                                            </p>
+                                                        </button>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                
+                                </ks-swiper-slide>
+
+                                
+                            </ks-swiper-container>                      
+                        </div>
+
+                        <!-- <div class="fraction_pagination">
+                            <div class="swiper-scrollbar fraction_pagination-scrollbar"></div>
+                        </div> -->
+                    
+
+
+
+                        <!-- <div class="fraction_pagination">
+                            <div class="swiper-pagination gallery-swiper-pagination"></div>
+                        </div> -->
+                    
+                    </div>
+                </div>
+
+               
+              
+
+                
+            </div>
+        </div>
+    </section>
+        <!-- ------------- -->
 
 
         <!-- <section class="reecosys-section relative" id="reecosys-project-detail-section-9"
@@ -1094,7 +1491,7 @@
         <section class="reecosys-section" id="reecosys-project-detail-section-7"
             ng-if="(projects_full_list_detail.construction_data.image.length > 0 || projects_full_list_detail.construction_data.video.length > 0) && is_section_Scrolled">
             <div class>
-                <div class="container relative">
+                <div class="website_container relative">
                     <div class="inner-flex">
                         <div class="gallery-image-3d">
 
@@ -1111,7 +1508,7 @@
                                     <div class="black_overlay"></div>
                                     <div class="construction-banner-abs"
                                         ng-if="projects_full_list_detail.construction.tag_line">
-                                        <div class="section-information wow fade_top" data-wow-duration="0.6s"
+                                        <div class="section-information wow fade_topx" data-wow-duration="0.6s"
                                             data-wow-delay="0.6s">
                                             <div class="content-size-div"
                                                 ng-if="projects_full_list_detail.construction.title">
@@ -1142,7 +1539,7 @@
                                         data-wow-delay="0.3s">
                                     <div class="black_overlay"></div>
                                     <div class="walkthrough-banner-content">
-                                        <div class="inner-flex wow fade_top" data-wow-duration="0.6s">
+                                        <div class="inner-flex wow fade_topx" data-wow-duration="0.6s">
                                             <div class="section-title">
                                                 <h2 class="white-color" data-wow-delay="0.4s">
                                                     {{projects_full_list_detail.construction.tag_line}}
@@ -1192,11 +1589,11 @@
             </div>
         </section>
 
-        <section class="reecosys-section relative" id="reecosys-project-detail-section-8"
+        <!-- <section class="reecosys-section relative" id="reecosys-project-detail-section-8"
             ng-if="(projects_full_list_detail.location_tag_line || projects_full_list_detail.proximity_data.proximity_array.length > 0) && is_section_Scrolled">
 
             <div class="container" id="project_location">
-                <div class="section-information location_text wow fade_top" data-wow-duration="0.6s"
+                <div class="section-information location_text wow fade_topx" data-wow-duration="0.6s"
                     data-wow-delay="0.3s" ng-if="projects_full_list_detail.location_title">
                     <div class="content-size-div">
                         <p class="title-color capitalize">
@@ -1216,7 +1613,7 @@
                             <p class="location-paragraph" ng-bind-html="projects_full_list_detail.address_description">
                             </p>
                         </div>
-                        <!-- <div class="outline-div-button button-div wfc" style="margin-top: 1rem;">
+                        <div class="outline-div-button button-div wfc" style="margin-top: 1rem;">
                             <button class="button-style download-fill-button">
                                 <a href="{{projects_full_list_detail.map_iframe}}" target="_blank">
                                     <p class="capitalize">
@@ -1224,11 +1621,11 @@
                                     </p>
                                 </a>
                             </button>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
 
-                <!-- <div class="section-information location_text wow fade_top" data-wow-duration="0.6s"
+                 <div class="section-information location_text wow fade_topx" data-wow-duration="0.6s"
                     data-wow-delay="0.3s">
                     <div class="content-size-div">
                         <p class="title-color capitalize">
@@ -1261,7 +1658,7 @@
                             </a>
                         </div>
                     </div>
-                </div> -->
+                </div> 
             </div>
 
             <div class="project-map-iframe detail-map relative" ng-if="projects_full_list_detail.map_iframe">
@@ -1271,9 +1668,9 @@
                 </iframe>
             </div>
 
-        </section>
+        </section> -->
 
-        <section class="reecosys-section relative" ng-if="projects_full_list_detail.blog_data.length > 0">
+        <!-- <section class="reecosys-section relative" ng-if="projects_full_list_detail.blog_data.length > 0">
             <div class="inner-flex">
                 <div class="container">
                     <div class="content-size-div">
@@ -1339,13 +1736,13 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section ng-if="is_section_Scrolled">
+        <!-- <section ng-if="is_section_Scrolled">
             <div class="container">
                 <div ng-include='"templates/forms/project_detail_inquiry.html"'></div>
             </div>
-        </section>
+        </section> -->
     </div>
 
 </div>
@@ -1362,15 +1759,25 @@
             </div>
             <div class="section-information">
                 <div class="content-size-div" ng-if="projects_full_list_detail.amenities_title">
-                    <p class="title-color capitalize">
+                    <p class="title-colorx capitalize">
                         {{projects_full_list_detail.amenities_title}}
                     </p>
                 </div>
-                <div class="section-title" ng-if="projects_full_list_detail.amenities_tagline">
+                
+                <!-- <div class="section-title" ng-if="projects_full_list_detail.amenities_tagline">
                     <h2>
                         {{projects_full_list_detail.amenities_tagline}}
                     </h2>
+                </div> -->
+
+
+                <div class="section-title-tag_line" ng-if="projects_full_list_detail.amenities_tagline">
+                    <h2 class="g_regular tcpaitlizex">
+                        {{projects_full_list_detail.amenities_tagline}}
+                    </h2>
                 </div>
+
+
             </div>
             <div class="all-amenites-list">
                 <ul>
@@ -1391,7 +1798,7 @@
     </div>
 </div>
 
-<div class="amenities-grid-more" ng-class=" {'more_active': view_moreless2_toggleF}">
+<!-- <div class="amenities-grid-more" ng-class=" {'more_active': view_moreless2_toggleF}">
     <div class="all-amenities-grid">
         <div class="amenities-close-icon-div">
             <div class="amenities-close-icon" ng-click="view_moreless2_toggle_close()">
@@ -1423,7 +1830,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <style>
     .reecosys-brand-logo {

@@ -1,0 +1,120 @@
+<div class="reecosys-main-wrapper" id="reecosys-main-wrapper" ng-if="!is_blog_list_loading">
+    <div id="reecosys-contact-wrapper" class="relative">
+        <section class="reecosys-section relative" id="reecosys-contact-section-banner">
+
+            <div class="commonpage_banner">
+                <div style="height: 100%;">
+                    <img src="assets/images/other/dummy_image.png" hires="assets/images/blog/blog_img.jpg"
+                        alt="" class="lazyload">
+                </div>
+            </div>
+            <div class="black_overlay"></div>
+            <div class="banner-text-half">
+                <!-- <div class="banner-title">
+                    <h1 class="white-color">
+                        Articles
+                    </h1>
+                </div> -->
+
+
+                <div class="banner-title-new wow banner_text-width fade_top other_page_width" data-wow-delay="0.6s" data-wow-duration="0.6s">
+                    <h2 class="white-color g_regular">   Articles </h2>
+                                        </div>
+            </div>
+        </section>
+
+
+        <section class="reecosys-section project_blog_list_setion" id="reecosys-blog-section-2">
+            <div class="container-fluid">
+                <div class="inner-flex">
+
+                    <div class="tags_type_click relative" ng-if="tag_type">
+                        <div class="blog_tags_text capitalize relative">
+                            <p>{{tag_type}}</p>
+                            <div class="clear_tags_filter" ng-click="clear_tag();">
+                                <img src="assets/images/icons/close_image.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="project-list-grid project-list-grid-1-column" ng-if="blogs_types_list.length == 1">
+                        <div ng-repeat="data in blogs_types_list" class="project-list-card">
+                            <a href="articles/{{data.slug}}" class="wow fadeIn" data-wow-delay="0.4s"
+                                data-wow-duration="0.{{$index+3}}s">
+                                <div class="project-img-list relative">
+                                    <img src="assets/images/other/dummy_image.png"
+                                        hires="{{data.image_full}}&w=1320&h=740&q=75"
+                                        alt="" class="image-cover">
+                                    <div class="card_black_overlay"></div>
+                                </div>
+                                <div class="project-info-list">
+                                    <div class="section-information">
+                                        <div class="banner-title">
+                                            <h2 class="charter_regularx white_color_text g_regular">
+                                                {{data.banner_title}}
+                                            </h2>
+                                        </div>
+                                        <div class="content-size-div capitalize content-size-div-small projects_list_information text-center">
+                                            <div class="project-info-flex">
+                                                <p>{{data.published_date}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="outline-div-button button-div view-project-btn">
+                                            <button class="button-style ">
+                                                <p class="">
+                                                    Know More
+                                                </p>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="project-list-grid project-list-grid-2-column" ng-if="blogs_types_list.length > 1">
+                        <div ng-repeat="data in blogs_types_list" class="project-list-card">
+
+                            <a href="articles/{{data.slug}}">
+                                <div class="blog_list_card section-information">
+                                    <div class="list_blog_img overflow">
+                                        <img src="assets/images/other/dummy_image.png"
+                                            hires="{{data.image_full}}&h=400&w=590&q=75" alt=""
+                                            class="image-cover lazyload">
+                                    </div>
+                                </div>
+                                <div class="project-info-list">
+                                    <div class="section-information">
+                                        <div class="content-size-div section-title-flex j-c-sb list_blogs_text">
+                                            <div>
+                                                <p class="capitalize charter_regularx g_regular">
+                                                    {{data.banner_title}}
+                                                </p>
+                                            </div>
+                                            <div class="project-arrow-icon">
+                                                <img src="assets/images/icon/right_arrow_line.svg" alt="Blog">
+                                            </div>
+                                        </div>
+                                        <div class="banner-detail-row banner-detail-row-grid"
+                                            ng-if="data.published_date">
+                                            <div class="project-information-div">
+                                                <div class="content-size-div banner-detail-row-grid-text">
+                                                    <p class="capitalize">
+                                                        {{data.published_date}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>

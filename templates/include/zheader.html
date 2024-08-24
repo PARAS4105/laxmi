@@ -1,0 +1,555 @@
+
+<div class="reecosys-header"
+    ng-class="{'webmenu_hidden2': inquire_popup_web_toggleF, 'reecosys-header-order': project_detail_flag}"
+    ng-click="menu_click_close(); project_dropdown_mobile_close();">
+
+    <div class="reecosys-header-content relative" id="reecosys-header-content"
+        ng-class="{'menu_list' : mobile_menu_toggleF}">
+
+        <div class="reecosys-header-logo">
+
+            <div ng-if="!project_detail_flag">
+                <a href="{{base_url}}">
+                    <div ng-if="$storage.logged_user_details.logo != ''" class="reecosys-brand-logo">
+                        <img src="{{$storage.logged_user_details.logo}}" alt="{{$storage.logged_user_details.name}}">
+                    </div>
+                    <div class="header_logo_text" ng-if="$storage.logged_user_details.logo == ''">
+                        <p class="capitalize">
+                            {{$storage.logged_user_details.name}}
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-logo-bock">
+                <a href="projects" ng-if="projects_name">
+                    <div class="project-logo">
+                        <div class="back-icon-header">
+                            <img src="assets/images/icon/left_arrow.svg" alt="">
+                        </div>
+                        <div class="header_project_name mt2">
+                            <p class="capitalize">
+                                {{projects_name}}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="header-navigation-links">
+            <div class="header-links-navbar web-link" ng-repeat="category_data in projects_category"
+                ng-if="!project_detail_flag && !isMobilescreen"
+                ng-click="dropdown_category_get(category_data.category); menu_click_close(); close_contact_dropdown(); project_dropdown_mobile_close(); $event.stopPropagation();">
+                <a href="javascript:void(0);" class="header-navigation-project" ng-if="category_data.category">
+                    <p class="capitalize">
+                        {{category_data.category}}
+                    </p>
+                    <div class="header-navigation-links-arrow"
+                        ng-class="{'active': category_data.category == dropdown_category_get_f}">
+                        <img src="assets/images/icon/down_arrow.svg" alt="">
+                    </div>
+                </a>
+            </div>
+
+            <div class="mobile-icons-flex" ng-if="isMobilescreen && project_detail_flag">
+                <div class="mob-link inquire-now-header-mob">
+                    <img src="assets/images/icon/email_icon.svg"
+                        ng-click="inquire_popup_web_toggle(); project_dropdown_mobile_close();" alt="">
+                </div>
+            </div>
+
+            <div class="outline-div-button web-link button-div header-inquire-now"
+                ng-if="project_detail_flag && !isMobilescreen">
+                <button ng-click="inquire_popup_web_toggle()" class="button-style button-style-black ">
+                    <p class="">
+                        Enquire Now
+                    </p>
+                </button>
+            </div>
+
+            <div class="header_contact_us" ng-if="isMobilescreen"
+                ng-click="open_contact_dropdown(); close_dropdown_category_get(); menu_click_close(); project_dropdown_mobile_close(); $event.stopPropagation();">
+                <img src="assets/images/icon/call.svg" alt="">
+            </div>
+
+            <div id="vibrate" class="web-bar"
+                ng-click="mobile_menu_toggle(); close_dropdown_category_get(); close_contact_dropdown(); project_dropdown_mobile_close(); $event.stopPropagation();"
+                ng-class="{'nav-btn-active': mobile_menu_toggleF}">
+                <div class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </div>
+
+        </div>
+
+        <div class="header_contact_dropdown" ng-class="{'active' : open_contact_dropdown_f}"
+            ng-click="$event.stopPropagation();">
+            <div class="relative">
+                <ul class="header_contact_list">
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="header_contact_content">
+                                <div class="header_contact_dropdown_img">
+                                    <img src="assets/images/icon/call.svg" alt="">
+                                </div>
+                                <div class="header_contact_dropdown_text">
+                                    <p>Call</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" target="_blank">
+                            <div class="header_contact_content">
+                                <div class="header_contact_dropdown_img">
+                                    <img src="assets/images/icon/whatsapp.svg" alt="">
+                                </div>
+                                <div class="header_contact_dropdown_text">
+                                    <p>WhatsApp</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <div class="header_contact_content">
+                                <div class="header_contact_dropdown_img">
+                                    <img src="assets/images/icon/email_icon.svg" alt="">
+                                </div>
+                                <div class="header_contact_dropdown_text">
+                                    <p>Email</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="close_contact" ng-click="close_contact_dropdown();" ng-if="isMobilescreen">
+                    <img src="assets/images/icon/close_background.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-dropdown-web" ng-if="!isMobilescreen && dropdown_category_get_f != ''"
+        ng-class="{'show_dropdown': dropdown_category_get_show}" ng-click="$event.stopPropagation();">
+        <div>
+            <ul>
+                <li ng-repeat="data in projects_full_list" class="links-flex-column"
+                    ng-if="data.category == dropdown_category_get_f" ng-click="close_dropdown_category_get();">
+                    <a href="project/{{data.slug}}" ng-click="nav_accordion_close(); menu_click_close();">
+                        <div class="dropdown_project_list">
+                            <div class="header_project_thum" ng-if="data.banner_data.image_web_full">
+                                <img src="assets/images/other/dummy_125.jpg"
+                                    hires="{{data.banner_data.image_web_full}}&h=125&w=125"
+                                    ng-if="data.banner_data.image_web_type == 'image'" alt="reecosys">
+                                <video autoplay muted loop playsinline id="myVideo"
+                                    style="width: 100%; height: 100%; display: block; object-fit: cover;"
+                                    ng-if="data.banner_data.image_web_type == 'video'">
+                                    <source src="{{data.banner_data.image_web_full}}" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="dropdown_project_content">
+                                <div class="dropdown_project_title" ng-if="data.project_title">
+                                    <h4 class="capitalize">
+                                        {{data.project_title}}
+                                    </h4>
+                                </div>
+                                <div class="dropdown_project_info_list">
+                                    <div class="dropdown_project_info" ng-if="data.size_price">
+                                        <div class="dropdown_project_img">
+                                            <img src="assets/images/icon/building.svg" alt="">
+                                        </div>
+                                        <div class="capitalize mt4x">
+                                            <p>{{data.size_price}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown_project_info" ng-if="data.location">
+                                        <div class="dropdown_project_img">
+                                            <img src="assets/images/icon/location.svg" alt="">
+                                        </div>
+                                        <div class="capitalize mt2">
+                                            <p>{{data.location}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown_project_status dropdown_project_info"
+                                        ng-if="data.construction">
+                                        <div class="progress-statuss">
+                                            <div class="progress"
+                                                data-percentage="{{data.construction.progress_percent}}"
+                                                ng-if="data.construction.progress_percent > 0">
+                                                <span class="progress-left">
+                                                    <span class="progress-bar"></span>
+                                                </span>
+                                                <span class="progress-right">
+                                                    <span class="progress-bar"></span>
+                                                </span>
+                                                <div class="progress-value value_get">
+                                                    <p>
+                                                        {{data.construction.progress_percent}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="progress-consctruction progress_banner"
+                                                ng-if="data.construction.progress_percent == 0">
+                                                <img src="assets/images/icon/construction.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="capitalize" ng-if="data.status">
+                                            <p>{{data.status}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="sub_header"
+        ng-if="project_detail_flag && (projects_full_list_detail.location_tag_line || projects_full_list_detail.construction_data.image.length > 0 || projects_full_list_detail.construction_data.video.length > 0 || projects_full_list_detail.specifications.length > 0 || projects_full_list_detail.amenities_data || projects_full_list_detail.big_text_pain || projects_full_list_detail.highlights.length > 0 || projects_full_list_detail.gallery_data_all[0].image.length > 0 || projects_full_list_detail.experts_data.experts_array.length > 0)">
+        <ul class="sub_header_list">
+            <li ng-if="projects_full_list_detail.big_text_pain || projects_full_list_detail.highlights.length > 0">
+                <a href="javascript:void(0);" ng-click="scrolltoDiv('reecosys-project-detail-section-3');">
+                    <p class="capitalize">
+                        Overview
+                    </p>
+                </a>
+            </li>
+            <li ng-if="projects_full_list_detail.experts_data.experts_array.length > 0">
+                <a href="javascript:void(0);" ng-click="scrolltoDiv('reecosys-project-detail-expert-section');">
+                    <p class="capitalize">
+                        Experts
+                    </p>
+                </a>
+            </li>
+            <li ng-repeat="video in projects_full_list_detail.virtual_data"
+                ng-if="video.type == 'walk-through' && video.image">
+                <a href="javascript:void(0);" ng-click="scrolltoDiv('reecosys-project-detail-section-4');">
+                    <p class="capitalize">
+                        Walkthrough
+                    </p>
+                </a>
+            </li>
+            <li ng-if="projects_full_list_detail.gallery_data_all[0].image.length > 0">
+                <a href="javascript:void(0);" ng-click="scrolltoDiv('reecosys-project-detail-section-5');">
+                    <p class="capitalize">
+                        Gallery
+                    </p>
+                </a>
+            </li>
+            <li ng-if="projects_full_list_detail.amenities_data">
+                <a href="javascript:void(0);" ng-click="scrolltoDiv('reecosys-project-detail-section-6');">
+                    <p class="capitalize">
+                        Amenities
+                    </p>
+                </a>
+            </li>
+            <li ng-if="projects_full_list_detail.specifications.length > 0">
+                <a href="javascript:void(0);" ng-click="scrolltoDiv('reecosys-project-detail-section-9');">
+                    <p class="capitalize">
+                        Specs
+                    </p>
+                </a>
+            </li>
+            <li
+                ng-if="projects_full_list_detail.construction_data.image.length > 0 || projects_full_list_detail.construction_data.video.length > 0">
+                <a href="javascript:void(0);" ng-click="scrolltoDiv('reecosys-project-detail-section-7');">
+                    <p class="capitalize">
+                        Construction
+                    </p>
+                </a>
+            </li>
+            <li
+                ng-if="projects_full_list_detail.location_tag_line || projects_full_list_detail.proximity_data.proximity_array.length > 0">
+                <a href="javascript:void(0);" ng-click="scrolltoDiv('project_location');">
+                    <p class="capitalize">
+                        Location
+                    </p>
+                </a>
+            </li>
+            <!-- <li>
+                <div>
+                    
+                </div>
+            </li> -->
+            <li>&nbsp;</li>
+        </ul>
+    </div>
+
+</div>
+
+
+<div class="header_contact_dropdown_overlay" ng-click="project_dropdown_mobile_close();" ng-if="isMobilescreen"
+    ng-class="{'active' : open_contact_dropdown_f || project_detail_dropdown_f}">
+</div>
+
+
+<div class="navigation-wrapper" id="navigation-wrapper" ng-class="{'navigation-wrapper-active': mobile_menu_toggleF}">
+    <div class="navigation-wrapper-div" id="navigation-wrapper-div">
+        <div class="navigation-wrapper-links web_menu_flex">
+            <ul id="accordion">
+                <li>
+                    <div>
+                        <p>
+                            <a href="{{base_url}}" class="capitalize" ng-click="menu_click_close()"
+                                ng-class="{'active_page': activePath == '/'}" title="Home">
+                                Home
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li ng-repeat="category_data in projects_category">
+                    <div class="nav-li-flex" ng-click="project_list_click(category_data.category);"
+                        ng-class="{'active' : project_list_click_f == category_data.category}">
+                        <p class="mobile_acr-div" ng-if="category_data.category">
+                            <a href="javascript:void(0);" class="capitalize">
+                                {{category_data.category}}
+                            </a>
+                            <span>
+                                <img src="assets/images/icon/down_arrow.svg" alt="">
+                            </span>
+                        </p>
+                    </div>
+                    <div class="project-links content_accordian"
+                        ng-class="{'active_list' : project_list_click_f == category_data.category}">
+                        <ul>
+                            <li ng-repeat="data in projects_full_list" class="links-flex-column"
+                                ng-if="data.category == category_data.category">
+                                <a href="project/{{data.slug}}" ng-click="nav_accordion_close(); menu_click_close();">
+                                    <div class="dropdown_project_list">
+                                        <div class="header_project_thum" ng-if="data.banner_data.image_web_full"
+                                            title="{{data.project_title}}">
+                                            <img src="assets/images/other/dummy_100.jpg"
+                                                hires="{{data.banner_data.image_web_full}}"
+                                                ng-if="data.banner_data.image_web_type == 'image' && isMobilescreen"
+                                                alt="reecosys">
+                                            <img src="assets/images/other/dummy_125.jpg"
+                                                hires="{{data.banner_data.image_web_full}}&h=125&w=125"
+                                                ng-if="data.banner_data.image_web_type == 'image' && !isMobilescreen"
+                                                alt="reecosys">
+                                            <video autoplay muted loop playsinline id="myVideo"
+                                                style="width: 100%; height: 100%; display: block; object-fit: cover;"
+                                                ng-if="data.banner_data.image_web_type == 'video'">
+                                                <source src="{{data.banner_data.image_web_full}}" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <div class="dropdown_project_content">
+                                            <div class="dropdown_project_title" ng-if="data.project_title">
+                                                <h4 class="capitalize">
+                                                    {{data.project_title}}
+                                                </h4>
+                                            </div>
+                                            <div class="dropdown_project_info_list">
+                                                <div class="dropdown_project_info" ng-if="data.size_price">
+                                                    <div class="dropdown_project_img">
+                                                        <img src="assets/images/icon/building.svg" alt="">
+                                                    </div>
+                                                    <div class="capitalize mt4x">
+                                                        <p>{{data.size_price}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="dropdown_project_info" ng-if="data.location">
+                                                    <div class="dropdown_project_img">
+                                                        <img src="assets/images/icon/location.svg" alt="">
+                                                    </div>
+                                                    <div class="capitalize mt2">
+                                                        <p>{{data.location}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="dropdown_project_status dropdown_project_info"
+                                                    ng-if="data.construction">
+                                                    <div class="progress-statuss">
+                                                        <div class="progress"
+                                                            data-percentage="{{data.construction.progress_percent}}"
+                                                            ng-if="data.construction.progress_percent > 0">
+                                                            <span class="progress-left">
+                                                                <span class="progress-bar"></span>
+                                                            </span>
+                                                            <span class="progress-right">
+                                                                <span class="progress-bar"></span>
+                                                            </span>
+                                                            <div class="progress-value value_get">
+                                                                <p>
+                                                                    {{data.construction.progress_percent}}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress-consctruction progress_banner"
+                                                            ng-if="data.construction.progress_percent == 0">
+                                                            <img src="assets/images/icon/construction.svg" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="capitalize" ng-if="data.status">
+                                                        <p ng-if="data.status != 'ready to move in'">{{data.status}}</p>
+                                                        <p ng-if="data.status == 'ready to move in'">Completed</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li ng-repeat="data in page_full_list" ng-if="data.page_type == '' && data.is_profile_page == 0">
+                    <div>
+                        <p>
+                            <a href="{{data.slug}}" target="{{data.slug_target}}" class="capitalize"
+                                ng-click="menu_click_close()"
+                                ng-class="{'active_page': activePath == '/{{data.slug}}/'}" title="{{data.page_name}}">
+                                {{data.page_name}}
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li class="ventures_list_menu" ng-repeat="data in menu_venture_list"
+                    ng-if="data.pages.length > 0 && menu_venture_list.length > 0">
+                    <div class="venture_menu_list">
+                        <div class="accordion_click" accordion>
+                            <p class="mobile_acr-div" title="{{data.title}}">
+                                <a href="javascript:void(0);" class="capitalize">
+                                    {{data.title}}
+                                </a>
+                                <span>
+                                    <img src="assets/images/icon/down_arrow.svg" alt="">
+                                </span>
+                            </p>
+                        </div>
+                        <div class="ventures_list content_accordian">
+                            <ul>
+                                <li ng-repeat="data2 in data.pages">
+                                    <a href="{{data2.slug}}" class="capitalize" title="{{data2.page_name}}">
+                                        {{data2.page_name}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <!-- profile -->
+                <!-- <li ng-repeat="data in page_full_list" ng-if="data.is_profile_page == 1">
+                    <div>
+                        <p>
+                            <a href="profile/{{data.slug}}" target="{{data.slug_target}}" class="capitalize"
+                                ng-click="menu_click_close()"
+                                ng-class="{'active_page': activePath == '/{{data.slug}}/'}" title="{{data.page_name}}">
+                                {{data.page_name}}
+                            </a>
+                        </p>
+                    </div>
+                </li> -->
+
+                <li>
+                    <div>
+                        <p>
+                            <a href="completed-projects" class="capitalize" ng-click="menu_click_close()"
+                                ng-class="{'active_page': activePath == '/completed-projects'}" title="Completed projects">
+                                Completed Projects
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                <li ng-if="$storage.permissions.indexOf('blogs') != -1">
+                    <div>
+                        <p>
+                            <a href="blogs" class="capitalize" ng-class="{'active_page': activePath == '/blogs/'}"
+                                ng-click="menu_click_close()" title="Blogs">
+                                Blogs
+                            </a>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="navigation-mobile"
+        ng-if="home_list.facebook_url || home_list.instagram_url || home_list.twitter_url || home_list.linkedin_url || home_list.youtube_page_url">
+        <ul class="web_menu_flex_ulx navigation-mobile-ul">
+            <li ng-if="home_list.facebook_url">
+                <div>
+                    <a href="{{home_list.facebook_url}}" target="_blank">
+                        <img src="assets/images/social/facebook.svg" alt="">
+                    </a>
+                </div>
+            <li ng-if="home_list.instagram_url">
+                <div>
+                    <a href="{{home_list.instagram_url}}" target="_blank">
+                        <img src="assets/images/social/instagram.svg" alt="">
+                    </a>
+                </div>
+            </li>
+            <li ng-if="home_list.twitter_url">
+                <div>
+                    <a href="{{home_list.twitter_url}}" target="_blank">
+                        <img src="assets/images/social/twitter.svg" alt="">
+                    </a>
+                </div>
+            </li>
+            <li ng-if="home_list.linkedin_url">
+                <div>
+                    <a href="{{home_list.linkedin_url}}" target="_blank">
+                        <img src="assets/images/social/indeed.svg" alt="">
+                    </a>
+                </div>
+            </li>
+            <li ng-if="home_list.youtube_page_url">
+                <div>
+                    <a href="{{home_list.youtube_page_url}}" target="_blank">
+                        <img src="assets/images/social/youtube.svg" alt="">
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="mobile_menu_overlay" ng-class="{'nav-btn-active': mobile_menu_toggleF}" ng-click="menu_click_close();">
+</div>
+<!-- inquiry side bar -->
+<div class="quickEnquiryOverlay" ng-click="inquire_popup_web_toggle_close(); country_code_click_false();"
+    ng-class="{'inqury_active': inquire_popup_web_toggleF}">
+</div>
+
+<div ng-include='"templates/forms/header_inquiry_form.html"'></div>
+
+
+
+<script type="text/javascript">
+    var prev = 0;
+    var $window = $(window);
+    var nav = $(".reecosys-header, .mobile_header");
+
+    $window.on("scroll", function (e) {
+        var scrollTop = $window.scrollTop();
+        if (scrollTop <= 80) {
+            nav.removeClass("webmenu_hidden");
+            prev = 0;
+        } else {
+            nav.toggleClass("webmenu_hidden", scrollTop > prev);
+            prev = scrollTop;
+        }
+    });
+
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        if (scroll > 100) {
+            $(".reecosys-header, .mobile_header").addClass(
+                "header_change"
+            );
+        } else {
+            $(".reecosys-header, .mobile_header").removeClass(
+                "header_change"
+            );
+        }
+    });
+</script>
+
+
+<script> vibrate.addEventListener("click", function(event){ navigator.vibrate([300]);       })     </script>
